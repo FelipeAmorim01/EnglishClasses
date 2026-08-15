@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* CEO ACTIVITY */
+      .ceo-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .ceo-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .ceo-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .challenge-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .challenge-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 20px 22px;
+        cursor: default;
+        transition: border-color 0.15s;
+      }
+
+      .challenge-card:hover {
+        border-color: var(--accent);
+      }
+
+      .challenge-num {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      .challenge-title {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .challenge-questions {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .challenge-questions li {
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+        line-height: 1.5;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      /* WRAP-UP */
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Business English — Experimental Lesson</div>
+      </div>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Vocabulary</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">CEO for a Day</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>Getting started</em></div>
+          <div class="stage-sub">
+            Speak freely, there are no wrong answers here.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>Tell me a little about yourself — what do you do for work?</li>
+            <li>Do you use English at work? In what situations?</li>
+            <li>What's the biggest challenge for you when speaking English?</li>
+            <li>
+              Have you ever had a meeting or email in English? How did it go?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: VOCABULARY -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">Vocabulary <em>Upgrade</em></div>
+          <div class="stage-sub">Small changes, big difference.</div>
+
+          <div class="section-label">To get us started</div>
+          <ul class="q-list">
+            <li>
+              "Imagine you have a job interview in English tomorrow. What would
+              you say when they ask: 'Tell me about yourself'?"
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="section-label">
+            More precise ways to talk about your work
+          </div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Instead of</th>
+                <th>Try this</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"I do marketing"</td>
+                <td>I am responsible for...</td>
+                <td>
+                  "I am responsible for managing our social media campaigns."
+                </td>
+              </tr>
+              <tr>
+                <td>"I work with the team"</td>
+                <td>I collaborate with...</td>
+                <td>
+                  "I collaborate closely with the sales and design teams."
+                </td>
+              </tr>
+              <tr>
+                <td>"My job is..."</td>
+                <td>My role involves...</td>
+                <td>"My role involves overseeing client accounts."</td>
+              </tr>
+              <tr>
+                <td>"I am in charge of..."</td>
+                <td>I oversee / I lead...</td>
+                <td>"I oversee a team of five people."</td>
+              </tr>
+              <tr>
+                <td>"I want to learn more"</td>
+                <td>I'm looking to develop...</td>
+                <td>
+                  "I'm looking to develop my skills in project management."
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- STAGE 2: CEO FOR A DAY -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">CEO <em>for a Day</em></div>
+          <div class="stage-sub">
+            You are the CEO. Every decision is yours to make — and defend.
+          </div>
+
+          <div class="ceo-intro">
+            <div class="intro-label">The scenario</div>
+            <p>
+              You have just been appointed CEO of a company. The board has
+              called an emergency meeting. Four urgent issues are on the table.
+              What do you do?
+            </p>
+          </div>
+
+          <div class="section-label">Your challenges</div>
+          <div class="challenge-grid">
+            <div class="challenge-card">
+              <div class="challenge-num">Challenge 01</div>
+              <div class="challenge-title">Revenue is falling</div>
+              <ul class="challenge-questions">
+                <li>
+                  What is your first move — cut costs or find new revenue?
+                </li>
+                <li>Which department do you protect? Which do you cut?</li>
+                <li>
+                  How do you communicate this to your team without causing
+                  panic?
+                </li>
+              </ul>
+            </div>
+
+            <div class="challenge-card">
+              <div class="challenge-num">Challenge 02</div>
+              <div class="challenge-title">Employees want remote work</div>
+              <ul class="challenge-questions">
+                <li>Do you allow it? Fully, partially, or not at all?</li>
+                <li>How do you keep the team aligned from different places?</li>
+                <li>
+                  Your best manager says they'll quit if remote is not allowed.
+                  What do you do?
+                </li>
+              </ul>
+            </div>
+
+            <div class="challenge-card">
+              <div class="challenge-num">Challenge 03</div>
+              <div class="challenge-title">
+                A competitor launched a new product
+              </div>
+              <ul class="challenge-questions">
+                <li>Do you respond immediately or wait and observe?</li>
+                <li>
+                  Do you match the product or double down on what makes you
+                  different?
+                </li>
+                <li>How do you keep your current clients from switching?</li>
+              </ul>
+            </div>
+
+            <div class="challenge-card">
+              <div class="challenge-num">Challenge 04</div>
+              <div class="challenge-title">The budget is limited</div>
+              <ul class="challenge-questions">
+                <li>
+                  You can only invest in one area: marketing, technology, or
+                  people. Which one?
+                </li>
+                <li>
+                  A promised project now has no funding. How do you handle it?
+                </li>
+                <li>
+                  An investor offers money but wants 30% of the company. Do you
+                  accept?
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Useful language for this activity</div>
+          <div style="margin-bottom: 10px">
+            <div
+              style="
+                font-size: 0.7rem;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 8px;
+              "
+            >
+              Making decisions
+            </div>
+            <div class="vocab-chips">
+              <span class="chip">I would prioritize...</span>
+              <span class="chip">The first thing I'd do is...</span>
+              <span class="chip">In the long run...</span>
+              <span class="chip">We need to allocate resources to...</span>
+            </div>
+          </div>
+          <div style="margin-bottom: 10px">
+            <div
+              style="
+                font-size: 0.7rem;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 8px;
+              "
+            >
+              Arguing your position
+            </div>
+            <div class="vocab-chips">
+              <span class="chip">The reason behind this is...</span>
+              <span class="chip">The risk here is...</span>
+              <span class="chip">This could lead to...</span>
+              <span class="chip">On the other hand...</span>
+            </div>
+          </div>
+          <div>
+            <div
+              style="
+                font-size: 0.7rem;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 8px;
+              "
+            >
+              Finding middle ground
+            </div>
+            <div class="vocab-chips">
+              <span class="chip">I'm open to...</span>
+              <span class="chip">That's not negotiable, but...</span>
+              <span class="chip">We need to find a middle ground</span>
+              <span class="chip">What if we tried...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Reflection <em>&amp; Next Steps</em></div>
+          <div class="stage-sub">
+            Let's look at where you are and where you want to go.
+          </div>
+
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">What went well</div>
+              <div class="reflection-content">
+                Vocabulary choices, sentence construction, confidence,
+                pronunciation highlights.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">One focus area</div>
+              <div class="reflection-content">
+                One clear pattern to work on going forward.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label">Let's close with these questions</div>
+          <ul class="q-list">
+            <li>What did you think of today's class?</li>
+            <li>What would you like to focus on going forward?</li>
+            <li>
+              Is there a specific situation at work you'd like to prepare for?
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+    </script>
+  </body>
+</html>

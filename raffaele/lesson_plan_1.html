@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* NEGOTIATION SCENARIO */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* NEGOTIATION LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">
+          Negotiation &amp; Workplace Conflict — Lesson 2
+        </div>
+      </div>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Diplomacy Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">The Negotiation Table</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>Picking your battles</em></div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              Tell me about a time you had to negotiate something at work — big
+              or small.
+            </li>
+            <li>
+              Are you more direct or more diplomatic when there's a conflict?
+              Give an example.
+            </li>
+            <li>
+              What's harder for you: saying no to your boss, or saying no to a
+              client?
+            </li>
+            <li>
+              Have you ever stayed quiet in a disagreement and regretted it
+              afterward? What happened?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: DIPLOMACY TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">Diplomacy <em>Toolkit</em></div>
+          <div class="stage-sub">
+            Same message, different impact. It's rarely about what you say —
+            it's about how you say it.
+          </div>
+
+          <div class="section-label">The Diplomacy Dial</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Too blunt</th>
+                <th>Diplomatic version</th>
+                <th>In context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"That's wrong."</td>
+                <td>I see it a bit differently.</td>
+                <td>"I see it a bit differently — can I explain why?"</td>
+              </tr>
+              <tr>
+                <td>"You need to fix this now."</td>
+                <td>Could we prioritize this?</td>
+                <td>"Could we prioritize this before Friday's deadline?"</td>
+              </tr>
+              <tr>
+                <td>"I disagree."</td>
+                <td>I'm not sure I fully agree.</td>
+                <td>
+                  "I'm not sure I fully agree — can I share another angle?"
+                </td>
+              </tr>
+              <tr>
+                <td>"That's not my problem."</td>
+                <td>That falls outside my role, but...</td>
+                <td>
+                  "That falls outside my role, but I can point you to Marcos,
+                  who handles that."
+                </td>
+              </tr>
+              <tr>
+                <td>"No."</td>
+                <td>I'm not able to commit to that right now.</td>
+                <td>
+                  "I'm not able to commit to that right now, but let's revisit
+                  it next week."
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Idiom spotlight — negotiation talk</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">meet someone halfway</div>
+              <div class="idiom-meaning">
+                To compromise — each side gives up a little.
+              </div>
+              <div class="idiom-example">"We met halfway on the price."</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">play hardball</div>
+              <div class="idiom-meaning">
+                To negotiate aggressively, with no concessions.
+              </div>
+              <div class="idiom-example">
+                "They played hardball during the contract talks."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">read the room</div>
+              <div class="idiom-meaning">
+                To sense the mood before you speak or push an idea.
+              </div>
+              <div class="idiom-example">
+                "He didn't read the room and pushed too hard."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">table an issue</div>
+              <div class="idiom-meaning">
+                To postpone a discussion until later.
+              </div>
+              <div class="idiom-example">
+                "Let's table this and come back to it next meeting."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">walk away from the table</div>
+              <div class="idiom-meaning">
+                To end a negotiation without reaching a deal.
+              </div>
+              <div class="idiom-example">
+                "If the terms aren't fair, be ready to walk away."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">give and take</div>
+              <div class="idiom-meaning">A mutual exchange of compromises.</div>
+              <div class="idiom-example">
+                "Any good deal involves some give and take."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: THE NEGOTIATION TABLE -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">The <em>Negotiation Table</em></div>
+          <div class="stage-sub">
+            Two roleplays. You'll play one side — I'll play the other. Use
+            today's language to reach the best deal you can.
+          </div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">How it works</div>
+            <p>
+              Each scenario has two roles. You'll only see your own role and
+              will negotiate out loud until you reach an agreement or decide to
+              walk away.
+            </p>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- SCENARIO A -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario A — Salary Renegotiation
+                  <span>Employee vs. Manager</span>
+                </div>
+                <div class="scenario-numbers">
+                  You've been in your role for two years and recently took on
+                  extra responsibility.
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">Your role — Employee</div>
+                    <ul>
+                      <li>You now manage two junior team members.</li>
+                      <li>
+                        You led a project that saved the company real money last
+                        quarter.
+                      </li>
+                      <li>
+                        Market research shows the role pays 15–20% more
+                        elsewhere.
+                      </li>
+                      <li>Your target: a 15% raise.</li>
+                      <li>
+                        Your walk-away point: 8% minimum, or non-monetary
+                        benefits (extra vacation days, remote work, training
+                        budget).
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-a">
+                    <div class="position-role">Counterpart — Manager</div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          Budget only allows 5% raises department-wide this
+                          year.
+                        </li>
+                        <li>
+                          You value this employee and don't want to lose them.
+                        </li>
+                        <li>You can't break salary equity across the team.</li>
+                        <li>
+                          You CAN offer: a title change, flexible remote days, a
+                          training budget, or a formal promotion review in 6
+                          months.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-a', this)"
+                >
+                  Reveal manager's brief
+                </button>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- SCENARIO B -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario B — Vendor Price Increase
+                  <span>Buyer vs. Supplier</span>
+                </div>
+                <div class="scenario-numbers">
+                  A long-time supplier just announced a price increase,
+                  effective next month.
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">Your role — Buyer</div>
+                    <ul>
+                      <li>
+                        Your supplier is raising prices by 12%, citing rising
+                        material costs.
+                      </li>
+                      <li>Your annual budget is already approved and fixed.</li>
+                      <li>
+                        Your goal: reduce the increase, or get something of
+                        equal value in return.
+                      </li>
+                      <li>
+                        You could accept: better payment terms, priority
+                        delivery, or a smaller increase.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-b">
+                    <div class="position-role">Counterpart — Supplier</div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          Costs genuinely rose — 7% is the minimum increase you
+                          need to stay profitable.
+                        </li>
+                        <li>
+                          You'd rather offer extras than lose a long-term
+                          client: extended payment terms, priority delivery, or
+                          a volume discount.
+                        </li>
+                        <li>
+                          You value the relationship and want to find a deal
+                          that works.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-b', this)"
+                >
+                  Reveal supplier's brief
+                </button>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Useful language</div>
+              <div class="chip-group">
+                <div class="chip-group-label">Opening</div>
+                <div class="vocab-chips">
+                  <span class="chip">I'd like to talk about...</span>
+                  <span class="chip">Before we start, can I ask...</span>
+                  <span class="chip"
+                    >Let's see if we can find something that works for both
+                    sides.</span
+                  >
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Counteroffer</div>
+                <div class="vocab-chips">
+                  <span class="chip">What if we met in the middle at...</span>
+                  <span class="chip"
+                    >I could agree to that if you could...</span
+                  >
+                  <span class="chip">Here's an alternative...</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Standing firm</div>
+                <div class="vocab-chips">
+                  <span class="chip">I hear you, but I can't go below...</span>
+                  <span class="chip"
+                    >That's not something I'm able to change, however...</span
+                  >
+                  <span class="chip"
+                    >I need to be honest — that doesn't work for me.</span
+                  >
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Closing the deal</div>
+                <div class="vocab-chips">
+                  <span class="chip">So, to confirm, we're agreeing on...</span>
+                  <span class="chip">Let's put this in writing.</span>
+                  <span class="chip">I think we have a deal.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Reflection <em>&amp; Next Steps</em></div>
+
+          <div class="apply-box">
+            <div class="apply-label">Bring it to work</div>
+            <div class="apply-lead">
+              Think of a real negotiation or disagreement waiting for you at
+              work in the next few weeks — a raise, a deadline, a scope change,
+              anything.
+            </div>
+            <ol class="apply-steps">
+              <li>In one sentence, what's the situation?</li>
+              <li>What's your target? What's your walk-away point?</li>
+              <li>
+                Pick one phrase from today's toolkit. How would you open that
+                conversation? Say it out loud, right now, like you mean it.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function toggleReveal(id, btn) {
+        const card = document.getElementById(id);
+        if (!btn.dataset.origLabel) btn.dataset.origLabel = btn.textContent;
+        const revealed = card.classList.toggle("revealed");
+        btn.textContent = revealed ? "Hide brief again" : btn.dataset.origLabel;
+      }
+    </script>
+  </body>
+</html>
