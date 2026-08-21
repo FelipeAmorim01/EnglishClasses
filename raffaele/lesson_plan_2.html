@@ -1,0 +1,1645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 3</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Travel &amp; Social Small Talk — Lesson 3</div>
+      </div>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Travel Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">The Small Talk Engine</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Out in the World</div>
+        </div>
+        <div class="nav-item" onclick="goTo(4)">
+          <div class="nav-num">05</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 05</div>
+          <div class="stage-title">Warm-up: <em>Where to next?</em></div>
+          <div class="stage-sub">
+            Answer in full stories, not single sentences.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              Tell me about the last trip you took — work or holiday. Where did
+              you go, and what stayed with you?
+            </li>
+            <li>
+              What kind of traveller are you: plan every detail, or figure it out
+              when you land?
+            </li>
+            <li>
+              What's the worst thing that has ever gone wrong on a trip? How did
+              you handle it?
+            </li>
+            <li>
+              Is it easier for you to talk to strangers abroad or here at home?
+              Why do you think that is?
+            </li>
+            <li>
+              If the right job appeared tomorrow, which country would you move
+              to — and which one would you never move to?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: TRAVEL TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 05</div>
+          <div class="stage-title">Travel <em>Toolkit</em></div>
+          <div class="stage-sub">
+            Textbook English gets you understood. This is the English that makes
+            you sound like you've done this before.
+          </div>
+
+          <div class="section-label">Say it like a traveller</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Textbook version</th>
+                <th>What people actually say</th>
+                <th>In context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"I want a table for two."</td>
+                <td>Could we get a table for two? · Party of two, please.</td>
+                <td>
+                  "Hi — could we get a table for two, somewhere quiet if
+                  possible?" In the US the host usually asks "How many in your
+                  party?" — the short, natural answer is "Party of two, please."
+                </td>
+              </tr>
+              <tr>
+                <td>"Where is the bus stop?"</td>
+                <td>Do you know where I'd catch the bus to...?</td>
+                <td>
+                  "Sorry to bother you — do you know where I'd catch the bus to
+                  the centre?"
+                </td>
+              </tr>
+              <tr>
+                <td>"I don't understand."</td>
+                <td>Sorry, could you run that by me again?</td>
+                <td>
+                  "Sorry, could you run that by me again? It's a bit loud in
+                  here."
+                </td>
+              </tr>
+              <tr>
+                <td>"The room is bad."</td>
+                <td>The room isn't quite what we booked.</td>
+                <td>
+                  "I'm afraid the room isn't quite what we booked — we asked for
+                  a double."
+                </td>
+              </tr>
+              <tr>
+                <td>"My flight is late."</td>
+                <td>My flight's been delayed / They've pushed it back.</td>
+                <td>
+                  "My flight's been delayed — they've pushed it back a couple of
+                  hours."
+                </td>
+              </tr>
+              <tr>
+                <td>"I liked the trip."</td>
+                <td>It was one of those trips you don't want to end.</td>
+                <td>
+                  "Honestly, it was one of those trips you don't want to end."
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Phrasal verbs that live in airports</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>The long way</th>
+                <th>The natural way</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>to depart / begin a journey</td>
+                <td>set off</td>
+                <td>"We set off at five to beat the traffic."</td>
+              </tr>
+              <tr>
+                <td>to arrive (a flight, a train)</td>
+                <td>get in</td>
+                <td>"My flight gets in around eleven at night."</td>
+              </tr>
+              <tr>
+                <td>to register at a hotel / leave it</td>
+                <td>check in · check out</td>
+                <td>"I'll check in, drop my bags off, and meet you there."</td>
+              </tr>
+              <tr>
+                <td>to break a journey in another city</td>
+                <td>stop over</td>
+                <td>"We stopped over in Lisbon for a night."</td>
+              </tr>
+              <tr>
+                <td>to go away for a short break</td>
+                <td>get away</td>
+                <td>"We're trying to get away for a few days in October."</td>
+              </tr>
+              <tr>
+                <td>to explore a place casually</td>
+                <td>look around</td>
+                <td>"We had a few hours to look around the old town."</td>
+              </tr>
+              <tr>
+                <td>to collect someone</td>
+                <td>pick (someone) up</td>
+                <td>"Can you pick me up at arrivals? I'll text you when I land."</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Idiom spotlight — travel talk</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">off the beaten track</div>
+              <div class="idiom-meaning">
+                Away from the tourist route; somewhere few people go.
+              </div>
+              <div class="idiom-example">
+                "We stayed in a village off the beaten track — no tour buses at
+                all."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">hit the road</div>
+              <div class="idiom-meaning">To leave, to start the journey.</div>
+              <div class="idiom-example">
+                "We should hit the road before it gets dark."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">travel light</div>
+              <div class="idiom-meaning">
+                To take very little luggage with you.
+              </div>
+              <div class="idiom-example">
+                "I've learned to travel light — hand luggage only."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">get itchy feet</div>
+              <div class="idiom-meaning">
+                To feel restless, like you need to travel again.
+              </div>
+              <div class="idiom-example">
+                "After six months in the same city I start getting itchy feet."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">a whistle-stop tour</div>
+              <div class="idiom-meaning">
+                A very fast visit to many places, with little time in each.
+              </div>
+              <div class="idiom-example">
+                "It was a whistle-stop tour — four cities in five days."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">live out of a suitcase</div>
+              <div class="idiom-meaning">
+                To travel so constantly that you never really unpack.
+              </div>
+              <div class="idiom-example">
+                "That job had me living out of a suitcase for two years."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: THE SMALL TALK ENGINE -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 05</div>
+          <div class="stage-title">The <em>Small Talk</em> Engine</div>
+          <div class="stage-sub">
+            Small talk isn't about being interesting. It's about giving the other
+            person something easy to hold on to.
+          </div>
+
+          <div class="apply-box">
+            <div class="apply-label">The four-step ladder</div>
+            <div class="apply-lead">
+              Every good small-talk exchange follows the same shape. Learn the
+              shape once and you'll never be stuck at a conference dinner again.
+            </div>
+            <ol class="apply-steps">
+              <li>
+                <span
+                  ><strong>Observe.</strong> Comment on something you're both
+                  experiencing right now. — "This queue is unbelievable, isn't
+                  it?"</span
+                >
+              </li>
+              <li>
+                <span
+                  ><strong>Ask.</strong> Turn it into an open question. — "Have
+                  you flown this route before?"</span
+                >
+              </li>
+              <li>
+                <span
+                  ><strong>Give.</strong> When they ask you back, never answer in
+                  one word. Give them a detail to grab. — "I have, actually — I
+                  come out here twice a year for work."</span
+                >
+              </li>
+              <li>
+                <span
+                  ><strong>Bridge.</strong> Use their detail to open a new topic.
+                  — "You mentioned you live here — where would you eat tonight if
+                  you were me?"</span
+                >
+              </li>
+            </ol>
+          </div>
+
+          <div class="section-label">The one-word trap</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Dead end</th>
+                <th>Keeps it alive</th>
+                <th>Why it works</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"Yes." / "It was good."</td>
+                <td>"It was great, actually — especially the..."</td>
+                <td>Gives the other person a hook to ask about.</td>
+              </tr>
+              <tr>
+                <td>"Do you like it here?"</td>
+                <td>"What's it like living here?"</td>
+                <td>Open question — impossible to answer with yes or no.</td>
+              </tr>
+              <tr>
+                <td>"I'm an engineer."</td>
+                <td>"I'm an engineer — I work on X, which basically means..."</td>
+                <td>Turns a job title into a conversation.</td>
+              </tr>
+              <tr>
+                <td>"Oh, nice."</td>
+                <td>"Oh really? How come?"</td>
+                <td>Shows interest and hands the turn back to them.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Safe ground vs. thin ice</div>
+          <div class="topic-split">
+            <div class="topic-card safe">
+              <div class="topic-head">Safe with almost anyone</div>
+              <ul>
+                <li>The situation you're both in (the flight, the queue, the event)</li>
+                <li>Travel — where they've been, where they'd go again</li>
+                <li>Food and restaurants, local recommendations</li>
+                <li>Work, in general terms — what they do, how they got into it</li>
+                <li>Films, series, music, sport</li>
+                <li>Weekend and holiday plans</li>
+                <li>The city you're in — what's changed, what's worth seeing</li>
+              </ul>
+            </div>
+            <div class="topic-card risky">
+              <div class="topic-head">Handle with care</div>
+              <ul>
+                <li>Politics and religion</li>
+                <li>Salary, the price of their house, money in general</li>
+                <li>Age, weight, appearance</li>
+                <li>Marital status, children ("So when are you having kids?")</li>
+                <li>Health problems</li>
+                <li>Strong criticism of their country or their city</li>
+                <li>Anything you'd only ask a close friend</li>
+              </ul>
+              <div class="topic-note">
+                Rule of thumb: if the honest answer could embarrass them, it's
+                not small talk.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label">Reactions that buy you time</div>
+          <div class="vocab-chips">
+            <span class="chip">Oh really?</span>
+            <span class="chip">No way!</span>
+            <span class="chip">That sounds amazing.</span>
+            <span class="chip">Same here.</span>
+            <span class="chip">Tell me about it.</span>
+            <span class="chip">How come?</span>
+            <span class="chip">What's that like?</span>
+            <span class="chip">I know what you mean.</span>
+            <span class="chip">That must have been tough.</span>
+            <span class="chip">Good for you!</span>
+          </div>
+
+          <div class="section-label">Getting out politely</div>
+          <div class="vocab-chips">
+            <span class="chip">It was really nice talking to you.</span>
+            <span class="chip">I'd better let you get back to it.</span>
+            <span class="chip">I'm going to grab another coffee — enjoy the rest of the day.</span>
+            <span class="chip">Let's stay in touch — are you on LinkedIn?</span>
+            <span class="chip">I should probably go and say hello to a few people.</span>
+          </div>
+        </div>
+
+        <!-- STAGE 3: OUT IN THE WORLD -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 05</div>
+          <div class="stage-title">Out in the <em>World</em></div>
+          <div class="stage-sub">
+            Three roleplays. You play one side — I'll play the other. Two are
+            problems to solve; the last one is pure conversation, which is
+            usually the harder of the two.
+          </div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">How it works</div>
+            <p>
+              You only see your own brief. Stay in role until the situation is
+              resolved — and keep the language from stages 2 and 3 within reach.
+            </p>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- SCENARIO A -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario A — The Room You Didn't Book
+                  <span>Guest vs. Front Desk</span>
+                </div>
+                <div class="scenario-numbers">
+                  It's 11 p.m. You've just come off a twelve-hour flight and
+                  you're standing at the reception desk of your hotel.
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">Your role — Guest</div>
+                    <ul>
+                      <li>
+                        You booked and paid for a quiet double room with air
+                        conditioning.
+                      </li>
+                      <li>
+                        You've been given a small twin room facing a main road,
+                        and the AC doesn't work.
+                      </li>
+                      <li>
+                        You have an important meeting at 9 a.m. and you need to
+                        sleep.
+                      </li>
+                      <li>
+                        You want: the room you booked. If that's impossible, you
+                        want real compensation.
+                      </li>
+                      <li>
+                        Challenge: stay polite the whole way through. Firm, but
+                        never rude.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-a">
+                    <div class="position-role">Counterpart — Front Desk</div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          The hotel is genuinely full — a conference took the
+                          last rooms.
+                        </li>
+                        <li>
+                          The booking system double-sold the double rooms. It
+                          isn't the guest's fault and you know it.
+                        </li>
+                        <li>
+                          You CAN offer: a fan tonight, a free upgrade from
+                          tomorrow, breakfast included, late checkout, dinner on
+                          the house, or a taxi to a partner hotel ten minutes
+                          away.
+                        </li>
+                        <li>
+                          You cannot refund tonight without the manager, who is
+                          back at 8 a.m.
+                        </li>
+                        <li>
+                          If the guest stays calm and specific, be generous. If
+                          they shout, retreat to policy.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-a', this)"
+                >
+                  Reveal front desk brief
+                </button>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- SCENARIO B -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario B — The Missed Connection
+                  <span>Passenger vs. Airline Agent</span>
+                </div>
+                <div class="scenario-numbers">
+                  Your first flight landed two hours late. Your connection left
+                  without you. You're at the transfer desk with a queue behind
+                  you.
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">Your role — Passenger</div>
+                    <ul>
+                      <li>
+                        You must be at a client meeting tomorrow at 10 a.m. —
+                        missing it is not an option.
+                      </li>
+                      <li>Your checked bag is somewhere in the system.</li>
+                      <li>
+                        You want: the fastest route there, plus a hotel and food
+                        if you have to wait.
+                      </li>
+                      <li>
+                        Ask about your rights — the delay was the airline's
+                        fault.
+                      </li>
+                      <li>
+                        Challenge: get what you need without ever raising your
+                        voice.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-b">
+                    <div class="position-role">Counterpart — Airline Agent</div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          The next direct flight is tomorrow at 2 p.m. — too late
+                          for the meeting.
+                        </li>
+                        <li>
+                          There's one seat tonight via another city, arriving
+                          6 a.m. It means no sleep, but it works.
+                        </li>
+                        <li>
+                          You can issue a hotel voucher and meal vouchers, but
+                          only if the passenger stays overnight.
+                        </li>
+                        <li>
+                          The bag can be rerouted, but it may arrive a day later.
+                        </li>
+                        <li>
+                          You have twenty people waiting. Be helpful, but keep it
+                          moving — mention the queue if it drags.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-b', this)"
+                >
+                  Reveal airline agent brief
+                </button>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- SCENARIO C -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario C — The Conference Dinner
+                  <span>You vs. a Stranger</span>
+                </div>
+                <div class="scenario-numbers">
+                  You've been seated next to someone you've never met. There are
+                  forty minutes until the speeches. No problem to solve — just
+                  the conversation.
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">Your role — You</div>
+                    <ul>
+                      <li>Open the conversation. Don't wait to be spoken to.</li>
+                      <li>
+                        Climb the ladder: observe → ask → give → bridge.
+                      </li>
+                      <li>
+                        Mission: find out three real things about them, and find
+                        one thing you have in common.
+                      </li>
+                      <li>
+                        Then exit politely — without it feeling like an escape.
+                      </li>
+                      <li>
+                        Forbidden: one-word answers, and asking "So, what do you
+                        do?" in the first thirty seconds.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-c">
+                    <div class="position-role">Counterpart — The Stranger</div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          You're shy. Closed questions get short, flat answers.
+                        </li>
+                        <li>
+                          Open questions get real answers — and you warm up
+                          quickly once someone tries.
+                        </li>
+                        <li>
+                          Facts to reveal only if asked well: you're from
+                          Vancouver, you work in logistics, you moved to São
+                          Paulo four months ago, you cycle competitively, and you
+                          are quietly hating this dinner.
+                        </li>
+                        <li>
+                          If they ask two good follow-up questions in a row, open
+                          up and start asking questions back.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-c', this)"
+                >
+                  Reveal stranger's brief
+                </button>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Useful language</div>
+              <div class="chip-group">
+                <div class="chip-group-label">Complaining politely</div>
+                <div class="vocab-chips">
+                  <span class="chip">I'm afraid there's been a mix-up.</span>
+                  <span class="chip"
+                    >This isn't quite what we agreed when I booked.</span
+                  >
+                  <span class="chip"
+                    >I understand it's not your fault, but...</span
+                  >
+                  <span class="chip">Is there anything you can do for me?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Being firm</div>
+                <div class="vocab-chips">
+                  <span class="chip">I do need this sorted out tonight.</span>
+                  <span class="chip">Could I speak to someone who can?</span>
+                  <span class="chip"
+                    >What are my options here, realistically?</span
+                  >
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Small talk openers</div>
+                <div class="vocab-chips">
+                  <span class="chip">Is this seat taken?</span>
+                  <span class="chip">Have you come far for this?</span>
+                  <span class="chip">First time at one of these?</span>
+                  <span class="chip">How do you know the organisers?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Keeping it going</div>
+                <div class="vocab-chips">
+                  <span class="chip">What's that like?</span>
+                  <span class="chip">How did you get into that?</span>
+                  <span class="chip">Whereabouts is that?</span>
+                  <span class="chip">You mentioned... tell me more.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: WRAP-UP -->
+        <div class="stage" id="stage-4">
+          <div class="stage-eyebrow">Stage 05 of 05</div>
+          <div class="stage-title">Reflection <em>&amp; Next Steps</em></div>
+
+          <div class="section-label">Let's close with these questions</div>
+          <ul class="q-list">
+            <li>
+              Which felt harder today — the complaint or the dinner? Why do you
+              think that is?
+            </li>
+            <li>
+              Which phrase from today will you actually use, and which one will
+              you never say?
+            </li>
+            <li>
+              Where does English still slow you down: the words, or the
+              confidence?
+            </li>
+          </ul>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Speaking</div>
+              <div class="reflection-content">
+                Record a two-minute voice note describing your last trip. Use
+                three phrasal verbs and one idiom from stage 2. Send it to me.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 5</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 5;
+      const done = [false, false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function toggleReveal(id, btn) {
+        const card = document.getElementById(id);
+        if (!btn.dataset.origLabel) btn.dataset.origLabel = btn.textContent;
+        const revealed = card.classList.toggle("revealed");
+        btn.textContent = revealed ? "Hide brief again" : btn.dataset.origLabel;
+      }
+    </script>
+  </body>
+</html>
