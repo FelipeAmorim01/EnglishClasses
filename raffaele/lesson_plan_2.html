@@ -73,6 +73,25 @@
         background: var(--bg);
       }
 
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
       /* PROGRESS */
       .progress-wrap {
         height: 3px;
@@ -739,6 +758,12 @@
 
         header {
           padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
         }
 
         header h1 {
@@ -880,6 +905,7 @@
         <h1>English Conversation</h1>
         <div class="subtitle">Travel &amp; Social Small Talk — Lesson 3</div>
       </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
     </header>
 
     <div class="progress-wrap">
