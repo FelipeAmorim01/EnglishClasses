@@ -1,1 +1,1 @@
-Enrollment form for English classes.
+Enrollment form and English class material.
