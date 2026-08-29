@@ -1,0 +1,1971 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 4</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+
+      /* ---------- COMPRESSION LADDER ---------- */
+      /* grid items default to min-width:auto, which lets the survive table
+         push the whole page wider than the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .round-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      @media (max-width: 1180px) {
+        .round-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .round-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--border);
+        padding: 16px 16px 18px;
+        cursor: pointer;
+        transition: all 0.12s;
+        text-align: left;
+        font-family: "Inter", sans-serif;
+        display: block;
+        width: 100%;
+      }
+
+      .round-card:hover {
+        border-color: var(--accent);
+        border-top-color: var(--accent);
+      }
+
+      .round-card.active {
+        border-color: var(--accent);
+        border-top-color: var(--accent2);
+        background: var(--accent-light);
+      }
+
+      .round-card .round-num {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      .round-card .round-name {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin: 6px 0 2px;
+      }
+
+      .round-card .round-time {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: var(--accent2);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.01em;
+      }
+
+      .round-card .round-rule {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.5;
+        margin-top: 8px;
+      }
+
+      /* timer */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 22px 26px;
+        margin-bottom: 10px;
+      }
+
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.6rem;
+      }
+
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 16px 0 18px;
+      }
+
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+
+      .timer-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .timer-controls .spacer {
+        flex: 1;
+      }
+
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* what survived */
+      .survive-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      .survive-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        min-width: 380px;
+      }
+
+      .survive-table th {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        text-align: center;
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface2);
+      }
+
+      .survive-table th:first-child {
+        text-align: left;
+        padding-left: 18px;
+      }
+
+      .survive-table td {
+        border-bottom: 1px solid var(--border);
+        padding: 0;
+      }
+
+      .survive-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .survive-table .part {
+        padding: 11px 18px;
+        color: var(--text);
+      }
+
+      .survive-table tr.survived .part {
+        background: var(--accent-light);
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .survive-cell {
+        width: 68px;
+        text-align: center;
+        cursor: pointer;
+        color: transparent;
+        user-select: none;
+        font-size: 0.95rem;
+        transition: background 0.1s;
+      }
+
+      .survive-cell:hover {
+        background: var(--surface2);
+        color: var(--border);
+      }
+
+      .survive-cell.ticked {
+        color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .survive-summary {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-top: 12px;
+        padding-left: 2px;
+      }
+
+      .survive-summary strong {
+        color: var(--accent);
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      @media (max-width: 720px) {
+        .round-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .timer-panel {
+          padding: 18px 20px;
+        }
+
+        .timer-display {
+          font-size: 2.8rem;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Presentations &amp; Pitching — Lesson 4</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Pitch Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">The Compression Ladder</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>The floor is yours</em></div>
+          <div class="stage-sub">
+            Today you do most of the talking — so let's start as we mean to go
+            on. Full answers, no single sentences.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              When did you last have to present or explain something to a group?
+              What was it, and how did it go?
+            </li>
+            <li>
+              What's worse for you — the presenting itself, or the questions
+              afterwards? Why do you think that is?
+            </li>
+            <li>
+              Have you ever had to present in English? What happened to your
+              English once the pressure was on?
+            </li>
+            <li>
+              Think of the best presenter you've seen at work. What exactly do
+              they do that you don't?
+            </li>
+            <li>
+              If you had sixty seconds to make a stranger care about what your
+              company does — go. I'm timing you.
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">The Pitch <em>Toolkit</em></div>
+          <div class="stage-sub">
+            A pitch isn't a summary of everything you know. It's a
+            recommendation, a reason, and an ask — said in language that sounds
+            like you've already decided.
+          </div>
+
+          <div class="section-label">Say it like you mean it</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Hesitant version</th>
+                <th>Say this instead</th>
+                <th>In context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"I think maybe we should..."</td>
+                <td>My recommendation is...</td>
+                <td>
+                  "My recommendation is that we rebuild the platform rather than
+                  patch it." Notice there's no <em>maybe</em>, no
+                  <em>I think</em> — you were asked for a recommendation, so
+                  give one.
+                </td>
+              </tr>
+              <tr>
+                <td>"It's a good idea, I believe."</td>
+                <td>The case for this is straightforward:...</td>
+                <td>
+                  "The case for this is straightforward: we're losing two hours
+                  per order to manual work."
+                </td>
+              </tr>
+              <tr>
+                <td>"The numbers are good."</td>
+                <td>The numbers speak for themselves —...</td>
+                <td>
+                  "The numbers speak for themselves — we're up 18% year on year
+                  with the same headcount."
+                </td>
+              </tr>
+              <tr>
+                <td>"I don't know." (in Q&amp;A)</td>
+                <td>I don't have that figure to hand — let me come back to you.</td>
+                <td>
+                  "I don't have that figure to hand, but I'll have it in your
+                  inbox this afternoon." Never invent a number in front of a
+                  room; promise it instead, then deliver.
+                </td>
+              </tr>
+              <tr>
+                <td>"Sorry, this slide is a bit confusing."</td>
+                <td>Let me walk you through this one.</td>
+                <td>
+                  "Let me walk you through this one — the left half is today,
+                  the right half is twelve months from now." Never apologise for
+                  your own material.
+                </td>
+              </tr>
+              <tr>
+                <td>"That's all. Thank you."</td>
+                <td>So, what I need from you today is...</td>
+                <td>
+                  "So, what I need from you today is a decision on the budget —
+                  ideally before the end of the week." Every pitch ends with an
+                  ask, not with <em>thank you</em>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Signposting — telling them where they are</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Moment</th>
+                <th>Phrase</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Opening the frame</td>
+                <td>
+                  I'll keep this to ten minutes and leave time for questions.
+                </td>
+                <td>
+                  "I'll keep this to ten minutes and leave plenty of time for
+                  questions at the end."
+                </td>
+              </tr>
+              <tr>
+                <td>Landing the point early</td>
+                <td>Here's what I want you to take away.</td>
+                <td>
+                  "Here's what I want you to take away: we don't have a sales
+                  problem, we have a delivery problem."
+                </td>
+              </tr>
+              <tr>
+                <td>Moving on</td>
+                <td>That brings me to... · Let's turn to...</td>
+                <td>"That brings me to the part everyone asks about — cost."</td>
+              </tr>
+              <tr>
+                <td>Coming back</td>
+                <td>Coming back to what I said about...</td>
+                <td>
+                  "Coming back to what I said about churn — this is where it
+                  bites us."
+                </td>
+              </tr>
+              <tr>
+                <td>Zooming out</td>
+                <td>The bigger picture here is...</td>
+                <td>
+                  "The bigger picture here is that our competitors solved this
+                  two years ago."
+                </td>
+              </tr>
+              <tr>
+                <td>Closing</td>
+                <td>
+                  So, to bring it all together... · If you remember one thing,
+                  make it this.
+                </td>
+                <td>
+                  "If you remember one thing today, make it this number: forty
+                  per cent."
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Talking about numbers without sounding like a spreadsheet</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>What you mean</th>
+                <th>How to say it</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>It went up / down a lot</td>
+                <td>rose sharply · fell sharply · doubled · halved</td>
+                <td>"Support tickets rose sharply after the June release."</td>
+              </tr>
+              <tr>
+                <td>It went up / down slowly</td>
+                <td>rose steadily · edged up · dipped slightly</td>
+                <td>"Revenue edged up through the second quarter."</td>
+              </tr>
+              <tr>
+                <td>It stopped changing</td>
+                <td>levelled off · flattened out · flat year on year</td>
+                <td>"Growth levelled off in March and has been flat since."</td>
+              </tr>
+              <tr>
+                <td>It got worse, then recovered</td>
+                <td>bottomed out · rebounded · bounced back</td>
+                <td>"It bottomed out in April and rebounded in June."</td>
+              </tr>
+              <tr>
+                <td>An approximate number</td>
+                <td>roughly · just under · in the region of</td>
+                <td>"We're talking about roughly two million a year."</td>
+              </tr>
+              <tr>
+                <td>A number you can't be held to</td>
+                <td>a ballpark figure · give or take · broadly speaking</td>
+                <td>
+                  "As a ballpark figure, six months — give or take a few weeks."
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Idiom spotlight — boardroom edition</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">get buy-in</div>
+              <div class="idiom-meaning">
+                To get people to genuinely support a decision, not just approve
+                it.
+              </div>
+              <div class="idiom-example">
+                "Before the board meeting I got buy-in from both directors."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">the bottom line</div>
+              <div class="idiom-meaning">
+                The final result, or the essential point.
+              </div>
+              <div class="idiom-example">
+                "The bottom line is we can't ship this before December."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">move the needle</div>
+              <div class="idiom-meaning">
+                To make a difference big enough to actually notice.
+              </div>
+              <div class="idiom-example">
+                "Cutting travel saves money, but it won't move the needle."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">low-hanging fruit</div>
+              <div class="idiom-meaning">
+                The easy wins you can take first, with little effort.
+              </div>
+              <div class="idiom-example">
+                "Let's start with the low-hanging fruit and show results early."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">cut to the chase</div>
+              <div class="idiom-meaning">
+                To skip the background and get to the important part.
+              </div>
+              <div class="idiom-example">
+                "I'll cut to the chase — we need another three months."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">make the business case</div>
+              <div class="idiom-meaning">
+                To argue for something in terms of cost, risk and return.
+              </div>
+              <div class="idiom-example">
+                "I can make the business case, but I need your numbers first."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: THE PITCH ROOM -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">The <em>Compression Ladder</em></div>
+          <div class="stage-sub">
+            One idea. Three pitches. Each one shorter than the last. You can cut
+            anything you like — you can't add anything new.
+          </div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">How it works</div>
+            <p>
+              Pick one real proposal from your job — something you actually want
+              someone to say yes to. No real one to hand? Use the system rebuild
+              from stage 2, a hire you want signed off, or a process you'd
+              change tomorrow if it were up to you. I'll run the clock. When it
+              hits zero you stop, even mid-sentence — and whatever you hadn't
+              said yet, you'd never have said in the real meeting either.
+            </p>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Pick your round
+              </div>
+              <div class="round-grid">
+                <button class="round-card" onclick="armRound(0, this)">
+                  <div class="round-num">Round 01</div>
+                  <div class="round-name">The Full Case</div>
+                  <div class="round-time">3:00</div>
+                  <div class="round-rule">
+                    Everything: the problem, your evidence, the options you
+                    rejected, the recommendation, the ask.
+                  </div>
+                </button>
+                <button class="round-card" onclick="armRound(1, this)">
+                  <div class="round-num">Round 02</div>
+                  <div class="round-name">The Meeting Version</div>
+                  <div class="round-time">1:00</div>
+                  <div class="round-rule">
+                    Three things must survive: the recommendation, one number,
+                    the ask. Everything else is yours to lose.
+                  </div>
+                </button>
+                <button class="round-card" onclick="armRound(2, this)">
+                  <div class="round-num">Round 03</div>
+                  <div class="round-name">The Corridor Version</div>
+                  <div class="round-time">0:10</div>
+                  <div class="round-rule">
+                    One sentence. What you want and why it matters. You've just
+                    caught them between two meetings.
+                  </div>
+                </button>
+              </div>
+
+              <div class="timer-panel">
+                <div class="timer-top">
+                  <div>
+                    <div class="timer-label" id="timer-round-label">
+                      No round armed
+                    </div>
+                    <div class="timer-display" id="timer-display">--:--</div>
+                  </div>
+                  <div class="panel-note" style="max-width: 260px">
+                    Silence counts as time. If you're thinking, think out loud —
+                    that's what the phrases in stage 2 are for.
+                  </div>
+                </div>
+                <div class="timer-bar">
+                  <div class="timer-bar-fill" id="timer-bar-fill"></div>
+                </div>
+                <div class="timer-controls">
+                  <button class="btn primary" id="timer-start" onclick="toggleTimer()">
+                    Start
+                  </button>
+                  <button class="btn" onclick="resetTimer()">Reset round</button>
+                  <span class="spacer"></span>
+                  <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+                    Sound on
+                  </button>
+                </div>
+              </div>
+
+              <div class="section-label">What survived</div>
+              <div class="survive-wrap">
+                <table class="survive-table">
+                  <thead>
+                    <tr>
+                      <th>Part of the pitch</th>
+                      <th>3:00</th>
+                      <th>1:00</th>
+                      <th>0:10</th>
+                    </tr>
+                  </thead>
+                  <tbody id="survive-body"></tbody>
+                </table>
+              </div>
+              <div class="survive-summary" id="survive-summary">
+                Tick a box each time he actually says it. The rows still standing
+                at ten seconds are the pitch — everything else was furniture.
+              </div>
+
+              <div class="reset-row">
+                <button class="btn" onclick="resetAll()">Reset everything</button>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Useful language</div>
+              <div class="chip-group">
+                <div class="chip-group-label">Opening strong</div>
+                <div class="vocab-chips">
+                  <span class="chip">I'll get straight to the point.</span>
+                  <span class="chip">My recommendation is...</span>
+                  <span class="chip">Here's the problem in one sentence.</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">The one-sentence version</div>
+                <div class="vocab-chips">
+                  <span class="chip">In one sentence: ...</span>
+                  <span class="chip">The short version is...</span>
+                  <span class="chip">If we do nothing, ...</span>
+                  <span class="chip">It comes down to one number.</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Cutting without apologising</div>
+                <div class="vocab-chips">
+                  <span class="chip">I'll skip the background.</span>
+                  <span class="chip">The detail's in the deck.</span>
+                  <span class="chip">Two things matter here.</span>
+                  <span class="chip">I'll spare you the history.</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Closing / the ask</div>
+                <div class="vocab-chips">
+                  <span class="chip">What I need from you today is...</span>
+                  <span class="chip">Can I put you down for...?</span>
+                  <span class="chip">If you take one thing away, make it this.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Reflection <em>&amp; Next Steps</em></div>
+
+          <div class="section-label">Let's close with these questions</div>
+          <ul class="q-list">
+            <li>
+              Which round was hardest — and which one produced your single best
+              sentence? They're rarely the same round.
+            </li>
+            <li>
+              Look back at the grid. What survived to ten seconds? Is that what
+              you'd have predicted before we started?
+            </li>
+            <li>
+              What did you cut that you're still tempted to put back? Be honest
+              about what that part was really doing for you.
+            </li>
+          </ul>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Listening</div>
+              <div class="reflection-content">
+                Watch
+                <a
+                  href="https://www.youtube.com/watch?v=eIho2S0ZahI"
+                  target="_blank"
+                  rel="noopener"
+                  >Julian Treasure — "How to speak so that people want to
+                  listen"</a
+                >
+                (ten minutes) and write down three signposting phrases he
+                actually uses — not the ones from this page. Subtitles off the
+                first time: only note what your ear catches. We'll compare
+                notes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      /* ---------- COMPRESSION LADDER ---------- */
+      const ROUNDS = [
+        { name: "Round 01 — The Full Case", secs: 180, short: "3:00" },
+        { name: "Round 02 — The Meeting Version", secs: 60, short: "1:00" },
+        { name: "Round 03 — The Corridor Version", secs: 10, short: "0:10" },
+      ];
+
+      const PARTS = [
+        "The background / history",
+        "The problem",
+        "The evidence — one number",
+        "The options you rejected",
+        "The recommendation",
+        "The cost",
+        "The timeline",
+        "The risk",
+        "The ask",
+        "The story / the example",
+      ];
+
+      const ladder = {
+        round: null,
+        remaining: 0,
+        endsAt: 0,
+        running: false,
+        tick: null,
+        muted: false,
+        ticked: new Set(),
+      };
+
+      function buildLadder() {
+        const body = document.getElementById("survive-body");
+        body.innerHTML = PARTS.map(
+          (part, r) =>
+            '<tr id="part-row-' +
+            r +
+            '"><td class="part">' +
+            part +
+            "</td>" +
+            ROUNDS.map(
+              (_, c) =>
+                '<td class="survive-cell" onclick="toggleCell(' +
+                r +
+                "," +
+                c +
+                ')" id="cell-' +
+                r +
+                "-" +
+                c +
+                '">&#10003;</td>'
+            ).join("") +
+            "</tr>"
+        ).join("");
+      }
+
+      function armRound(i, card) {
+        stopTick();
+        ladder.round = i;
+        ladder.running = false;
+        ladder.remaining = ROUNDS[i].secs;
+        document
+          .querySelectorAll(".round-card")
+          .forEach((el, idx) => el.classList.toggle("active", idx === i));
+        document.getElementById("timer-round-label").textContent =
+          ROUNDS[i].name;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      function renderTimer() {
+        const disp = document.getElementById("timer-display");
+        const fill = document.getElementById("timer-bar-fill");
+        if (ladder.round === null) {
+          disp.textContent = "--:--";
+          disp.className = "timer-display";
+          fill.style.width = "100%";
+          fill.className = "timer-bar-fill";
+          return;
+        }
+        const total = ROUNDS[ladder.round].secs;
+        const left = Math.max(0, ladder.remaining);
+        const mins = Math.floor(left / 60);
+        const secs = Math.floor(left % 60);
+        const warning = left <= total * 0.2;
+
+        if (left === 0 && !ladder.running && ladder.startedOnce) {
+          disp.textContent = "Time.";
+          disp.className = "timer-display done";
+        } else {
+          disp.textContent = mins + ":" + String(secs).padStart(2, "0");
+          disp.className = "timer-display" + (warning ? " warning" : "");
+        }
+        fill.style.width = (left / total) * 100 + "%";
+        fill.className = "timer-bar-fill" + (warning ? " warning" : "");
+      }
+
+      function toggleTimer() {
+        if (ladder.round === null) return;
+        if (ladder.running) {
+          stopTick();
+          ladder.running = false;
+          document.getElementById("timer-start").textContent = "Resume";
+          return;
+        }
+        if (ladder.remaining <= 0) ladder.remaining = ROUNDS[ladder.round].secs;
+        ladder.running = true;
+        ladder.startedOnce = true;
+        ladder.endsAt = Date.now() + ladder.remaining * 1000;
+        document.getElementById("timer-start").textContent = "Pause";
+        ladder.tick = setInterval(() => {
+          ladder.remaining = (ladder.endsAt - Date.now()) / 1000;
+          if (ladder.remaining <= 0) {
+            ladder.remaining = 0;
+            stopTick();
+            ladder.running = false;
+            document.getElementById("timer-start").textContent = "Start";
+            beep();
+          }
+          renderTimer();
+        }, 100);
+        renderTimer();
+      }
+
+      function stopTick() {
+        if (ladder.tick) clearInterval(ladder.tick);
+        ladder.tick = null;
+      }
+
+      function resetTimer() {
+        if (ladder.round === null) return;
+        stopTick();
+        ladder.running = false;
+        ladder.startedOnce = false;
+        ladder.remaining = ROUNDS[ladder.round].secs;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      let audioCtx = null;
+      function beep() {
+        if (ladder.muted) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) audioCtx = new Ctx();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.02);
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioCtx.currentTime + 0.45
+          );
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+
+      function toggleMute() {
+        ladder.muted = !ladder.muted;
+        document.getElementById("mute-btn").textContent = ladder.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      function toggleCell(r, c) {
+        const key = r + "-" + c;
+        const cell = document.getElementById("cell-" + key);
+        if (ladder.ticked.has(key)) {
+          ladder.ticked.delete(key);
+          cell.classList.remove("ticked");
+        } else {
+          ladder.ticked.add(key);
+          cell.classList.add("ticked");
+        }
+        renderSurvivors();
+      }
+
+      function renderSurvivors() {
+        const survivors = [];
+        PARTS.forEach((part, r) => {
+          const alive = ladder.ticked.has(r + "-2");
+          document
+            .getElementById("part-row-" + r)
+            .classList.toggle("survived", alive);
+          if (alive) survivors.push(part.toLowerCase());
+        });
+        const summary = document.getElementById("survive-summary");
+        if (!survivors.length) {
+          summary.innerHTML =
+            "Tick a box each time he actually says it. The rows still standing at ten seconds are the pitch — everything else was furniture.";
+        } else {
+          summary.innerHTML =
+            "Still standing at ten seconds: <strong>" +
+            survivors.join(", ") +
+            "</strong>. That's your pitch. Everything else is support.";
+        }
+      }
+
+      function resetAll() {
+        stopTick();
+        ladder.round = null;
+        ladder.running = false;
+        ladder.startedOnce = false;
+        ladder.remaining = 0;
+        ladder.ticked.clear();
+        document
+          .querySelectorAll(".round-card")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById("timer-round-label").textContent =
+          "No round armed";
+        document.getElementById("timer-start").textContent = "Start";
+        document
+          .querySelectorAll(".survive-cell")
+          .forEach((el) => el.classList.remove("ticked"));
+        renderTimer();
+        renderSurvivors();
+      }
+
+      buildLadder();
+    </script>
+  </body>
+</html>
