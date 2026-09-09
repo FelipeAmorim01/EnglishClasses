@@ -1,0 +1,2568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 5</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+
+      /* ---------- THE STORY MACHINE ---------- */
+      /* grid items default to min-width:auto, which lets the wider panels
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      /* timer */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 22px 26px;
+        margin-bottom: 10px;
+      }
+
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.6rem;
+      }
+
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 16px 0 18px;
+      }
+
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+
+      .timer-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .timer-controls .spacer {
+        flex: 1;
+      }
+
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* the prompt deck */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .prompt-constraint {
+        margin-top: 14px;
+        font-size: 0.82rem;
+        color: var(--accent2);
+        font-weight: 500;
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.5;
+      }
+
+      .prompt-constraint span {
+        display: block;
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* how long the telling runs */
+      .dur-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .dur-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-right: 4px;
+      }
+
+      .dur-chip {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-variant-numeric: tabular-nums;
+        color: var(--muted);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 7px 14px;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+
+      .dur-chip:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .dur-chip.active {
+        border-color: var(--accent);
+        background: var(--accent-light);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* the derailer */
+      .react-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      @media (max-width: 1180px) {
+        .react-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .react-btn {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--border);
+        padding: 14px 15px;
+        cursor: pointer;
+        text-align: left;
+        font-family: "Inter", sans-serif;
+        display: block;
+        width: 100%;
+        transition: all 0.12s;
+      }
+
+      .react-btn:hover {
+        border-color: var(--accent);
+        border-left-color: var(--accent);
+      }
+
+      .react-btn.fired {
+        border-left-color: var(--accent2);
+        background: var(--accent-light);
+      }
+
+      .react-line {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        font-style: italic;
+        color: var(--text);
+        line-height: 1.35;
+      }
+
+      .react-why {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-top: 8px;
+        font-weight: 600;
+      }
+
+      .react-btn.fired .react-why {
+        color: var(--accent2);
+      }
+
+      /* the log */
+      .derail-log {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 14px 18px;
+        max-height: 190px;
+        overflow-y: auto;
+        margin-bottom: 28px;
+      }
+
+      .derail-empty {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .derail-entry {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+        padding: 6px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.85rem;
+      }
+
+      .derail-entry:last-child {
+        border-bottom: none;
+      }
+
+      .derail-time {
+        font-variant-numeric: tabular-nums;
+        font-size: 0.72rem;
+        color: var(--accent2);
+        font-weight: 600;
+        flex-shrink: 0;
+        min-width: 42px;
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* ---------- THE REACTION DRILL ---------- */
+      .drill-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 18px;
+      }
+
+      .drill-line {
+        font-family: "Lora", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--accent);
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+
+      .drill-line.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+      }
+
+      .drill-controls {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .drill-controls .spacer {
+        flex: 1;
+      }
+
+      .drill-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 14px;
+      }
+
+      .drill-chip {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.88rem;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 7px 13px;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+
+      .drill-chip:hover {
+        border-color: var(--accent);
+      }
+
+      .drill-chip.used {
+        background: var(--surface2);
+        border-color: var(--surface2);
+        color: var(--muted);
+        text-decoration: line-through;
+      }
+
+      .drill-status {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        padding-left: 2px;
+      }
+
+      .drill-status strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 720px) {
+        .react-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .drill-panel {
+          padding: 20px;
+        }
+
+        .drill-line {
+          font-size: 1.1rem;
+        }
+
+        .timer-panel {
+          padding: 18px 20px;
+        }
+
+        .timer-display {
+          font-size: 2.8rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Storytelling — Lesson 5</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Storyteller's Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">The Story Machine</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">
+            Warm-up: <em>the story you always tell</em>
+          </div>
+          <div class="stage-sub">
+            Everyone has three or four stories they've told a hundred times. In
+            your own language you know exactly where the laugh is. Today we
+            rebuild that instinct in English.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              What's the story you always end up telling? The one that comes out
+              at every dinner.
+            </li>
+            <li>
+              Who's the best storyteller you know? Not the funniest person — the
+              best <em>teller</em>. What do they actually do that holds a table?
+            </li>
+            <li>
+              When did you last make someone laugh in English? Was it something
+              you said, or something that happened?
+            </li>
+            <li>
+              Now the other side: what makes you stop listening to someone
+              else's story?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">The <em>Storyteller's Toolkit</em></div>
+          <div class="stage-sub">
+            Everything on this page is here to be used out loud in stage 3.
+            Around sixty expressions: swaps, openers, idioms, phrasal verbs and
+            reactions. Read them, say them, and mark the ones you've never once
+            used in a real conversation.
+          </div>
+
+          <div class="section-label">Say it like a native speaker</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Everything in the left column is correct English. It's just not what
+            anyone actually says. Six patterns that close the gap between the
+            English you were taught and the English you hear — and the third
+            column is the one that counts. Read each of those out loud.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Correct, but textbook</th>
+                <th>What's actually said</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"He said he didn't want to do it."</td>
+                <td>And he goes, "yeah — I'm not doing that."</td>
+                <td>
+                  <em
+                    >So I ask her if she's coming, and she goes, "I already told
+                    you no." And I'm like, "when?"</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"I met a man at the airport who..."</td>
+                <td>So there's this guy at the airport who...</td>
+                <td>
+                  <em
+                    >There's this woman who lives upstairs, and she's got this
+                    enormous dog that howls all night.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"We planned to leave at six."</td>
+                <td>We were supposed to leave at six.</td>
+                <td>
+                  <em
+                    >We were supposed to land at nine. I was going to call you
+                    from the airport, but my phone was dead.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"He asked me many times."</td>
+                <td>He kept asking me.</td>
+                <td>
+                  <em
+                    >She kept looking at her phone while I was talking, and the
+                    waiter kept walking past without stopping.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"It was very cold."</td>
+                <td>It was absolutely freezing.</td>
+                <td>
+                  <em
+                    >By the time we got there we were absolutely freezing,
+                    completely exhausted and totally starving.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"...and other similar things."</td>
+                <td>...and stuff like that. / ...or something.</td>
+                <td>
+                  <em
+                    >So some guy comes over, asks me about the tickets or
+                    something, and we talk for a couple of minutes about work
+                    and stuff like that.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">The scene in one line</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Fixed expressions for opening, turning and stalling. They're
+            formulaic on purpose — learn them whole, the way a native speaker
+            stores them, rather than building each one from grammar.
+          </p>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Opening the frame</div>
+            <div class="vocab-chips">
+              <span class="chip">So this was back when I was living in...</span>
+              <span class="chip">Right — picture this.</span>
+              <span class="chip">This was, what, three years ago now?</span>
+              <span class="chip">OK, so you know when you...?</span>
+              <span class="chip">I don't think I've told you this one.</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Signalling the turn</div>
+            <div class="vocab-chips">
+              <span class="chip"
+                >And this is the bit I still don't understand.</span
+              >
+              <span class="chip">And then it got weird.</span>
+              <span class="chip">Now — bear in mind I had no idea.</span>
+              <span class="chip">So far, so normal. And then...</span>
+              <span class="chip">Anyway, that's when I realised.</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Buying yourself a second</div>
+            <div class="vocab-chips">
+              <span class="chip"
+                >Hang on, I'm telling this badly. Let me start again.</span
+              >
+              <span class="chip">Sorry — I should have said...</span>
+              <span class="chip">Where was I? Right.</span>
+              <span class="chip">You need to know one thing first.</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Six phrases that live in anecdotes</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">out of the blue</div>
+              <div class="idiom-meaning">
+                With no warning at all, from nowhere.
+              </div>
+              <div class="idiom-example">
+                "And then out of the blue he asks me if I want the job."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">next thing I know</div>
+              <div class="idiom-meaning">
+                Jumps you straight to the consequence and skips the boring
+                middle.
+              </div>
+              <div class="idiom-example">
+                "Next thing I know I'm in a taxi to the airport with no
+                passport."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">long story short</div>
+              <div class="idiom-meaning">
+                Signals you're cutting to the ending on purpose. Use it once —
+                twice and it sounds like you've lost control.
+              </div>
+              <div class="idiom-example">
+                "Long story short, we never got the deposit back."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">of all people / of all places</div>
+              <div class="idiom-meaning">
+                Marks a coincidence as absurd. Does a lot of work for two words.
+              </div>
+              <div class="idiom-example">
+                "And who's sitting there? My old boss. In Lisbon, of all
+                places."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">it went downhill from there</div>
+              <div class="idiom-meaning">
+                Everything got progressively worse after that point.
+              </div>
+              <div class="idiom-example">
+                "The starter arrived cold and it went downhill from there."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">you had to be there</div>
+              <div class="idiom-meaning">
+                The graceful way to close a story that didn't land. Everyone
+                needs this one.
+              </div>
+              <div class="idiom-example">
+                "...no, OK, it was funnier at the time. You had to be there."
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">The verbs anecdotes are made of</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Twelve phrasal verbs. Almost every story you tell in English will
+            need three or four of them, and there is no elegant way around them
+            — the single-word alternatives all sound like a police report.
+          </p>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">bump into / run into</div>
+              <div class="idiom-meaning">
+                To meet someone by chance. Not <em>find</em>, not
+                <em>encounter</em>.
+              </div>
+              <div class="idiom-example">
+                "I bumped into my old boss at the airport."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">end up</div>
+              <div class="idiom-meaning">
+                To finish somewhere or doing something you didn't plan. Followed
+                by <em>-ing</em> or a place.
+              </div>
+              <div class="idiom-example">
+                "We ended up walking home at three in the morning."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">turn out</div>
+              <div class="idiom-meaning">
+                The truth was different from what everyone thought. The single
+                most useful verb in any anecdote.
+              </div>
+              <div class="idiom-example">
+                "It turned out he'd never worked there at all."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">show up</div>
+              <div class="idiom-meaning">
+                To arrive — often late, unexpectedly, or in the wrong state.
+              </div>
+              <div class="idiom-example">
+                "Nobody showed up until half past nine."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">get stuck</div>
+              <div class="idiom-meaning">
+                Unable to move or continue. Works for traffic, lifts,
+                conversations and problems.
+              </div>
+              <div class="idiom-example">
+                "We got stuck in the lift for forty minutes."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">freak out</div>
+              <div class="idiom-meaning">
+                To panic or lose control emotionally. Informal, and much more
+                natural than "I became very nervous".
+              </div>
+              <div class="idiom-example">
+                "My sister completely freaked out when she saw the bill."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">mess up</div>
+              <div class="idiom-meaning">
+                To do something badly or ruin it — usually your own fault.
+              </div>
+              <div class="idiom-example">
+                "I messed up the booking and we lost the table."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">kick off</div>
+              <div class="idiom-meaning">
+                To start — and, informally, for an argument or a scene to erupt.
+              </div>
+              <div class="idiom-example">
+                "And that's when it all kicked off."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">come across</div>
+              <div class="idiom-meaning">
+                To find something by chance; also, to give a certain impression.
+              </div>
+              <div class="idiom-example">
+                "I came across an old photo of us in a drawer."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">put up with</div>
+              <div class="idiom-meaning">
+                To tolerate something unpleasant, usually for a long time.
+              </div>
+              <div class="idiom-example">
+                "I put up with that noise for two years."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">back out</div>
+              <div class="idiom-meaning">
+                To withdraw from something you'd agreed to do.
+              </div>
+              <div class="idiom-example">
+                "He backed out the night before the flight."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">work out</div>
+              <div class="idiom-meaning">
+                To end well; also, to figure something out. Two meanings, both
+                constant.
+              </div>
+              <div class="idiom-example">
+                "In the end it all worked out." / "I never worked out why."
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">The other half: reacting</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Listening isn't silence. In English, a listener is expected to make
+            noise — and if you don't, the person telling the story assumes it's
+            going badly and rushes the ending. This is the half we're going to
+            drill hardest today.
+          </p>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Surprise</div>
+            <div class="vocab-chips">
+              <span class="chip">No way.</span>
+              <span class="chip">You're kidding.</span>
+              <span class="chip">He did <em>what</em>?</span>
+              <span class="chip">Get out.</span>
+              <span class="chip">Seriously?</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Sympathy / wincing</div>
+            <div class="vocab-chips">
+              <span class="chip">Oh, that's awful.</span>
+              <span class="chip">Ugh, I can imagine.</span>
+              <span class="chip">That's brutal.</span>
+              <span class="chip">Oh no. No, no, no.</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Pushing for more</div>
+            <div class="vocab-chips">
+              <span class="chip">So what did you do?</span>
+              <span class="chip">Wait, back up — who's this?</span>
+              <span class="chip">And she just let you?</span>
+              <span class="chip">Hang on, where was this?</span>
+              <span class="chip">Please tell me you said something.</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Closing it off</div>
+            <div class="vocab-chips">
+              <span class="chip">Classic.</span>
+              <span class="chip">That's brilliant.</span>
+              <span class="chip">I'm stealing that story.</span>
+              <span class="chip">Right, my turn.</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Drill: eighteen reactions, no repeats</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            I read you a line, you fire one back straight away — and once you've
+            used a reaction it's gone for the rest of the drill. The first two
+            are easy. By the tenth you'll be reaching for the ones you'd never
+            normally touch, which is the entire point.
+          </p>
+
+          <div class="drill-panel">
+            <div class="drill-line empty" id="drill-line">
+              Hit "Next line" for a situation. React to it straight away — first
+              thing out of your mouth.
+            </div>
+            <div class="drill-controls">
+              <button class="btn primary" onclick="nextLine()">
+                Next line
+              </button>
+              <button class="btn" onclick="resetDrill()">Reset drill</button>
+            </div>
+          </div>
+
+          <p class="panel-note" style="margin-bottom: 12px">
+            Each reaction gets clicked the moment it's used, and a
+            struck-through one is spent — find another.
+          </p>
+          <div class="drill-chips" id="drill-chips"></div>
+          <div class="drill-status" id="drill-status"></div>
+        </div>
+
+        <!-- STAGE 2: THE STORY MACHINE -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">The <em>Story Machine</em></div>
+          <div class="stage-sub">
+            A prompt you didn't choose, a clock, and a listener who won't stay
+            quiet. Nobody gets to tell a story in peace — so let's practise it
+            the way it actually happens.
+          </div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">How it works</div>
+            <p>
+              Draw a prompt. You get about fifteen seconds to decide which of
+              your real stories fits it — don't invent one, dig one up. Then the
+              clock starts and you tell it, and the only rule is that you cram
+              in as much of stage 2 as you can. While you're talking I'll be
+              hitting the buttons below; each one is an interruption designed to
+              force a specific piece of English out of you. When the timer
+              stops, we count how many of today's expressions actually made it
+              out of your mouth.
+            </p>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Draw your prompt
+              </div>
+
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Hit the button and take what you're
+                    given.
+                  </div>
+                  <div
+                    class="prompt-constraint"
+                    id="prompt-constraint"
+                    style="display: none"
+                  >
+                    <span>One rule</span>
+                    <em id="constraint-text"></em>
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawPrompt()">
+                    Draw a prompt
+                  </button>
+                  <button class="btn" onclick="drawPrompt(true)">
+                    Draw + add a rule
+                  </button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+
+              <div class="section-label">The clock</div>
+              <div class="dur-row">
+                <span class="dur-label">You get</span>
+                <button class="dur-chip" onclick="setDuration(60, this)">
+                  1:00
+                </button>
+                <button class="dur-chip active" onclick="setDuration(90, this)">
+                  1:30
+                </button>
+                <button class="dur-chip" onclick="setDuration(120, this)">
+                  2:00
+                </button>
+              </div>
+
+              <div class="timer-panel">
+                <div class="timer-top">
+                  <div>
+                    <div class="timer-label" id="timer-round-label">
+                      Ready when you are
+                    </div>
+                    <div class="timer-display" id="timer-display">1:30</div>
+                  </div>
+                  <div class="panel-note" style="max-width: 260px">
+                    Running out of time isn't failure — trailing off is. If you
+                    see the bar going orange, get to the turn and land it.
+                  </div>
+                </div>
+                <div class="timer-bar">
+                  <div class="timer-bar-fill" id="timer-bar-fill"></div>
+                </div>
+                <div class="timer-controls">
+                  <button
+                    class="btn primary"
+                    id="timer-start"
+                    onclick="toggleTimer()"
+                  >
+                    Start
+                  </button>
+                  <button class="btn" onclick="resetTimer()">
+                    Reset clock
+                  </button>
+                  <span class="spacer"></span>
+                  <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+                    Sound on
+                  </button>
+                </div>
+              </div>
+
+              <div class="section-label">The derailer</div>
+              <p class="panel-note" style="margin-bottom: 14px">
+                Teacher's controls, fired <em>mid-story</em> — the line gets
+                said out loud, then clicked. Each one is built to force a
+                particular structure out of you, listed underneath. Two or three
+                per story is plenty; six is an interrogation.
+              </p>
+              <div class="react-grid" id="react-grid"></div>
+
+              <div class="section-label">What got thrown at you</div>
+              <div class="derail-log" id="derail-log">
+                <div class="derail-empty">
+                  No interruptions yet. The log timestamps each one against the
+                  clock, so afterwards we can find the exact moment the thread
+                  went — or didn't.
+                </div>
+              </div>
+
+              <div class="reset-row">
+                <button class="btn" onclick="resetAll()">
+                  Reset everything
+                </button>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Useful language</div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Setting the scene</div>
+                <div class="vocab-chips">
+                  <span class="chip">So this was back when...</span>
+                  <span class="chip">Right — picture this.</span>
+                  <span class="chip">You know when you...?</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Direct speech</div>
+                <div class="vocab-chips">
+                  <span class="chip">And he goes, "..."</span>
+                  <span class="chip">And I'm like, "..."</span>
+                  <span class="chip">She just turns round and says...</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">The turn</div>
+                <div class="vocab-chips">
+                  <span class="chip">And then it got weird.</span>
+                  <span class="chip">Next thing I know...</span>
+                  <span class="chip">Out of the blue...</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Absorbing an interruption</div>
+                <div class="vocab-chips">
+                  <span class="chip"
+                    >Good question — hang on, I'll get there.</span
+                  >
+                  <span class="chip">Sorry, I should have said:...</span>
+                  <span class="chip">Right, where was I? Yes.</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Landing it</div>
+                <div class="vocab-chips">
+                  <span class="chip">...and that was that.</span>
+                  <span class="chip">Long story short...</span>
+                  <span class="chip">You had to be there.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>what actually landed</em></div>
+          <div class="stage-sub">
+            Two minutes on what changed between the first story and the last
+            one.
+          </div>
+
+          <div class="section-label">What stuck</div>
+          <ul class="q-list">
+            <li>
+              Close the page. How many of today's expressions can you give me
+              from memory? Just start listing — I'll count, and I'm not helping.
+            </li>
+            <li>
+              Now open stage 3 and look at the tally. Which ones did you
+              actually use, and which did you recognise on the page but never
+              once say out loud? That gap is the entire lesson.
+            </li>
+            <li>
+              Of the twelve phrasal verbs, which were already in your English,
+              and which are genuinely new? Be honest about the difference
+              between "I've seen it" and "I'd say it."
+            </li>
+            <li>
+              Pick three expressions from today and use each one in a sentence
+              about your own life. Now, out loud, no preparation.
+            </li>
+            <li>
+              As the listener, which reactions did you reach for? Give me two
+              from the bank that you never touched — and a situation where you'd
+              use them.
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Listening</div>
+              <div class="reflection-content">
+                One episode of
+                <a
+                  href="https://themoth.org/podcast"
+                  target="_blank"
+                  rel="noopener"
+                  >The Moth</a
+                >
+                — ordinary people telling true stories live, with no notes. Pick
+                any story and listen for two things only: how long it takes them
+                to set the scene, and where they switch into the present tense.
+                Time the first one roughly. It'll be shorter than you expect.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      /* ---------- THE STORY MACHINE ---------- */
+      const PROMPTS = [
+        "A time you got completely lost.",
+        "The worst meal you've ever been served.",
+        "A time you were completely wrong about someone.",
+        "Something that only happens in Brazil.",
+        "The last time you were genuinely scared.",
+        "A journey that went wrong.",
+        "A time you got away with something.",
+        "The most awkward thing that's happened to you at work.",
+        "A time you met someone you'd never expect to meet.",
+        "Something you broke that wasn't yours.",
+        "The worst haircut, outfit or photo of your life.",
+        "A time you had to lie and it went badly.",
+        "The strangest thing you've seen on public transport.",
+        "A time technology humiliated you in front of people.",
+        "Your first day at a job — any job.",
+        "A time you were the only one who didn't understand what was going on.",
+        "Something that happened to you because of the weather.",
+        "A neighbour. Any neighbour. Go.",
+        "A time you spent money you really shouldn't have.",
+        "The last time you were genuinely proud of yourself.",
+        "A moment you'd give anything to have back.",
+        "Something that happened at a wedding, a funeral or a party.",
+      ];
+
+      const CONSTRAINTS = [
+        "Tell the whole thing in the present tense.",
+        "It must contain at least two lines of direct speech.",
+        "Set the scene in one sentence. One.",
+        "End on the punchline — no explanation afterwards, at all.",
+        "Use three of the six phrases from stage 2.",
+        "No adjectives for emotions. Show me instead.",
+        "Somebody else has to be a real character in it, with a name.",
+        "You have to make me care why it mattered to you.",
+      ];
+
+      const REACTIONS = [
+        {
+          line: "No way — what did he actually say?",
+          why: "forces you to quote someone",
+        },
+        {
+          line: "Wait, hang on. Where was this?",
+          why: "forces a scene: past continuous",
+        },
+        {
+          line: "Sorry — who's this? I've lost track.",
+          why: "forces a description: who / that / the one who",
+        },
+        {
+          line: "And how were you feeling at that point?",
+          why: "no 'happy', no 'sad' — find another word",
+        },
+        {
+          line: "OK, so then what?",
+          why: "keeps you going, in the present tense",
+        },
+        {
+          line: "Right, but why does that matter?",
+          why: "forces a reason: the thing is / the point is",
+        },
+      ];
+
+      const DEFAULT_SECS = 90;
+
+      const story = {
+        secs: DEFAULT_SECS,
+        remaining: DEFAULT_SECS,
+        endsAt: 0,
+        running: false,
+        startedOnce: false,
+        tick: null,
+        muted: false,
+        deck: [],
+        log: [],
+      };
+
+      /* ---- the prompt deck ---- */
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      function renderDeckCount() {
+        const left = story.deck.length;
+        document.getElementById("deck-count").textContent =
+          left === 0
+            ? "Deck empty — next draw reshuffles all " + PROMPTS.length + "."
+            : left + " of " + PROMPTS.length + " left in the deck";
+      }
+
+      function drawPrompt(withConstraint) {
+        if (!story.deck.length) story.deck = shuffle(PROMPTS);
+        const prompt = story.deck.pop();
+
+        const text = document.getElementById("prompt-text");
+        text.textContent = prompt;
+        text.classList.remove("empty");
+
+        const box = document.getElementById("prompt-constraint");
+        if (withConstraint) {
+          document.getElementById("constraint-text").textContent =
+            CONSTRAINTS[Math.floor(Math.random() * CONSTRAINTS.length)];
+          box.style.display = "";
+        } else {
+          box.style.display = "none";
+        }
+
+        renderDeckCount();
+        resetTimer();
+      }
+
+      /* ---- the clock ---- */
+      function setDuration(secs, el) {
+        stopTick();
+        story.secs = secs;
+        story.remaining = secs;
+        story.running = false;
+        story.startedOnce = false;
+        document
+          .querySelectorAll(".dur-chip")
+          .forEach((c) => c.classList.toggle("active", c === el));
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      function renderTimer() {
+        const disp = document.getElementById("timer-display");
+        const fill = document.getElementById("timer-bar-fill");
+        const left = Math.max(0, story.remaining);
+        const mins = Math.floor(left / 60);
+        const secs = Math.floor(left % 60);
+        const warning = left <= story.secs * 0.2;
+
+        if (left === 0 && !story.running && story.startedOnce) {
+          disp.textContent = "Time.";
+          disp.className = "timer-display done";
+        } else {
+          disp.textContent = mins + ":" + String(secs).padStart(2, "0");
+          disp.className = "timer-display" + (warning ? " warning" : "");
+        }
+        fill.style.width = (left / story.secs) * 100 + "%";
+        fill.className = "timer-bar-fill" + (warning ? " warning" : "");
+      }
+
+      function toggleTimer() {
+        if (story.running) {
+          stopTick();
+          story.running = false;
+          document.getElementById("timer-start").textContent = "Resume";
+          return;
+        }
+        if (story.remaining <= 0) story.remaining = story.secs;
+        story.running = true;
+        story.startedOnce = true;
+        story.endsAt = Date.now() + story.remaining * 1000;
+        document.getElementById("timer-round-label").textContent = "Telling";
+        document.getElementById("timer-start").textContent = "Pause";
+        story.tick = setInterval(() => {
+          story.remaining = (story.endsAt - Date.now()) / 1000;
+          if (story.remaining <= 0) {
+            story.remaining = 0;
+            stopTick();
+            story.running = false;
+            document.getElementById("timer-round-label").textContent =
+              "That's the clock";
+            document.getElementById("timer-start").textContent = "Start";
+            beep();
+          }
+          renderTimer();
+        }, 100);
+        renderTimer();
+      }
+
+      function stopTick() {
+        if (story.tick) clearInterval(story.tick);
+        story.tick = null;
+      }
+
+      function resetTimer() {
+        stopTick();
+        story.running = false;
+        story.startedOnce = false;
+        story.remaining = story.secs;
+        document.getElementById("timer-round-label").textContent =
+          "Ready when you are";
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      let audioCtx = null;
+      function beep() {
+        if (story.muted) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) audioCtx = new Ctx();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(
+            0.2,
+            audioCtx.currentTime + 0.02,
+          );
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioCtx.currentTime + 0.45,
+          );
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+
+      function toggleMute() {
+        story.muted = !story.muted;
+        document.getElementById("mute-btn").textContent = story.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      /* ---- the derailer ---- */
+      function buildReactions() {
+        document.getElementById("react-grid").innerHTML = REACTIONS.map(
+          (r, i) =>
+            '<button class="react-btn" id="react-' +
+            i +
+            '" onclick="fireReaction(' +
+            i +
+            ')"><div class="react-line">&ldquo;' +
+            r.line +
+            '&rdquo;</div><div class="react-why">' +
+            r.why +
+            "</div></button>",
+        ).join("");
+      }
+
+      function elapsedStamp() {
+        if (!story.startedOnce) return "--:--";
+        const gone = Math.max(0, story.secs - Math.max(0, story.remaining));
+        const mins = Math.floor(gone / 60);
+        const secs = Math.floor(gone % 60);
+        return mins + ":" + String(secs).padStart(2, "0");
+      }
+
+      function fireReaction(i) {
+        const btn = document.getElementById("react-" + i);
+        btn.classList.add("fired");
+
+        story.log.push({ at: elapsedStamp(), line: REACTIONS[i].line });
+        renderLog();
+      }
+
+      function renderLog() {
+        const log = document.getElementById("derail-log");
+        if (!story.log.length) {
+          log.innerHTML =
+            '<div class="derail-empty">No interruptions yet. The log timestamps each one against the clock, so afterwards we can find the exact moment the thread went — or didn\'t.</div>';
+          return;
+        }
+        log.innerHTML = story.log
+          .map(
+            (e) =>
+              '<div class="derail-entry"><span class="derail-time">' +
+              e.at +
+              "</span><span>&ldquo;" +
+              e.line +
+              "&rdquo;</span></div>",
+          )
+          .join("");
+        log.scrollTop = log.scrollHeight;
+      }
+
+      function resetAll() {
+        stopTick();
+        story.remaining = story.secs;
+        story.running = false;
+        story.startedOnce = false;
+        story.log = [];
+
+        const text = document.getElementById("prompt-text");
+        text.textContent =
+          "Nothing drawn yet. Hit the button and take what you're given.";
+        text.classList.add("empty");
+        document.getElementById("prompt-constraint").style.display = "none";
+
+        document
+          .querySelectorAll(".react-btn")
+          .forEach((el) => el.classList.remove("fired"));
+
+        document.getElementById("timer-round-label").textContent =
+          "Ready when you are";
+        document.getElementById("timer-start").textContent = "Start";
+
+        renderTimer();
+        renderLog();
+        renderDeckCount();
+      }
+
+      /* ---------- THE REACTION DRILL ---------- */
+      const DRILL_LINES = [
+        "And then the hotel told me they'd lost my booking.",
+        "So he turned up at the wedding in shorts.",
+        "My flight was cancelled twice in the same day.",
+        "She'd been lying about it for three years.",
+        "And I opened the box and it was completely empty.",
+        "So I get in the taxi and realise my passport's at home.",
+        "He asked me to pay for his lunch. On the first date.",
+        "They gave the promotion to the guy who started in March.",
+        "And the waiter just walked away in the middle of my order.",
+        "I got locked out of the flat at two in the morning.",
+        "My neighbour has been playing the drums since Tuesday.",
+        "So it turned out we'd been in the same class at school.",
+        "And then my laptop died. With no backup.",
+        "He replied to the whole company by mistake.",
+        "They charged me four hundred euros for a bottle of water.",
+        "I spent an hour on hold and then they hung up on me.",
+        "And she just started crying in the middle of the meeting.",
+        "So I finally get there and the place has closed down.",
+        "He'd been using my Netflix account for two years.",
+        "And my sister named her son after the dog.",
+        "I found five hundred reais in an old jacket.",
+        "The doctor asked if I was the patient's father. I'm thirty-four.",
+        "And then the smoke alarm went off during my presentation.",
+        "They sent the signed contract to the wrong company.",
+      ];
+
+      const REACTION_CHIPS = [
+        "No way.",
+        "You're kidding.",
+        "He did what?",
+        "Get out.",
+        "Seriously?",
+        "Oh, that's awful.",
+        "Ugh, I can imagine.",
+        "That's brutal.",
+        "Oh no. No, no, no.",
+        "So what did you do?",
+        "Wait, back up \u2014 who's this?",
+        "And she just let you?",
+        "Hang on, where was this?",
+        "Please tell me you said something.",
+        "Classic.",
+        "That's brilliant.",
+        "I'm stealing that story.",
+        "Right, my turn.",
+      ];
+
+      const drill = {
+        deck: [],
+        used: new Set(),
+      };
+
+      function buildDrillChips() {
+        document.getElementById("drill-chips").innerHTML = REACTION_CHIPS.map(
+          (c, i) =>
+            '<button class="drill-chip" id="drill-chip-' +
+            i +
+            '" onclick="useChip(' +
+            i +
+            ')">' +
+            c +
+            "</button>",
+        ).join("");
+      }
+
+      function nextLine() {
+        if (drill.used.size >= REACTION_CHIPS.length) {
+          renderDrillStatus();
+          return;
+        }
+        if (!drill.deck.length) drill.deck = shuffle(DRILL_LINES);
+
+        const line = document.getElementById("drill-line");
+        line.textContent = "\u201c" + drill.deck.pop() + "\u201d";
+        line.classList.remove("empty");
+      }
+
+      function useChip(i) {
+        const el = document.getElementById("drill-chip-" + i);
+        if (drill.used.has(i)) {
+          drill.used.delete(i);
+          el.classList.remove("used");
+        } else {
+          drill.used.add(i);
+          el.classList.add("used");
+        }
+        renderDrillStatus();
+      }
+
+      function renderDrillStatus() {
+        const status = document.getElementById("drill-status");
+        const n = drill.used.size;
+        const total = REACTION_CHIPS.length;
+
+        if (n === 0) {
+          status.innerHTML =
+            "Eighteen reactions, none spent yet. It's easy to reach for the same two all evening \u2014 that's what the strike-through is for.";
+          return;
+        }
+        if (n === total) {
+          status.innerHTML =
+            "<strong>All eighteen spent.</strong> Now go back through the struck-out list: which three would you never have said a week ago?";
+          return;
+        }
+
+        const left = REACTION_CHIPS.filter((_, i) => !drill.used.has(i));
+        status.innerHTML =
+          "<strong>" +
+          n +
+          " of " +
+          total +
+          "</strong> spent. Still available: " +
+          left.join(" &middot; ");
+      }
+
+      function resetDrill() {
+        drill.used.clear();
+        drill.deck = shuffle(DRILL_LINES);
+
+        const line = document.getElementById("drill-line");
+        line.textContent =
+          'Hit "Next line" for a situation. React to it straight away \u2014 first thing out of your mouth.';
+        line.classList.add("empty");
+
+        document
+          .querySelectorAll(".drill-chip")
+          .forEach((el) => el.classList.remove("used"));
+
+        renderDrillStatus();
+      }
+
+      story.deck = shuffle(PROMPTS);
+      drill.deck = shuffle(DRILL_LINES);
+      buildReactions();
+      buildDrillChips();
+      renderDeckCount();
+      renderTimer();
+      renderDrillStatus();
+    </script>
+  </body>
+</html>
