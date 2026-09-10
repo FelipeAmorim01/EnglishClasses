@@ -1,9 +1,35 @@
 ---
 name: raffa-class-prep
-description: Prepare or edit an English lesson page for Raffa (Raffaele), Felipe's one-to-one English student, in the EnglishClasses repo. Use this whenever the user mentions Raffa, a class, a lesson, class prep, "the next class", a lesson_plan HTML file, the class library, or wants to plan, build, or change any teaching material in this repo — including vague openers like "let's do class six" or "what should we cover next". Covers picking a topic, the vocabulary-first rule that governs all content, the page template and house style, and the shared-screen language rules.
+description: Prepare or edit an English lesson page for Raffa (Raffaele), Felipe's upper-intermediate (B2+) student, whose material lives in Raffa/ in the EnglishClasses repo. Use this when the user names Raffa or Raffaele, or points at a file under Raffa/ — including openers like "let's do Raffa's class six" or "what should Raffa cover next". Covers picking a topic, the vocabulary-first rule, the page template and house style, and the shared-screen language rules. Do NOT use this for Peterson, who is a beginner on a separate track with its own skill (peterson-class-prep), and do NOT use it for an unnamed student — if the request does not say which student, ask before loading either skill.
 ---
 
 # Raffa's class prep
+
+## This skill is for Raffa only
+
+Felipe teaches two students, on deliberately different tracks:
+
+| | Raffa (Raffaele) | Peterson |
+|---|---|---|
+| Level | Upper-intermediate, B2+ | Beginner, level still being diagnosed |
+| Folder | `Raffa/` | `Peterson/` |
+| Skill | this one | `peterson-class-prep` |
+| The job | range — vocabulary he would not reach for | the core — grammar and high-frequency language |
+| Items per lesson | 60–80 | far fewer, drilled far harder |
+| Portuguese on the page | not needed | forbidden; Felipe translates out loud |
+
+**Everything below applies to Raffa and misleads on Peterson.** The
+vocabulary-first rule, the 60–80 item target and "could he already do this in
+Portuguese? then cut it" are all calibrated for a fluent adult who needs range.
+A beginner needs the opposite, and grammar *is* his lesson.
+
+What the two tracks genuinely share is the page template, the design tokens, the
+brand and the shared-screen rules. Those are worth copying across. The pedagogy
+is not.
+
+If a request does not name the student — "let's do the next class", "add a
+lesson" — **ask which one** rather than guessing. The two pages look alike and
+the mistake is not obvious until the class is underway.
 
 ## The student
 
