@@ -62,7 +62,7 @@ headings and anything meant to be *said*; Inter for everything else.
     <header>
       <div>
         <h1>English Conversation</h1>
-        <div class="subtitle">First Class — Lesson 1</div>
+        <div class="subtitle">Getting Started — Lesson 1</div>
       </div>
       <a class="back-link" href="index.html">&larr; All classes</a>
     </header>
@@ -237,7 +237,7 @@ Append one object to the `LESSONS` array in `Peterson/index.html`:
 ```js
 {
   file: "lesson_plan_0.html",
-  title: "First Class — Hello",
+  title: "Getting Started",
   date: "10 September 2026",
   desc: "One line describing what the class covers.",
 },
