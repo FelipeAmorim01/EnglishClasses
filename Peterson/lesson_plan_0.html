@@ -1,0 +1,2717 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+
+      /* ---------- THE STORY MACHINE ---------- */
+      /* grid items default to min-width:auto, which lets the wider panels
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* the prompt deck */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .prompt-constraint {
+        margin-top: 14px;
+        font-size: 0.82rem;
+        color: var(--accent2);
+        font-weight: 500;
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.5;
+      }
+
+      .prompt-constraint span {
+        display: block;
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      @media (max-width: 1180px) {
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* ---------- THE REACTION DRILL ---------- */
+      .drill-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 18px;
+      }
+
+      .drill-line {
+        font-family: "Lora", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--accent);
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+
+      .drill-line.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+      }
+
+      .drill-controls {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .drill-controls .spacer {
+        flex: 1;
+      }
+
+      .drill-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 14px;
+      }
+
+      .drill-chip {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.88rem;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 7px 13px;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+
+      .drill-chip:hover {
+        border-color: var(--accent);
+      }
+
+      .drill-chip.used {
+        background: var(--surface2);
+        border-color: var(--surface2);
+        color: var(--muted);
+        text-decoration: line-through;
+      }
+
+      .drill-status {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        padding-left: 2px;
+      }
+
+      .drill-status strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 720px) {
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .drill-panel {
+          padding: 20px;
+        }
+
+        .drill-line {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+
+      /* ==================================================================
+         LESSON 1 COMPONENTS — added for the beginner track
+         ================================================================== */
+
+      /* Level badge — marks the pacing of a block, not a score */
+      .level-badge {
+        display: inline-block;
+        font-size: 0.58rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 3px 9px;
+        border-radius: 2px;
+        vertical-align: 2px;
+        margin-left: 10px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        background: var(--surface);
+      }
+
+      .level-badge.lv-1 {
+        border-color: var(--accent);
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+
+      .level-badge.lv-2 {
+        border-color: #cbb9a4;
+        background: #f6efe6;
+        color: #8a6a45;
+      }
+
+      .level-badge.lv-3 {
+        border-color: var(--accent2);
+        background: #fbeee5;
+        color: var(--accent2);
+      }
+
+      /* Ladder — five sentences, easiest first */
+      .ladder {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        margin-bottom: 28px;
+      }
+
+      .ladder-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ladder-step:last-child {
+        border-bottom: none;
+      }
+
+      .ladder-num {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent-light);
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+      }
+
+      .ladder-body {
+        min-width: 0;
+      }
+
+      .ladder-say {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-style: italic;
+        line-height: 1.5;
+      }
+
+      .ladder-note {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 4px;
+        letter-spacing: 0.02em;
+      }
+
+      /* Fix cards — a wrong form struck out, the right one beside it */
+      .fix-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .fix-card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 14px 16px;
+      }
+
+      .fix-bad {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: var(--accent2);
+        margin-bottom: 6px;
+      }
+
+      .fix-bad::before {
+        content: "✗ ";
+        text-decoration: none;
+        color: var(--accent2);
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+      }
+
+      .fix-good {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .fix-good::before {
+        content: "✓ ";
+        font-family: "Inter", sans-serif;
+      }
+
+      .fix-note {
+        font-size: 0.74rem;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.5;
+      }
+
+      /* Sentence builder */
+      .builder {
+        border: 1px solid var(--border);
+        background: var(--surface2);
+        padding: 20px 22px;
+        margin-bottom: 20px;
+      }
+
+      .builder-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 26px 24px;
+        min-height: 104px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 14px;
+      }
+
+      .builder-sentence {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        line-height: 1.45;
+        color: var(--text);
+      }
+
+      .builder-sentence.empty {
+        font-size: 0.9rem;
+        font-family: "Inter", sans-serif;
+        color: var(--muted);
+        font-style: normal;
+      }
+
+      .builder-mode {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .mode-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-right: 4px;
+      }
+
+      .mode-chip {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+
+      .mode-chip:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .mode-chip.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      .builder-controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .builder-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      /* Word bank — compact chips with no functional grouping */
+      .word-bank {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 18px;
+      }
+
+      .word-bank .chip {
+        background: var(--surface);
+      }
+
+      @media (max-width: 720px) {
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .builder {
+          padding: 16px 16px;
+        }
+
+        .builder-card {
+          padding: 20px 16px;
+        }
+
+        .builder-sentence {
+          font-size: 1.15rem;
+        }
+
+        .ladder-step {
+          padding: 12px 14px;
+        }
+
+        .ladder-say {
+          font-size: 0.95rem;
+        }
+      }
+
+      .apply-box p.apply-text {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+
+      .apply-link {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 18px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
+
+      .apply-link:hover {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">First Class — Lesson 1</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Your First Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">The Question Machine</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============================================================
+             STAGE 0: WARM-UP
+             ============================================================ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>hello</em></div>
+          <div class="stage-sub">
+            Everything on this page is for saying out loud.
+          </div>
+
+          <div class="section-label">Five sentences — try them now</div>
+          <div class="ladder">
+            <div class="ladder-step">
+              <div class="ladder-num">1</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "Hello. My name is Peterson. Nice to meet you."
+                </div>
+                <div class="ladder-note">Saying hello · your name</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">2</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I'm from Brazil. I live in São Paulo."
+                </div>
+                <div class="ladder-note">am / is / are · from · live in</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">3</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I work at a bank. I'm an engineer."
+                </div>
+                <div class="ladder-note">jobs · a / an · work at, work in</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">4</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I start work at eight. I usually check my email first."
+                </div>
+                <div class="ladder-note">
+                  present simple · times · usually, always, never
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">5</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "Yesterday I had two meetings. It was a long day."
+                </div>
+                <div class="ladder-note">past simple · was / were</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Hello and goodbye</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Same as the rest of the page: I say it, you say it back.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">Saying hello</div>
+            <div class="vocab-chips">
+              <span class="chip">Hello.</span>
+              <span class="chip">Hi.</span>
+              <span class="chip">Hey. (friends)</span>
+              <span class="chip">Good morning.</span>
+              <span class="chip">Good afternoon.</span>
+              <span class="chip">Good evening.</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Asking how someone is</div>
+            <div class="vocab-chips">
+              <span class="chip">How are you?</span>
+              <span class="chip">How's it going?</span>
+              <span class="chip">How are you doing?</span>
+              <span class="chip">And you?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Answering</div>
+            <div class="vocab-chips">
+              <span class="chip">I'm fine, thanks.</span>
+              <span class="chip">I'm good, thanks.</span>
+              <span class="chip">Not bad.</span>
+              <span class="chip">Pretty good.</span>
+              <span class="chip">A bit tired.</span>
+              <span class="chip">Very well, thank you.</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Meeting someone the first time</div>
+            <div class="vocab-chips">
+              <span class="chip">Nice to meet you.</span>
+              <span class="chip">Nice to meet you too.</span>
+              <span class="chip">Good to see you.</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Saying goodbye</div>
+            <div class="vocab-chips">
+              <span class="chip">Goodbye.</span>
+              <span class="chip">Bye.</span>
+              <span class="chip">See you later.</span>
+              <span class="chip">See you tomorrow.</span>
+              <span class="chip">See you next week.</span>
+              <span class="chip">Have a good day.</span>
+              <span class="chip">Take care.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 1: THE TOOLKIT
+             ============================================================ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">Your <em>first toolkit</em></div>
+          <div class="stage-sub">Six blocks, easiest first.</div>
+
+          <div class="section-label" style="margin-top: 0">
+            How this page works
+          </div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Boxed words</div>
+              <div class="reflection-content">
+                I say it first, you say it back.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Italic sentences</div>
+              <div class="reflection-content">
+                Yours to read out loud, once I have read the first one in the
+                table.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Green ✓ lines</div>
+              <div class="reflection-content">
+                Yours too — each one twice, and both times out loud.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 1 -->
+          <div class="section-label">1 · Staying in English</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            This class runs in English, which only works if these sentences come
+            out automatically instead of silence. I say each one first, you say
+            it back.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">When you don't understand</div>
+            <div class="vocab-chips">
+              <span class="chip">Sorry?</span>
+              <span class="chip">Sorry, I don't understand.</span>
+              <span class="chip">I don't know this word.</span>
+              <span class="chip">What does "busy" mean?</span>
+              <span class="chip">I understand a little.</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Asking for it again</div>
+            <div class="vocab-chips">
+              <span class="chip">Can you repeat that, please?</span>
+              <span class="chip">Can you say that again?</span>
+              <span class="chip">Can you say it slowly, please?</span>
+              <span class="chip">One more time, please.</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Asking for a word</div>
+            <div class="vocab-chips">
+              <span class="chip">How do you say this in English?</span>
+              <span class="chip">What's this in English?</span>
+              <span class="chip">How do you spell that?</span>
+              <span class="chip">Can you write it, please?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Buying yourself a second</div>
+            <div class="vocab-chips">
+              <span class="chip">Just a moment.</span>
+              <span class="chip">Let me think.</span>
+              <span class="chip">How do I say this…</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Checking</div>
+            <div class="vocab-chips">
+              <span class="chip">Is this correct?</span>
+              <span class="chip">Like this?</span>
+              <span class="chip">Did I say it right?</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- BLOCK 2 -->
+          <div class="section-label">2 · am / is / are</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The short forms in the middle column are what people actually say.
+            Column three is a sentence to read out loud.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Full form</th>
+                <th>Say this</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>I am from Brazil.</td>
+                <td>I'm from Brazil.</td>
+                <td>
+                  <em
+                    >I'm Peterson. I'm from Brazil, and I'm very happy to be
+                    here.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>You are late.</td>
+                <td>You're late.</td>
+                <td>
+                  <em
+                    >You're late again. You're always late — but you're a good
+                    friend, so it's fine.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>He is my manager.</td>
+                <td>He's my manager.</td>
+                <td>
+                  <em
+                    >He's my manager. He's from Recife. He's not in the office
+                    today.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>She is not here.</td>
+                <td>She isn't here.</td>
+                <td>
+                  <em
+                    >She isn't here today. She's at home. She's sick, but she
+                    isn't very sick.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>We are in a meeting.</td>
+                <td>We're in a meeting.</td>
+                <td>
+                  <em
+                    >We're in a meeting now. We're on the fourth floor. We're
+                    finished at three.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>They are not ready.</td>
+                <td>They aren't ready.</td>
+                <td>
+                  <em
+                    >They aren't ready. They're still working, and they aren't
+                    happy about it.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="chip-group">
+            <div class="chip-group-label">Asking — and the short answer</div>
+            <div class="vocab-chips">
+              <span class="chip">Are you Brazilian? — Yes, I am.</span>
+              <span class="chip">Are you tired? — No, I'm not.</span>
+              <span class="chip">Is he your manager? — Yes, he is.</span>
+              <span class="chip">Is she here? — No, she isn't.</span>
+              <span class="chip">Are they new? — Yes, they are.</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- BLOCK 3 -->
+          <div class="section-label">3 · Saying who you are</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            These run the other way round: I ask the question, you answer it.
+            The line underneath is one good answer, not the only one — change
+            the details to make it true.
+          </p>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">What's your name?</div>
+              <div class="idiom-meaning">My name is… / I'm…</div>
+              <div class="idiom-example">
+                "My name is Peterson. Just Peterson."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Where are you from?</div>
+              <div class="idiom-meaning">I'm from + country or city</div>
+              <div class="idiom-example">
+                "I'm from Brazil — from a small town near Belo Horizonte."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Where do you live?</div>
+              <div class="idiom-meaning">I live in + city</div>
+              <div class="idiom-example">
+                "I live in São Paulo, in an apartment near the center."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">How old are you?</div>
+              <div class="idiom-meaning">I'm + number (+ years old)</div>
+              <div class="idiom-example">
+                "I'm thirty-four." / "I'm thirty-four years old."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Do you speak English?</div>
+              <div class="idiom-meaning">A little. / I'm learning.</div>
+              <div class="idiom-example">
+                "A little. I'm learning. I understand more than I speak."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Are you married?</div>
+              <div class="idiom-meaning">I'm married. / I'm single.</div>
+              <div class="idiom-example">
+                "I'm married. I have two children — a boy and a girl."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">How do you spell that?</div>
+              <div class="idiom-meaning">Letter by letter, slowly</div>
+              <div class="idiom-example">"P-E-T-E-R-S-O-N. Peterson."</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">What's your phone number?</div>
+              <div class="idiom-meaning">Say the digits one by one</div>
+              <div class="idiom-example">
+                "It's nine one — nine eight seven six — five four three two."
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label">Nine sentences to unlearn</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            These nine come out of a Portuguese speaker's mouth almost every
+            time. Say the green sentence once.
+          </p>
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">I have thirty-four years.</div>
+              <div class="fix-good">I'm thirty-four.</div>
+              <div class="fix-note">
+                Age uses <em>am</em>, never <em>have</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I have hungry.</div>
+              <div class="fix-good">I'm hungry.</div>
+              <div class="fix-note">
+                Same with: I'm thirsty · I'm cold · I'm hot · I'm afraid.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I have sure.</div>
+              <div class="fix-good">I'm sure.</div>
+              <div class="fix-note">
+                And: I'm right · I'm wrong · I'm lucky.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I am agree.</div>
+              <div class="fix-good">I agree.</div>
+              <div class="fix-note">
+                <em>Agree</em> is already the verb — it doesn't need
+                <em>am</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I'm with sleep.</div>
+              <div class="fix-good">I'm tired. / I'm sleepy.</div>
+              <div class="fix-note">
+                Nothing in English is "with" a feeling.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I have five minutes late.</div>
+              <div class="fix-good">I'm five minutes late.</div>
+              <div class="fix-note">And: I'm early · I'm on time.</div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">Yes, I like very much.</div>
+              <div class="fix-good">Yes, I like it very much.</div>
+              <div class="fix-note">
+                <em>Like</em> always needs something after it — <em>it</em>,
+                <em>them</em>, <em>this job</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">Actually, I work at a bank.</div>
+              <div class="fix-good">Right now, I work at a bank.</div>
+              <div class="fix-note">
+                <em>Actually</em> means "in fact", not "now". Use
+                <em>right now</em> or <em>at the moment</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I pretend to travel in June.</div>
+              <div class="fix-good">I plan to travel in June.</div>
+              <div class="fix-note">
+                <em>Pretend</em> means to act, to fake. The word you want is
+                <em>plan</em> or <em>intend</em>.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- BLOCK 4 -->
+          <div class="section-label">4 · Work</div>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>The question</th>
+                <th>Say this</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>What do you do?</td>
+                <td>I'm a designer.</td>
+                <td>
+                  <em
+                    >I'm a designer. I work at a small agency in São Paulo, and
+                    I work with two other designers.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Where do you work?</td>
+                <td>I work for a bank.</td>
+                <td>
+                  <em
+                    >I work for a bank. I work in the finance department. I work
+                    on the tenth floor.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Who do you work with?</td>
+                <td>I work with a small team.</td>
+                <td>
+                  <em
+                    >I work with a small team. My manager is very good, my
+                    colleagues are nice, and my team is only five people.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Do you like your job?</td>
+                <td>Yes, I do. / It's OK.</td>
+                <td>
+                  <em
+                    >Yes, I do. I like my team, I like the work, and I don't
+                    like the hours.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">I'm engineer.</div>
+              <div class="fix-good">I'm an engineer.</div>
+              <div class="fix-note">
+                A job always takes <em>a</em> or <em>an</em>. Use
+                <em>an</em> before a vowel sound: an engineer, an accountant, an
+                architect, an IT manager.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I work in Itaú.</div>
+              <div class="fix-good">I work at Itaú. / I work for Itaú.</div>
+              <div class="fix-note">
+                <em>at</em> or <em>for</em> a company · <em>in</em> a
+                department: I work in marketing.
+              </div>
+            </div>
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Don't read these lists end to end. They are here to look at while
+            you talk in stage 3 — a word gets said the moment you need it.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">Jobs</div>
+            <div class="word-bank">
+              <span class="chip">an engineer</span
+              ><span class="chip">a designer</span
+              ><span class="chip">a teacher</span
+              ><span class="chip">a nurse</span
+              ><span class="chip">a doctor</span
+              ><span class="chip">a driver</span
+              ><span class="chip">a manager</span
+              ><span class="chip">an accountant</span
+              ><span class="chip">a lawyer</span
+              ><span class="chip">a developer</span
+              ><span class="chip">a salesperson</span
+              ><span class="chip">a mechanic</span
+              ><span class="chip">a chef</span
+              ><span class="chip">a receptionist</span
+              ><span class="chip">a consultant</span
+              ><span class="chip">an analyst</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Departments</div>
+            <div class="word-bank">
+              <span class="chip">sales</span><span class="chip">marketing</span
+              ><span class="chip">finance</span><span class="chip">HR</span
+              ><span class="chip">IT</span><span class="chip">operations</span
+              ><span class="chip">logistics</span
+              ><span class="chip">customer service</span
+              ><span class="chip">production</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Things at work</div>
+            <div class="word-bank">
+              <span class="chip">a meeting</span
+              ><span class="chip">a deadline</span
+              ><span class="chip">a report</span
+              ><span class="chip">a client</span
+              ><span class="chip">a supplier</span
+              ><span class="chip">a colleague</span
+              ><span class="chip">my boss</span
+              ><span class="chip">the office</span
+              ><span class="chip">a shift</span
+              ><span class="chip">overtime</span
+              ><span class="chip">a day off</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- BLOCK 5 -->
+          <div class="section-label">5 · Your day</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The block where nearly everyone loses the <em>-s</em>. He, she and
+            it take an extra <em>s</em> — and then, in a negative or a question,
+            that <em>s</em> jumps onto <em>does</em> and the verb goes back to
+            normal.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>The form</th>
+                <th>Say this</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>I / you / we / they + verb</td>
+                <td>I start work at eight.</td>
+                <td>
+                  <em
+                    >I start work at eight. I check my email, I answer the
+                    important ones, and I start the real work at nine.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>he / she / it + verb + s</td>
+                <td>She starts at nine.</td>
+                <td>
+                  <em
+                    >She starts at nine. She works from home on Fridays, and she
+                    finishes early on Fridays too.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>don't / doesn't + verb</td>
+                <td>I don't work on Sundays.</td>
+                <td>
+                  <em
+                    >I don't work on Sundays. I don't check my email, and my
+                    manager doesn't call me.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Do / Does + you + verb?</td>
+                <td>Do you work on Saturdays?</td>
+                <td>
+                  <em
+                    >Do you work on Saturdays? Do you work from home? Does your
+                    team work from home too?</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">She work in marketing.</div>
+              <div class="fix-good">She works in marketing.</div>
+              <div class="fix-note">
+                He, she and it always add the <em>s</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">She doesn't works here.</div>
+              <div class="fix-good">She doesn't work here.</div>
+              <div class="fix-note">
+                Only one <em>s</em> per sentence — <em>does</em> already has it.
+              </div>
+            </div>
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The second list is in order on purpose. Say it as a sequence — your
+            own day, start to finish — instead of reading it as words.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">How often</div>
+            <div class="vocab-chips">
+              <span class="chip">always</span>
+              <span class="chip">usually</span>
+              <span class="chip">often</span>
+              <span class="chip">sometimes</span>
+              <span class="chip">hardly ever</span>
+              <span class="chip">never</span>
+              <span class="chip">every day</span>
+              <span class="chip">twice a week</span>
+              <span class="chip">once a month</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">A working day, in order</div>
+            <div class="word-bank">
+              <span class="chip">wake up</span><span class="chip">get up</span
+              ><span class="chip">have breakfast</span
+              ><span class="chip">get ready</span
+              ><span class="chip">go to work</span
+              ><span class="chip">start work</span
+              ><span class="chip">check my email</span
+              ><span class="chip">have a meeting</span
+              ><span class="chip">have lunch</span
+              ><span class="chip">call a client</span
+              ><span class="chip">finish work</span
+              ><span class="chip">go home</span
+              ><span class="chip">have dinner</span
+              ><span class="chip">watch TV</span
+              ><span class="chip">go to bed</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- BLOCK 6 -->
+          <div class="section-label">6 · Yesterday</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Only worth opening if blocks 4 and 5 came out easily. Otherwise this
+            waits for next week — it is the whole of the next class.
+          </p>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Every box in this block is listen-and-repeat, with no exceptions.
+            Nothing here can be guessed from the spelling — thought, said and
+            took least of all. And the + ed ending has three different sounds:
+            worked and talked finish with a t sound, called with a d, wanted
+            with id.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">was / were</div>
+            <div class="vocab-chips">
+              <span class="chip">I was</span>
+              <span class="chip">you were</span>
+              <span class="chip">he / she / it was</span>
+              <span class="chip">we / they were</span>
+              <span class="chip">I wasn't</span>
+              <span class="chip">they weren't</span>
+              <span class="chip">Was it good?</span>
+              <span class="chip">Were you there?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Ten verbs that change completely</div>
+            <div class="word-bank">
+              <span class="chip">go → went</span
+              ><span class="chip">have → had</span
+              ><span class="chip">do → did</span
+              ><span class="chip">say → said</span
+              ><span class="chip">get → got</span
+              ><span class="chip">make → made</span
+              ><span class="chip">see → saw</span
+              ><span class="chip">come → came</span
+              ><span class="chip">take → took</span
+              ><span class="chip">think → thought</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">And the easy ones: + ed</div>
+            <div class="word-bank">
+              <span class="chip">work → worked</span
+              ><span class="chip">start → started</span
+              ><span class="chip">finish → finished</span
+              ><span class="chip">call → called</span
+              ><span class="chip">want → wanted</span
+              ><span class="chip">talk → talked</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">When</div>
+            <div class="vocab-chips">
+              <span class="chip">yesterday</span>
+              <span class="chip">last night</span>
+              <span class="chip">last week</span>
+              <span class="chip">last Monday</span>
+              <span class="chip">two days ago</span>
+              <span class="chip">this morning</span>
+            </div>
+          </div>
+          <ul class="q-list">
+            <li>
+              <em
+                >Yesterday I went to the office. I had three meetings, I talked
+                to two clients, and I finished at seven. It was a long day.</em
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============================================================
+             STAGE 2: THE QUESTION MACHINE
+             ============================================================ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">The <em>Question Machine</em></div>
+          <div class="stage-sub">
+            Answer the question, then ask the same question back. Every card you
+            take is a card nobody gets twice.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Draw a question
+              </div>
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Take the button, and take whatever comes
+                    out.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawQuestion()">
+                    Draw a question
+                  </button>
+                  <button class="btn" onclick="resetDeck()">Reshuffle</button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                Answer in a full sentence, never one word. Then ask it back —
+                that second half is where the question forms get practised.
+              </p>
+
+              <div class="section-label">Build a sentence</div>
+              <div class="builder">
+                <div class="builder-card">
+                  <div class="builder-sentence empty" id="builder-sentence">
+                    Pick positive, negative or question, then press Build. Say
+                    the sentence out loud before you press it again.
+                  </div>
+                </div>
+                <div class="builder-mode">
+                  <span class="mode-label">Make it</span>
+                  <button
+                    class="mode-chip active"
+                    onclick="setMode('positive', this)"
+                  >
+                    Positive
+                  </button>
+                  <button class="mode-chip" onclick="setMode('negative', this)">
+                    Negative
+                  </button>
+                  <button class="mode-chip" onclick="setMode('question', this)">
+                    Question
+                  </button>
+                  <button class="mode-chip" onclick="setMode('mix', this)">
+                    Mix
+                  </button>
+                </div>
+                <div class="builder-controls">
+                  <button class="btn primary" onclick="buildSentence()">
+                    Build a sentence
+                  </button>
+                  <button class="btn" onclick="resetBuilder()">Reset</button>
+                  <span class="builder-count" id="builder-count"></span>
+                </div>
+              </div>
+              <p class="panel-note">
+                The machine writes it; your job is to say it. When one comes out
+                easily, say it again and change one word — the subject, the
+                time, the place.
+              </p>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Keep these in view</div>
+              <div class="chip-group">
+                <div class="chip-group-label">Answering</div>
+                <div class="vocab-chips">
+                  <span class="chip">Yes, I do.</span>
+                  <span class="chip">No, I don't.</span>
+                  <span class="chip">Yes, I am.</span>
+                  <span class="chip">No, I'm not.</span>
+                  <span class="chip">Sometimes.</span>
+                  <span class="chip">Not really.</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Asking it back</div>
+                <div class="vocab-chips">
+                  <span class="chip">And you?</span>
+                  <span class="chip">What about you?</span>
+                  <span class="chip">How about you?</span>
+                  <span class="chip">Do you?</span>
+                  <span class="chip">Are you?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Getting more</div>
+                <div class="vocab-chips">
+                  <span class="chip">Why?</span>
+                  <span class="chip">Really?</span>
+                  <span class="chip">Tell me more.</span>
+                  <span class="chip">That's interesting.</span>
+                  <span class="chip">Me too.</span>
+                  <span class="chip">Me neither.</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">If you get stuck</div>
+                <div class="vocab-chips">
+                  <span class="chip">Sorry, I don't understand.</span>
+                  <span class="chip">Can you say that again?</span>
+                  <span class="chip">Let me think.</span>
+                  <span class="chip">How do you say this in English?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">One short scene</div>
+            <p>
+              You play the new employee — it is your first week and you have met
+              almost nobody. I play the colleague. Your half is on the left and
+              you get a minute to prepare it; my half stays hidden until we
+              start, because in real life it would be.
+            </p>
+          </div>
+
+          <div class="scenario-block">
+            <div class="scenario-name">
+              The kitchen at work
+              <span>New employee vs. a colleague you've never met</span>
+            </div>
+            <div class="scenario-numbers">
+              Nine in the morning, your first week in the job. You are in the
+              office kitchen making a coffee. Someone walks in, sees you, and
+              says hello.
+            </div>
+            <div class="position-split">
+              <div class="position-card mine">
+                <div class="position-role">You — the new employee</div>
+                <div class="position-content">
+                  <ul>
+                    <li>Say hello. It is nine in the morning.</li>
+                    <li>Say your name, and spell it.</li>
+                    <li>Say your job and which team you are on.</li>
+                    <li>Say it is your first week.</li>
+                    <li>Ask two questions back.</li>
+                    <li>Say goodbye — you have a meeting at half past nine.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="position-card counterpart" id="reveal-a">
+                <div class="position-role">
+                  Me — a colleague from another team
+                </div>
+                <div class="hint-text">Hidden until the scene starts.</div>
+                <div class="position-content">
+                  <ul>
+                    <li>Warm, friendly, and speaks a little too fast.</li>
+                    <li>"Morning! You're new here, right? I'm Sam."</li>
+                    <li>"Sorry — how do you spell that?"</li>
+                    <li>"Nice one. So what do you do here?"</li>
+                    <li>
+                      One line said quickly and quietly, so the repeat phrases
+                      have to come out.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <button
+              class="reveal-toggle"
+              onclick="toggleReveal('reveal-a', this)"
+            >
+              Reveal the other side
+            </button>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 3: WRAP-UP
+             ============================================================ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>say it again</em></div>
+          <div class="stage-sub">Same five sentences as the first stage.</div>
+
+          <div class="section-label">The five, one more time</div>
+          <div class="ladder">
+            <div class="ladder-step">
+              <div class="ladder-num">1</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "Hello. My name is Peterson. Nice to meet you."
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">2</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I'm from Brazil. I live in São Paulo."
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">3</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I work at a bank. I'm an engineer."
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">4</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I start work at eight. I usually check my email first."
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">5</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "Yesterday I had two meetings. It was a long day."
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label">Close the page</div>
+          <ul class="q-list">
+            <li>
+              Five true sentences about you, with nothing on the screen. Name,
+              city, job, one thing you do every day, one thing you never do.
+            </li>
+            <li>
+              Now three questions for me. Any three — but they have to be
+              questions, not statements.
+            </li>
+          </ul>
+
+          <div class="apply-box">
+            <div class="apply-label">Before next class</div>
+            <div class="apply-lead">Listen to it twice.</div>
+            <p class="apply-text">
+              BBC Learning English, English at Work, episode 1 — The Interview.
+              Do not translate it and do not stop it to look words up.
+              Understanding half of it is a good result.
+            </p>
+            <a
+              class="apply-link"
+              href="https://www.bbc.co.uk/learningenglish/english/features/english-at-work/01-the-interview"
+              target="_blank"
+              rel="noopener"
+              >Open episode 1 — The Interview</a
+            >
+          </div>
+
+          <div class="section-label">Next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Coming up</div>
+              <div class="reflection-content">
+                Yesterday, last week, last year — the past simple, properly.
+                Plus asking questions instead of only answering them.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---------------- STAGE NAVIGATION ---------------- */
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---------------- HIDDEN BRIEFS ---------------- */
+      function toggleReveal(id, btn) {
+        const card = document.getElementById(id);
+        if (!btn.dataset.origLabel) btn.dataset.origLabel = btn.textContent;
+        const revealed = card.classList.toggle("revealed");
+        btn.textContent = revealed ? "Hide it again" : btn.dataset.origLabel;
+      }
+
+      /* ---------------- QUESTION DECK ---------------- */
+      const QUESTIONS = [
+        "What do you do? And what does your company do?",
+        "Tell me about your team. How many people, and what do they do?",
+        "Describe your morning, from waking up to starting work.",
+        "How do you get to work, and how long does it take?",
+        "What do you like about your job, and what do you not like?",
+        "Where do you live? Do you like it there? Why?",
+        "What time do you start and finish? Is that every day?",
+        "Do you prefer working from home or the office? Why?",
+        "Who do you work with most, and why that person?",
+        "What do you have for lunch on a working day, and where?",
+        "What's a normal Saturday for you?",
+        "What do you usually do after work?",
+        "Tell me about someone in your family. What do they do?",
+        "What's your favourite day of the week, and why?",
+        "Why are you learning English? What do you want to do with it?",
+        "When do you use English at work, and how often?",
+        "What's difficult about English for you?",
+        "What do you do when you don't understand someone in English?",
+        "Describe your office. Where is it, and what's in it?",
+        "Do you cook? What do you make, and how often?",
+        "What's the best thing about your city? And the worst?",
+        "Tell me about your last holiday. Where did you go?",
+        "What did you do last weekend?",
+        "What's your day like tomorrow? What do you have?",
+        "How is your work different from five years ago?",
+        "What do you want to do next year?",
+      ];
+
+      let qDeck = shuffle(QUESTIONS);
+
+      function updateDeckCount() {
+        const el = document.getElementById("deck-count");
+        el.textContent =
+          qDeck.length === 0
+            ? "deck finished — reshuffle to go again"
+            : qDeck.length + " left in the deck";
+      }
+
+      function drawQuestion() {
+        const textEl = document.getElementById("prompt-text");
+        if (qDeck.length === 0) {
+          textEl.classList.add("empty");
+          textEl.textContent =
+            "That's the whole deck. Reshuffle to start it again.";
+          updateDeckCount();
+          return;
+        }
+        textEl.classList.remove("empty");
+        textEl.textContent = qDeck.pop();
+        updateDeckCount();
+      }
+
+      function resetDeck() {
+        qDeck = shuffle(QUESTIONS);
+        const textEl = document.getElementById("prompt-text");
+        textEl.classList.add("empty");
+        textEl.textContent =
+          "Nothing drawn yet. Take the button, and take whatever comes out.";
+        updateDeckCount();
+      }
+
+      /* ---------------- SENTENCE BUILDER ---------------- */
+      const B_SUBJ = [
+        { t: "I", third: false },
+        { t: "You", third: false },
+        { t: "He", third: true },
+        { t: "She", third: true },
+        { t: "We", third: false },
+        { t: "They", third: false },
+        { t: "My boss", third: true, qOk: false },
+        { t: "My team", third: true, qOk: false },
+      ];
+
+      const B_VERBS = [
+        {
+          base: "work",
+          s: "works",
+          time: true,
+          comp: ["in marketing", "at a bank", "from home", "with a big team"],
+        },
+        {
+          base: "start",
+          s: "starts",
+          time: true,
+          comp: ["at eight", "at nine", "early", "late"],
+        },
+        {
+          base: "finish",
+          s: "finishes",
+          time: true,
+          comp: ["at six", "at five thirty", "early", "late"],
+        },
+        {
+          base: "live",
+          s: "lives",
+          time: false,
+          comp: [
+            "in São Paulo",
+            "near the office",
+            "in a small apartment",
+            "far from work",
+          ],
+        },
+        {
+          base: "like",
+          s: "likes",
+          time: false,
+          comp: [
+            "this company",
+            "coffee in the morning",
+            "Mondays",
+            "working from home",
+          ],
+        },
+        {
+          base: "have",
+          s: "has",
+          time: false,
+          comp: [
+            "a meeting at ten",
+            "a lot of work",
+            "a new manager",
+            "two children",
+          ],
+        },
+        {
+          base: "go",
+          s: "goes",
+          time: true,
+          comp: [
+            "to the office by car",
+            "to the gym after work",
+            "to lunch at twelve",
+          ],
+        },
+      ];
+
+      const B_TIME = [
+        "every day",
+        "on Fridays",
+        "in the morning",
+        "twice a week",
+        "on Mondays",
+      ];
+
+      let bMode = "positive";
+      let bCount = 0;
+      let bLast = "";
+
+      function pick(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function setMode(mode, btn) {
+        bMode = mode;
+        document
+          .querySelectorAll(".mode-chip")
+          .forEach((el) => el.classList.toggle("active", el === btn));
+      }
+
+      function makeSentence() {
+        const mode =
+          bMode === "mix" ? pick(["positive", "negative", "question"]) : bMode;
+        const verb = pick(B_VERBS);
+        let subjPool = B_SUBJ;
+        if (mode === "question")
+          subjPool = B_SUBJ.filter((s) => s.qOk !== false);
+        const subj = pick(subjPool);
+        const comp = pick(verb.comp);
+        const time = verb.time && Math.random() < 0.5 ? " " + pick(B_TIME) : "";
+
+        if (mode === "positive") {
+          return (
+            subj.t +
+            " " +
+            (subj.third ? verb.s : verb.base) +
+            " " +
+            comp +
+            time +
+            "."
+          );
+        }
+        if (mode === "negative") {
+          return (
+            subj.t +
+            " " +
+            (subj.third ? "doesn't" : "don't") +
+            " " +
+            verb.base +
+            " " +
+            comp +
+            time +
+            "."
+          );
+        }
+        const lower = subj.t === "I" ? "I" : subj.t.toLowerCase();
+        return (
+          (subj.third ? "Does " : "Do ") +
+          lower +
+          " " +
+          verb.base +
+          " " +
+          comp +
+          time +
+          "?"
+        );
+      }
+
+      function buildSentence() {
+        let s = makeSentence();
+        for (let i = 0; i < 5 && s === bLast; i++) s = makeSentence();
+        bLast = s;
+        bCount++;
+        const el = document.getElementById("builder-sentence");
+        el.classList.remove("empty");
+        el.textContent = s;
+        document.getElementById("builder-count").textContent =
+          bCount + (bCount === 1 ? " sentence said" : " sentences said");
+      }
+
+      function resetBuilder() {
+        bCount = 0;
+        bLast = "";
+        const el = document.getElementById("builder-sentence");
+        el.classList.add("empty");
+        el.textContent =
+          "Pick positive, negative or question, then press Build. Say the sentence out loud before you press it again.";
+        document.getElementById("builder-count").textContent = "";
+      }
+
+      /* ---------------- INIT ---------------- */
+      updateDeckCount();
+      goTo(0);
+    </script>
+  </body>
+</html>

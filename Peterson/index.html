@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Classes — Class Library</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2226%22%20fill%3D%22%23fbf8f1%22%2F%3E%3Cg%20transform%3D%22translate%2860%2C60%29%20scale%280.86%29%20translate%28-60%2C-64%29%22%3E%3Cpath%20d%3D%22M24%2C20%20H70%20A12%2C12%200%200%201%2082%2C32%20V56%20A12%2C12%200%200%201%2070%2C68%20H46%20L28%2C84%20V68%20H24%20A12%2C12%200%200%201%2012%2C56%20V32%20A12%2C12%200%200%201%2024%2C20%20Z%22%20fill%3D%22%2317304a%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2243%22%20r%3D%224.5%22%20fill%3D%22%23c99a3e%22%2F%3E%3Ccircle%20cx%3D%2247%22%20cy%3D%2243%22%20r%3D%224.5%22%20fill%3D%22%23c99a3e%22%2F%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%2243%22%20r%3D%224.5%22%20fill%3D%22%23c99a3e%22%2F%3E%3Cpath%20d%3D%22M58%2C48%20H96%20A12%2C12%200%200%201%20108%2C60%20V80%20A12%2C12%200%200%201%2096%2C92%20V108%20L78%2C92%20H58%20A12%2C12%200%200%201%2046%2C80%20V60%20A12%2C12%200%200%201%2058%2C48%20Z%22%20fill%3D%22%23fbf8f1%22%20stroke%3D%22%23b23a2e%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        /* brand mark — deliberately not the page palette */
+        --brand-ink: #17304a;
+        --brand-red: #b23a2e;
+        --brand-gold: #c99a3e;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-mark {
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+      }
+      .brand-mark svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      /* CONTENT */
+      main {
+        flex: 1;
+        padding: 52px 52px 64px;
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .page-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .page-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .page-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .page-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      /* LESSON CARDS */
+      .lesson-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      .lesson-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px 16px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          border-color 0.15s,
+          transform 0.15s;
+        animation: fadeUp 0.25s ease;
+      }
+
+      .lesson-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .lesson-meta {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      .lesson-title {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .lesson-desc {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.55;
+        margin-bottom: 16px;
+      }
+
+      .lesson-open {
+        margin-top: auto;
+        align-self: flex-start;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 8px 18px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #fff;
+        transition: all 0.12s;
+      }
+
+      .lesson-card:hover .lesson-open {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+      }
+
+      /* SOON / EMPTY */
+      .lesson-card.soon {
+        border-style: dashed;
+        cursor: default;
+        opacity: 0.7;
+      }
+
+      .lesson-card.soon:hover {
+        border-color: var(--border);
+        transform: none;
+      }
+
+      .lesson-card.soon .lesson-open {
+        background: none;
+        border-color: var(--border);
+        color: var(--muted);
+      }
+
+      .lesson-card.soon:hover .lesson-open {
+        background: none;
+        border-color: var(--border);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        font-size: 0.72rem;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @media (max-width: 720px) {
+        header,
+        footer {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        main {
+          padding: 36px 24px 48px;
+        }
+        .lesson-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <div
+          class="brand-mark"
+          role="img"
+          aria-label="Teacher Felipe — English classes"
+        >
+          <svg viewBox="0 0 120 120">
+            <path
+              d="M24,20 H70 A12,12 0 0 1 82,32 V56 A12,12 0 0 1 70,68 H46 L28,84 V68 H24 A12,12 0 0 1 12,56 V32 A12,12 0 0 1 24,20 Z"
+              fill="var(--brand-ink)"
+            />
+            <circle cx="32" cy="43" r="4.5" fill="var(--brand-gold)" />
+            <circle cx="47" cy="43" r="4.5" fill="var(--brand-gold)" />
+            <circle cx="62" cy="43" r="4.5" fill="var(--brand-gold)" />
+            <path
+              d="M58,48 H96 A12,12 0 0 1 108,60 V80 A12,12 0 0 1 96,92 V108 L78,92 H58 A12,12 0 0 1 46,80 V60 A12,12 0 0 1 58,48 Z"
+              fill="var(--surface)"
+              stroke="var(--brand-red)"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div>
+          <h1>English Classes</h1>
+          <div class="subtitle">Class Library — Peterson</div>
+        </div>
+      </div>
+      <span class="tag" id="lesson-count"></span>
+    </header>
+
+    <main>
+      <div class="page-eyebrow">All classes</div>
+      <div class="page-title">Your <em>lessons</em></div>
+      <div class="page-sub">
+        Pick a class to review the material. New lessons are added here after
+        each session.
+      </div>
+
+      <div class="section-label">Available now</div>
+      <div class="lesson-grid" id="lesson-grid"></div>
+    </main>
+
+    <footer>
+      <span>Updated after each class</span>
+    </footer>
+
+    <script>
+      /* ------------------------------------------------------------------
+         TO ADD A NEW CLASS: copy one block below, change the values, done.
+         - file:   name of the html file (must sit in the same folder)
+         - title:  shown in orange
+         - date:   day of the class, e.g. "21 August 2026"
+         - desc:   one-line summary
+         - soon:   set to true for a class that isn't ready yet (no link)
+
+         Lessons are numbered from 0 in the order they appear in this list,
+         so just append new ones at the bottom.
+      ------------------------------------------------------------------ */
+      const LESSONS = [
+        {
+          file: "lesson_plan_0.html",
+          title: "First Class — Hello",
+          date: "10 September 2026",
+          desc: "Your first class: saying who you are, where you are from, what you do, and asking the same questions back.",
+        },
+      ];
+
+      const grid = document.getElementById("lesson-grid");
+
+      LESSONS.forEach((lesson, i) => {
+        const card = document.createElement(lesson.soon ? "div" : "a");
+        card.className = "lesson-card" + (lesson.soon ? " soon" : "");
+        if (!lesson.soon) card.href = lesson.file;
+
+        card.innerHTML = `
+          <div class="lesson-meta">
+            <span>Lesson ${i}</span>
+            <span>${lesson.date || ""}</span>
+          </div>
+          <div class="lesson-title">${lesson.title}</div>
+          <div class="lesson-desc">${lesson.desc}</div>
+          <span class="lesson-open">${lesson.soon ? "Coming soon" : "Open lesson"}</span>
+        `;
+
+        grid.appendChild(card);
+      });
+
+      const ready = LESSONS.filter((l) => !l.soon).length;
+      document.getElementById("lesson-count").textContent =
+        ready + (ready === 1 ? " lesson" : " lessons");
+    </script>
+  </body>
+</html>
