@@ -246,10 +246,12 @@ Append one object to the `LESSONS` array in `Peterson/index.html`:
 Set `soon: true` for a class that is not ready — it renders as a dashed,
 unclickable card.
 
-**Numbering:** files are zero-indexed, `<title>` is one-indexed, and the library
-labels by array position. So `lesson_plan_0.html` carries
-`<title>English Conversation — Lesson 1</title>` and appears as "Lesson 0". This
-mismatch is inherited from Raffa's pages — reproduce it, do not correct it.
+**Numbering:** files, titles and library cards all agree. `lesson_plan_0.html`
+carries `<title>English Conversation — Lesson 0</title>`, uses "Lesson 0" in the
+header subtitle too, and appears as "Lesson 0" on the library, which labels by
+array position. So `lesson_plan_N.html` is "Lesson N". Titles used to be
+one-indexed against zero-indexed files; that was corrected on 12 September 2026,
+on Raffa's pages and this one together.
 
 ## Mobile
 

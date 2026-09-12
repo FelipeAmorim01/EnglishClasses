@@ -168,9 +168,12 @@ several reps. Set them in `<em>` so they read as speech.
   constraint can be enforced socially ("don't take too long"), prefer that over a
   timer. Scarcity — "you can't use the same reaction twice" — is usually a better
   constraint than a clock anyway.
-- **Numbering is offset and stays that way.** `lesson_plan_4.html` is titled
-  "Lesson 5" but shows as "Lesson 4" on the library, because cards are labelled by
-  array index. This is the existing convention. Follow it; do not "fix" it.
+- **Numbering matches the file name.** `lesson_plan_4.html` is titled "Lesson 4",
+  in both the `<title>` and the header subtitle, and shows as "Lesson 4" on the
+  library, where cards are labelled by array index. The two used to be off by one;
+  that was corrected on 12 September 2026. So `lesson_plan_N.html` is "Lesson N"
+  — the only exception is `lesson_plan_0.html`, whose header still reads
+  "Experimental Lesson" rather than carrying a number at all.
 - **Felipe edits these files directly between sessions.** If a count or a phrase
   does not match what was last written, that is him, not corruption. Read the
   current file and build on it. Never restore something back to a previous version
