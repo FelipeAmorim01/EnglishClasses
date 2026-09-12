@@ -115,6 +115,59 @@ takes.
 
 ---
 
+## Lesson 5 — Opinions & Disagreeing
+`lesson_plan_5.html` · 12 September 2026
+
+Stages: Warm-up → The Disagreement Toolkit → The Strength Dial → Wrap-up
+
+Framing is mixed business / non-business. Built around a five-rung strength
+ladder, which is both the stage 2 reference and the thing the stage 3 widget
+drives. 83 language items.
+
+**Native-speaker patterns** (three-column table, column 3 read aloud):
+*the way I see it* / *if you ask me* · *I'm not convinced, to be honest* ·
+*I'll give you that* · *a bit of a stretch* · *fair enough / that's a good point* ·
+*push back on* · *I could go either way* · *what makes you say that?*
+
+**The strength ladder** (5 rungs × 5 expressions):
+1 Hedged — *I mean, maybe* · *I'm not sure I'd go that far* · *up to a point* ·
+*I can see it, I'm just not sure* · *I'd want to look at it properly*
+2 Doubtful — *I'm not convinced* · *I'd question that* · *I'd be surprised* ·
+*I'm not sure that holds up* · *that doesn't quite ring true*
+3 Clear — *I see it differently* · *I don't think that's right* · *a bit of a
+stretch* · *I'd argue the opposite* · *honestly? I think that's wrong*
+4 Firm — *I'm going to have to disagree there* · *that doesn't stand up* · *I
+just don't buy that* · *with respect* · *I'll be straight with you*
+5 Flat — *that's not happening* · *that's simply not true* · *I'm not even going
+to entertain that* · *absolutely not* · *a non-starter*
+
+**Idioms:** play devil's advocate · be on the fence · that's beside the point ·
+miss the point · see eye to eye · the jury's still out · agree to disagree ·
+talk past each other
+
+**Phrasal verbs:** push back on · back down · go along with · come round to ·
+stand by · talk someone into / out of · rule out · water down · pick holes in ·
+shoot down · get at · hold up
+
+**Chip banks:** Asking for the grounds · Conceding cleanly · Conceding then
+turning · Agreeing emphatically · Arguing a side you don't hold · Closing it down
+
+**Activity:** the Strength Dial — a statement deck (24, no repeats until
+exhausted) plus a five-position dial. Each statement has to be answered at all
+five strengths before the next one; "Roll the dial" only serves rungs not yet
+covered. No timer — the constraint is scarcity (no expression twice per
+statement). Followed by a short Round Two where the position has to be *agreed*
+with emphatically and then argued against.
+
+**Homework:** voice note — 90 seconds arguing a position you don't hold, then 30
+seconds conceding and switching back. Plus one *Intelligence Squared* episode,
+listening for the first five seconds of a rebuttal.
+
+**Recycled into the warm-up:** read the room (L1) · long story short (L4) ·
+put up with (L4)
+
+---
+
 ## Not yet covered
 
 Topic ideas raised and not used, with the language each would carry:
@@ -123,8 +176,6 @@ Topic ideas raised and not used, with the language each would carry:
   in a group, asking for repetition without sounding lost.
 - **Difficult conversations and feedback** — softening without losing meaning,
   delivering bad news, apologising professionally, receiving criticism.
-- **Opinions, debate, devil's advocate** — the strength dial from hedged to
-  emphatic, conceding a point, *I take your point, but…*
 - **Sorting things out in real life** — customer service, landlords, doctors,
   returning things; the escalation ladder from polite to immovable.
 - **Taste and recommending** — comparison shortcuts, intensity and enthusiasm

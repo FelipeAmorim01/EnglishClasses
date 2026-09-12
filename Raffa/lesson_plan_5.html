@@ -1,0 +1,2212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation &mdash; Lesson 5</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward: panels, decks, used-chips ---------- */
+      /* grid items default to min-width:auto, which lets the wider panels
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .drill-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .drill-chip {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.88rem;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 7px 13px;
+        transition: all 0.12s;
+      }
+
+      /* ---------- THE STRENGTH LADDER (stage 2 reference) ---------- */
+      .ladder {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .rung {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        padding: 16px 20px;
+      }
+
+      .rung-head {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+
+      .rung-num {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .rung-name {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .rung-gloss {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        flex: 1 1 240px;
+      }
+
+      /* ---------- THE STRENGTH DIAL (stage 3 widget) ---------- */
+      .dial-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .dial-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+
+      .dial-row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .dial-pos {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-bottom: 3px solid var(--border);
+        padding: 14px 8px 11px;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.12s;
+        position: relative;
+      }
+
+      .dial-pos:hover {
+        border-color: var(--accent);
+      }
+
+      .dial-num {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .dial-name {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-top: 6px;
+      }
+
+      .dial-pos.active {
+        background: var(--accent-light);
+        border-color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .dial-pos.active .dial-num,
+      .dial-pos.active .dial-name {
+        color: var(--accent);
+      }
+
+      .dial-pos.done {
+        border-bottom-color: var(--accent2);
+      }
+
+      .dial-pos.done .dial-num::after {
+        content: "\2713";
+        position: absolute;
+        top: 6px;
+        right: 8px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.68rem;
+        color: var(--accent2);
+      }
+
+      .dial-detail {
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .dial-detail-name {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--accent2);
+        margin-bottom: 4px;
+      }
+
+      .dial-detail-gloss {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.55;
+        margin-bottom: 14px;
+      }
+
+      .dial-status {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .dial-status strong {
+        color: var(--accent);
+      }
+
+      /* ---------- ROUND TWO ---------- */
+      .agree-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .agree-list li {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        font-style: italic;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 720px) {
+        .prompt-deck,
+        .dial-panel {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .dial-row {
+          gap: 6px;
+        }
+
+        .dial-pos {
+          padding: 11px 3px 9px;
+        }
+
+        .dial-num {
+          font-size: 1.2rem;
+        }
+
+        .dial-name {
+          font-size: 0.52rem;
+          letter-spacing: 0.04em;
+        }
+
+        .dial-pos.done .dial-num::after {
+          top: 3px;
+          right: 4px;
+          font-size: 0.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Opinions &amp; Disagreeing — Lesson 5</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Disagreement Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">The Strength Dial</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">
+            Warm-up: <em>the volume you actually use</em>
+          </div>
+          <div class="stage-sub">
+            In Portuguese you have about twenty different ways to say "no, I
+            don't think so" — and you pick the right one without thinking. In
+            English most people have two: <em>I agree</em> and
+            <em>I disagree</em>. Today we build the rest of the dial.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              When did you last genuinely change your mind about something that
+              mattered? What moved you — an argument, or just time?
+            </li>
+            <li>
+              Are you someone who says what they think straight away, or someone
+              who reads the room first? Has that always been true, or did work
+              teach it to you?
+            </li>
+            <li>
+              Long story short: what was your last real disagreement about — and
+              did anyone actually move?
+            </li>
+            <li>
+              Is there an opinion you hold that most people around you don't?
+              You don't have to defend it yet. Just say it.
+            </li>
+            <li>
+              What do you put up with in an argument, and what's the thing that
+              makes you stop being polite?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">The <em>Disagreement Toolkit</em></div>
+          <div class="stage-sub">
+            Around seventy expressions. The centre of it is the ladder: five
+            strengths of disagreement, five ways to say each.
+          </div>
+
+          <div class="section-label">Say it like a native speaker</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            The left column is correct English and nobody says it. Eight
+            patterns that close the gap.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Correct, but textbook</th>
+                <th>What's actually said</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"In my opinion, the plan is bad."</td>
+                <td>The way I see it, the plan doesn't work.</td>
+                <td>
+                  <em
+                    >The way I see it, we've got two options. And the way I see
+                    it, neither of them is great — but if you ask me, the second
+                    one is less bad.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"I think that is wrong."</td>
+                <td>I'm not convinced, to be honest.</td>
+                <td>
+                  <em
+                    >I'm not convinced, to be honest. I'm not convinced the
+                    numbers are real, and I'm definitely not convinced we can do
+                    it by March.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"I agree with part of it."</td>
+                <td>I'll give you that.</td>
+                <td>
+                  <em
+                    >OK — I'll give you that. The timing was bad, I'll give you
+                    that much. But the idea itself? No. I still think it was the
+                    right call.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"That is an exaggeration."</td>
+                <td>That's a bit of a stretch.</td>
+                <td>
+                  <em
+                    >Calling it a disaster is a bit of a stretch. It was a bad
+                    quarter. Saying the company is finished is more than a
+                    stretch — that's just not true.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"You are right and I was wrong."</td>
+                <td>Fair enough — that's a good point.</td>
+                <td>
+                  <em
+                    >Fair enough. That's a good point, actually — I hadn't
+                    thought of it that way.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"I disagree strongly."</td>
+                <td>I'm going to have to push back on that.</td>
+                <td>
+                  <em
+                    >I'm going to have to push back on that one. And I'd push
+                    back on the second point too, because I don't think it holds
+                    up.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"I have no strong opinion."</td>
+                <td>Honestly, I could go either way.</td>
+                <td>
+                  <em
+                    >Honestly, I could go either way on this. I've been on the
+                    fence for weeks. Either way works for me — you pick.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>"What is the basis for that claim?"</td>
+                <td>What makes you say that?</td>
+                <td>
+                  <em
+                    >What makes you say that? Genuinely — what makes you say
+                    it's the pricing and not the product?</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">The ladder: five strengths</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Same disagreement, five volumes. Twenty-five expressions — read each
+            rung out loud before moving on.
+          </p>
+          <div class="ladder">
+            <div class="rung">
+              <div class="rung-head">
+                <span class="rung-num">01</span>
+                <span class="rung-name">Hedged</span>
+                <span class="rung-gloss"
+                  >You're not really arguing. You're leaving the door
+                  open.</span
+                >
+              </div>
+              <div class="drill-chips">
+                <span class="drill-chip">I mean, maybe.</span>
+                <span class="drill-chip">I'm not sure I'd go that far.</span>
+                <span class="drill-chip">I suppose so, up to a point.</span>
+                <span class="drill-chip"
+                  >I can see it — I'm just not sure.</span
+                >
+                <span class="drill-chip"
+                  >Possibly. I'd want to look at it properly.</span
+                >
+              </div>
+            </div>
+            <div class="rung">
+              <div class="rung-head">
+                <span class="rung-num">02</span>
+                <span class="rung-name">Doubtful</span>
+                <span class="rung-gloss"
+                  >Polite scepticism. You're signalling doubt without committing
+                  to a fight.</span
+                >
+              </div>
+              <div class="drill-chips">
+                <span class="drill-chip">I'm not convinced, to be honest.</span>
+                <span class="drill-chip">I'd question that.</span>
+                <span class="drill-chip">I'd be surprised.</span>
+                <span class="drill-chip">I'm not sure that holds up.</span>
+                <span class="drill-chip"
+                  >That doesn't quite ring true to me.</span
+                >
+              </div>
+            </div>
+            <div class="rung">
+              <div class="rung-head">
+                <span class="rung-num">03</span>
+                <span class="rung-name">Clear</span>
+                <span class="rung-gloss"
+                  >You disagree and you say so. Still perfectly polite.</span
+                >
+              </div>
+              <div class="drill-chips">
+                <span class="drill-chip">I see it differently.</span>
+                <span class="drill-chip">I don't think that's right.</span>
+                <span class="drill-chip">That's a bit of a stretch.</span>
+                <span class="drill-chip"
+                  >I'd argue the opposite, actually.</span
+                >
+                <span class="drill-chip">Honestly? I think that's wrong.</span>
+              </div>
+            </div>
+            <div class="rung">
+              <div class="rung-head">
+                <span class="rung-num">04</span>
+                <span class="rung-name">Firm</span>
+                <span class="rung-gloss"
+                  >You're not moving, and they can hear it.</span
+                >
+              </div>
+              <div class="drill-chips">
+                <span class="drill-chip"
+                  >I'm going to have to disagree there.</span
+                >
+                <span class="drill-chip">That doesn't stand up.</span>
+                <span class="drill-chip">Sorry — I just don't buy that.</span>
+                <span class="drill-chip"
+                  >With respect, that's not what happened.</span
+                >
+                <span class="drill-chip">I'll be straight with you: no.</span>
+              </div>
+            </div>
+            <div class="rung">
+              <div class="rung-head">
+                <span class="rung-num">05</span>
+                <span class="rung-name">Flat</span>
+                <span class="rung-gloss"
+                  >The door is shut. Use it rarely, and mean it when you
+                  do.</span
+                >
+              </div>
+              <div class="drill-chips">
+                <span class="drill-chip">No. That's not happening.</span>
+                <span class="drill-chip">That's simply not true.</span>
+                <span class="drill-chip"
+                  >I'm not even going to entertain that.</span
+                >
+                <span class="drill-chip">Absolutely not.</span>
+                <span class="drill-chip">That's a non-starter.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Idioms of the argument</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Six. These are the ones that come up when a disagreement is being
+            described rather than had — and every one of them will save you a
+            whole sentence of explaining.
+          </p>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">play devil's advocate</div>
+              <div class="idiom-meaning">
+                To argue a position you don't hold, to test it.
+              </div>
+              <div class="idiom-example">
+                "Let me play devil's advocate for a second — what if the price
+                isn't the problem?"
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">be on the fence</div>
+              <div class="idiom-meaning">
+                Undecided, genuinely. Not weak — often the honest answer.
+              </div>
+              <div class="idiom-example">
+                "I'm still on the fence about the whole thing, to be honest."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">that's beside the point</div>
+              <div class="idiom-meaning">
+                True, maybe, but irrelevant to what's being argued. Dismisses
+                without calling anyone wrong.
+              </div>
+              <div class="idiom-example">
+                "He was late, sure, but that's beside the point."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">miss the point</div>
+              <div class="idiom-meaning">
+                To answer something other than what was actually said. Sharper
+                than it looks — it's close to "you weren't listening".
+              </div>
+              <div class="idiom-example">
+                "I think you're missing the point. Nobody's blaming the team."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">agree to disagree</div>
+              <div class="idiom-meaning">
+                To stop arguing, on purpose, without either side giving in. Ends
+                a conversation politely.
+              </div>
+              <div class="idiom-example">
+                "I think we're just going to have to agree to disagree on this
+                one."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">talk past each other</div>
+              <div class="idiom-meaning">
+                Two people arguing about two different things without noticing.
+              </div>
+              <div class="idiom-example">
+                "We spent forty minutes talking past each other."
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">The verbs an argument is made of</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Twelve phrasal verbs. The single-word versions —
+            <em>oppose</em>, <em>concede</em>, <em>persuade</em>,
+            <em>reject</em>
+            — are all correct and all sound like a legal document. These are
+            what people say.
+          </p>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">push back on</div>
+              <div class="idiom-meaning">
+                To resist or challenge something, without rejecting it outright.
+                The most useful verb on this page.
+              </div>
+              <div class="idiom-example">
+                "I pushed back on the deadline and they moved it a week."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">back down</div>
+              <div class="idiom-meaning">
+                To stop insisting; to give up a position you were defending.
+              </div>
+              <div class="idiom-example">
+                "He wouldn't back down, even when everyone else had moved on."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">go along with</div>
+              <div class="idiom-meaning">
+                To accept something you don't really agree with, to keep the
+                peace.
+              </div>
+              <div class="idiom-example">
+                "I went along with it because nobody else objected."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">come round to</div>
+              <div class="idiom-meaning">
+                To change your mind slowly and end up agreeing. Takes
+                <em>-ing</em> or a noun.
+              </div>
+              <div class="idiom-example">
+                "She's finally come round to the idea of moving."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">stand by</div>
+              <div class="idiom-meaning">
+                To continue to support a decision or statement, especially under
+                pressure.
+              </div>
+              <div class="idiom-example">
+                "I stand by what I said in the meeting."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">talk someone into / out of</div>
+              <div class="idiom-meaning">
+                To persuade someone to do something — or not to. Followed by
+                <em>-ing</em>.
+              </div>
+              <div class="idiom-example">
+                "They talked me into staying, and I talked them out of hiring
+                him."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">rule out</div>
+              <div class="idiom-meaning">
+                To eliminate an option completely. The opposite of leaving the
+                door open.
+              </div>
+              <div class="idiom-example">
+                "I'm not ruling it out, I just don't think it's the first thing
+                to try."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">water down</div>
+              <div class="idiom-meaning">
+                To weaken something — a proposal, a message — usually to make it
+                acceptable to everyone.
+              </div>
+              <div class="idiom-example">
+                "By the third draft it had been watered down to nothing."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">pick holes in</div>
+              <div class="idiom-meaning">
+                To find and point out every small weakness in an argument.
+                Slightly critical of the person doing it.
+              </div>
+              <div class="idiom-example">
+                "He'll pick holes in it whatever you send him."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">shoot down</div>
+              <div class="idiom-meaning">
+                To reject an idea quickly and publicly. Blunt, and it stings.
+              </div>
+              <div class="idiom-example">
+                "My whole proposal got shot down in about ninety seconds."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">get at</div>
+              <div class="idiom-meaning">
+                To mean or imply. Almost always in a question:
+                <em>what are you getting at?</em>
+              </div>
+              <div class="idiom-example">
+                "Sorry — what exactly are you getting at here?"
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">hold up</div>
+              <div class="idiom-meaning">
+                To survive examination. Used of arguments, evidence and excuses.
+              </div>
+              <div class="idiom-example">
+                "That argument doesn't hold up if you look at last year."
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Fixed expressions, by move</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Grouped by what they <em>do</em> rather than what they mean.
+          </p>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Asking for the grounds</div>
+            <div class="vocab-chips">
+              <span class="chip">What makes you say that?</span>
+              <span class="chip">Where are you getting that from?</span>
+              <span class="chip">Says who, though?</span>
+              <span class="chip">Hang on — how do you know that?</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Conceding</div>
+            <div class="vocab-chips">
+              <span class="chip">Fair enough.</span>
+              <span class="chip">OK, you've got a point.</span>
+              <span class="chip">I hadn't thought of it that way.</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Conceding, then turning</div>
+            <div class="vocab-chips">
+              <span class="chip">I take your point, but...</span>
+              <span class="chip"
+                >I'm with you on the first bit, less so on the second.</span
+              >
+              <span class="chip">Even so, I'd still...</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Agreeing emphatically</div>
+            <div class="vocab-chips">
+              <span class="chip">Couldn't agree more.</span>
+              <span class="chip">Exactly — that's my whole point.</span>
+              <span class="chip">You've hit the nail on the head.</span>
+              <span class="chip">A hundred per cent.</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Arguing a side you don't hold</div>
+            <div class="vocab-chips">
+              <span class="chip"
+                >Let me argue the other side for a second.</span
+              >
+              <span class="chip">Just to push on that —</span>
+              <span class="chip"
+                >For the sake of argument, say you're right.</span
+              >
+              <span class="chip">I don't actually believe this, but...</span>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Closing it down</div>
+            <div class="vocab-chips">
+              <span class="chip">I think we're going round in circles.</span>
+              <span class="chip">We'll have to agree to disagree.</span>
+              <span class="chip">Look — I'll leave it there.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: THE STRENGTH DIAL -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">The <em>Strength Dial</em></div>
+          <div class="stage-sub">
+            One statement, five volumes. A statement appears, the dial gives you
+            a number, and you respond at exactly that strength — no louder, no
+            softer. The same opinion has to come out of your mouth five
+            different ways before the next statement unlocks.
+          </div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">How it runs</div>
+            <p>
+              Draw a statement. Roll the dial, or pick a rung. Answer at that
+              exact strength using the language on the panel — then keep going
+              until all five ticks are filled. Whoever isn't speaking pushes
+              back once, so nobody gets to answer into silence.
+            </p>
+          </div>
+
+          <div class="prompt-deck">
+            <div class="prompt-card">
+              <div class="prompt-text empty" id="stmt-text">
+                Hit "New statement" to start. Nothing here is my opinion — argue
+                with the sentence, not with me.
+              </div>
+            </div>
+            <div class="deck-controls">
+              <button class="btn primary" onclick="drawStatement()">
+                New statement
+              </button>
+              <button class="btn" onclick="rollDial()">Roll the dial</button>
+              <span class="deck-count" id="stmt-count"></span>
+            </div>
+          </div>
+
+          <div class="dial-panel">
+            <div class="dial-label">The dial — how hard you hit it</div>
+            <div class="dial-row" id="dial-row"></div>
+
+            <div class="dial-detail">
+              <div class="dial-detail-name" id="dial-name">
+                Nothing selected yet
+              </div>
+              <div class="dial-detail-gloss" id="dial-gloss">
+                Pick a rung above, or hit "Roll the dial" and take what you're
+                given.
+              </div>
+              <div class="drill-chips" id="dial-chips"></div>
+            </div>
+          </div>
+
+          <div class="dial-status" id="dial-status"></div>
+
+          <p class="panel-note">
+            Two rules that make this work. First: no expression twice on the
+            same statement — if you've used <em>I'm not convinced</em> once,
+            it's gone. Second: rung 1 still has to be a real answer. "I don't
+            know" isn't hedging, it's leaving.
+          </p>
+
+          <div class="reset-row">
+            <button class="btn" onclick="resetDial()">Start over</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Round two — you have to agree</div>
+          <p class="stage-sub" style="margin-bottom: 18px">
+            Disagreeing is the easy half. Agreeing without saying "yes, I agree"
+            is where most of the language above actually lives. Four positions —
+            agree hard, using the <em>agreeing emphatically</em> bank right
+            below, and then add something the other person didn't say.
+          </p>
+
+          <div class="chip-group">
+            <div class="chip-group-label">Agreeing emphatically</div>
+            <div class="vocab-chips">
+              <span class="chip">Couldn't agree more.</span>
+              <span class="chip">Exactly — that's my whole point.</span>
+              <span class="chip">You've hit the nail on the head.</span>
+              <span class="chip">A hundred per cent.</span>
+            </div>
+          </div>
+
+          <ul class="agree-list">
+            <li>
+              "Most meetings would be better with half the people in them."
+            </li>
+            <li>"You learn more from a bad manager than a good one."</li>
+            <li>
+              "Nobody has ever changed their mind because of an argument on the
+              internet."
+            </li>
+            <li>
+              "The best decisions get made in the ten minutes after the meeting
+              ends."
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">
+            Wrap-up: <em>what actually came out</em>
+          </div>
+
+          <div class="section-label">What stuck</div>
+          <ul class="q-list">
+            <li>
+              Open stage 2 and find three expressions you recognised on the page
+              but never once said out loud. Say each one now, in a sentence
+              about your own week.
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Before next class</div>
+
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Listening</div>
+              <div class="reflection-content">
+                One episode of
+                <a
+                  href="https://www.intelligencesquared.com/podcasts"
+                  target="_blank"
+                  rel="noopener"
+                  >Intelligence Squared</a
+                >
+                — a formal debate, two sides, an audience that votes before and
+                after.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      /* ---------- THE STRENGTH DIAL ---------- */
+      const STATEMENTS = [
+        "Remote work has been a disaster for anyone under thirty.",
+        "Brazil is a better place to live than anywhere in Europe.",
+        "If someone's late twice, they're telling you something.",
+        "This project is late because the spec was never finished. That's the whole story.",
+        "Nobody reads a forty-page report. Send one slide.",
+        "Football is boring now. It's all money.",
+        "You should never go back to a company you've already left.",
+        "Paying for a gym you don't use is just a donation.",
+        "The client is always at least partly right.",
+        "Learning a language after forty is a hobby, not a skill.",
+        "Cities are for young people. After that you leave.",
+        "A meeting that could have been an email is still better than the email.",
+        "Working with friends always ends badly.",
+        "Most people are underpaid and most people are also replaceable.",
+        "If your team needs you every single day, you've built it wrong.",
+        "Streaming has ruined films. Everything looks the same now.",
+        "Nobody should be managing people before they're thirty.",
+        "Any diet works if you stick to it, so the diet doesn't matter.",
+        "The right time to ask for a raise is the week after a win, not at review time.",
+        "Social media has made people worse at arguing, not better.",
+        "You should always tell a supplier the real reason you're leaving them.",
+        "Everyone should have to work in a restaurant for a year.",
+      ];
+
+      const RUNGS = [
+        {
+          name: "Hedged",
+          gloss:
+            "You're not really arguing. You're leaving the door open — and it still has to be an answer.",
+          chips: [
+            "I mean, maybe.",
+            "I'm not sure I'd go that far.",
+            "I suppose so, up to a point.",
+            "I can see it — I'm just not sure.",
+            "Possibly. I'd want to look at it properly.",
+          ],
+        },
+        {
+          name: "Doubtful",
+          gloss:
+            "Polite scepticism. You're signalling doubt without committing to a fight.",
+          chips: [
+            "I'm not convinced, to be honest.",
+            "I'd question that.",
+            "Hmm — I'd be surprised.",
+            "I'm not sure that holds up.",
+            "That doesn't quite ring true to me.",
+          ],
+        },
+        {
+          name: "Clear",
+          gloss: "You disagree and you say so. Still perfectly polite.",
+          chips: [
+            "I see it differently.",
+            "I don't think that's right.",
+            "That's a bit of a stretch.",
+            "I'd argue the opposite, actually.",
+            "Honestly? I think that's wrong.",
+          ],
+        },
+        {
+          name: "Firm",
+          gloss: "You're not moving, and they can hear it.",
+          chips: [
+            "I'm going to have to disagree there.",
+            "That doesn't stand up.",
+            "Sorry — I just don't buy that.",
+            "With respect, that's not what happened.",
+            "I'll be straight with you: no.",
+          ],
+        },
+        {
+          name: "Flat",
+          gloss: "The door is shut. Use it rarely, and mean it when you do.",
+          chips: [
+            "No. That's not happening.",
+            "That's simply not true.",
+            "I'm not even going to entertain that.",
+            "Absolutely not.",
+            "That's a non-starter.",
+          ],
+        },
+      ];
+
+      const dial = {
+        deck: [],
+        drawn: false,
+        selected: null,
+        hit: new Set(),
+      };
+
+      function shuffle(arr) {
+        const a = arr.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      function buildDial() {
+        const row = document.getElementById("dial-row");
+        row.innerHTML = "";
+        RUNGS.forEach((rung, i) => {
+          const btn = document.createElement("button");
+          btn.className = "dial-pos";
+          btn.id = "dial-pos-" + i;
+          btn.onclick = () => selectRung(i);
+          btn.innerHTML =
+            '<div class="dial-num">' +
+            (i + 1) +
+            '</div><div class="dial-name">' +
+            rung.name +
+            "</div>";
+          row.appendChild(btn);
+        });
+      }
+
+      function selectRung(i) {
+        dial.selected = i;
+        if (dial.drawn) dial.hit.add(i);
+
+        const rung = RUNGS[i];
+        document.getElementById("dial-name").textContent =
+          "Rung " + (i + 1) + " — " + rung.name;
+        document.getElementById("dial-gloss").textContent = rung.gloss;
+
+        const chips = document.getElementById("dial-chips");
+        chips.innerHTML = "";
+        rung.chips.forEach((text) => {
+          const span = document.createElement("span");
+          span.className = "drill-chip";
+          span.textContent = text;
+          chips.appendChild(span);
+        });
+
+        renderDialState();
+      }
+
+      function rollDial() {
+        const left = [0, 1, 2, 3, 4].filter((i) => !dial.hit.has(i));
+        const pool = left.length ? left : [0, 1, 2, 3, 4];
+        selectRung(pool[Math.floor(Math.random() * pool.length)]);
+      }
+
+      function drawStatement() {
+        if (!dial.deck.length) dial.deck = shuffle(STATEMENTS);
+
+        const text = dial.deck.pop();
+        const el = document.getElementById("stmt-text");
+        el.textContent = text;
+        el.classList.remove("empty");
+
+        dial.drawn = true;
+        dial.hit.clear();
+        dial.selected = null;
+
+        document.getElementById("dial-name").textContent =
+          "Nothing selected yet";
+        document.getElementById("dial-gloss").textContent =
+          'Pick a rung above, or hit "Roll the dial" and take what you\'re given.';
+        document.getElementById("dial-chips").innerHTML = "";
+
+        renderDeckCount();
+        renderDialState();
+      }
+
+      function renderDeckCount() {
+        document.getElementById("stmt-count").textContent =
+          dial.deck.length + " of " + STATEMENTS.length + " statements left";
+      }
+
+      function renderDialState() {
+        RUNGS.forEach((_, i) => {
+          const el = document.getElementById("dial-pos-" + i);
+          el.classList.toggle("active", dial.selected === i);
+          el.classList.toggle("done", dial.hit.has(i));
+        });
+
+        const status = document.getElementById("dial-status");
+        if (!dial.drawn) {
+          status.innerHTML =
+            "No statement on the table yet. Draw one, then work it up the dial.";
+          return;
+        }
+
+        const remaining = RUNGS.filter((_, i) => !dial.hit.has(i)).map(
+          (r) => r.name,
+        );
+
+        if (!remaining.length) {
+          status.innerHTML =
+            "<strong>All five done.</strong> Which one was hardest to say and still mean? Then draw the next statement.";
+        } else {
+          status.innerHTML =
+            "<strong>" +
+            dial.hit.size +
+            " of 5</strong> covered on this statement. Still to do: " +
+            remaining.join(" &middot; ");
+        }
+      }
+
+      function resetDial() {
+        dial.deck = shuffle(STATEMENTS);
+        dial.drawn = false;
+        dial.selected = null;
+        dial.hit.clear();
+
+        const el = document.getElementById("stmt-text");
+        el.textContent =
+          'Hit "New statement" to start. Nothing here is my opinion — argue with the sentence, not with me.';
+        el.classList.add("empty");
+
+        document.getElementById("dial-name").textContent =
+          "Nothing selected yet";
+        document.getElementById("dial-gloss").textContent =
+          'Pick a rung above, or hit "Roll the dial" and take what you\'re given.';
+        document.getElementById("dial-chips").innerHTML = "";
+
+        renderDeckCount();
+        renderDialState();
+      }
+
+      buildDial();
+      dial.deck = shuffle(STATEMENTS);
+      renderDeckCount();
+      renderDialState();
+    </script>
+  </body>
+</html>
