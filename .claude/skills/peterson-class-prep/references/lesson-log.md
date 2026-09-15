@@ -28,7 +28,7 @@ understood, which is a second read on his listening level.
 ---
 
 ## Lesson 1 — Getting Started
-`lesson_plan_0.html` · 10 September 2026 · diagnostic
+`lesson_plan_0.html` · 15 September 2026 · diagnostic
 
 Stages: Warm-up → Your First Toolkit → The Question Machine → Wrap-up
 

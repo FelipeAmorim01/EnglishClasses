@@ -238,7 +238,7 @@ Append one object to the `LESSONS` array in `Peterson/index.html`:
 {
   file: "lesson_plan_0.html",
   title: "Getting Started",
-  date: "10 September 2026",
+  date: "15 September 2026",
   desc: "One line describing what the class covers.",
 },
 ```
