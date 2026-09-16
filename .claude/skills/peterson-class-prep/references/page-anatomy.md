@@ -30,6 +30,11 @@ new component is added.
 **To build lesson N+1: copy `lesson_plan_N.html`.** Strip the widgets that do not
 apply, keep the base, add what is new.
 
+Two blocks of dead CSS were dropped at lesson 1 and should stay dropped:
+`.level-badge` (with `.lv-1`/`.lv-2`/`.lv-3`) and `.prompt-constraint`. Both are
+cut features — see the skill's "No pacing labels" and the question-deck note
+below — and leaving the styling in place is an invitation to reintroduce them.
+
 Design tokens, identical to Raffa's:
 
 ```css
@@ -186,6 +191,21 @@ for the "Next class" note.
 **Homework** — `.apply-box` > `.apply-label` + `.apply-lead` + `p.apply-text` +
 `a.apply-link`.
 
+**Language Tip** — `.rule-box` > `.rule-badge` ("Language Tip") + `.rule-title` +
+`.rule-lead` + `.rule-split` (two `.rule-card`s, each `.rule-card-head` +
+`.rule-formula` + `ul`) + `.rule-trap` (`.rule-trap-label` + two `p`) +
+`.rule-say` (`.rule-say-label` + `ol`). Copied from Raffa's lesson 6, where it
+is labelled *stage 2 closer, recurring* — it goes **last in the toolkit stage,
+after a `.divider`**, and holds the single most important rule of the class.
+
+Fill it that way on this track too: `.rule-split` contrasts the two things that
+get confused, `.rule-formula` is the shape rather than a sentence (accent green,
+with `span` turning the moving part orange), `.rule-trap` is the ✗ → ✓ pair plus
+*why*, and `.rule-say` is four sentences to say out loud. One difference from
+Raffa's: **his `.rule-lead` names the Portuguese** that causes the confusion
+(*"Portuguese covers both directions with emprestar"*). That is forbidden here —
+state the English rule and let Felipe say the Portuguese half out loud.
+
 **Misc** — `.section-label`, `.divider`, `.panel-note`, `.q-list`.
 
 ## Peterson-only components
@@ -217,18 +237,75 @@ reintroduce it.
 **Sentence builder** (`.builder`, `.builder-card`, `.builder-sentence`,
 `.builder-mode` > `.mode-label` + `.mode-chip`, `.builder-controls`,
 `.builder-count`) — generates a random grammatical sentence to say out loud, in
-positive / negative / question / mix mode. It drills exactly where Portuguese
-speakers break: the third-person `-s` and the `do`/`does` auxiliary.
+positive / negative / question / mix mode. **The shell is fixed; the generator
+is retuned for each lesson** to drill whatever that page teaches.
 
-The generator is data-driven — `B_SUBJ` (each with a `third` flag, and `qOk:
-false` for subjects that read badly as questions), `B_VERBS` (with `base`, `s`,
-a `time` flag and a `comp` list), and `B_TIME`. **Complements must be
-subject-neutral**, since any subject can be paired with any complement. Time
-phrases only attach to verbs flagged `time: true`, or you get "She lives in São
-Paulo every day".
+The generator is data-driven. `B_SUBJ` carries whatever the person-agreement of
+the day is, plus `qOk: false` for subjects that read badly as questions ("Does
+my boss …?", "Did my team …?"). Verb entries carry the forms, a `time` flag and
+a `comp` list; `B_TIME` holds the time phrases.
 
-If you change the generator, generate a dozen sentences in every mode and read
-them before shipping.
+`B_SUBJ` has a `third` flag, `B_VERBS` have `base` and `s`. It drills the
+third-person `-s` and `do`/`does`. **Complements must be subject-neutral**,
+since any subject can pair with any complement, and **time phrases only attach
+to verbs flagged `time: true`**, or you get "She lives in São Paulo every day".
+
+If you change the generator, generate a couple of dozen sentences in every mode
+and read all of them before shipping. A past-tense variant was built for lesson
+1 and read-tested this way; it caught three warts no amount of staring at the
+data arrays would have shown — a time clash ("had a good week last weekend"), a
+negative that needed *anything* rather than *something* ("didn't eat something
+quick"), and a complement whose `it` had no referent ("Was I very happy with
+it?").
+
+**That variant was then cut, and the lesson is in the cut.** Felipe on the
+builder: *"too fancy for something that is just for reading sentences."* A
+machine that hands Peterson a finished sentence only buys a reading rep, however
+good the grammar behind it is. If a widget is not making him **change**
+something, it is not earning its place. Lesson 1 replaced it with the
+transformation deck below; only lesson 0 still carries the builder, and lesson
+1 stripped its markup, its CSS, its generator and `pick()` entirely.
+
+**Verb machine** (`.drill-panel`, `.drill-chips` > `.drill-chip[.used]`,
+`.drill-line`, `.drill-controls` > `.spacer`, `.drill-status`) — built for
+lesson 1's irregular verbs, out of CSS that was already in the stylesheet
+unused. Shows `go → ?`, and the past form stays hidden until **Show the past**
+is pressed, so recall happens before the answer appears. `drawVerb()` pops from
+a shuffled index deck so nothing repeats until exhausted; the chip strip doubles
+as the progress display and as a direct picker — clicking a chip jumps to that
+verb, including one already struck through, which is how a verb gets re-drilled.
+
+It carries its own escalation and the page has to say so: first pass is
+listen-and-repeat (Felipe says the past form, Peterson repeats), second pass
+Peterson goes before the button. Without that note the widget silently breaks
+the listen-and-repeat rule for irregular verbs.
+
+**Transformation deck** (`.drill-panel` again, with `.chip-group-label` as the
+task line above `.drill-line`) — lesson 1's replacement for the sentence
+builder, and the better shape of the two. Each card is a hand-written
+`{ task, given, answer }`: the task label reads *Make it a question*, the line
+shows *You went home early.*, and the answer stays hidden until **Show the
+answer**, when the line becomes `given → answer` exactly like the verb machine.
+
+Hand-written beats generated here. Two dozen cards is a small enough set to
+write by hand, and writing them by hand means every sentence is checked rather
+than merely well-formed — no time clashes, no *something* in a negative. It also
+lets the deck be balanced on purpose: lesson 1's is exactly 12 `be` and 12
+`do`, so the panel-note's claim that half need *was/were* is literally true and
+the choice stays live on every card.
+
+`drawTransform()` pops from a shuffled copy, `revealTransform()` is a no-op with
+no current card, and `resetTransform()` restores the *rest* state — empty line,
+task line back to its waiting text, full count.
+
+**The task has to read as an instruction, not a heading.** It was first built as
+a `.chip-group-label` above the sentence — small, uppercase, muted — and Felipe
+asked for the hint to be added, having looked straight past it. Same words, same
+position; it just looked like a section title. It is now `.trans-task` >
+`.trans-task-label` ("Change it how?") + `.trans-task-value`, the value in bold
+`--accent2`, and it never goes blank: at rest and when the deck is exhausted it
+carries a `.waiting` modifier and says which button to press. A control that
+does nothing until you press something should say so on its face.
 
 ## Registering the lesson
 
