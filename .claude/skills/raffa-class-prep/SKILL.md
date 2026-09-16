@@ -138,7 +138,8 @@ details.
    yet; this is where he talks and you hear what is missing.
 2. **The toolkit** — the actual lesson. Vocabulary tables, idiom/phrasal-verb
    grids, chip banks of fixed expressions. This is the biggest stage and should
-   carry most of the 60–80 items.
+   carry most of the 60–80 items. It always ends with **the rule this week** —
+   see below.
 3. **The activity** — the machine that forces production. Prompts, a clock,
    interruptions, roleplays. Points back at the stage 2 language.
 4. **Wrap-up** — recall, not reflection. "Close the page, how many can you say
@@ -157,6 +158,45 @@ Column three is **a sentence for Raffa to say**, not an explanation of why the
 phrase works. A rule he reads is inert; a sentence he says is a rep. Build each
 one so the target pattern appears two or three times, so one reading gets him
 several reps. Set them in `<em>` so they read as speech.
+
+### The rule this week
+
+**Every lesson from 6 onwards closes stage 2 with one vocabulary rule** — the
+kind of thing people actually ask about, in a `.rule-box` marked with a
+`.rule-badge` reading **Language Tip**. One rule per class, never two. Felipe
+asked for this on 16 September 2026 and settled on the badge name himself, so
+keep the wording exactly — it is the fixture Raffa learns to look for, and it
+should read the same every week.
+
+"Language" rather than "Grammar" is deliberate: plenty of these are vocabulary,
+usage or collocation rather than grammar proper — *lend* vs. *borrow* is usage,
+*make* vs. *do* is collocation — and the broader word stays true every week.
+
+Good candidates are confusable pairs and sets: *lend* vs. *borrow*, *either* vs.
+*neither*, *anything / nothing / everything / something*, *make* vs. *do*, *say*
+vs. *tell*, *fewer* vs. *less*, *since* vs. *for*, *used to* vs. *be used to*.
+
+Two things make one of these worth a slot:
+
+- **Portuguese interference.** The best rules are the ones where Portuguese
+  merges what English splits — one *emprestar* covering both *lend* and
+  *borrow*, one *fazer* covering both *make* and *do*. That is a real error he
+  produces, not a textbook distinction.
+- **It touches the lesson's topic.** *lend* vs. *borrow* earned its place in the
+  money lesson because the roleplay is about money that was lent. A rule bolted
+  onto an unrelated topic is just a grammar exercise.
+
+Keep the shape: the badge, the pair, one line on why it trips a Portuguese
+speaker, the two sides side by side with a formula each, the trap written as
+✗ wrong → ✓ right, and three or four sentences describing **the same situation
+from both sides** for him to say out loud. The last part is what makes it a rep
+rather than a rule.
+
+The badge replaces the `.section-label` that would otherwise sit above the box —
+don't use both, or the block announces itself twice.
+
+Log which rule each lesson used in `references/lesson-log.md` so they do not
+repeat.
 
 ## House rules, learned the hard way
 

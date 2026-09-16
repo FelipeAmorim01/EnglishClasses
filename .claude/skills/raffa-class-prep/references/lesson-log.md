@@ -168,6 +168,111 @@ put up with (L4)
 
 ---
 
+## Lesson 6 — Money, Prices & Value
+`lesson_plan_6.html` · 16 September 2026
+
+Stages: Warm-up → The Money Toolkit → Three Conversations About Money → Wrap-up
+
+Non-business by design — the first lesson built entirely around a concrete
+lexical field rather than an argument shape. Built at 86 language items and
+trimmed by Felipe to roughly 54 in stage 2, plus 20 in the stage 3 sidebar. He
+cut steadily for density, so treat 60–80 as the *build* target and expect it to
+come down. Chosen partly
+because lessons 3, 4 and 5 all leaned on abstract discussion language, and money
+is the field where a fluent adult reverts to *expensive*, *cheap* and *a good
+price*.
+
+**Native-speaker patterns** (three-column table, column 3 read aloud):
+*it cost a fortune / it set me back (R$800)* · *it was a steal / going for next
+to nothing* · *I got ripped off / stung / I overpaid* · *money's tight / I'm a
+bit short / strapped for cash* · *I splashed out / I blew (R$2,000) on it* ·
+*it's on me / I'll get this one / put your money away* · *let's go halves /
+split it / chip in* · *putting money aside / squirrelling it away* · *the price
+has gone up / they've hiked it / it's crept up* · *it's not worth it / you're
+paying for the name* · *an impulse buy / on a whim* · *I'm broke / cleaned out /
+skint*
+
+**The value scale** (5 bands × 4 expressions) — the stage 2 reference, and the
+verdict he has to name before explaining it:
+1 A steal — *an absolute steal* · *a proper bargain* · *dirt cheap* · *going for
+next to nothing*
+2 Good value — *worth every penny* · *good value for money* · *you get what you
+pay for* · *it pays for itself*
+3 Fair enough — *about right* · *the going rate* · *reasonable enough* ·
+*nothing to complain about*
+4 A bit steep — *a bit steep* · *pricey* · *on the expensive side* · *a lot for
+what it is*
+5 A rip-off — *daylight robbery* · *a total rip-off* · *extortionate* · *they
+saw you coming*
+
+**Approximating a figure** (the sub-block that carries the most transfer, since
+vague quantity language is the real gap): *in the region of* · *somewhere
+around* · *give or take* · *north of / south of* · *a ballpark figure* · *the
+best part of* · *upwards of* · *anywhere between X and Y* · *a couple of grand* ·
+*and change*. Paired with saying three figures aloud twice — once exactly, once
+vaguely.
+
+**Idioms:** cost an arm and a leg · tighten your belt · live beyond your means ·
+make ends meet · money down the drain · not break the bank · in the red / in the
+black · a nest egg · penny-pinching · foot the bill · throw money at something ·
+burn a hole in your pocket
+
+**Phrasal verbs:** set (you) back · splash out (on) · chip in · put aside / put
+away · dip into · run up (a bill) · pay off · come to · knock off · cough up ·
+get by (on) · cut back (on)
+
+**Chip banks:** cut from stage 2 on 16 September as too much text on one page.
+The same expressions survive in the stage 3 sticky sidebar (Asking the price ·
+Reacting · Moving it · Approximating · Between friends), which is where they get
+used anyway — so the roleplay targets still all resolve, just from the sidebar
+rather than the toolkit. Worth copying that decision forward: a phrase bank is
+more useful beside the activity than stacked in the reference stage.
+
+**Language Tip:** *lend* vs. *borrow* — the first of the recurring stage-2 rule
+blocks Felipe asked for on 16 September 2026. He named the badge "Language Tip";
+keep it identical in every lesson. Chosen because Portuguese
+runs both directions through *emprestar*, and because Scenario B is about money
+that was lent. Carried *owe* and *pay back* with it.
+
+**Activity:** two hidden-brief roleplays, back to the `.negotiation-layout` +
+sticky sidebar pattern from lessons 1 and 2 — a price to argue (used car,
+private seller) and a friendship with money in it (R$1,200 lent four months
+ago). New component: `.lang-target`, a "land all six" strip above each scenario
+naming six stage-2 expressions that have to appear in that scene. That strip is
+what keeps a roleplay from drifting into a haggling exercise he could already do
+in Portuguese.
+
+A third scenario — a R$3,000 bathroom quote invoiced at R$5,400 — was written
+and then cut on 16 September as too much for one class. Worth rebuilding if a
+"sorting things out in real life" lesson ever happens.
+
+**Wrap-up:** the 90-second best-buy / worst-buy task is done **in class**, as the
+last thing that happens, not set as homework. Homework is listening only.
+
+**Homework:** voice note — 90 seconds on the best and worst things you've ever
+bought, prices said aloud both exactly and approximately, value-scale band named
+before it's explained. Plus one episode of *Planet Money*, listening only for how
+often a figure gets approximated and which expression does it.
+
+**Recycled into the warm-up:** turn out (L4) · off the beaten track (L2) · meet
+halfway (L1) · I could go either way (L5)
+
+---
+
+## Rules used so far
+
+One per lesson, at the bottom of stage 2. Don't repeat one.
+
+- L6 — *lend* vs. *borrow*
+
+Queued, roughly best first (Portuguese-interference ones first, since those are
+errors he actually produces): *make* vs. *do* · *say* vs. *tell* · *either /
+neither / both* · *anything / nothing / everything / something* · *used to* vs.
+*be used to* · *since* vs. *for* · *fewer* vs. *less* · *remember / remind* ·
+*bring* vs. *take* · *win* vs. *earn* vs. *gain*.
+
+---
+
 ## Not yet covered
 
 Topic ideas raised and not used, with the language each would carry:
@@ -180,6 +285,8 @@ Topic ideas raised and not used, with the language each would carry:
   returning things; the escalation ladder from polite to immovable.
 - **Taste and recommending** — comparison shortcuts, intensity and enthusiasm
   vocabulary, describing something to someone who has never seen it.
+- **Feeling rough** — symptoms, aches and doctors; a field where fluent adults
+  describe illness like children because they have never needed to.
 - **When things go wrong at work** — accountability language, escalating upward,
   the vocabulary of uncertainty.
 - **Your professional story** — career narrative retold for different audiences.

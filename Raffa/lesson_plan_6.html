@@ -1,0 +1,2119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation &mdash; Lesson 6</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- THE VALUE SCALE (stage 2 reference) ---------- */
+      .value-scale {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .value-band {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 14px 15px 16px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .value-band:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .value-band:nth-child(2) {
+        border-top-color: #4a7a52;
+      }
+      .value-band:nth-child(3) {
+        border-top-color: #8a7a45;
+      }
+      .value-band:nth-child(4) {
+        border-top-color: #a86a35;
+      }
+      .value-band:nth-child(5) {
+        border-top-color: #b85c2a;
+      }
+
+      .value-band-head {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 3px;
+      }
+
+      .value-band-note {
+        font-size: 0.7rem;
+        color: var(--muted);
+        line-height: 1.45;
+        margin-bottom: 11px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .value-band ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .value-band li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.87rem;
+        color: var(--text);
+        line-height: 1.35;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .value-scale {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .value-band {
+          padding: 14px 16px;
+        }
+
+        .lang-target {
+          padding: 11px 14px;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Money, Prices &amp; Value — Lesson 6</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Money Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Two Conversations About Money</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">
+            Warm-up: <em>the subject you go quiet on</em>
+          </div>
+          <div class="stage-sub">
+            Money is the field where a fluent adult suddenly sounds like a
+            beginner. You can argue a position, tell a story and run a meeting
+            in English — and then someone asks what you paid for something and
+            you get <em>expensive</em>, <em>cheap</em> and
+            <em>a good price</em>. There are about ninety other things to say.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              Best thing you've ever bought — the one that turned out to be
+              worth every cent. And the worst.
+            </li>
+            <li>
+              Do you haggle, or do you just pay what's asked? Has that changed
+              as you've got older?
+            </li>
+            <li>
+              Are you someone who talks about money easily, or is it a subject
+              you go quiet on?
+            </li>
+            <li>
+              Last time you and someone else had to meet halfway on money —
+              splitting something, agreeing a price, deciding who pays. How did
+              it end?
+            </li>
+            <li>
+              Overpaying or being too tight — which mistake do you make more
+              often?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: THE MONEY TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">The <em>Money Toolkit</em></div>
+          <div class="stage-sub">
+            Everything here is for stage 3, where you'll need it under a bit of
+            pressure. Read the third column of the table out loud — each
+            sentence is built to give you the pattern two or three times in one
+            go.
+          </div>
+
+          <div class="section-label">What you'd say · what gets said</div>
+
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th style="width: 22%">Correct</th>
+                <th style="width: 26%">What's actually said</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>It was very expensive.</td>
+                <td>it cost a fortune · it set me back (R$800)</td>
+                <td>
+                  <em
+                    >That kitchen cost us a fortune, and the oven alone set me
+                    back three thousand — which is a lot for what it is.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>It was very cheap.</td>
+                <td>it was a steal</td>
+                <td>
+                  <em
+                    >The bike was a steal — forty euros only (the owner was
+                    moving out that weekend).</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I paid too much for it.</td>
+                <td>I got ripped off · I got stung · I overpaid</td>
+                <td>
+                  <em
+                    >I got ripped off on the airport taxi, properly stung — I
+                    overpaid by about triple and I knew it halfway through the
+                    ride.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I don't have much money this month.</td>
+                <td>money's tight · I'm a bit short · strapped for cash</td>
+                <td>
+                  <em
+                    >Money's tight this month and I'm a bit short until Friday —
+                    if you're strapped for cash too, let's do something that
+                    costs nothing.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I spent a lot of money on it.</td>
+                <td>I splashed out on it · I blew (R$2,000) on it</td>
+                <td>
+                  <em
+                    >I splashed out on a decent mattress last year — blew about
+                    two thousand on it — and it's the one thing I'd splash out
+                    on again.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I will pay.</td>
+                <td>it's on me · I'll get this one</td>
+                <td>
+                  <em
+                    >Put your money away — this one's on me. You got the last
+                    one, so I'll get this one and then we're even.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>We will divide the bill.</td>
+                <td>let's go halves · split it · we'll all chip in</td>
+                <td>
+                  <em
+                    >Let's go halves. Actually there's six of us, so we'll all
+                    chip in and split it by couple.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I am saving money.</td>
+                <td>putting money aside · squirrelling it away</td>
+                <td>
+                  <em
+                    >I've been putting a bit aside every month, just
+                    squirrelling it away, and after two years of putting money
+                    aside it finally looks like something.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>The price increased.</td>
+                <td>the price has gone up · they've hiked it</td>
+                <td>
+                  <em
+                    >The price has gone up again — they've hiked it twice this
+                    year.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>It is not worth that price.</td>
+                <td>it's not worth it · you're paying for the name</td>
+                <td>
+                  <em
+                    >It's a nice jacket, but it's not worth it at that price —
+                    you're paying for the name, not the coat.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I have no money at all.</td>
+                <td>I'm broke · I'm cleaned out</td>
+                <td>
+                  <em
+                    >After the holiday I was completely broke — cleaned out and
+                    living on rice for two weeks.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <div class="section-label">
+            The value scale — five verdicts on a price
+          </div>
+          <div class="value-scale">
+            <div class="value-band">
+              <div class="value-band-head">A steal</div>
+              <div class="value-band-note">You can't believe your luck.</div>
+              <ul>
+                <li>an absolute steal</li>
+                <li>a real bargain</li>
+                <li>dirt cheap</li>
+              </ul>
+            </div>
+            <div class="value-band">
+              <div class="value-band-head">Good value</div>
+              <div class="value-band-note">You'd pay it again tomorrow.</div>
+              <ul>
+                <li>worth every penny</li>
+                <li>good value for money</li>
+                <li>it pays for itself</li>
+              </ul>
+            </div>
+            <div class="value-band">
+              <div class="value-band-head">Fair enough</div>
+              <div class="value-band-note">No strong feeling either way.</div>
+              <ul>
+                <li>about right</li>
+                <li>the going rate</li>
+                <li>reasonable enough</li>
+                <li>nothing to complain about</li>
+              </ul>
+            </div>
+            <div class="value-band">
+              <div class="value-band-head">A bit steep</div>
+              <div class="value-band-note">
+                You'll pay — and mention it twice.
+              </div>
+              <ul>
+                <li>a bit steep</li>
+                <li>pricey</li>
+                <li>a lot for what it is</li>
+              </ul>
+            </div>
+            <div class="value-band">
+              <div class="value-band-head">A rip-off</div>
+              <div class="value-band-note">You walk away.</div>
+              <ul>
+                <li>daylight robbery</li>
+                <li>a total rip-off</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">
+            Saying the figure without committing to it
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">Approximating</div>
+            <div class="vocab-chips">
+              <span class="chip">in the region of</span>
+              <span class="chip">somewhere around</span>
+              <span class="chip">give or take</span>
+              <span class="chip">a ballpark figure</span>
+              <span class="chip">anywhere between X and Y</span>
+              <span class="chip">a couple of grand</span>
+            </div>
+          </div>
+          <div class="panel-note">
+            Say these three out loud, twice each — once exactly, once vaguely:
+            <strong>R$47,500</strong> · <strong>R$1,200</strong> ·
+            <strong>R$380</strong>. Exactly is
+            <em>forty-seven thousand five hundred</em>. Vaguely is
+            <em>the best part of fifty grand</em>. The second one is the harder
+            skill and the one that actually comes up.
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Idioms</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">cost an arm and a leg</div>
+              <div class="idiom-meaning">Be painfully expensive.</div>
+              <div class="idiom-example">
+                <em
+                  >The dental work cost an arm and a leg, and that was with
+                  insurance.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">tighten your belt</div>
+              <div class="idiom-meaning">Cut spending because you have to.</div>
+              <div class="idiom-example">
+                <em
+                  >We've had to tighten our belts a bit since the rent went
+                  up.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">make ends meet</div>
+              <div class="idiom-meaning">
+                Have just enough to cover what you owe.
+              </div>
+              <div class="idiom-example">
+                <em>Two jobs, and they're still barely making ends meet.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">money down the drain</div>
+              <div class="idiom-meaning">
+                Spending with nothing to show for it.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >Four months of a gym I never went to — money straight down
+                  the drain.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">not break the bank</div>
+              <div class="idiom-meaning">
+                Not cost more than you can afford.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >Somewhere decent, but nothing that's going to break the
+                  bank.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">in the red / in the black</div>
+              <div class="idiom-meaning">
+                Overdrawn, losing money / back in profit.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >We were in the red for most of the first year and only just
+                  went back into the black.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">penny-pinching</div>
+              <div class="idiom-meaning">
+                Mean with money, in a small-minded way.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >There's being careful, and there's penny-pinching — splitting
+                  a bill to the cent is the second one.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">foot the bill</div>
+              <div class="idiom-meaning">
+                End up paying, usually for other people.
+              </div>
+              <div class="idiom-example">
+                <em>Guess who footed the bill for the entire weekend.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">throw money at something</div>
+              <div class="idiom-meaning">
+                Spend heavily instead of fixing the real problem.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >They keep throwing money at it instead of asking why it keeps
+                  happening.</em
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Phrasal verbs</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">set (you) back</div>
+              <div class="idiom-meaning">
+                Cost — always with a figure after it.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >A decent laptop will set you back about six thousand these
+                  days.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">splash out (on)</div>
+              <div class="idiom-meaning">
+                Spend freely on something nice, deliberately.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >We splashed out on business class for once, and I regret
+                  nothing.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">chip in</div>
+              <div class="idiom-meaning">Each contribute a share.</div>
+              <div class="idiom-example">
+                <em
+                  >If everyone chips in twenty, we can cover the whole
+                  thing.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">put aside / put away</div>
+              <div class="idiom-meaning">Save a bit at a time, on purpose.</div>
+              <div class="idiom-example">
+                <em
+                  >I put a bit aside every month without really noticing it.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">run up (a bill)</div>
+              <div class="idiom-meaning">Accumulate a large bill or debt.</div>
+              <div class="idiom-example">
+                <em>They ran up a four-hundred-euro bar tab in one night.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">pay off</div>
+              <div class="idiom-meaning">
+                Clear a debt — or turn out to be worth it.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >We finally paid off the car, and the extra we spent on good
+                  tyres really paid off.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">come to</div>
+              <div class="idiom-meaning">Add up to, total.</div>
+              <div class="idiom-example">
+                <em>That comes to three hundred and twenty altogether.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">get by (on)</div>
+              <div class="idiom-meaning">Manage on a limited amount.</div>
+              <div class="idiom-example">
+                <em
+                  >You can get by on very little there if you don't eat out.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">cut back (on)</div>
+              <div class="idiom-meaning">
+                Reduce what you spend on something.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >We've cut back on eating out, not on travelling — that's the
+                  one thing we won't cut back on.</em
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="rule-box">
+            <div class="rule-badge">Language Tip</div>
+            <div class="rule-title">lend vs. borrow</div>
+            <div class="rule-lead">
+              Portuguese covers both directions with <em>emprestar</em>. English
+              splits them into two verbs, and the only thing that separates them
+              is which way the money is travelling. Get the direction right and
+              the grammar follows on its own.
+            </div>
+
+            <div class="rule-split">
+              <div class="rule-card">
+                <div class="rule-card-head">lend — it leaves your hand</div>
+                <div class="rule-formula">
+                  lend <span>someone</span> something<br />
+                  lend something <span>to</span> someone
+                </div>
+                <ul>
+                  <li>I lent him R$1,200 back in March.</li>
+                  <li>Could you lend me twenty until Friday?</li>
+                  <li>I lent it to a friend and never saw it again.</li>
+                </ul>
+              </div>
+              <div class="rule-card">
+                <div class="rule-card-head">
+                  borrow — it comes into your hand
+                </div>
+                <div class="rule-formula">
+                  borrow something <span>from</span> someone
+                </div>
+                <ul>
+                  <li>I borrowed R$1,200 from him back in March.</li>
+                  <li>Could I borrow twenty until Friday?</li>
+                  <li>She borrowed it from a friend and never gave it back.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-trap">
+              <div class="rule-trap-label">The trap</div>
+              <p>
+                ✗ <em>Can you borrow me twenty?</em> &nbsp;→&nbsp; ✓
+                <em>Can you lend me twenty?</em> or ✓
+                <em>Can I borrow twenty?</em>
+              </p>
+              <p>
+                <strong>borrow</strong> never takes two objects. You borrow
+                <em>something</em>, and if you name the other person it is
+                always <em>from</em> them — never <em>borrow me</em>,
+                <em>borrow you</em>, <em>borrow him</em>.
+              </p>
+            </div>
+
+            <div class="rule-say">
+              <div class="rule-say-label">
+                Same event, four ways — say all four out loud
+              </div>
+              <ol>
+                <li>I lent her the money in March.</li>
+                <li>She borrowed the money from me in March.</li>
+                <li>She still owes me eight hundred of it.</li>
+                <li>She paid me back last week — well, half of it.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: THE ROLEPLAYS -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">Two <em>conversations about money</em></div>
+          <div class="stage-sub">
+            Two roleplays. You play one side — I'll play the other. The first is
+            a price to be argued; the second is a friendship with money sitting
+            in the middle of it.
+          </div>
+
+          <div class="scenario-intro">
+            <div class="intro-label">How it works</div>
+            <p>
+              You only see your own brief. Every figure gets said out loud in
+              English — no writing numbers down, no switching to Portuguese for
+              the price. Each scene has six expressions attached to it — some
+              from the toolkit, the rest in the sidebar on the right. Land all
+              six before the scene ends.
+            </p>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- SCENARIO A -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario A — The Car That's Almost Right
+                  <span>Buyer vs. Private Seller</span>
+                </div>
+                <div class="scenario-numbers">
+                  Advertised at R$48,000. You've driven forty minutes to see it.
+                  Saturday morning, on the street outside their building.
+                </div>
+
+                <div class="lang-target">
+                  <div class="lang-target-label">Land all six</div>
+                  <em>What sort of figure are we talking?</em> ·
+                  <em>Is there any movement on that?</em> ·
+                  <em>a bit steep</em> · <em>a lot for what it is</em> ·
+                  <em>knock (X) off</em> · <em>That's my limit, I'm afraid.</em>
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">Your role — Buyer</div>
+                    <ul>
+                      <li>
+                        The car is genuinely good, but the tyres are worn and
+                        there's a scratch along the door.
+                      </li>
+                      <li>
+                        You have R$44,000. You could stretch to R$46,000 and
+                        that is a hard ceiling.
+                      </li>
+                      <li>
+                        You want this car. That shouldn't be obvious in the
+                        first two minutes.
+                      </li>
+                      <li>
+                        Two others are advertised cheaper — further away, higher
+                        mileage. Useful, and true.
+                      </li>
+                      <li>
+                        Get a number out of them before you name one of your
+                        own.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-a">
+                    <div class="position-role">
+                      Counterpart — Private seller
+                    </div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          The money is needed by Friday — it's the deposit on a
+                          flat.
+                        </li>
+                        <li>
+                          Two time-wasters have already been and gone this week.
+                        </li>
+                        <li>
+                          R$43,500 is acceptable if genuinely pushed. Open by
+                          holding at R$48,000 and don't move for a while.
+                        </li>
+                        <li>
+                          There's another viewing booked for this evening. True
+                          — though they cancelled once already. Mention it
+                          anyway.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-a', this)"
+                >
+                  Reveal seller brief
+                </button>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- SCENARIO B -->
+              <div class="scenario-block">
+                <div class="scenario-name">
+                  Scenario B — The Money You Lent
+                  <span>You vs. a Friend</span>
+                </div>
+                <div class="scenario-numbers">
+                  R$1,200, lent four months ago. No date was ever agreed. You're
+                  having a coffee.
+                </div>
+
+                <div class="lang-target">
+                  <div class="lang-target-label">Land all six</div>
+                  <em>money's tight</em> · <em>I'm a bit short</em> ·
+                  <em>strapped for cash</em> · <em>I still owe you for…</em> ·
+                  <em>Are we square?</em> · <em>Don't worry about it.</em>
+                </div>
+
+                <div class="position-split">
+                  <div class="position-card mine">
+                    <div class="position-role">
+                      Your role — The one who lent it
+                    </div>
+                    <ul>
+                      <li>
+                        You lent R$1,200 in March. It was urgent at the time and
+                        nobody mentioned paying it back.
+                      </li>
+                      <li>
+                        Since then there's been a trip to Buenos Aires and a new
+                        pair of headphones. You noticed. You'd rather not say
+                        so.
+                      </li>
+                      <li>
+                        Your car needs R$1,800 of work in two weeks. That's why
+                        it's suddenly a problem.
+                      </li>
+                      <li>
+                        You want the money and you want the friendship. If it
+                        comes to choosing, choose the friendship.
+                      </li>
+                      <li>
+                        Raise it in the first minute. Don't circle it for ten.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="position-card counterpart" id="reveal-b">
+                    <div class="position-role">Counterpart — The friend</div>
+                    <div class="hint-text">Hidden.</div>
+                    <div class="position-content">
+                      <ul>
+                        <li>
+                          You remember R$400, not R$1,200 — you assumed the rest
+                          settled an older debt from years back.
+                        </li>
+                        <li>
+                          Money is tight, but not desperate. Half now and half
+                          next month is doable.
+                        </li>
+                        <li>
+                          Raised gently, you're apologetic and offer instalments
+                          straight away.
+                        </li>
+                        <li>
+                          Made to sound like an accusation, you get defensive
+                          and bring up the weekend you paid for everything.
+                        </li>
+                        <li>
+                          Don't volunteer the full figure until you're asked for
+                          it directly.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="reveal-toggle"
+                  onclick="toggleReveal('reveal-b', this)"
+                >
+                  Reveal friend brief
+                </button>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Within reach</div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Asking the price</div>
+                <div class="vocab-chips">
+                  <span class="chip">What sort of figure are we talking?</span>
+                  <span class="chip">Is that your best price?</span>
+                  <span class="chip">What does that include?</span>
+                  <span class="chip">Anything on top of that?</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Reacting</div>
+                <div class="vocab-chips">
+                  <span class="chip">That's more than I had in mind.</span>
+                  <span class="chip">That seems steep for what it is.</span>
+                  <span class="chip">a lot for what it is</span>
+                  <span class="chip">How is it that much?</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Moving it</div>
+                <div class="vocab-chips">
+                  <span class="chip">Is there any movement on that?</span>
+                  <span class="chip">Could you meet me at (X)?</span>
+                  <span class="chip">knock (X) off</span>
+                  <span class="chip">That's my limit, I'm afraid.</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Approximating</div>
+                <div class="vocab-chips">
+                  <span class="chip">in the region of</span>
+                  <span class="chip">give or take</span>
+                  <span class="chip">north of / south of</span>
+                  <span class="chip">the best part of</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Between friends</div>
+                <div class="vocab-chips">
+                  <span class="chip">I still owe you for (X).</span>
+                  <span class="chip">Are we square?</span>
+                  <span class="chip">Don't worry about it.</span>
+                  <span class="chip">Get me next time.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">
+            Wrap-up: <em>what you can still say</em>
+          </div>
+
+          <div class="section-label">Close the page first</div>
+
+          <div class="apply-box">
+            <div class="apply-label">Out loud, now</div>
+            <div class="apply-lead">
+              Ninety seconds. The best thing you've ever bought, and the worst.
+            </div>
+            <ol class="apply-steps">
+              <li>
+                Give the actual price of each one, said out loud approximately.
+              </li>
+              <li>
+                Put each one on the value scale and name the band before you
+                explain it.
+              </li>
+              <li>
+                Finish with the thing you'd splash out on again without thinking
+                twice.
+              </li>
+            </ol>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Before next class</div>
+
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Listening</div>
+              <div class="reflection-content">
+                One episode of
+                <a
+                  href="https://www.npr.org/podcasts/510289/planet-money"
+                  target="_blank"
+                  rel="noopener"
+                  >Planet Money</a
+                >
+                — twenty minutes, money in ordinary speech.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      /* ---------- HIDDEN BRIEFS ---------- */
+      function toggleReveal(id, btn) {
+        const card = document.getElementById(id);
+        if (!btn.dataset.origLabel) btn.dataset.origLabel = btn.textContent;
+        const revealed = card.classList.toggle("revealed");
+        btn.textContent = revealed ? "Hide brief again" : btn.dataset.origLabel;
+      }
+    </script>
+  </body>
+</html>

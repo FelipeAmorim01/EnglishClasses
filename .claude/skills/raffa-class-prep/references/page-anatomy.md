@@ -165,6 +165,15 @@ while talking.
 `<ol class="apply-steps">`, or `.reflection-grid` > `.reflection-row` >
 `.reflection-label` + `.reflection-content`.
 
+**Vocabulary rule** — `.rule-box` > `.rule-badge` (always reads "Language Tip";
+solid orange marker, and it stands in for the section label above the box) +
+`.rule-title` + `.rule-lead` +
+`.rule-split` > two `.rule-card`s (each `.rule-card-head` + `.rule-formula` +
+`ul`), then `.rule-trap` (+ `.rule-trap-label`) and `.rule-say` (+
+`.rule-say-label` + `ol`). Closes stage 2 in every lesson from 6 onwards —
+see the main skill file for what belongs in one. `.rule-formula` marks the
+moving part in `<span>`, which renders orange against the green.
+
 **Misc** — `.section-label` (small caps section heading), `.divider`,
 `.panel-note` (small muted explanatory text), `.reset-row`.
 
@@ -218,10 +227,13 @@ from the array, so nothing else needs editing.
 Set `soon: true` for a class that is not ready — it renders as a dashed,
 unclickable card.
 
-**Numbering:** files are zero-indexed, `<title>` is one-indexed, and the library
-labels by array position. So `lesson_plan_4.html` carries
-`<title>English Conversation — Lesson 5</title>` and appears as "Lesson 4". This
-mismatch is the established convention — reproduce it, do not correct it.
+**Numbering:** `lesson_plan_N.html` is "Lesson N" everywhere — the `<title>`, the
+header subtitle and the library card. So `lesson_plan_6.html` carries
+`<title>English Conversation — Lesson 6</title>` and appears as "Lesson 6". The
+`<title>` used to run one ahead of the file name; that was corrected on
+12 September 2026 and this file described the old mismatch until 16 September.
+`lesson_plan_0.html` is the one exception — its header reads "Experimental
+Lesson" and carries no number.
 
 ## Mobile
 
