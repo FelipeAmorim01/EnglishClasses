@@ -82,7 +82,7 @@ second roleplay scene, and a three-item homework list.
 ---
 
 ## Lesson 1 — Last Week
-`lesson_plan_1.html` · 22 September 2026 · built 16 September 2026, not yet taught
+`lesson_plan_1.html` · 16 September 2026 · the day after the diagnostic
 
 Stages: Warm-up → Your Past Toolkit → The Time Machine → Wrap-up
 
