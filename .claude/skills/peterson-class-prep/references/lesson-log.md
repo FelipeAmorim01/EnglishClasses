@@ -157,38 +157,129 @@ lesson they are decisions about one page.
 
 ---
 
+## Lesson 2 — Next Week
+`lesson_plan_2.html` · 29 September 2026
+
+Stages: Warm-up → Your Future Toolkit → The Week Ahead → Wrap-up
+
+**Pitched a step higher, at Felipe's request** — *"a little more higher level
+than the previous ones"*, then *harder still* when offered the choice. Three
+futures — *going to*, *will* for offers and promises, *I'm meeting …* — plus how
+sure you are, plus the no-*will*-after-*if* rule. Harder additions on top of the
+first proposal: *unless*, *as soon as / before / after / until*, *Shall I …?*,
+*should* for expectation and *be supposed to*.
+
+**Warm-up:** a new ladder, harder than lesson 1's (the fifth rung is *If the
+meeting finishes early, I'll call you as soon as I get home*), then the Friday
+version of lesson 1's Monday exchange — *Any plans for the weekend?* — **held
+for real rather than repeated**: four numbered steps (I ask · you answer · you
+keep it going · swap and close), where the answer chips are **sentence starters
+ending in …** (*I'm seeing … on Saturday* · *I might … if the weather's good*)
+that can only be finished with something true. On the swap, Felipe answers
+short on purpose and Peterson has to pull two more details out.
+
+**Toolkit**, seven numbered blocks, each with its own cue:
+
+1. **going to** — present simple → going to table, *gonna* as a listen-only chip
+   group (said so on the page). Fix cards: *I go to call you* · *Next week I
+   travel to Recife* · *going to works* · *What you are going to do?*
+2. **want to, would like to, hoping to, thinking of** — a scale from idea to
+   decision, *someone else's plan for you* (*she wants me to …*). Fix cards:
+   *I want that you come* · *I like to go* for *I'd like to* · *thinking to* ·
+   *Would you like go*.
+3. **In the diary: I'm meeting …** — present continuous for arrangements, with
+   lesson 1's carried time phrases in future form. Fix cards: *in the next
+   Friday* · *after two weeks* · *this night* · *Are you do*.
+4. **will: offers and promises** — *Shall I / Shall we*. Fix cards:
+   *I help you with that* · *Do I open the window?* · *will to* · *won't* said
+   like *want* (pronunciation).
+5. **How sure are you?** — definitely / probably / might / probably won't /
+   should / be supposed to. Fix cards: *will probably not* · *maybe no* ·
+   *might to* · *I suppose to*.
+6. **If, when, as soon as** — present in the time/condition half, *will* in the
+   other; lesson 1's sequencing words as *Telling a plan in order*. Fix cards:
+   *If I will have* · *when I will arrive* · *wait you* · *unless it doesn't*.
+7. **Words for plans** — make / take / changing a plan / looking forward to.
+   Three of the nine parked false friends used here, in future form: *make a
+   course* · *lose the bus* · *pass the weekend* — plus *looking forward to see*.
+
+**Language Tip:** *will, might vs. going to, want to* — which words take *to*
+before the verb and which never do, with the base verb after both. Trap: *I will
+to call you* · *Would you like go for a coffee?* It is the join every block
+depends on: the same error shows up in fix cards in blocks 1, 2, 4, 5 and 7.
+
+**Cut during review, do not reintroduce:** *going to vs. will* as the Language
+Tip (decided before vs. deciding now). Felipe: *"too niche"* — he doesn't need
+to know it. The framing went with it everywhere else on the page: block 4 is
+*will* for offers and promises, not *will* as a decision made on the spot, and
+neither the stage sub nor the transformation deck talks about choosing between
+futures.
+
+**Also cut: the listen-and-repeat phrase bank** in the warm-up — the *"I say
+it, you say it back"* shape copied from lesson 1's *Monday morning* block.
+Felipe: *"I don't want this to be plain repetition and boring."* A phrase bank
+that only gets repeated is a reading rep in disguise, the same objection as the
+sentence builder. The replacement makes him finish the phrases with his own
+content and ask real follow-ups.
+
+**Activity:** the Week Ahead — a 26-card deck of two-part future questions;
+**Change the sentence**, 24 hand-written cards, four each of *Make it a plan for
+tomorrow* / *Answer it with an offer* / *Make it less sure* / *Put it in the
+diary* / *Join them with …* / *Make it negative*. The joining cards give both
+halves with *will* in them, so one half has to lose it. Roleplay: *Finding a
+time* — Peterson's full week shown as a diary (`.reflection-grid` reused, day
+per row), Felipe as a colleague who needs an hour before Friday; halfway
+through, the presentation moves to Thursday afternoon, when the diary has him
+in Brasília.
+
+**Homework:** BBC *English at Work*, episode 3 — The Crisis (verified 200).
+A "count the *I'll*s" task was drafted and dropped: the page's visible
+transcript has none, so the instruction could not be checked.
+
+**Next class, as named on the page:** comparatives and superlatives.
+
+**Realistic reach:** blocks 1–5 again, if the pace holds — this page is harder,
+so possibly fewer. Block 6 is the one to protect: it carries the rule most
+likely to be wrong in real speech (*If I will …*).
+
+---
+
 ## Carried over
 
 From **lesson 0**: block 6 (Yesterday) only. Blocks 1–5 were all reached, which
 is the pace fact worth remembering.
 
-From **lesson 1**: to be recorded after the class. Expect blocks 6 and 7.
+From **lesson 1**: blocks 6 (When it happened) and 7 (Telling it in order) —
+blocks 1–5 were reached, the same pace as lesson 0. Both were folded into
+lesson 2 rather than re-run: the time phrases come back in their future form in
+block 3 (*next* as the opposite of *last*, *in* as the opposite of *ago*), and
+the sequencing words come back in block 6 as *Telling a plan in order*.
+
+From **lesson 2**: to be recorded after the class.
 
 ---
 
 ## Not yet covered
 
-Sequenced roughly by what he needs next, now that the past is done:
+Sequenced roughly by what he needs next, now that all three time frames are done:
 
-- **Going to / want to / would like to** — plans. With the present and the past
-  behind him this is the last of the three time frames, and it is what the
-  lesson 1 page names as coming up next.
+- **Comparatives and superlatives** — named on the lesson 2 page as next.
+  *bigger*, *better*, *the best*. Cheap grammar, and it buys a lot of range for
+  someone whose gap is range.
 - **Numbers, letters and time** — cut from lesson 0 for time. Zero to a hundred,
   the *thirteen/thirty* stress contrast, spelling out loud (E/I and G/J are the
   ones Portuguese speakers mix up), telling the time, days of the week.
 - **There is / there are, and places** — describing an office, a home, a city.
 - **Can / can't** — ability and permission, and the workplace uses of both.
-- **Comparatives and superlatives** — *bigger*, *better*, *the best*. Cheap
-  grammar, and it buys a lot of range for someone whose gap is range.
 - **Food, ordering, and shopping** — high-frequency everyday language he will
   actually use.
 - **On the phone and on video calls** — a beginner's version: asking someone to
   slow down, spelling names, confirming times.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
-  way it was not before. **The nine false-friend fix cards cut from lesson 1
-  belong here**, and they are already written: *assisted* → *watched* · *lost
-  the bus* → *missed the bus* · *passed time* → *spent time* · *did a mistake* →
-  *made a mistake* · *made a course* → *took a course* · *realized a project* →
-  *finished a project* · *very funny* → *really fun* · *stayed in home* →
-  *stayed at home* · *went in the cinema* → *went to the cinema*.
+  way it was not before. **Six of the nine false-friend fix cards cut from
+  lesson 1 are still unused**: *assisted* → *watched* · *did a mistake* →
+  *made a mistake* · *realized a project* → *finished a project* · *very funny*
+  → *really fun* · *stayed in home* → *stayed at home* · *went in the cinema* →
+  *went to the cinema*. (*lost the bus*, *passed time* and *made a course* were
+  used in lesson 2's block 7.)

@@ -186,7 +186,10 @@ visible while he talks.
 
 **Label / content rows** — `.reflection-grid` > `.reflection-row` >
 `.reflection-label` + `.reflection-content`. Used for the who-speaks legend and
-for the "Next class" note.
+for the "Next class" note. Lesson 2 also uses it as a **diary** in a roleplay
+(one row per day, placed between `.scenario-numbers` and `.position-split`):
+it already stacks on mobile, so a situation that needs a schedule costs no new
+CSS.
 
 **Homework** — `.apply-box` > `.apply-label` + `.apply-lead` + `p.apply-text` +
 `a.apply-link`.
