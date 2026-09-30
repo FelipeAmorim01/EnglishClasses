@@ -42,8 +42,9 @@ for an exam, not primarily for travel.
 speak the basics well, but doesn't have a very sophisticated vocabulary."* The
 core grammar is there and it comes out. The gap is range. So pitch at one level
 rather than hedging across three, and do not spend a block re-drilling something
-he already says correctly. He reached five toolkit blocks in his first hour —
-that is the pace to plan for.
+he already says correctly. He gets through about five toolkit blocks an hour —
+but a toolkit that fills the hour leaves no time to talk, so do not plan to that
+pace. See *Keep the toolkit small* below.
 
 Lesson material lives in `Peterson/lesson_plan_N.html`, one self-contained HTML
 page per class, listed on the class library at `Peterson/index.html`.
@@ -120,8 +121,8 @@ No live assessment widgets. Nothing that reads as a score.
 ## How a lesson gets made
 
 **1. Check the log, then propose.** Read `references/lesson-log.md` for what has
-been taught and what carried over. Blocks routinely carry over: pages are built
-with more material than one hour reaches, on purpose. Propose the shape before
+been taught and what carried over. Blocks carried from the last lesson count
+toward this one's limit — see *Keep the toolkit small*. Propose the shape before
 building.
 
 **2. Build the page.** Copy the most recent `lesson_plan_N.html` — it carries the
@@ -148,6 +149,25 @@ by a small script — `references/page-anatomy.md` has the contract.
 4. **Wrap-up** — recall with the page closed, then homework. **Not the ladder
    again.** Felipe cut that bookend from lesson 1 — *"too repetitive and doesn't
    add anything."* The five sentences appear once, in the warm-up.
+
+### Keep the toolkit small — the talking is the point
+
+Lessons 0–2 were built with more toolkit than an hour could reach, on purpose,
+so blocks would carry over. Lesson 2 had seven blocks and 28 fix cards; the
+class reached five, and Felipe called it: *"there was too much on the second
+page … let's do less on that so I have time to talk more."*
+
+So from lesson 3 on:
+
+- **Four blocks at most**, plus the Language Tip. Fewer is fine.
+- **Lean blocks** — one table or one chip set at the core, and two or three fix
+  cards, not four.
+- **Blocks carried from the last lesson count toward the four.** They are not
+  extra.
+- **Build it to be finished**, with time left over for the activity stage — the
+  deck, the roleplay, the conversation. That time is the point of the class,
+  not what is left when the toolkit runs out. When a good block does not fit,
+  park it in the log rather than shipping it as a planned carry-over.
 
 ### Every lesson closes its toolkit with a Language Tip
 
@@ -215,6 +235,7 @@ Open the page in a browser and check:
 - Grep for `\bhe\b`, `\bhim\b`, `\bhis\b` and confirm every hit is a grammar
   example.
 - Every block has a cue saying who says it out loud.
+- The toolkit has four blocks or fewer, counting anything carried over.
 - The toolkit closes with a Language Tip, and it is about one rule, not the page.
 - No Portuguese anywhere on the page.
 

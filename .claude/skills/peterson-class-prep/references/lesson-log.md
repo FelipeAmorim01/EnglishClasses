@@ -25,7 +25,9 @@ What that means for planning:
 - The productive move is to **carry vocabulary in on the back of grammar**:
   false-friend fix cards, sequencing words, collocations attached to whatever
   structure is being taught.
-- He reached blocks 1–5 in a single hour. That is the pace to plan for.
+- He gets through blocks 1–5 in an hour — but a toolkit that fills the hour
+  leaves no time to talk. **From lesson 3: four blocks at most**, counting
+  carried ones (see *Keep the toolkit small* in `SKILL.md`).
 
 Still unrecorded: how much of the BBC homework he actually understood, which is
 the second read on his listening level. Worth asking at the start of lesson 1.
@@ -238,9 +240,10 @@ transcript has none, so the instruction could not be checked.
 
 **Next class, as named on the page:** comparatives and superlatives.
 
-**Realistic reach:** blocks 1–5 again, if the pace holds — this page is harder,
-so possibly fewer. Block 6 is the one to protect: it carries the rule most
-likely to be wrong in real speech (*If I will …*).
+**What happened (29 September):** blocks 1–5, not 6 or 7. Felipe: *"there was
+too much on the second page … let's do less on that so I have time to talk
+more."* That is what set the four-block limit — see *Keep the toolkit small* in
+`SKILL.md`. The page itself was left as it is, on his instruction.
 
 ---
 
@@ -255,7 +258,12 @@ lesson 2 rather than re-run: the time phrases come back in their future form in
 block 3 (*next* as the opposite of *last*, *in* as the opposite of *ago*), and
 the sequencing words come back in block 6 as *Telling a plan in order*.
 
-From **lesson 2**: to be recorded after the class.
+From **lesson 2**: blocks 6 (If, when, as soon as) and 7 (Words for plans).
+Under the four-block limit these cannot both ride on top of a new topic.
+Block 6 is the one worth bringing back — *If I will …* is the error most likely
+in his real speech, and it was already the fifth rung of lesson 2's ladder.
+Block 7's collocations (make / take / changing a plan / *looking forward to*)
+fit the vocabulary page listed below.
 
 ---
 
@@ -282,4 +290,5 @@ Sequenced roughly by what he needs next, now that all three time frames are done
   *made a mistake* · *realized a project* → *finished a project* · *very funny*
   → *really fun* · *stayed in home* → *stayed at home* · *went in the cinema* →
   *went to the cinema*. (*lost the bus*, *passed time* and *made a course* were
-  used in lesson 2's block 7.)
+  written into lesson 2's block 7, which was not reached — so they are still
+  untaught too, along with the rest of that block's collocations.)
