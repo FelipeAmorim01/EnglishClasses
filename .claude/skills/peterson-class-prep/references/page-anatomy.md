@@ -180,6 +180,12 @@ for the situation, then `.scenario-block` > `.scenario-name` + `.position-split`
 in `.position-role`** — "You — the new employee", "Me — a colleague from another
 team". A beginner should never have to infer who he is playing.
 
+When the scene is a choice between two things, lesson 3 puts a **second
+`.position-split` above the roles**, holding two plain `.position-card`s (no
+`mine` / `counterpart` modifier, so neutral borders and nothing hidden) — one
+per option, `.position-role` naming it ("Offer A — a big company in the
+center"). It already collapses on mobile, so it costs no new CSS.
+
 **Sticky sidebar** — `.language-sidebar` inside `.negotiation-layout` (with
 `.negotiation-main`), filled with `.chip-group`s, so the target language stays
 visible while he talks.
@@ -309,6 +315,17 @@ position; it just looked like a section title. It is now `.trans-task` >
 `--accent2`, and it never goes blank: at rest and when the deck is exhausted it
 carries a `.waiting` modifier and says which button to press. A control that
 does nothing until you press something should say so on its face.
+
+**Rank them — built and cut, lesson 3.** A ranking deck: each card a topic and
+four things (*Jobs: a doctor · a teacher · a pilot · a chef*), the direction of
+the order on its face (*from the most stressful to the least stressful*),
+Peterson ordering them out loud while clicks numbered them into a line. It was
+built as a replacement for the transformation deck when Felipe asked for other
+activity options, and cut as soon as he saw it — *"I don't like the cards on
+page 3, let's go back to the change sentence exercise."* The transformation
+deck was restored, and the widget's markup, CSS, script and sidebar group were
+stripped. Do not rebuild it; the transformation deck is the activity-stage
+drill this track keeps.
 
 ## Registering the lesson
 

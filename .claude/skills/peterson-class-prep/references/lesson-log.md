@@ -247,6 +247,91 @@ more."* That is what set the four-block limit — see *Keep the toolkit small* i
 
 ---
 
+## Lesson 3 — Which Is Better?
+`lesson_plan_3.html` · 6 October 2026
+
+Stages: Warm-up → The Comparing Toolkit → This or That → Wrap-up
+
+Comparatives and superlatives, as named on lesson 2's page. **The first lesson
+built under the four-block limit.** Felipe asked for it **"a level harder in the
+English"** — the same step up as lesson 2, not a return to lesson 1's pitch. The
+step up shows in *much / far / a bit / even*, *twice as … as*, *as … as
+possible*, *one of the most*, the *I've ever had / seen / been to* frame taught
+as a fixed ending, and *I'd rather … than*.
+
+**Warm-up:** a new ladder (fifth rung: *For me, a shorter commute is more
+important than a bigger salary — the best job isn't always the best-paid one*),
+then *Which one, and why?* in lesson 2's four-step shape: I give you a choice ·
+you answer by finishing a starter with something true, always with a reason ·
+you keep it going · swap and close. On the swap, Felipe opens with *It depends*
+and Peterson has to get a real choice out of him.
+
+**Toolkit**, four blocks:
+
+1. **-er and more … than** — six-row table (cheap, big, busy, expensive, *less*
+   stressful, good · bad), then *How big is the difference?* chips. Fix cards:
+   *bigger that* · *very cheaper* · *more easy*.
+2. **The best, the worst, the most …** — six-row table ending on *far → the
+   furthest*; *in* for a place, *of* for a time, *I've ever …* for a lifetime.
+   Fix cards: *the more expensive in the city* · *the best of the world* · *the
+   worse day* (the /t/ is the only sound between them).
+3. **not as … as, the same as, different from** — not as / just as / twice as /
+   as … as possible / the same as / different from · similar to. Fix cards:
+   *as big than* · *different of* · *the same that*.
+4. **Words to compare with** — twelve opposite pairs, six for a job and six for
+   a place to live, with *well-paid → better-paid* named as the exception. Fix
+   cards: *very funny* → *really fun* (one of the parked false friends) · *The
+   life in São Paulo* · *prefer … than*.
+
+**Language Tip:** *cheaper vs. more expensive* — short words take -er / the
+-est, long words take more / the most, never both. Trap: *more cheaper* · *the
+most cheapest*. The prose names *more better* and the three irregulars.
+
+**Activity:** This or That — a 26-card deck of two-part *which is better, and
+why?* questions; **Change the sentence**, 24 hand-written cards, six each of
+*Compare them* / *Make it the winner — the -est or the most* / *Say it softer —
+use not as … as* (the word flips to its opposite: *slower* → *not as fast*) /
+*Join them with if*. The *if* cards are **lesson 2's block 6, carried into the
+activity rather than the toolkit, on Felipe's call**: both halves arrive with
+*will*, one has to lose it. Roleplay:
+*Two offers* — two job offers side by side (R$ 15,000 / 1h10 commute / five days
+in the office vs. R$ 12,500 / twenty minutes, two days in / flexible start),
+Felipe as a friend who keeps asking why and thinks money matters most; halfway,
+offer B comes back at R$ 14,500 but wants three office days.
+
+**Homework:** British Council LearnEnglish, A2 reading — *Choosing a conference
+venue* (two venue adverts side by side, a preparation task and two
+self-checking tasks). **The first reading homework** — Felipe asked for
+something other than the BBC audio. Then choose one venue and bring three
+reasons: one *-er*, one *more*, one *not as … as*. The site returns 403 to curl
+(bot protection) but loads in a browser — verify it there, not with curl.
+
+**Cut during review, do not reintroduce on this page:**
+
+- **Rank them** — built to replace *Change the sentence* when Felipe asked for
+  other options for the activity stage (offered alongside *You vs. me*, *Guess
+  what I'm thinking* and a *Best and worst interview*; he kept the question
+  deck and picked this). Once he saw it: *"I don't like the cards on page 3,
+  let's go back to the change sentence exercise."* The transformation deck was
+  restored as it was, *if* cards included, and the widget, its CSS and its
+  sidebar group were stripped. See page-anatomy for what it was, so it is not
+  rebuilt by accident.
+- **"Use *if* at least once"** in the roleplay brief, removed by Felipe's own
+  edit, reason not given. The *if* cards in the deck stay, so *if* is still on
+  the page — just not in the roleplay.
+- **"My half stays hidden until we start, because in real life it would be"**
+  from the roleplay intro, also Felipe's edit. The reveal toggle still works;
+  the sentence explaining it was surplus.
+- **The BBC homework** (episode 4, Doing Lunch), replaced by the reading. The
+  series is not abandoned — episode 4 is still next if audio comes back.
+
+**Next class, as named on the page:** places — *there is / there are*,
+describing a home, an office, a city. Chosen because it reuses this lesson's
+place vocabulary; it jumps *Numbers, letters and time* in the list below, so
+swap the note if that is wanted instead.
+
+---
+
 ## Carried over
 
 From **lesson 0**: block 6 (Yesterday) only. Blocks 1–5 were all reached, which
@@ -265,15 +350,18 @@ in his real speech, and it was already the fifth rung of lesson 2's ladder.
 Block 7's collocations (make / take / changing a plan / *looking forward to*)
 fit the vocabulary page listed below.
 
+**In lesson 3:** block 6 is carried as the six *Join them with if* cards in the
+transformation deck — activity only, not a toolkit block, on Felipe's call.
+(The deck was briefly swapped out for *Rank them* and then restored.) Block 7
+stays parked for the vocabulary page.
+
 ---
 
 ## Not yet covered
 
-Sequenced roughly by what he needs next, now that all three time frames are done:
+Sequenced roughly by what he needs next, now that all three time frames and
+comparing are done:
 
-- **Comparatives and superlatives** — named on the lesson 2 page as next.
-  *bigger*, *better*, *the best*. Cheap grammar, and it buys a lot of range for
-  someone whose gap is range.
 - **Numbers, letters and time** — cut from lesson 0 for time. Zero to a hundred,
   the *thirteen/thirty* stress contrast, spelling out loud (E/I and G/J are the
   ones Portuguese speakers mix up), telling the time, days of the week.
@@ -285,10 +373,10 @@ Sequenced roughly by what he needs next, now that all three time frames are done
   slow down, spelling names, confirming times.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
-  way it was not before. **Six of the nine false-friend fix cards cut from
+  way it was not before. **Five of the nine false-friend fix cards cut from
   lesson 1 are still unused**: *assisted* → *watched* · *did a mistake* →
-  *made a mistake* · *realized a project* → *finished a project* · *very funny*
-  → *really fun* · *stayed in home* → *stayed at home* · *went in the cinema* →
-  *went to the cinema*. (*lost the bus*, *passed time* and *made a course* were
+  *made a mistake* · *realized a project* → *finished a project* · *stayed in
+  home* → *stayed at home* · *went in the cinema* → *went to the cinema*.
+  (*very funny* → *really fun* went into lesson 3's block 4.) (*lost the bus*, *passed time* and *made a course* were
   written into lesson 2's block 7, which was not reached — so they are still
   untaught too, along with the rest of that block's collocations.)
