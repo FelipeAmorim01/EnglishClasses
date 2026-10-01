@@ -248,7 +248,7 @@ more."* That is what set the four-block limit — see *Keep the toolkit small* i
 ---
 
 ## Lesson 3 — Which Is Better?
-`lesson_plan_3.html` · 6 October 2026
+`lesson_plan_3.html` · 1 October 2026
 
 Stages: Warm-up → The Comparing Toolkit → This or That → Wrap-up
 
