@@ -169,7 +169,7 @@ put up with (L4)
 ---
 
 ## Lesson 6 — Money, Prices & Value
-`lesson_plan_6.html` · 16 September 2026
+`lesson_plan_6.html` · 3 October 2026
 
 Stages: Warm-up → The Money Toolkit → Three Conversations About Money → Wrap-up
 
