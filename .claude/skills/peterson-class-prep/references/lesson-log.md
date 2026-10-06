@@ -330,6 +330,117 @@ describing a home, an office, a city. Chosen because it reuses this lesson's
 place vocabulary; it jumps *Numbers, letters and time* in the list below, so
 swap the note if that is wanted instead.
 
+**What happened (1 October):** all four blocks reached — the first lesson
+finished in full. The four-block limit fits the hour.
+
+---
+
+## Lesson 4 — What's It Like?
+`lesson_plan_4.html` · 6 October 2026
+
+Stages: Warm-up → The Places Toolkit → Show Me Around → Wrap-up
+
+Places, as named on lesson 3's page. Four blocks, nothing carried in the
+toolkit (lesson 3 finished in full). **Same harder pitch as lessons 2 and 3,
+confirmed by Felipe** — it shows in *there was / there'll be / there might be*,
+*too much / too many*, *within walking distance*, *opposite* vs. *in front of*,
+and *more / less* + a noun in the transformation deck.
+
+**Warm-up:** a new ladder (fifth rung: *There's a new café on the corner of my
+street — it's tiny, but it's busier than the big one opposite*), then *What's
+it like where you live?* in lesson 3's four-step shape. On the swap, Felipe's
+first answers are short (*It's OK.*) and Peterson has to get three real details
+out of him.
+
+**Toolkit**, four blocks:
+
+1. **there is, there are** — six-row table (there's a / there are / there isn't
+   a / there aren't any / Is there a …? / Are there any …?), plus *the same
+   shape at other times* chips (*there was / there were / there's going to be /
+   there'll be / there might be*). Fix cards: *Have a gym in my building* ·
+   *Is there any good restaurants*.
+2. **a lot of, not much, a few** — six-row table ending on *too much / too
+   many*; count / can't-count chips (buses, cars, people … vs. traffic, noise,
+   parking, space, pollution). Fix cards: *many traffic* · *There isn't
+   nothing* · *a lot of peoples*.
+3. **Where it is** — next to / opposite / between / around the corner / on the
+   … floor / … minutes from; *How far is it?* chips. Fix cards: *in the
+   fifth floor* · *near of*.
+4. **Words for a home, an office and a neighborhood** — three chip groups (at
+   home / at work / in the neighborhood). Fix cards: two of the parked false
+   friends, *stayed in home* → *at home* and *went in the cinema* → *to the
+   cinema*.
+
+**Cut by Felipe's own edit before class, reasons not given** — do not
+reintroduce on this page:
+
+- **The who-speaks cue** at the end of every toolkit block's panel-note (*I
+  read the first row … green lines are yours, twice each*). All four removed;
+  the notes now explain the grammar only. This contradicts *Every block states
+  its own cue* in `SKILL.md` — **ask before treating it as a standing rule**.
+- Three fix cards: *Yes, there's* → *Yes, there is* (block 1), *in front of*
+  for across the street → *opposite* (block 3), *notebook* → *laptop*
+  (block 4). Every block now has two or three.
+- The *an open-plan office* chip from *At work*.
+- **The roleplay, *The visitor*** — Felipe: *"takes too much time."* It was
+  Felipe as a London colleague calling ahead, the building given floor by
+  floor as notes, and a hotel cancellation to compare two hotels. Replaced by
+  a description of his real workplace, which needs no reading time; the
+  `toggleReveal` script went with it.
+- **The drawing half of its replacement**, cut by Felipe the same day. It was
+  *You describe, I draw*: Felipe sketching only what was said, then showing
+  the sketch with two things deliberately wrong for Peterson to fix, with a
+  *Fixing my drawing* chip set. What is left is the description alone.
+- **Wrap-up cut to one recall item** — *three questions for me about where I
+  live* (*Is there …? / Are there any …? / … like?*). Gone: *describe your
+  home with nothing on the screen* and *thirty seconds on the street where
+  you grew up*.
+- **The homework's study instructions** — *it's a level above the last
+  reading, read it twice, the tasks check themselves, do not translate it*.
+  What is left: what the reading is, then write the same four parts for your
+  city.
+- *Every card you take is a card nobody gets twice* from the activity stage's
+  sub.
+
+Removing the block 1 card left a stray `</div>`, which closed the toolkit
+stage early and spilled blocks 2–4 into a narrow column beside every other
+stage. Fixed by deleting that one line. **When cutting a card, delete the
+whole `.fix-card`, its closing tag included** — see page-anatomy *Gotchas*.
+
+**Language Tip:** *there's vs. it's* — *there's* puts something new in the
+picture, *it's* describes something already in it, and a sentence never starts
+with the verb. Trap: *Have a park near my house. Is very big.* The prose also
+places *has* (needs an owner in front: *My building has a gym*) and keeps the
+same opening word in short answers.
+
+**Activity:** Show Me Around — a 26-card deck of two-part questions about home,
+office and neighborhood (a few reach into the past: *What was there ten years
+ago …?*); **Change the sentence**, 24 hand-written cards, six each of *Say it
+with there* (*My street has two bakeries* → *There are two bakeries on my
+street*) / *Make it a question* / *Make it negative — use any, much or many*
+(two of each) / *Compare them* (**lesson 3 carried into the activity**, the
+way lesson 2's *if* cards were: *more / less* + noun, *-er*, *twice as … as*,
+*not as … as*). Then **Describe your workplace** — Peterson describes his
+real workplace, from the street to his desk, in three prompts (outside ·
+inside · your floor), told that Felipe has never been there so he has to say
+where everything is, not only what is there. It sits inside
+`.negotiation-main`, under the two decks, so the sticky *Keep these in view*
+sidebar stays on screen while he talks. No new CSS: `.scenario-intro` and
+`.reflection-grid`. The deck question *What's your office like? What's on
+your floor …?* was swapped out, since it is now the whole activity.
+
+**Homework:** British Council LearnEnglish, **B1** reading — *A travel guide*
+(Bangkok: where to stay, how to get around, where to eat, what to do). A level
+above lesson 3's A2 reading, in line with the harder pitch. Then write the same four parts for his own city with
+*there's / there are* in each. There is no A2 reading on the site about a
+place — the A1 *Holiday home adverts* fits the topic but is two levels down,
+and is the fallback if B1 lands badly. Verified in a browser (the site 403s to
+curl).
+
+**Next class, as named on the page:** *can* and *can't* — ability, permission,
+asking for things at work. Next in the list below after places; swap the note
+if *Numbers, letters and time* is wanted first.
+
 ---
 
 ## Carried over
@@ -355,6 +466,10 @@ transformation deck — activity only, not a toolkit block, on Felipe's call.
 (The deck was briefly swapped out for *Rank them* and then restored.) Block 7
 stays parked for the vocabulary page.
 
+From **lesson 3**: nothing — all four blocks were reached. Comparing still
+comes back in lesson 4, as the six *Compare them* cards in the transformation
+deck and the hotel choice in the roleplay.
+
 ---
 
 ## Not yet covered
@@ -365,7 +480,6 @@ comparing are done:
 - **Numbers, letters and time** — cut from lesson 0 for time. Zero to a hundred,
   the *thirteen/thirty* stress contrast, spelling out loud (E/I and G/J are the
   ones Portuguese speakers mix up), telling the time, days of the week.
-- **There is / there are, and places** — describing an office, a home, a city.
 - **Can / can't** — ability and permission, and the workplace uses of both.
 - **Food, ordering, and shopping** — high-frequency everyday language he will
   actually use.
@@ -373,10 +487,10 @@ comparing are done:
   slow down, spelling names, confirming times.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
-  way it was not before. **Five of the nine false-friend fix cards cut from
+  way it was not before. **Three of the nine false-friend fix cards cut from
   lesson 1 are still unused**: *assisted* → *watched* · *did a mistake* →
-  *made a mistake* · *realized a project* → *finished a project* · *stayed in
-  home* → *stayed at home* · *went in the cinema* → *went to the cinema*.
-  (*very funny* → *really fun* went into lesson 3's block 4.) (*lost the bus*, *passed time* and *made a course* were
+  *made a mistake* · *realized a project* → *finished a project*.
+  (*very funny* → *really fun* went into lesson 3's block 4; *stayed in home*
+  and *went in the cinema* went into lesson 4's block 4.) (*lost the bus*, *passed time* and *made a course* were
   written into lesson 2's block 7, which was not reached — so they are still
   untaught too, along with the rest of that block's collocations.)

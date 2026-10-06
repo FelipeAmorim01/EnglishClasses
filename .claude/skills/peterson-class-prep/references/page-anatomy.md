@@ -376,3 +376,13 @@ the bottom.
 - **Verify external links.** A plausible-looking BBC episode URL turned out to be
   a 404; the real one had a different slug pattern. Curl it before shipping.
 - Reset functions must restore the *rest* state, not the *finished* state.
+- **One stray `</div>` breaks every stage.** `main` is a flex row, so if a
+  stage closes early the rest of its content escapes `.content` and renders
+  as a narrow column beside every other stage. It happened in lesson 4 when a
+  fix card was cut without its closing tag. After any hand edit, check that
+  `.content`'s children are exactly the stages.
+- **Verify over HTTP, not `file://`.** The desktop app's file preview renders a
+  static snapshot — scripts do not run, so decks and nav cannot be tested
+  there. `.claude/launch.json` has a `lessons` config (a `python3 -m
+  http.server` on port 8765 at the repo root); start it with `preview_start`
+  and open `http://localhost:8765/Peterson/lesson_plan_N.html`.

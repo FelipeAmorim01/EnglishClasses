@@ -1,0 +1,2553 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 4</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+
+      /* ---------- THE STORY MACHINE ---------- */
+      /* grid items default to min-width:auto, which lets the wider panels
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* the prompt deck */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      @media (max-width: 1180px) {
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* ---------- THE REACTION DRILL ---------- */
+      .drill-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 18px;
+      }
+
+      .drill-line {
+        font-family: "Lora", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--accent);
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+
+      .drill-line.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+      }
+
+      .drill-controls {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .drill-controls .spacer {
+        flex: 1;
+      }
+
+      .drill-status {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        padding-left: 2px;
+      }
+
+      .drill-status strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 720px) {
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .drill-panel {
+          padding: 20px;
+        }
+
+        .drill-line {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+
+      /* ==================================================================
+         BEGINNER-TRACK COMPONENTS
+         ================================================================== */
+
+      /* Ladder — five sentences, easiest first */
+      .ladder {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        margin-bottom: 28px;
+      }
+
+      .ladder-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ladder-step:last-child {
+        border-bottom: none;
+      }
+
+      .ladder-num {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent-light);
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+      }
+
+      .ladder-body {
+        min-width: 0;
+      }
+
+      .ladder-say {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-style: italic;
+        line-height: 1.5;
+      }
+
+      .ladder-note {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 4px;
+        letter-spacing: 0.02em;
+      }
+
+      /* Fix cards — a wrong form struck out, the right one beside it */
+      .fix-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .fix-card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 14px 16px;
+      }
+
+      .fix-bad {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: var(--accent2);
+        margin-bottom: 6px;
+      }
+
+      .fix-bad::before {
+        content: "✗ ";
+        text-decoration: none;
+        color: var(--accent2);
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+      }
+
+      .fix-good {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .fix-good::before {
+        content: "✓ ";
+        font-family: "Inter", sans-serif;
+      }
+
+      .fix-note {
+        font-size: 0.74rem;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.5;
+      }
+
+      /* Word bank — compact chips with no functional grouping */
+      .word-bank {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 18px;
+      }
+
+      .word-bank .chip {
+        background: var(--surface);
+      }
+
+      @media (max-width: 720px) {
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ladder-step {
+          padding: 12px 14px;
+        }
+
+        .ladder-say {
+          font-size: 0.95rem;
+        }
+      }
+
+      .apply-box p.apply-text {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+
+      .apply-link {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 18px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
+
+      .apply-link:hover {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+      }
+
+      /* ---------- LANGUAGE TIP (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- Transformation deck — the instruction line ---------- */
+      .trans-task {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-bottom: 4px;
+      }
+
+      .trans-task-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .trans-task-value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent2);
+        letter-spacing: -0.01em;
+      }
+
+      .trans-task-value.waiting {
+        font-weight: 400;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      @media (max-width: 720px) {
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">What's It Like? — Lesson 4</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Places Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Show Me Around</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============================================================
+             STAGE 0: WARM-UP
+             ============================================================ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>what's it like?</em></div>
+          <div class="stage-sub"></div>
+
+          <div class="section-label">Five sentences — try them now</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            These are yours to read out loud. They get harder as they go down,
+            and each one is a piece of the next stage.
+          </p>
+          <div class="ladder">
+            <div class="ladder-step">
+              <div class="ladder-num">1</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "There's a gym in my building, but there aren't any shops on
+                  my street."
+                </div>
+                <div class="ladder-note">there's · there aren't any</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">2</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "There isn't much parking near the office, and there are only
+                  a few places to eat."
+                </div>
+                <div class="ladder-note">not much · a few</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">3</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "My desk is on the fifth floor, opposite the elevators and
+                  next to the kitchen."
+                </div>
+                <div class="ladder-note">on · opposite · next to</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">4</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "It's a quiet neighborhood, with a bakery, a pharmacy and a
+                  metro station within walking distance."
+                </div>
+                <div class="ladder-note">
+                  words for a neighborhood · within walking distance
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">5</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "There's a new café on the corner of my street — it's tiny,
+                  but it's busier than the big one opposite."
+                </div>
+                <div class="ladder-note">there's first — then it's</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">What's it like where you live?</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The conversation this whole lesson is for, and you have it for real
+            — nothing here is for repeating. I ask you about where you live,
+            from the first row. You answer by finishing one of the second row
+            with something true, and keep it going with the third. Then we swap:
+            you ask me. My first answers will be short —
+            <em>It's OK.</em> — so get three real details out of me before you
+            close it.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">1 · I ask you</div>
+            <div class="vocab-chips">
+              <span class="chip">What's your neighborhood like?</span>
+              <span class="chip">Is there a … near your house?</span>
+              <span class="chip">Are there any good places to eat?</span>
+              <span class="chip">How far is it from your work?</span>
+              <span class="chip">What's your place like?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">
+              2 · You answer — finish one with something true
+            </div>
+            <div class="vocab-chips">
+              <span class="chip"
+                >It's quite …, and there's a … around the corner.</span
+              >
+              <span class="chip"
+                >There are a lot of …, but there aren't many …</span
+              >
+              <span class="chip">There isn't much …, so …</span>
+              <span class="chip">It's about … minutes from … by …</span>
+              <span class="chip"
+                >The best thing about it is that there's …</span
+              >
+              <span class="chip">It isn't as … as …, but …</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">3 · You keep it going</div>
+            <div class="vocab-chips">
+              <span class="chip">What about you? Where do you live?</span>
+              <span class="chip">Is there a … near you?</span>
+              <span class="chip">Is it far from your work?</span>
+              <span class="chip">What's it like at night?</span>
+              <span class="chip">Do you like it there?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">
+              4 · Swap — you ask, then close it
+            </div>
+            <div class="vocab-chips">
+              <span class="chip">Sounds nice.</span>
+              <span class="chip">That's really convenient.</span>
+              <span class="chip">That sounds a bit far!</span>
+              <span class="chip">I'd love to live somewhere like that.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 1: THE PLACES TOOLKIT
+             ============================================================ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">Your <em>places toolkit</em></div>
+          <div class="stage-sub">
+            Four blocks, easiest first. Each one is a way to say what's in a
+            place, and where.
+          </div>
+
+          <!-- BLOCK 1 -->
+          <div class="section-label" style="margin-top: 0">
+            1 · there is, there are
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            To say that something is in a place. One thing: <em>there's</em>.
+            More than one: <em>there are</em>. To ask, swap the two words round:
+            <em>Is there …?</em> <em>Are there any …?</em> To say no:
+            <em>there isn't a …</em>, <em>there aren't any …</em>. The boxed
+            words take the same shape into the past and the future.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Pattern</th>
+                <th>Example</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>there's a …</td>
+                <td>There's a bakery on my street.</td>
+                <td>
+                  <em
+                    >There's a bakery on my street, and there's a pharmacy next
+                    to it.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>there are …</td>
+                <td>There are two bathrooms.</td>
+                <td>
+                  <em
+                    >There are two bathrooms in my apartment, and there are
+                    three bedrooms.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>there isn't a …</td>
+                <td>There isn't a gym in my building.</td>
+                <td>
+                  <em
+                    >There isn't a gym in my building, and there isn't a pool
+                    either.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>there aren't any …</td>
+                <td>There aren't any shops near here.</td>
+                <td>
+                  <em
+                    >There aren't any shops near here, and there aren't any
+                    buses after ten.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Is there a …?</td>
+                <td>Is there a pharmacy near here?</td>
+                <td>
+                  <em
+                    >Is there a pharmacy near here? — Yes, there is. There's one
+                    around the corner.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Are there any …?</td>
+                <td>Are there any good restaurants in the area?</td>
+                <td>
+                  <em
+                    >Are there any good restaurants in the area? — No, there
+                    aren't, but there are a few nice cafés.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="chip-group">
+            <div class="chip-group-label">The same shape, at other times</div>
+            <div class="vocab-chips">
+              <span class="chip">there was a …</span>
+              <span class="chip">there were some …</span>
+              <span class="chip">there's going to be a …</span>
+              <span class="chip">there'll be …</span>
+              <span class="chip">there might be …</span>
+            </div>
+          </div>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">Have a gym in my building.</div>
+              <div class="fix-good">There's a gym in my building.</div>
+              <div class="fix-note">
+                To say something is in a place, start with <em>there's</em> or
+                <em>there are</em>. <em>has</em> needs an owner in front of it:
+                <em>My building has a gym.</em>
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">
+                Is there any good restaurants near here?
+              </div>
+              <div class="fix-good">
+                Are there any good restaurants near here?
+              </div>
+              <div class="fix-note">
+                The word after it decides: one thing, <em>is there</em>; more
+                than one, <em>are there</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 2 -->
+          <div class="section-label">2 · a lot of, not much, a few</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            How much of something there is. Some things you can count — buses,
+            shops, people — and some you can't — traffic, noise, parking.
+            <em>a lot of</em> works for both. Things you can count take
+            <em>many</em> and <em>a few</em>; things you can't count take
+            <em>much</em>. In a negative or a question, <em>some</em> becomes
+            <em>any</em>.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>How much</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>lots — of anything</td>
+                <td>a lot of</td>
+                <td>
+                  <em
+                    >There are a lot of buses, and there's a lot of traffic.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>a small number</td>
+                <td>a few</td>
+                <td>
+                  <em
+                    >There are a few good cafés near the office, and a few nice
+                    restaurants.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>not a lot — you can count it</td>
+                <td>not many</td>
+                <td>
+                  <em
+                    >There aren't many buses after ten, and there aren't many
+                    taxis either.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>not a lot — you can't count it</td>
+                <td>not much</td>
+                <td>
+                  <em
+                    >There isn't much parking near the office, and there isn't
+                    much space in the kitchen.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>zero</td>
+                <td>no · not any</td>
+                <td>
+                  <em
+                    >There's no parking on my street, and there aren't any
+                    shops.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>more than you want</td>
+                <td>too much · too many</td>
+                <td>
+                  <em
+                    >There's too much noise at night, and there are too many
+                    cars.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="chip-group">
+            <div class="chip-group-label">You can count them</div>
+            <div class="vocab-chips">
+              <span class="chip">buses</span>
+              <span class="chip">cars</span>
+              <span class="chip">people</span>
+              <span class="chip">shops</span>
+              <span class="chip">trees</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">You can't count it</div>
+            <div class="vocab-chips">
+              <span class="chip">traffic</span>
+              <span class="chip">noise</span>
+              <span class="chip">parking</span>
+              <span class="chip">space</span>
+              <span class="chip">pollution</span>
+            </div>
+          </div>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">There are many traffic in the morning.</div>
+              <div class="fix-good">
+                There's a lot of traffic in the morning.
+              </div>
+              <div class="fix-note">
+                You can't count <em>traffic</em>, so it takes <em>there's</em>.
+                In a positive sentence, <em>a lot of</em> sounds the most
+                natural.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">There isn't nothing near my house.</div>
+              <div class="fix-good">There isn't anything near my house.</div>
+              <div class="fix-note">
+                One negative per sentence: <em>There isn't anything</em>, or
+                <em>There's nothing</em> — never both.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">
+                There are a lot of peoples on the metro.
+              </div>
+              <div class="fix-good">
+                There are a lot of people on the metro.
+              </div>
+              <div class="fix-note">
+                <em>people</em> is already more than one: one person, two people
+                — never <em>peoples</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 3 -->
+          <div class="section-label">3 · Where it is</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Saying exactly where something is. Most of these are two or three
+            words that travel together — learn them whole:
+            <em>next to</em>, <em>around the corner</em>. A building has floors,
+            and floors take <em>on</em>. For how far, give the time and the way:
+            <em>ten minutes on foot</em>.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>Where</th>
+                <th>Example</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>next to</td>
+                <td>The kitchen is next to the meeting room.</td>
+                <td>
+                  <em
+                    >The kitchen is next to the meeting room, and the restrooms
+                    are next to the kitchen.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>opposite</td>
+                <td>The bank is opposite the bakery.</td>
+                <td>
+                  <em
+                    >The bank is opposite the bakery, and the metro is opposite
+                    the bank.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>between</td>
+                <td>The pharmacy is between the bank and the bakery.</td>
+                <td>
+                  <em
+                    >The pharmacy is between the bank and the bakery, on the
+                    same side as the bus stop.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>around the corner</td>
+                <td>There's a gym around the corner.</td>
+                <td>
+                  <em
+                    >There's a gym around the corner, and a supermarket just
+                    around the next corner.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>on the … floor</td>
+                <td>My office is on the fifth floor.</td>
+                <td>
+                  <em
+                    >My office is on the fifth floor, and the meeting rooms are
+                    on the sixth.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>… minutes from</td>
+                <td>It's ten minutes from here on foot.</td>
+                <td>
+                  <em
+                    >It's ten minutes from here on foot, or two minutes by
+                    car.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="chip-group">
+            <div class="chip-group-label">How far is it?</div>
+            <div class="vocab-chips">
+              <span class="chip">within walking distance</span>
+              <span class="chip">five minutes' walk</span>
+              <span class="chip">ten minutes by car</span>
+              <span class="chip">two stops on the metro</span>
+              <span class="chip">close to</span>
+              <span class="chip">a long way from</span>
+            </div>
+          </div>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">My office is in the fifth floor.</div>
+              <div class="fix-good">My office is on the fifth floor.</div>
+              <div class="fix-note">
+                Floors take <em>on</em>: on the first floor, on the top floor.
+                Streets too: <em>on my street</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">It's near of my house.</div>
+              <div class="fix-good">It's near my house.</div>
+              <div class="fix-note">
+                <em>near</em> goes straight to the place. Its partners keep
+                their small word: <em>close to</em>, <em>next to</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 4 -->
+          <div class="section-label">
+            4 · Words for a home, an office and a neighborhood
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Words for the three places you spend your week. Learn each one with
+            the small word that goes with it: <em>in the living room</em>,
+            <em>on the balcony</em>, <em>at my desk</em>.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">At home</div>
+            <div class="vocab-chips">
+              <span class="chip">a two-bedroom apartment</span>
+              <span class="chip">the living room</span>
+              <span class="chip">a balcony</span>
+              <span class="chip">the doorman</span>
+              <span class="chip">a parking space</span>
+              <span class="chip">a view of the park</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">At work</div>
+            <div class="vocab-chips">
+              <span class="chip">the reception</span>
+              <span class="chip">my desk</span>
+              <span class="chip">the meeting room</span>
+              <span class="chip">the kitchen</span>
+              <span class="chip">the restrooms</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">In the neighborhood</div>
+            <div class="vocab-chips">
+              <span class="chip">a bakery</span>
+              <span class="chip">a pharmacy</span>
+              <span class="chip">a bus stop</span>
+              <span class="chip">a square</span>
+              <span class="chip">a shopping mall</span>
+              <span class="chip">a metro station</span>
+            </div>
+          </div>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">I stayed in home on Sunday.</div>
+              <div class="fix-good">I stayed at home on Sunday.</div>
+              <div class="fix-note">
+                <em>at home</em> — no <em>in</em>, no <em>the</em>. The same
+                with <em>at work</em> and <em>at school</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">We went in the cinema last night.</div>
+              <div class="fix-good">We went to the cinema last night.</div>
+              <div class="fix-note">
+                Going somewhere takes <em>to</em>: to the gym, to work, to the
+                bank. One exception: <em>go home</em>, with nothing in between.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="rule-box">
+            <div class="rule-badge">Language Tip</div>
+            <div class="rule-title">there's vs. it's</div>
+            <div class="rule-lead">
+              Every place you describe goes in the same order: first you say
+              that something is there, then you say what it's like. Those are
+              two different jobs, and English gives each one its own opening.
+              <em>there's</em> puts something new in the picture.
+              <em>it's</em> talks about something that is already in it. And an
+              English sentence never starts with the verb — one of these two
+              words always comes first.
+            </div>
+
+            <div class="rule-split">
+              <div class="rule-card">
+                <div class="rule-card-head">something new — it's there</div>
+                <div class="rule-formula">
+                  <span>there's</span> a … · <span>there are</span> …
+                </div>
+                <ul>
+                  <li>There's a park near my house.</li>
+                  <li>There are two bakeries on my street.</li>
+                  <li>There's a lot of traffic in the morning.</li>
+                </ul>
+              </div>
+              <div class="rule-card">
+                <div class="rule-card-head">
+                  something you already said — what it's like
+                </div>
+                <div class="rule-formula">
+                  <span>it's</span> … · <span>they're</span> …
+                </div>
+                <ul>
+                  <li>It's small, but it's very quiet.</li>
+                  <li>They're both open until ten.</li>
+                  <li>It's terrible after six.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-trap">
+              <div class="rule-trap-label">The trap</div>
+              <p>
+                ✗ <em>Have a park near my house. Is very big.</em>
+                &nbsp;→&nbsp; ✓
+                <em>There's a park near my house. It's very big.</em>
+              </p>
+              <p>
+                <strong
+                  >Every sentence needs a word before the verb — and that word
+                  says which job the sentence is doing.</strong
+                >
+                <em>there's</em> says it exists; <em>it's</em> describes it.
+                <em>has</em> is fine too, but only with an owner in front of it:
+                <em>My building has a gym.</em> In a short answer, keep the same
+                opening word: <em>Is there a gym? — Yes, there is.</em>
+                <em>Is it big? — Yes, it is.</em>
+              </p>
+            </div>
+
+            <div class="rule-say">
+              <div class="rule-say-label">
+                Both sides — say all four out loud
+              </div>
+              <ol>
+                <li>
+                  There's a bakery on the corner. It's small, but the bread is
+                  fantastic.
+                </li>
+                <li>
+                  There are two parks near my house. They're both quiet in the
+                  morning.
+                </li>
+                <li>
+                  There's a meeting room on the fifth floor. It's opposite the
+                  elevators.
+                </li>
+                <li>Is there a gym in your building? Is it free?</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 2: SHOW ME AROUND
+             ============================================================ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">Show <em>me around</em></div>
+          <div class="stage-sub">
+            Answer the question, then ask the same question back.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Draw a question
+              </div>
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Take the button, and take whatever comes
+                    out.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawQuestion()">
+                    Draw a question
+                  </button>
+                  <button class="btn" onclick="resetDeck()">Reshuffle</button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                Both halves of the card, in full sentences. Say where things
+                are, not only what they are. Then ask it back.
+              </p>
+
+              <div class="section-label">Change the sentence</div>
+              <div class="drill-panel">
+                <div class="trans-task">
+                  <span class="trans-task-label">Change it how?</span>
+                  <span class="trans-task-value waiting" id="trans-task"
+                    >press Next sentence</span
+                  >
+                </div>
+                <div class="drill-line empty" id="trans-line">
+                  Press Next sentence. Say the new one out loud before you check
+                  it.
+                </div>
+                <div class="drill-controls">
+                  <button class="btn primary" onclick="drawTransform()">
+                    Next sentence
+                  </button>
+                  <button class="btn" onclick="revealTransform()">
+                    Show the answer
+                  </button>
+                  <button class="btn" onclick="resetTransform()">
+                    Reshuffle
+                  </button>
+                  <span class="spacer"></span>
+                  <span class="drill-status" id="trans-status"></span>
+                </div>
+              </div>
+              <p class="panel-note">
+                Say the new sentence out loud before you check it. Some cards
+                have more than one right answer — the one shown is only one of
+                them. <em>Say it with there</em> moves the place to the end:
+                <em>My street has …</em> becomes
+                <em>There are … on my street</em>. The
+                <em>Compare them</em> cards bring back last class —
+                <em>-er</em>, <em>more</em>, <em>less</em> and <em>as … as</em>.
+              </p>
+
+              <div class="divider"></div>
+
+              <div class="section-label">Describe your workplace</div>
+              <div class="scenario-intro">
+                <div class="intro-label">Your workplace</div>
+                <p>
+                  Tell me about the place where you really work, from the street
+                  to your desk. I've never been there, so tell me where
+                  everything is — not only what's there.
+                </p>
+              </div>
+              <div class="reflection-grid">
+                <div class="reflection-row">
+                  <div class="reflection-label">1 · Outside</div>
+                  <div class="reflection-content">
+                    Where is it, and how do you get there? What's near it — is
+                    there a café, a metro station, a place to park?
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">2 · Inside</div>
+                  <div class="reflection-content">
+                    What's on the ground floor? How many floors are there, and
+                    which one are you on?
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">3 · Your floor</div>
+                  <div class="reflection-content">
+                    What's there, and where exactly is everything? Where's your
+                    desk — next to what, opposite what?
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Keep these in view</div>
+              <div class="chip-group">
+                <div class="chip-group-label">It's there</div>
+                <div class="vocab-chips">
+                  <span class="chip">There's a …</span>
+                  <span class="chip">There are …</span>
+                  <span class="chip">There isn't a …</span>
+                  <span class="chip">There aren't any …</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Where</div>
+                <div class="vocab-chips">
+                  <span class="chip">next to</span>
+                  <span class="chip">opposite</span>
+                  <span class="chip">between … and …</span>
+                  <span class="chip">around the corner</span>
+                  <span class="chip">on the … floor</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">How much</div>
+                <div class="vocab-chips">
+                  <span class="chip">a lot of</span>
+                  <span class="chip">a few</span>
+                  <span class="chip">not much · not many</span>
+                  <span class="chip">too much · too many</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">If you get stuck</div>
+                <div class="vocab-chips">
+                  <span class="chip">Sorry, I don't understand.</span>
+                  <span class="chip">Can you say that again?</span>
+                  <span class="chip">Let me think.</span>
+                  <span class="chip">How do you say this in English?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 3: WRAP-UP
+             ============================================================ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>nothing on the screen</em></div>
+          <div class="stage-sub">Close the page for these.</div>
+
+          <div class="section-label" style="margin-top: 0">Close the page</div>
+
+          <ul class="q-list">
+            <li>
+              Three questions for me about where I live: one that starts
+              <em>Is there …?</em>, one that starts <em>Are there any …?</em>,
+              and one that ends <em>… like?</em>
+            </li>
+          </ul>
+
+          <div class="apply-box">
+            <div class="apply-label">Before next class</div>
+            <div class="apply-lead">
+              Read about a city, then write about yours.
+            </div>
+            <p class="apply-text">
+              British Council LearnEnglish, A travel guide — Bangkok in four
+              short parts: where to stay, how to get around, where to eat, and
+              what to do. Then write the same four parts for your city, one or
+              two sentences each, with
+              <em>there's</em> or <em>there are</em> in every part — and bring
+              them to class.
+            </p>
+            <a
+              class="apply-link"
+              href="https://learnenglish.britishcouncil.org/free-resources/reading/b1/travel-guide"
+              target="_blank"
+              rel="noopener"
+              >Open the reading — A travel guide</a
+            >
+          </div>
+
+          <div class="section-label">Next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Coming up</div>
+              <div class="reflection-content">
+                <em>can</em> and <em>can't</em> — what you can do, what you're
+                allowed to do, and how to ask for things at work.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---------------- NAVIGATION ---------------- */
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---------------- QUESTION DECK ---------------- */
+      const QUESTIONS = [
+        "What's your neighborhood like, and what's the best thing about it?",
+        "Is there a good place to eat near your work? What's it like?",
+        "How far is your home from your work, and how do you get there?",
+        "What's there to do in your city on a Sunday, and where do you usually go?",
+        "Are there any parks near your house? How often do you go?",
+        "Is there anywhere quiet near your house to go for a walk? What's it like?",
+        "Is there a lot of traffic where you live? What's the worst time of day?",
+        "What's near your house that you use every day — and what's missing?",
+        "Describe your living room: what's in it, and where is everything?",
+        "Is your neighborhood quieter or noisier than the center? Why?",
+        "What's the best café in your area, and where exactly is it?",
+        "A friend is visiting your city for one day. Where should they go, and why?",
+        "Is there much parking near your work, or is it a problem?",
+        "What's your favorite room at home, and what's in it?",
+        "Is there anything you don't like about your building? What's wrong with it?",
+        "What's the area around your office like at lunchtime? Where do people go?",
+        "Are there any good shops near you, or do you buy everything online?",
+        "Where did you live when you were a child, and what was it like?",
+        "What was there in your neighborhood ten years ago that isn't there now?",
+        "Is there a place in your city that tourists love and you don't? Why not?",
+        "What's the view from your window like — at home and at work?",
+        "Is your city a good place for families? What's there for children?",
+        "What's the noisiest place you go to every week, and what's the quietest?",
+        "Which neighborhood in your city would you most like to live in, and why?",
+        "Is there a lot to do near your house at night, or is it very quiet?",
+        "Where's the nearest pharmacy to your house, and how do you get there?",
+      ];
+
+      let qDeck = shuffle(QUESTIONS);
+
+      function updateDeckCount() {
+        const el = document.getElementById("deck-count");
+        el.textContent =
+          qDeck.length === 0
+            ? "deck finished — reshuffle to go again"
+            : qDeck.length + " left in the deck";
+      }
+
+      function drawQuestion() {
+        const textEl = document.getElementById("prompt-text");
+        if (qDeck.length === 0) {
+          textEl.classList.add("empty");
+          textEl.textContent =
+            "That's the whole deck. Reshuffle to start it again.";
+          updateDeckCount();
+          return;
+        }
+        textEl.classList.remove("empty");
+        textEl.textContent = qDeck.pop();
+        updateDeckCount();
+      }
+
+      function resetDeck() {
+        qDeck = shuffle(QUESTIONS);
+        const textEl = document.getElementById("prompt-text");
+        textEl.classList.add("empty");
+        textEl.textContent =
+          "Nothing drawn yet. Take the button, and take whatever comes out.";
+        updateDeckCount();
+      }
+
+      /* ---------------- CHANGE THE SENTENCE ---------------- */
+      /* Six of each job, hand-written and checked. */
+      const TRANSFORM = [
+        {
+          task: "Say it with there",
+          given: "My street has two bakeries.",
+          answer: "There are two bakeries on my street.",
+        },
+        {
+          task: "Say it with there",
+          given: "My building has a gym on the top floor.",
+          answer: "There's a gym on the top floor of my building.",
+        },
+        {
+          task: "Say it with there",
+          given: "Our office has three meeting rooms.",
+          answer: "There are three meeting rooms in our office.",
+        },
+        {
+          task: "Say it with there",
+          given: "The kitchen at work has a new coffee machine.",
+          answer: "There's a new coffee machine in the kitchen at work.",
+        },
+        {
+          task: "Say it with there",
+          given: "My neighborhood doesn't have a supermarket.",
+          answer: "There isn't a supermarket in my neighborhood.",
+        },
+        {
+          task: "Say it with there",
+          given: "This street doesn't have any trees.",
+          answer: "There aren't any trees on this street.",
+        },
+
+        {
+          task: "Make it a question",
+          given: "There's a pharmacy near here.",
+          answer: "Is there a pharmacy near here?",
+        },
+        {
+          task: "Make it a question",
+          given: "There are some good restaurants in the area.",
+          answer: "Are there any good restaurants in the area?",
+        },
+        {
+          task: "Make it a question",
+          given: "There's a lot of traffic in the morning.",
+          answer: "Is there a lot of traffic in the morning?",
+        },
+        {
+          task: "Make it a question",
+          given: "There are a few parking spaces behind the building.",
+          answer: "Are there any parking spaces behind the building?",
+        },
+        {
+          task: "Make it a question",
+          given: "The meeting room is on the third floor.",
+          answer: "Is the meeting room on the third floor?",
+        },
+        {
+          task: "Make it a question",
+          given: "There's some space in the fridge.",
+          answer: "Is there any space in the fridge?",
+        },
+
+        {
+          task: "Make it negative — use any, much or many",
+          given: "There's a lot of noise at night.",
+          answer: "There isn't much noise at night.",
+        },
+        {
+          task: "Make it negative — use any, much or many",
+          given: "There are a lot of buses after ten.",
+          answer: "There aren't many buses after ten.",
+        },
+        {
+          task: "Make it negative — use any, much or many",
+          given: "There are some shops near my house.",
+          answer: "There aren't any shops near my house.",
+        },
+        {
+          task: "Make it negative — use any, much or many",
+          given: "There's some parking behind the office.",
+          answer: "There isn't any parking behind the office.",
+        },
+        {
+          task: "Make it negative — use any, much or many",
+          given: "There are a lot of people on the metro on Sundays.",
+          answer: "There aren't many people on the metro on Sundays.",
+        },
+        {
+          task: "Make it negative — use any, much or many",
+          given: "There's a lot of space in my new apartment.",
+          answer: "There isn't much space in my new apartment.",
+        },
+
+        {
+          task: "Compare them",
+          given: "My street has two cafés. Your street has six.",
+          answer: "There are more cafés on your street than on mine.",
+        },
+        {
+          task: "Compare them",
+          given:
+            "There's a lot of traffic in the center. There isn't much in my neighborhood.",
+          answer: "There's less traffic in my neighborhood than in the center.",
+        },
+        {
+          task: "Compare them",
+          given: "The old office had one meeting room. The new one has four.",
+          answer:
+            "There are more meeting rooms in the new office than in the old one.",
+        },
+        {
+          task: "Compare them",
+          given: "It's very noisy in the center. It's quiet out here.",
+          answer: "It's much quieter out here than in the center.",
+        },
+        {
+          task: "Compare them",
+          given: "My old apartment was 40 m². My new one is 80 m².",
+          answer: "My new apartment is twice as big as my old one.",
+        },
+        {
+          task: "Compare them",
+          given: "The new office is very bright. The old one was quite dark.",
+          answer: "The old office wasn't as bright as the new one.",
+        },
+      ];
+
+      let tDeck = [];
+      let tCurrent = null;
+
+      function updateTransformStatus() {
+        document.getElementById("trans-status").innerHTML =
+          tDeck.length === 0
+            ? "deck finished — <strong>reshuffle to go again</strong>"
+            : "<strong>" + tDeck.length + "</strong> left in the deck";
+      }
+
+      function drawTransform() {
+        const line = document.getElementById("trans-line");
+        const task = document.getElementById("trans-task");
+        if (tDeck.length === 0) {
+          line.classList.add("empty");
+          line.textContent =
+            "That is the whole deck. Reshuffle to start it again.";
+          task.classList.add("waiting");
+          task.textContent = "press Reshuffle";
+          tCurrent = null;
+          updateTransformStatus();
+          return;
+        }
+        tCurrent = tDeck.pop();
+        line.classList.remove("empty");
+        task.classList.remove("waiting");
+        task.textContent = tCurrent.task;
+        line.textContent = tCurrent.given;
+        updateTransformStatus();
+      }
+
+      function revealTransform() {
+        if (!tCurrent) return;
+        document.getElementById("trans-line").textContent =
+          tCurrent.given + "  →  " + tCurrent.answer;
+      }
+
+      function resetTransform() {
+        tDeck = shuffle(TRANSFORM);
+        tCurrent = null;
+        const line = document.getElementById("trans-line");
+        line.classList.add("empty");
+        line.textContent =
+          "Press Next sentence. Say the new one out loud before you check it.";
+        const task = document.getElementById("trans-task");
+        task.classList.add("waiting");
+        task.textContent = "press Next sentence";
+        updateTransformStatus();
+      }
+
+      /* ---------------- INIT ---------------- */
+      resetTransform();
+      updateDeckCount();
+      goTo(0);
+    </script>
+  </body>
+</html>
