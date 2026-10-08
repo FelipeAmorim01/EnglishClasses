@@ -73,12 +73,11 @@ cut exactly that from lesson 1. They belong in the activity stage's
 `.language-sidebar` under *If you get stuck*, where he can reach them
 mid-conversation, which is the only moment he actually needs them.
 
-### Say who speaks every single item
+### Who speaks every single item — run out loud, not written on the page
 
-This is the rule most easily forgotten, and Felipe asked about it directly. A
-beginner cannot decode English spelling, so anything he reads cold comes out in
-Portuguese phonetics — and that pronunciation is what sticks. The conventions
-are fixed:
+A beginner cannot decode English spelling, so anything he reads cold comes out
+in Portuguese phonetics — and that pronunciation is what sticks. The conventions
+are fixed, and Felipe runs them in class:
 
 | | |
 |---|---|
@@ -86,14 +85,17 @@ are fixed:
 | **Italic sentences** (vocab table column 3, the ladder) | Peterson reads them, after Felipe has read the first one in the table. |
 | **Green ✓ lines** (`.fix-card`) | Peterson, twice each. |
 
-**Every block states its own cue, in its own `.panel-note`.** A legend at the
-top of the toolkit was built for lessons 0 and 1, and Felipe cut it: once every
-block says who speaks, the legend is a second copy of the same instruction —
-and the copy that is too far up the page to help mid-class. Cue the block, not
-the page.
+**Do not write who-speaks cues on the page.** Lessons 1–3 ended every toolkit
+`.panel-note` with one (*I read the first row … green lines are yours, twice
+each*). Felipe deleted all four from lesson 4, and on 8 October 2026 confirmed
+that new pages leave them out. A toolkit `.panel-note` explains the grammar
+only. The page-top legend from lessons 0 and 1 stays cut too.
 
-Irregular verbs and the three `-ed` endings (`worked`/`talked` → /t/, `called`
-→ /d/, `wanted` → /ɪd/) are listen-and-repeat *only* — say so on the page.
+The one exception is pronunciation that must not be read cold: irregular verbs,
+the three `-ed` endings (`worked`/`talked` → /t/, `called` → /d/, `wanted` →
+/ɪd/), weak forms like *gonna* or the short *can*. Those are listen-and-repeat
+*only*, and the explanation says so in passing (*Listen and repeat only. In the
+middle of a sentence, can …*). That is a warning about the sound, not a cue.
 
 ### No pacing labels
 
@@ -142,8 +144,9 @@ by a small script — `references/page-anatomy.md` has the contract.
    from the toolkit below it, plus a phrase bank for the conversation the lesson
    exists to make possible. Not discussion questions: a beginner cannot hold a
    discussion yet.
-2. **The toolkit** — the lesson. Numbered blocks, easiest first, each carrying
-   its own cue saying who speaks, **closing with the Language Tip**.
+2. **The toolkit** — the lesson. Numbered blocks, easiest first, each with a
+   short `.panel-note` explaining the grammar, **closing with the Language
+   Tip**.
 3. **The activity** — a machine that forces production. The question deck and
    the transformation deck both work; see the anatomy file.
 4. **Wrap-up** — recall with the page closed, then homework. **Not the ladder
@@ -234,7 +237,8 @@ Open the page in a browser and check:
   later top-level declaration** — this bug has already happened once.
 - Grep for `\bhe\b`, `\bhim\b`, `\bhis\b` and confirm every hit is a grammar
   example.
-- Every block has a cue saying who says it out loud.
+- No who-speaks cues in the toolkit notes; pronunciation-only items still say
+  listen-and-repeat.
 - The toolkit has four blocks or fewer, counting anything carried over.
 - The toolkit closes with a Language Tip, and it is about one rule, not the page.
 - No Portuguese anywhere on the page.

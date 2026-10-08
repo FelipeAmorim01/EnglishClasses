@@ -1,0 +1,2559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 5</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+
+      /* ---------- THE STORY MACHINE ---------- */
+      /* grid items default to min-width:auto, which lets the wider panels
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* the prompt deck */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      @media (max-width: 1180px) {
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* ---------- THE REACTION DRILL ---------- */
+      .drill-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 18px;
+      }
+
+      .drill-line {
+        font-family: "Lora", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--accent);
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+
+      .drill-line.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+      }
+
+      .drill-controls {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .drill-controls .spacer {
+        flex: 1;
+      }
+
+      .drill-status {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        padding-left: 2px;
+      }
+
+      .drill-status strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 720px) {
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .drill-panel {
+          padding: 20px;
+        }
+
+        .drill-line {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+
+      /* ==================================================================
+         BEGINNER-TRACK COMPONENTS
+         ================================================================== */
+
+      /* Ladder — five sentences, easiest first */
+      .ladder {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        margin-bottom: 28px;
+      }
+
+      .ladder-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ladder-step:last-child {
+        border-bottom: none;
+      }
+
+      .ladder-num {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent-light);
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+      }
+
+      .ladder-body {
+        min-width: 0;
+      }
+
+      .ladder-say {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-style: italic;
+        line-height: 1.5;
+      }
+
+      .ladder-note {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 4px;
+        letter-spacing: 0.02em;
+      }
+
+      /* Fix cards — a wrong form struck out, the right one beside it */
+      .fix-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .fix-card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 14px 16px;
+      }
+
+      .fix-bad {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: var(--accent2);
+        margin-bottom: 6px;
+      }
+
+      .fix-bad::before {
+        content: "✗ ";
+        text-decoration: none;
+        color: var(--accent2);
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+      }
+
+      .fix-good {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .fix-good::before {
+        content: "✓ ";
+        font-family: "Inter", sans-serif;
+      }
+
+      .fix-note {
+        font-size: 0.74rem;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.5;
+      }
+
+      /* Word bank — compact chips with no functional grouping */
+      .word-bank {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 18px;
+      }
+
+      .word-bank .chip {
+        background: var(--surface);
+      }
+
+      @media (max-width: 720px) {
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ladder-step {
+          padding: 12px 14px;
+        }
+
+        .ladder-say {
+          font-size: 0.95rem;
+        }
+      }
+
+      .apply-box p.apply-text {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+
+      .apply-link {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 18px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
+
+      .apply-link:hover {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+      }
+
+      /* ---------- LANGUAGE TIP (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- Transformation deck — the instruction line ---------- */
+      .trans-task {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-bottom: 4px;
+      }
+
+      .trans-task-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .trans-task-value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent2);
+        letter-spacing: -0.01em;
+      }
+
+      .trans-task-value.waiting {
+        font-weight: 400;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      @media (max-width: 720px) {
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">Can You Help Me? — Lesson 5</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Asking Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Do Me a Favor</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============================================================
+             STAGE 0: WARM-UP
+             ============================================================ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>how was your week?</em></div>
+          <div class="stage-sub"></div>
+
+          <div class="section-label">Five sentences — try them now</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            These are yours to read out loud. They get harder as they go down,
+            and each one is a piece of the next stage.
+          </p>
+          <div class="ladder">
+            <div class="ladder-step">
+              <div class="ladder-num">1</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I couldn't find the file anywhere, but in the end I managed
+                  to get a copy from IT."
+                </div>
+                <div class="ladder-note">couldn't · managed to</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">2</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "He isn't answering his phone — he must be in a meeting, or he
+                  might be on his way here."
+                </div>
+                <div class="ladder-note">a guess · must · might</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">3</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "Would it be OK if I left a bit earlier on Friday? I've got a
+                  flight at five."
+                </div>
+                <div class="ladder-note">
+                  a big favor · Would it be OK if I + the past?
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">4</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I was wondering if you could take a look at my slides before
+                  Thursday."
+                </div>
+                <div class="ladder-note">
+                  the softest way to ask · I was wondering if you could
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">5</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "Sorry to bother you — could you tell me where the meeting is?
+                  I looked everywhere, and it can't be on this floor."
+                </div>
+                <div class="ladder-note">
+                  a question inside a question · can't be
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">How was your week at work?</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The conversation this whole lesson is for, and you have it for real
+            — nothing here is for repeating. I ask you about your week, from the
+            first row. You answer by finishing one of the second row with
+            something true, and keep it going with the third.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">1 · I ask you</div>
+            <div class="vocab-chips">
+              <span class="chip">What was the hardest thing you did this week?</span>
+              <span class="chip">Did you manage to finish everything?</span>
+              <span class="chip">Was there anything you couldn't do?</span>
+              <span class="chip">Did anyone help you?</span>
+              <span class="chip">What would you like to be able to do better?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">
+              2 · You answer — finish one with something true
+            </div>
+            <div class="vocab-chips">
+              <span class="chip">I had to …, and it wasn't easy, because …</span>
+              <span class="chip">I managed to …, but I couldn't …</span>
+              <span class="chip">In the end I was able to …, because …</span>
+              <span class="chip">I didn't manage to …, so …</span>
+              <span class="chip">I'm hoping to be able to … by …</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">3 · You keep it going</div>
+            <div class="vocab-chips">
+              <span class="chip">What about you? How was your week?</span>
+              <span class="chip">Did you manage to …?</span>
+              <span class="chip">How did you do it?</span>
+              <span class="chip">Who did you ask for help?</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 1: THE ASKING TOOLKIT
+             ============================================================ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">Your <em>asking toolkit</em></div>
+          <div class="stage-sub">
+            Four blocks, easiest first: what you managed to do, what's probably
+            true, and how to ask for things without sounding rude.
+          </div>
+
+          <!-- BLOCK 1 -->
+          <div class="section-label" style="margin-top: 0">
+            1 · could, managed to, be able to
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            <em>can</em> only has two forms — <em>can</em> and <em>could</em> —
+            so everywhere else it borrows <em>be able to</em>. In the past
+            there's a catch: <em>could</em> is for something you could do in
+            general, over a long time. For one hard thing that you did anyway,
+            say <em>managed to</em> or <em>was able to</em>. In a negative,
+            <em>couldn't</em> works for both.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>When</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>in general, in the past</td>
+                <td>could</td>
+                <td>
+                  <em
+                    >When I was twenty, I could run ten kilometers, and I could
+                    stay up all night.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>one hard thing — you did it</td>
+                <td>managed to</td>
+                <td>
+                  <em
+                    >The traffic was terrible, but I managed to get there on
+                    time. I even managed to park.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>one hard thing — the same</td>
+                <td>was able to</td>
+                <td>
+                  <em
+                    >The system was down, but I was able to send it from my
+                    phone, and I was able to call the client.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>you didn't</td>
+                <td>couldn't · didn't manage to</td>
+                <td>
+                  <em
+                    >I couldn't find the file, and I didn't manage to finish the
+                    report.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>the future</td>
+                <td>will be able to</td>
+                <td>
+                  <em
+                    >I won't be able to come on Friday, but I'll be able to join
+                    on Monday.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>after another verb</td>
+                <td>to be able to</td>
+                <td>
+                  <em
+                    >I'd like to be able to present in English, and I hope to be
+                    able to do it this year.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">I could finish the report yesterday.</div>
+              <div class="fix-good">
+                I managed to finish the report yesterday.
+              </div>
+              <div class="fix-note">
+                One hard thing, done on one day, isn't <em>could</em>. Say
+                <em>managed to</em> or <em>was able to</em>. The negative is
+                fine: <em>I couldn't finish it.</em>
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I will can come on Monday.</div>
+              <div class="fix-good">I'll be able to come on Monday.</div>
+              <div class="fix-note">
+                <em>can</em> never comes after another verb — <em>will</em>,
+                <em>might</em>, <em>want to</em>. <em>be able to</em> takes its
+                place.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I managed finish it on time.</div>
+              <div class="fix-good">I managed to finish it on time.</div>
+              <div class="fix-note">
+                <em>manage</em> always takes <em>to</em>: managed to send,
+                managed to call, didn't manage to park.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 2 -->
+          <div class="section-label">2 · must, can't, might — making a guess</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            When you don't know, but you can guess from what you see.
+            <em>must</em> — you're almost sure it's true. <em>can't</em> —
+            you're almost sure it isn't. <em>might</em> or <em>could</em> —
+            maybe. The verb after them stays as it is: <em>must be</em>,
+            <em>might know</em>, <em>can't be working</em>.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>How sure</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>almost sure — yes</td>
+                <td>must</td>
+                <td>
+                  <em
+                    >He isn't answering — he must be in a meeting. He must be
+                    really busy.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>almost sure — no</td>
+                <td>can't</td>
+                <td>
+                  <em
+                    >That can't be right — it can't be five o'clock already.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>maybe</td>
+                <td>might</td>
+                <td>
+                  <em
+                    >She might be stuck in traffic, or she might be on the
+                    metro.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>maybe</td>
+                <td>could</td>
+                <td>
+                  <em>It could be the Wi-Fi, or it could be your laptop.</em>
+                </td>
+              </tr>
+              <tr>
+                <td>maybe not</td>
+                <td>might not</td>
+                <td>
+                  <em
+                    >He might not know about the meeting, and he might not have
+                    the address.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>reacting to someone</td>
+                <td>You must be …</td>
+                <td>
+                  <em>You must be tired! You must be happy it's over.</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">He can be in a meeting.</div>
+              <div class="fix-good">He might be in a meeting.</div>
+              <div class="fix-note">
+                For a guess about now, use <em>might</em> or <em>could</em>.
+                <em>can</em> is for what's possible in general:
+                <em>It can be cold in July.</em>
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">That mustn't be true.</div>
+              <div class="fix-good">That can't be true.</div>
+              <div class="fix-note">
+                The opposite of a <em>must</em> guess is <em>can't</em>.
+                <em>mustn't</em> means it's against the rules — see the next
+                block.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">She must to be at home.</div>
+              <div class="fix-good">She must be at home.</div>
+              <div class="fix-note">
+                <em>must</em> goes straight to the verb, like <em>can</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 3 -->
+          <div class="section-label">
+            3 · Would it be OK if I …? — permission and rules
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The bigger the favor, the longer the question. <em>Can I …?</em> for
+            small things; <em>Would it be OK if I …?</em> and
+            <em>Would you mind if I …?</em> for bigger ones — and after
+            <em>would … if I</em>, the verb goes into the past, even though
+            you're asking about the future. For rules: <em>don't have to</em>
+            means it isn't necessary; <em>not allowed to</em> and
+            <em>mustn't</em> mean it's against the rules.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>How big</th>
+                <th>Ask</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>small</td>
+                <td>Can I …?</td>
+                <td>
+                  <em
+                    >Can I borrow your charger? Can I give it back after
+                    lunch?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>bigger</td>
+                <td>Is it OK if I …?</td>
+                <td>
+                  <em
+                    >Is it OK if I work from home tomorrow? Is it OK if I start
+                    at ten?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>big</td>
+                <td>Would it be OK if I left …?</td>
+                <td>
+                  <em
+                    >Would it be OK if I left at two on Friday? Would it be OK
+                    if I took Monday off?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>big</td>
+                <td>Would you mind if I opened …?</td>
+                <td>
+                  <em
+                    >Would you mind if I opened the window? — No, not at all. Go
+                    ahead.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>very big</td>
+                <td>Is there any chance I could …?</td>
+                <td>
+                  <em
+                    >Is there any chance I could have a new laptop? Is there any
+                    chance I could have it this week?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>the rules</td>
+                <td>don't have to · not allowed to</td>
+                <td>
+                  <em
+                    >You don't have to wear a suit, but you're not allowed to
+                    wear shorts.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">
+                Would it be OK if I leave early on Friday?
+              </div>
+              <div class="fix-good">
+                Would it be OK if I left early on Friday?
+              </div>
+              <div class="fix-note">
+                After <em>would … if I</em>, the verb goes into the past. It
+                doesn't mean the past — it makes the question softer.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">
+                You mustn't come to the meeting — it's optional.
+              </div>
+              <div class="fix-good">
+                You don't have to come to the meeting — it's optional.
+              </div>
+              <div class="fix-note">
+                <em>don't have to</em>: you can if you want.
+                <em>mustn't</em>: you're not allowed to.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">
+                Do you mind if I sit here? — Yes, sit down!
+              </div>
+              <div class="fix-good">
+                Do you mind if I sit here? — No, go ahead!
+              </div>
+              <div class="fix-note">
+                <em>Do you mind …?</em> asks if it's a problem for you.
+                <em>Yes</em> means it is a problem — so to say OK, say
+                <em>No</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 4 -->
+          <div class="section-label">
+            4 · I was wondering if you could … — asking, and saying no
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            At work, the softer the request, the more likely the yes.
+            <em>I was wondering if you could …</em> and
+            <em>Would you be able to …?</em> are the softest ways to ask. To ask
+            for information politely, put the question inside
+            <em>Could you tell me …?</em> or <em>Do you know …?</em> And to say
+            no, give a reason and something else instead.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>What you're doing</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>asking, softly</td>
+                <td>I was wondering if you could …</td>
+                <td>
+                  <em
+                    >I was wondering if you could take a look at my slides — and
+                    if you could do it before Thursday.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>asking, softly</td>
+                <td>Would you be able to …?</td>
+                <td>
+                  <em
+                    >Would you be able to send me the numbers? Would you be able
+                    to send them by three?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>asking for information</td>
+                <td>Could you tell me …?</td>
+                <td>
+                  <em
+                    >Could you tell me where the meeting is, and what time it
+                    starts?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>asking for information</td>
+                <td>Do you know if …?</td>
+                <td>
+                  <em
+                    >Do you know if the client is coming? Do you know if she's
+                    bringing her team?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>saying no</td>
+                <td>I'd love to, but …</td>
+                <td>
+                  <em
+                    >I'd love to, but I'm afraid I won't be able to — I'm in
+                    Brasília all week.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>offering something else</td>
+                <td>I can't …, but I could …</td>
+                <td>
+                  <em
+                    >I can't do it today, but I could do it first thing
+                    tomorrow.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">I was wondering if you can help me.</div>
+              <div class="fix-good">I was wondering if you could help me.</div>
+              <div class="fix-note">
+                <em>was wondering</em> is in the past, so <em>can</em> moves
+                back to <em>could</em> — and it sounds softer.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">Do you know is he coming?</div>
+              <div class="fix-good">Do you know if he's coming?</div>
+              <div class="fix-note">
+                A yes/no question inside another question needs <em>if</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">No, I can't.</div>
+              <div class="fix-good">
+                I'm afraid I can't — I'm on a call until four.
+              </div>
+              <div class="fix-note">
+                A bare <em>no</em> sounds rude at work. Add
+                <em>I'm afraid</em>, a reason — and, if you can, something else
+                instead.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="rule-box">
+            <div class="rule-badge">Language Tip</div>
+            <div class="rule-title">Where is it? vs. Could you tell me where it is?</div>
+            <div class="rule-lead">
+              A normal question flips the order: the verb jumps in front —
+              <em>Where is the meeting?</em> — or <em>do</em> comes in to help —
+              <em>What time does it start?</em> A polite question wraps that
+              question inside a frame like <em>Could you tell me …?</em> or
+              <em>Do you know …?</em> The frame already does the asking, so the
+              question inside goes back to the order of a normal sentence: no
+              flip, no <em>do</em>.
+            </div>
+
+            <div class="rule-split">
+              <div class="rule-card">
+                <div class="rule-card-head">a normal question — it flips</div>
+                <div class="rule-formula">
+                  where + <span>is</span> + the meeting?
+                </div>
+                <ul>
+                  <li>Where is the meeting?</li>
+                  <li>What time does it start?</li>
+                  <li>Is the client coming?</li>
+                </ul>
+              </div>
+              <div class="rule-card">
+                <div class="rule-card-head">
+                  inside a frame — normal order
+                </div>
+                <div class="rule-formula">
+                  Could you tell me + where + the meeting <span>is</span>?
+                </div>
+                <ul>
+                  <li>Could you tell me where the meeting is?</li>
+                  <li>Do you know what time it starts?</li>
+                  <li>Do you know if the client is coming?</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-trap">
+              <div class="rule-trap-label">The trap</div>
+              <p>
+                ✗ <em>Do you know where is the printer?</em>
+                &nbsp;→&nbsp; ✓
+                <em>Do you know where the printer is?</em>
+              </p>
+              <p>
+                <strong
+                  >Once the frame has asked, the question inside is just
+                  information.</strong
+                >
+                So it goes back to normal order — the person or thing, then the
+                verb: <em>the printer is</em>, <em>it starts</em>. The
+                <em>do</em> goes when the flip goes:
+                <em>What time does it start?</em> becomes
+                <em>Do you know what time it starts?</em> A yes/no question has
+                no question word, so it borrows <em>if</em>:
+                <em>Is he coming?</em> becomes
+                <em>Do you know if he's coming?</em>
+                <em>I was wondering if you could …</em> works the same way.
+              </p>
+            </div>
+
+            <div class="rule-say">
+              <div class="rule-say-label">
+                Both sides — say all four out loud
+              </div>
+              <ol>
+                <li>Where's the printer? — Do you know where the printer is?</li>
+                <li>
+                  What time does the meeting start? — Could you tell me what
+                  time it starts?
+                </li>
+                <li>
+                  Is the client coming? — Do you know if the client is coming?
+                </li>
+                <li>Can you help me? — I was wondering if you could help me.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 2: DO ME A FAVOR
+             ============================================================ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">Do me <em>a favor</em></div>
+          <div class="stage-sub">
+            Answer the question, then ask the same question back.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Draw a question
+              </div>
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Take the button, and take whatever comes
+                    out.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawQuestion()">
+                    Draw a question
+                  </button>
+                  <button class="btn" onclick="resetDeck()">Reshuffle</button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                Both halves of the card, in full sentences. When a card asks for
+                guesses, give three — one with <em>must</em>, one with
+                <em>might</em>, one with <em>can't</em>. Then ask it back.
+              </p>
+
+              <div class="section-label">Change the sentence</div>
+              <div class="drill-panel">
+                <div class="trans-task">
+                  <span class="trans-task-label">Change it how?</span>
+                  <span class="trans-task-value waiting" id="trans-task"
+                    >press Next sentence</span
+                  >
+                </div>
+                <div class="drill-line empty" id="trans-line">
+                  Press Next sentence. Say the new one out loud before you check
+                  it.
+                </div>
+                <div class="drill-controls">
+                  <button class="btn primary" onclick="drawTransform()">
+                    Next sentence
+                  </button>
+                  <button class="btn" onclick="revealTransform()">
+                    Show the answer
+                  </button>
+                  <button class="btn" onclick="resetTransform()">
+                    Reshuffle
+                  </button>
+                  <span class="spacer"></span>
+                  <span class="drill-status" id="trans-status"></span>
+                </div>
+              </div>
+              <p class="panel-note">
+                Say the new sentence out loud before you check it. Some cards
+                have more than one right answer — the one shown is only one of
+                them. <em>Ask it indirectly</em> means no flip:
+                <em>Where is it?</em> becomes <em>Do you know where it is?</em>
+                <em>Make a guess</em> turns <em>I'm sure</em> into
+                <em>must</em>, and <em>I'm sure it isn't</em> into
+                <em>can't</em>.
+              </p>
+
+              <div class="divider"></div>
+
+              <div class="section-label">Four favors</div>
+              <div class="scenario-intro">
+                <div class="intro-label">You and me, at work</div>
+                <p>
+                  I'm your manager, and I'm very busy. You need four things
+                  from me this week — ask for each one as softly as you can.
+                  I'll say yes to two and no to two. When I say no, find
+                  another way: ask for something smaller, offer something back,
+                  or change the time.
+                </p>
+              </div>
+              <div class="reflection-grid">
+                <div class="reflection-row">
+                  <div class="reflection-label">1 · The numbers</div>
+                  <div class="reflection-content">
+                    You need last month's sales numbers from me before your
+                    meeting at three today.
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">2 · Friday</div>
+                  <div class="reflection-content">
+                    You want to leave at two on Friday. You've got a flight at
+                    five.
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">3 · Your slides</div>
+                  <div class="reflection-content">
+                    You want me to look at your slides before your presentation
+                    on Thursday.
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">4 · Your laptop</div>
+                  <div class="reflection-content">
+                    Yours is very slow, and you want a new one this week.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Keep these in view</div>
+              <div class="chip-group">
+                <div class="chip-group-label">Asking</div>
+                <div class="vocab-chips">
+                  <span class="chip">I was wondering if you could …</span>
+                  <span class="chip">Would you be able to …?</span>
+                  <span class="chip">Would it be OK if I left …?</span>
+                  <span class="chip">Is there any chance I could …?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">When I say no</div>
+                <div class="vocab-chips">
+                  <span class="chip">What about …?</span>
+                  <span class="chip">Could you at least …?</span>
+                  <span class="chip">If you …, I could …</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">If you get stuck</div>
+                <div class="vocab-chips">
+                  <span class="chip">Sorry, I don't understand.</span>
+                  <span class="chip">Can you say that again?</span>
+                  <span class="chip">Let me think.</span>
+                  <span class="chip">How do you say this in English?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 3: WRAP-UP
+             ============================================================ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>nothing on the screen</em></div>
+          <div class="stage-sub">Close the page for these.</div>
+
+          <div class="section-label" style="margin-top: 0">Close the page</div>
+
+          <ul class="q-list">
+            <li>
+              Ask me for three things: one that starts
+              <em>I was wondering if you could …</em>, one that starts
+              <em>Would it be OK if I …?</em>, and one that starts
+              <em>Do you know where …?</em>
+            </li>
+          </ul>
+
+          <div class="apply-box">
+            <div class="apply-label">Before next class</div>
+            <div class="apply-lead">
+              Listen to a favor being asked — and refused.
+            </div>
+            <p class="apply-text">
+              British Council LearnEnglish, Asking a favour — a short video.
+              Noelia needs Paul to do some extra work today, and Paul is very
+              busy. Listen, before you read the transcript, for how she asks and
+              how he says no — and bring the three phrases you liked best to
+              class.
+            </p>
+            <a
+              class="apply-link"
+              href="https://learnenglish.britishcouncil.org/free-resources/speaking/b1/asking-favour"
+              target="_blank"
+              rel="noopener"
+              >Watch the video — Asking a favour</a
+            >
+          </div>
+
+          <div class="section-label">Next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Coming up</div>
+              <div class="reflection-content">
+                On the phone — spelling names, giving numbers, and agreeing on a
+                time.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---------------- NAVIGATION ---------------- */
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---------------- QUESTION DECK ---------------- */
+      const QUESTIONS = [
+        "What's something difficult you managed to do this year, and how did you do it?",
+        "Was there anything you couldn't finish last week? What happened?",
+        "What could you do as a child that you can't do now — and why not?",
+        "What would you like to be able to do in English by December, and what's stopping you?",
+        "You emailed a colleague two days ago, and there's no answer. What might be the reason? Give three guesses.",
+        "Your phone rings at seven on a Sunday morning. Who might it be — and who can't it be?",
+        "What's the hardest thing to ask your manager for, and how do you ask for it?",
+        "When was the last time you had to say no at work? How did you say it?",
+        "Is it easy for you to say no to friends? What do you say when you don't want to go out?",
+        "What aren't you allowed to do at work that you'd like to do? Why is the rule there?",
+        "What don't you have to do in your job that people think you do?",
+        "Who do you ask when you need help at work — and who do you never ask?",
+        "What's the most polite way to ask your boss for a day off? Say it to me.",
+        "Did you manage to do everything you wanted to do last weekend? What didn't you manage to do?",
+        "What couldn't you do on your first day at work that you can do easily now?",
+        "A colleague asks you for a big favor at six on a Friday. What do you say?",
+        "A colleague arrives at work smiling, with a cake. What might be the reason? Give three guesses.",
+        "The office is empty at ten on a Monday. What could be going on?",
+        "Is there something you'd like to ask someone at work, but you're not sure how? Ask me instead.",
+        "What can't you do at work without your computer? What could you still do?",
+        "Do you know what time the shops close on Sundays where you live? What about the banks?",
+        "Could you tell me how you get to work, and how long it takes?",
+        "Do you know if any of your colleagues use English at work? When do they use it?",
+        "What's something you can't do at work yet, but you'll be able to do soon?",
+        "When was the last time someone said no to you? How did they say it, and how did you feel?",
+        "What's the best way to get a yes from a very busy person?",
+      ];
+
+      let qDeck = shuffle(QUESTIONS);
+
+      function updateDeckCount() {
+        const el = document.getElementById("deck-count");
+        el.textContent =
+          qDeck.length === 0
+            ? "deck finished — reshuffle to go again"
+            : qDeck.length + " left in the deck";
+      }
+
+      function drawQuestion() {
+        const textEl = document.getElementById("prompt-text");
+        if (qDeck.length === 0) {
+          textEl.classList.add("empty");
+          textEl.textContent =
+            "That's the whole deck. Reshuffle to start it again.";
+          updateDeckCount();
+          return;
+        }
+        textEl.classList.remove("empty");
+        textEl.textContent = qDeck.pop();
+        updateDeckCount();
+      }
+
+      function resetDeck() {
+        qDeck = shuffle(QUESTIONS);
+        const textEl = document.getElementById("prompt-text");
+        textEl.classList.add("empty");
+        textEl.textContent =
+          "Nothing drawn yet. Take the button, and take whatever comes out.";
+        updateDeckCount();
+      }
+
+      /* ---------------- CHANGE THE SENTENCE ---------------- */
+      /* Six of each job, hand-written and checked. */
+      const TRANSFORM = [
+        {
+          task: "Make it more polite",
+          given: "Send me the numbers by three.",
+          answer: "Would you be able to send me the numbers by three?",
+        },
+        {
+          task: "Make it more polite",
+          given: "Can you look at my slides?",
+          answer: "I was wondering if you could look at my slides.",
+        },
+        {
+          task: "Make it more polite",
+          given: "Can I leave at two on Friday?",
+          answer: "Would it be OK if I left at two on Friday?",
+        },
+        {
+          task: "Make it more polite",
+          given: "Move the meeting to Thursday.",
+          answer: "Is there any chance you could move the meeting to Thursday?",
+        },
+        {
+          task: "Make it more polite",
+          given: "Can I open the window?",
+          answer: "Would you mind if I opened the window?",
+        },
+        {
+          task: "Make it more polite",
+          given: "Call me back after lunch.",
+          answer: "I was wondering if you could call me back after lunch.",
+        },
+
+        {
+          task: "Ask it indirectly",
+          given: "Where's the printer?",
+          answer: "Do you know where the printer is?",
+        },
+        {
+          task: "Ask it indirectly",
+          given: "What time does the meeting start?",
+          answer: "Could you tell me what time the meeting starts?",
+        },
+        {
+          task: "Ask it indirectly",
+          given: "Is the client coming today?",
+          answer: "Do you know if the client is coming today?",
+        },
+        {
+          task: "Ask it indirectly",
+          given: "How much does the course cost?",
+          answer: "Could you tell me how much the course costs?",
+        },
+        {
+          task: "Ask it indirectly",
+          given: "When is Ana back from vacation?",
+          answer: "Do you know when Ana is back from vacation?",
+        },
+        {
+          task: "Ask it indirectly",
+          given: "Did they send the contract?",
+          answer: "Do you know if they sent the contract?",
+        },
+
+        {
+          task: "Make a guess — use must, can't or might",
+          given: "I'm sure he's in a meeting — his door is closed.",
+          answer: "He must be in a meeting — his door is closed.",
+        },
+        {
+          task: "Make a guess — use must, can't or might",
+          given: "I'm sure that isn't right — it's too cheap.",
+          answer: "That can't be right — it's too cheap.",
+        },
+        {
+          task: "Make a guess — use must, can't or might",
+          given: "Maybe she's stuck in traffic.",
+          answer: "She might be stuck in traffic.",
+        },
+        {
+          task: "Make a guess — use must, can't or might",
+          given: "I'm sure you're tired after that trip.",
+          answer: "You must be tired after that trip.",
+        },
+        {
+          task: "Make a guess — use must, can't or might",
+          given: "Maybe it's the Wi-Fi.",
+          answer: "It might be the Wi-Fi.",
+        },
+        {
+          task: "Make a guess — use must, can't or might",
+          given: "I'm sure it isn't Paulo — he's on vacation.",
+          answer: "It can't be Paulo — he's on vacation.",
+        },
+
+        {
+          task: "Say it with managed to",
+          given: "The traffic was terrible, but I got there on time.",
+          answer: "The traffic was terrible, but I managed to get there on time.",
+        },
+        {
+          task: "Say it with managed to",
+          given: "It was hard, but I finished the report.",
+          answer: "It was hard, but I managed to finish the report.",
+        },
+        {
+          task: "Say it with managed to",
+          given: "The system was down, but I sent it from my phone.",
+          answer: "The system was down, but I managed to send it from my phone.",
+        },
+        {
+          task: "Say it with managed to",
+          given: "The restaurant was full, but we found a table.",
+          answer: "The restaurant was full, but we managed to find a table.",
+        },
+        {
+          task: "Say it with managed to",
+          given: "I tried, but I didn't finish it.",
+          answer: "I tried, but I didn't manage to finish it.",
+        },
+        {
+          task: "Say it with managed to",
+          given: "The file was huge, but in the end I opened it.",
+          answer: "The file was huge, but in the end I managed to open it.",
+        },
+      ];
+
+      let tDeck = [];
+      let tCurrent = null;
+
+      function updateTransformStatus() {
+        document.getElementById("trans-status").innerHTML =
+          tDeck.length === 0
+            ? "deck finished — <strong>reshuffle to go again</strong>"
+            : "<strong>" + tDeck.length + "</strong> left in the deck";
+      }
+
+      function drawTransform() {
+        const line = document.getElementById("trans-line");
+        const task = document.getElementById("trans-task");
+        if (tDeck.length === 0) {
+          line.classList.add("empty");
+          line.textContent =
+            "That is the whole deck. Reshuffle to start it again.";
+          task.classList.add("waiting");
+          task.textContent = "press Reshuffle";
+          tCurrent = null;
+          updateTransformStatus();
+          return;
+        }
+        tCurrent = tDeck.pop();
+        line.classList.remove("empty");
+        task.classList.remove("waiting");
+        task.textContent = tCurrent.task;
+        line.textContent = tCurrent.given;
+        updateTransformStatus();
+      }
+
+      function revealTransform() {
+        if (!tCurrent) return;
+        document.getElementById("trans-line").textContent =
+          tCurrent.given + "  →  " + tCurrent.answer;
+      }
+
+      function resetTransform() {
+        tDeck = shuffle(TRANSFORM);
+        tCurrent = null;
+        const line = document.getElementById("trans-line");
+        line.classList.add("empty");
+        line.textContent =
+          "Press Next sentence. Say the new one out loud before you check it.";
+        const task = document.getElementById("trans-task");
+        task.classList.add("waiting");
+        task.textContent = "press Next sentence";
+        updateTransformStatus();
+      }
+
+      /* ---------------- INIT ---------------- */
+      resetTransform();
+      updateDeckCount();
+      goTo(0);
+    </script>
+  </body>
+</html>

@@ -28,6 +28,11 @@ What that means for planning:
 - He gets through blocks 1–5 in an hour — but a toolkit that fills the hour
   leaves no time to talk. **From lesson 3: four blocks at most**, counting
   carried ones (see *Keep the toolkit small* in `SKILL.md`).
+- **The pitch has kept moving up.** Lessons 2–4 were each asked for "a level
+  harder". On 8 October 2026 Felipe judged lesson 5's first version — A2 *can
+  / can't* — *"too easy for Peterson"*, and it was rebuilt at B1. **Pitch new
+  pages at B1 by default**, and test every block against the wasted-block rule
+  above before proposing it.
 
 Still unrecorded: how much of the BBC homework he actually understood, which is
 the second read on his listening level. Worth asking at the start of lesson 1.
@@ -376,8 +381,8 @@ reintroduce on this page:
 
 - **The who-speaks cue** at the end of every toolkit block's panel-note (*I
   read the first row … green lines are yours, twice each*). All four removed;
-  the notes now explain the grammar only. This contradicts *Every block states
-  its own cue* in `SKILL.md` — **ask before treating it as a standing rule**.
+  the notes now explain the grammar only. **Confirmed as a standing rule on
+  8 October 2026** — `SKILL.md` now says not to write cues on the page.
 - Three fix cards: *Yes, there's* → *Yes, there is* (block 1), *in front of*
   for across the street → *opposite* (block 3), *notebook* → *laptop*
   (block 4). Every block now has two or three.
@@ -441,6 +446,112 @@ curl).
 asking for things at work. Next in the list below after places; swap the note
 if *Numbers, letters and time* is wanted first.
 
+**What happened (6 October):** all four blocks reached — the second lesson in a
+row finished in full under the four-block limit.
+
+---
+
+## Lesson 5 — Can You Help Me?
+`lesson_plan_5.html` · 8 October 2026
+
+Stages: Warm-up → The Asking Toolkit → Do Me a Favor → Wrap-up
+
+*can* and *can't*, as named on lesson 4's page — but **rebuilt a level up the
+same morning.** The first version (can / can't for ability, could / be able to,
+Can I …? / Is it OK if I …?, Could you …? / Would you mind …ing?, Language Tip
+*can vs. be able to*) was built at the lessons 2–4 pitch, and Felipe judged it
+*"too easy for Peterson."* Its first two blocks drilled things he already says
+correctly — the wasted-block trap from *His level*. **Read this as the level
+moving up: from here, pitch at B1**, where *could vs. managed to*, guessing
+with *must / can't*, the past after *would it be OK if I*, and indirect
+questions are the target, not the stretch. Nothing carried in the toolkit
+(lesson 4 finished in full). **The first page built with no who-speaks cues**,
+on Felipe's confirmation.
+
+**Warm-up:** a new ladder (fifth rung: *Sorry to bother you — could you tell me
+where the meeting is? I looked everywhere, and it can't be on this floor*),
+then *How was your week at work?* — I ask · you answer · you keep it going,
+three rows, with answer chips built on *managed to / couldn't / was able to /
+I'm hoping to be able to*.
+
+**Toolkit**, four blocks:
+
+1. **could, managed to, be able to** — could (general past) / managed to / was
+   able to (one hard thing) / couldn't · didn't manage to / will be able to /
+   to be able to. Fix cards: *I could finish the report yesterday* → *managed
+   to* · *I will can come* · *I managed finish it*.
+2. **must, can't, might — making a guess** — must / can't / might / could /
+   might not / *You must be …* as a reaction. Fix cards: *He can be in a
+   meeting* → *might* · *That mustn't be true* → *can't* (pointing ahead to
+   block 3's *mustn't* for rules) · *She must to be*.
+3. **Would it be OK if I …? — permission and rules** — Can I / Is it OK if I /
+   Would it be OK if I left / Would you mind if I opened / Is there any chance
+   I could / *don't have to* vs. *not allowed to*. Fix cards: *Would it be OK if
+   I leave* → *left* · *You mustn't come — it's optional* → *don't have to* ·
+   *Do you mind …? — Yes, sit down!*
+4. **I was wondering if you could … — asking, and saying no** — I was wondering
+   if you could / Would you be able to / Could you tell me … / Do you know if …
+   / I'd love to, but … / I can't …, but I could … Fix cards: *I was wondering
+   if you can* · *Do you know is he coming?* → *if* · a bare *No, I can't* →
+   *I'm afraid I can't — I'm on a call until four*.
+
+**Language Tip:** *Where is it? vs. Could you tell me where it is?* — inside a
+polite frame the question goes back to normal order: no flip, no *do*, and
+*if* for a yes/no question. Trap: *Do you know where is the printer?* Picked
+over *could vs. managed to* because it is the error behind blocks 3 and 4's
+softest forms and the one he will make all day at work.
+
+**Activity:** Do Me a Favor — a 26-card deck of two-part questions (several ask
+for three guesses — *must*, *might*, *can't*; two are themselves indirect
+questions to answer and ask back); **Change the sentence**, 24 hand-written
+cards, six each of *Make it more polite* · *Ask it indirectly* · *Make a guess
+— use must, can't or might* · *Say it with managed to*. No lesson 4 carry —
+the *Say it with there* cards in the first version were dropped for harder
+jobs. Then **Four favors**: Felipe as a busy manager,
+Peterson asking for four things (sales numbers before three, leaving at two on
+Friday for a flight, a look at his slides, a new laptop), two yeses and two
+noes, and after a no he finds another way. Sidebar: *Asking* · *When I say
+no* · *If you get stuck*.
+
+**Wrap-up:** one recall item — ask me for three things, with *I was wondering
+if you could …*, *Would it be OK if I …?* and *Do you know where …?*
+
+**Homework:** British Council LearnEnglish, **B1** — *Asking a favour*, a short
+video (filed under their speaking section; the video is the listening). Noelia
+asks a busy colleague, Paul, to redo some work that afternoon; he says no, and
+they bargain their way to an early start the next day. It uses this page's
+language almost line for line: *Would you be able to …?* · *Is there any chance
+you could …?* · *I'm not really sure if I can* · *I would if I could, but I
+can't*. Task: listen before reading the transcript, for how she asks and how he
+says no, and bring the three phrases he liked best. **The first listening
+homework since lesson 2**, at Felipe's request. Verified in a browser.
+
+**Cut during review, do not reintroduce on this page:**
+
+- **The swap in the warm-up** — row 4, *Swap — you ask, react, then close
+  it*, with the reaction chips *You must be tired! · That can't be easy. ·
+  You must be happy it's over. · It might be better next week.*, and the note
+  telling Peterson to get Felipe's bad week out of him. Reason not given.
+  *What about you? How was your week?* is still in row 3.
+- **Round 2 of Four favors** — Felipe as a colleague from another team asking
+  for four things, Peterson refusing two politely. Reason not given. Its
+  sidebar group, *Saying no* (*I'm afraid I can't — … · I'd love to, but … ·
+  I won't be able to …, but I could … · How about … instead?*), went with it.
+  Saying no is still taught in block 4 and asked about in the deck.
+- **The reading homework** — *An email request for help* (B1 reading), plus
+  writing an email of his own. Felipe wanted a listening activity instead.
+
+**Kept out on purpose:** the present perfect. Two lines drafted with it (*I've
+looked everywhere*, *hasn't answered your email*) were rewritten — it has not
+been taught. It is a strong candidate for a coming lesson now that the pitch is
+B1.
+
+**Next class, as named on the page:** on the phone — spelling names, giving
+numbers, agreeing on a time. **This merges two items from the list below**:
+*Numbers, letters and time* (jumped twice already) and *On the phone*. Swap
+the note if either is wanted on its own — and given the new pitch, check it
+is not too easy before building it.
+
 ---
 
 ## Carried over
@@ -470,6 +581,10 @@ From **lesson 3**: nothing — all four blocks were reached. Comparing still
 comes back in lesson 4, as the six *Compare them* cards in the transformation
 deck and the hotel choice in the roleplay.
 
+From **lesson 4**: nothing — all four blocks were reached. Not carried into
+lesson 5 either: the *Say it with there* cards were in its first version and
+dropped when it was rebuilt a level up.
+
 ---
 
 ## Not yet covered
@@ -480,11 +595,15 @@ comparing are done:
 - **Numbers, letters and time** — cut from lesson 0 for time. Zero to a hundred,
   the *thirteen/thirty* stress contrast, spelling out loud (E/I and G/J are the
   ones Portuguese speakers mix up), telling the time, days of the week.
-- **Can / can't** — ability and permission, and the workplace uses of both.
 - **Food, ordering, and shopping** — high-frequency everyday language he will
   actually use.
 - **On the phone and on video calls** — a beginner's version: asking someone to
-  slow down, spelling names, confirming times.
+  slow down, spelling names, confirming times. Named as lesson 6, **merged with
+  Numbers, letters and time** above. Lesson 5's *Could you …?* and *Can I …?*
+  are its natural ground: *Could you spell that? · Can I call you back?*
+- **The present perfect** — *I've been to …*, *I've never …*, *I haven't …
+  yet*, *for / since*. Kept off lesson 5's page on purpose; at the B1 pitch it
+  is the biggest missing structure.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
   way it was not before. **Three of the nine false-friend fix cards cut from
