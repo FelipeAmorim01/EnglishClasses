@@ -259,11 +259,95 @@ halfway (L1) · I could go either way (L5)
 
 ---
 
+## Lesson 7 — Health & Feeling Rough
+`lesson_plan_7.html` · 8 October 2026
+
+Stages: Warm-up → The Health Toolkit → Talk It Through → Wrap-up
+
+Non-business, and another concrete lexical field like money. Chosen because
+illness is where a fluent adult falls back on *my head hurts* and *I feel bad*.
+Built to Felipe's trimmed Lesson 6 density, then trimmed again by him: roughly
+54 items in stage 2, plus 14 on the stage 3 ladder and 16 in the sidebar.
+
+**Native-speaker patterns** (three-column table, column 3 read aloud):
+*a splitting headache / a pounding head* · *my back's killing me / I've done my
+back in* · *a blocked nose / a runny nose / I'm all stuffed up* · *a scratchy
+throat / a sore throat* · *I'm running a temperature / I'm burning up* · *I threw
+up / I was sick* · *an upset stomach / a dodgy stomach* · *I twisted my ankle /
+I sprained it / it's swollen* · *it's sore / tender / stiff*
+
+**The severity scale** (5 bands × 3, the `.value-scale` component from L6
+renamed `.sev-scale`):
+1 Just a bit off — *a bit off* · *not quite right* · *a bit of a sniffle*
+2 Under the weather — *under the weather* · *not a hundred percent* · *feeling a
+bit rough*
+3 Properly ill — *properly ill* · *laid up in bed* · *feeling awful*
+4 Knocked out — *knocked for six* · *flat on my back* · *completely floored*
+5 In a bad way — *in agony* · *in a bad way* · *rushed to hospital*
+
+A "kinds of pain" grid (*sharp, dull, throbbing, stabbing, burning, aching,
+shooting, a twinge*) was built and then cut by Felipe on 8 October. Those words
+are still untaught, so they're free for a future lesson.
+
+**Idioms:** on the mend · back on your feet · (as) right as rain · a clean bill
+of health · burn the candle at both ends · run yourself into the ground · sick
+as a dog · a frog in your throat
+
+**Phrasal verbs:** come down with · pick up (a bug) · go round · shake off ·
+get over · pass out · flare up · kick in / wear off · put (someone) on
+
+**Language Tip:** *be cold* vs. *have a cold*. Portuguese *estar com* + noun
+(*com frio*, *com dor de cabeça*, *com febre*) becomes either *be* + adjective
+or *have got* + *a* + noun in English. The trap: *I'm with a headache* and
+*I have fever*. Picked over *hurt / injure / damage*, which was offered when the
+topic was proposed, because this is the error Brazilians actually make, and
+*hurt* doesn't split in English the way *machucar* / *doer* do in Portuguese.
+
+**Activity:** first built as two hidden-brief roleplays (a London pharmacy, a
+GP appointment). Felipe replaced them on 8 October with two conversational
+rounds, and that is what the page runs:
+1. **A question deck.** The same widget as Peterson's (`.prompt-deck`, draw /
+   reshuffle / count), with 24 personal health questions. Answer it, then ask it
+   back. Felipe asked for it "like we do in Peterson's class", so the pattern
+   carries across tracks.
+2. **Ride it out or get it looked at?** A deck of 20 situations plus a clickable
+   four-rung triage ladder: Ride it out (*I'd ride it out* · *sleep it off* ·
+   *keep an eye on it* · *it'll sort itself out*) → Pharmacy (*pick something up
+   for it* · *something over the counter* · *take the edge off it*) → Doctor
+   (*get it looked at* · *I wouldn't leave it* · *better safe than sorry*) →
+   A&E / ER (*go straight to A&E* · *I wouldn't mess around with that* · *it's
+   not worth the risk*). Clicking a rung marks it "Your call", and Raffa then
+   explains why that level and not the one above or below it. A new draw
+   clears the ladder. The first version also lit the mirror rung as "My case"
+   for Felipe to argue against. He found the label unclear and had it removed
+   on 8 October, so keep this activity as explain-your-choice, with no forced
+   counter-argument.
+
+Both decks run through one `makeDeck()` factory in the script. Sidebar groups:
+Telling it · Reacting · Explaining your call (*If it were me, I'd…* · *The thing
+that worries me is…* · *It depends on whether…* · *I'd give it (a couple of
+days)*) · Hedging it (*It's probably nothing, but…* · *I wouldn't normally
+bother, but…* · *If it got any worse, I'd…* · *just to be on the safe side*).
+
+**Wrap-up:** in class, a 60-second voicemail calling in sick: two symptoms, the
+scale band named first, how it started with a phrasal verb, and when you'll be
+back.
+
+**Homework:** speaking (alternating with L6's listening). A two-minute voice
+note on the worst you've ever felt, put on the scale before it's described.
+
+**Recycled into the warm-up:** out of the blue (L4) · live out of a suitcase
+(L2) · end up (L4) · put up with (L4) · cost an arm and a leg (L6) · be on the
+fence (L5)
+
+---
+
 ## Rules used so far
 
 One per lesson, at the bottom of stage 2. Don't repeat one.
 
 - L6 — *lend* vs. *borrow*
+- L7 — *be cold* vs. *have a cold* (*estar com* → *be* + adj. / *have got* + *a* + noun)
 
 Queued, roughly best first (Portuguese-interference ones first, since those are
 errors he actually produces): *make* vs. *do* · *say* vs. *tell* · *either /
@@ -285,8 +369,6 @@ Topic ideas raised and not used, with the language each would carry:
   returning things; the escalation ladder from polite to immovable.
 - **Taste and recommending** — comparison shortcuts, intensity and enthusiasm
   vocabulary, describing something to someone who has never seen it.
-- **Feeling rough** — symptoms, aches and doctors; a field where fluent adults
-  describe illness like children because they have never needed to.
 - **When things go wrong at work** — accountability language, escalating upward,
   the vocabulary of uncertainty.
 - **Your professional story** — career narrative retold for different audiences.
