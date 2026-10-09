@@ -227,6 +227,14 @@ from the array, so nothing else needs editing.
 Set `soon: true` for a class that is not ready — it renders as a dashed,
 unclickable card.
 
+Set `paid: true` once the class has been paid for — it puts a small green fold
+in the card's top-right corner. Leave it off a new lesson until it is paid.
+
+A class paid in advance can sit at the end of the array as a placeholder with
+both `soon: true` and `paid: true` (title "Next Class", no date). When that class
+is prepared, **fill in the placeholder** — set its title, date and desc, drop
+`soon`, keep `paid` — rather than appending a new entry after it.
+
 **Numbering:** `lesson_plan_N.html` is "Lesson N" everywhere — the `<title>`, the
 header subtitle and the library card. So `lesson_plan_6.html` carries
 `<title>English Conversation — Lesson 6</title>` and appears as "Lesson 6". The

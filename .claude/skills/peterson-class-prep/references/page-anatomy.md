@@ -343,6 +343,14 @@ Append one object to the `LESSONS` array in `Peterson/index.html`:
 Set `soon: true` for a class that is not ready — it renders as a dashed,
 unclickable card.
 
+Set `paid: true` once the class has been paid for — it puts a small green fold
+in the card's top-right corner. Leave it off a new lesson until it is paid.
+
+A class paid in advance can sit at the end of the array as a placeholder with
+both `soon: true` and `paid: true` (title "Next Class", no date). When that class
+is prepared, **fill in the placeholder** — set its title, date and desc, drop
+`soon`, keep `paid` — rather than appending a new entry after it.
+
 **Numbering:** files, titles and library cards all agree. `lesson_plan_0.html`
 carries `<title>English Conversation — Lesson 0</title>`, uses "Lesson 0" in the
 header subtitle too, and appears as "Lesson 0" on the library, which labels by

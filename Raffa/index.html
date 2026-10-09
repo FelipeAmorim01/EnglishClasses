@@ -21,6 +21,7 @@
         --accent2: #b85c2a;
         --text: #1a1a18;
         --muted: #7a7368;
+        --paid: #3d8a57;
         /* brand mark — deliberately not the page palette */
         --brand-ink: #17304a;
         --brand-red: #b23a2e;
@@ -164,6 +165,20 @@
       .lesson-card:hover {
         border-color: var(--accent);
         transform: translateY(-2px);
+      }
+
+      /* PAID: small green fold in the top-right corner */
+      .lesson-card.paid {
+        position: relative;
+      }
+
+      .lesson-card.paid::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 12px solid var(--paid);
+        border-left: 12px solid transparent;
       }
 
       @keyframes fadeUp {
@@ -330,6 +345,7 @@
          - date:   day of the class, e.g. "21 August 2026"
          - desc:   one-line summary
          - soon:   set to true for a class that isn't ready yet (no link)
+         - paid:   set to true once the class has been paid for (green corner)
 
          Lessons are numbered from 0 in the order they appear in this list,
          so just append new ones at the bottom.
@@ -337,51 +353,66 @@
       const LESSONS = [
         {
           file: "lesson_plan_0.html",
+          paid: true,
           title: "Getting Started",
           date: "6 August 2026",
           desc: "Experimental lesson: talking about your work, upgrading everyday vocabulary, and defending decisions as CEO for a day.",
         },
         {
           file: "lesson_plan_1.html",
+          paid: true,
           title: "Negotiation & Workplace Conflict",
           date: "14 August 2026",
           desc: "Diplomatic language for disagreement, pushing back politely, and holding your ground at the negotiation table.",
         },
         {
           file: "lesson_plan_2.html",
+          paid: true,
           title: "Travel & Social Small Talk",
           date: "21 August 2026",
           desc: "Sounding natural on the road, opening conversations with strangers, and handling things when the trip goes wrong.",
         },
         {
           file: "lesson_plan_3.html",
+          paid: true,
           title: "Presentations & Pitching",
           date: "29 August 2026",
           desc: "Holding the floor, signposting an argument, talking about numbers, and cutting a pitch from three minutes down to ten seconds.",
         },
         {
           file: "lesson_plan_4.html",
+          paid: true,
           title: "Storytelling & Anecdotes",
           date: "10 September 2026",
           desc: "Telling a story that lands: setting the scene, switching into the present at the peak, and holding the thread while someone keeps interrupting.",
         },
         {
           file: "lesson_plan_5.html",
+          paid: true,
           title: "Opinions & Disagreeing",
           date: "12 September 2026",
           desc: "Five strengths of disagreement, from barely hedged to flatly closed: conceding without losing the point, asking for the grounds, and arguing a side you don't hold.",
         },
         {
           file: "lesson_plan_6.html",
+          paid: true,
           title: "Money, Prices & Value",
           date: "3 October 2026",
           desc: "The language of what things cost: five verdicts on a price, saying a figure without committing to it, and two conversations where the money is the problem.",
         },
         {
           file: "lesson_plan_7.html",
+          paid: true,
           title: "Health & Feeling Rough",
           date: "8 October 2026",
           desc: "Saying what's wrong when you're ill: symptoms, five degrees of feeling awful, a question deck, and deciding when to ride it out and when to get it looked at.",
+        },
+        {
+          file: "lesson_plan_8.html",
+          paid: true,
+          soon: true,
+          title: "Next Class",
+          desc: "Topic and date to be confirmed.",
         },
       ];
 
@@ -389,7 +420,8 @@
 
       LESSONS.forEach((lesson, i) => {
         const card = document.createElement(lesson.soon ? "div" : "a");
-        card.className = "lesson-card" + (lesson.soon ? " soon" : "");
+        card.className =
+          "lesson-card" + (lesson.soon ? " soon" : "") + (lesson.paid ? " paid" : "");
         if (!lesson.soon) card.href = lesson.file;
 
         card.innerHTML = `
