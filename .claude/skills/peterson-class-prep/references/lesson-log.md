@@ -552,6 +552,100 @@ numbers, agreeing on a time. **This merges two items from the list below**:
 the note if either is wanted on its own — and given the new pitch, check it
 is not too easy before building it.
 
+**What happened (8 October):** all four blocks reached — the third lesson in a
+row finished in full under the four-block limit, and the first at B1.
+
+---
+
+## Lesson 6 — Can I Call You Back?
+`lesson_plan_6.html` · 13 October 2026
+
+Stages: Warm-up → The Phone Toolkit → On the Line → Wrap-up
+
+On the phone, as named on lesson 5's page — **with the level raised before
+building**, as the log warned. Taken literally (spelling, numbers, telling the
+time) it was A1 and partly covered in lesson 0, so the B1 weight sits in
+the phrasal verbs (pronoun in the middle), *tell / ask someone to …*, *say vs.
+tell*, moving a meeting, and *by vs. until*. Telling the time was left out.
+Nothing carried in the toolkit (lesson 5 finished in full).
+
+**Warm-up:** a new ladder (fifth rung: *Could you tell Ana I need the numbers
+by three? I'm in a meeting until two, but I'll be at my desk after that*), then
+*Calls at work*: I ask · you answer · you keep it going, three rows, no swap
+(lesson 5's swap row was cut, so it was not rebuilt).
+
+**Toolkit**, four blocks:
+
+1. **Spelling it out — letters, numbers, email** — the alphabet in six sound
+   groups (*the sound in day: A H J K* · *see* · *my* · *you* · *yes* · *on
+   their own: O R*), each with a name spelled as an example, as an
+   `.idiom-grid`; then *oh*, *double five*, *at*, *dot*, *underscore*, *dash*.
+   Listen-and-repeat only, said so in the note. Fix cards: *with P of Paris* →
+   *P as in Paris* · *point com* → *dot com* · *THIR-teen* → *thir-TEEN*.
+2. **pick up, call back, hold on — the verbs of a call** — pick up / hang up /
+   call back / hold on / put through / break up · get cut off; the pronoun goes
+   in the middle. Fix cards: *call back you* · *attended the phone* →
+   *answered* · *the call fell* → *we got cut off*.
+3. **Taking a message — tell, ask, say** — Can I take a message? / Could you
+   tell her …? / ask … to / ask … not to / She said … / I'll let him know. Fix
+   cards: *say him to call me* → *tell him* · *asked to me* → *asked me* ·
+   *let a message* → *leave a message*.
+4. **Does Thursday work? — finding a time, and moving it** — Does … work for
+   you? / I'm tied up · I'm free / I can't do … / push it back / bring it
+   forward / Let's say … Fix cards: *anticipate the meeting* → *bring it
+   forward* · *change the meeting for Friday* → *move it to* · *I can't on
+   Thursday* → *I can't do Thursday*.
+
+**Language Tip:** *by Friday vs. until Friday* — *by* is a deadline, something
+that happens once; *until* is a stretch that keeps going and stops. Trap: *I
+need the numbers until three*. The prose adds *not … until* = not before.
+Picked over *say vs. tell* (Felipe chose between the two) because a deadline
+said with *until* goes wrong at work, not just sounds wrong.
+
+**Activity:** On the Line — a 26-card deck of two-part questions (two ask him
+to spell or give a number the phone way); **Change the sentence**, 24
+hand-written cards, six each of *Use it, him or them* (*pick up the phone* →
+*pick it up*) · *Pass on the message* (*Ana: "Call me back before five."* →
+*Ana asked you to call her back before five.*; four *asked … (not) to*, two
+*said*) · *Join them with by or until* (three each) · *Ask to move the
+meeting*. Then **A message for Ana**: Peterson answers a colleague's phone,
+Felipe calls from another company talking fast; four rows to get (name and
+company spelled · number and email read back · the message and by when · our
+Wednesday meeting moved, with his free times given). The line breaking up
+halfway is announced in the intro. Sidebar: *Answering* · *Checking* · *When
+the line goes bad* · *If you get stuck*.
+
+**Added after review — Felipe's half, hidden.** As first built, the page gave
+only Peterson's side, and Felipe could not tell what he was meant to do: *"Do
+I have to be the person calling?"* Unlike *Four favors*, where Felipe only had
+to say yes or no, this scene needs him to supply exact facts — a name to
+spell, a number, an email — so it needs a brief. Restored the hidden
+`.position-card.counterpart` + `toggleReveal` from lessons 0–3, full width
+under the four rows, labelled *Me — the caller*, button *Show my half*, hint
+*Hidden until the call is over* (he is spelling from what he hears, so it
+cannot be open during the call; after it, it is the answer key for his notes).
+It holds: Jeremy Hughes · Kirby Freight · (11) 98803-1315 · 
+j_hughes@kirby-freight.com · the message (*ask Ana to send the signed
+contract by Thursday, tell her not to send the invoice until next week*) ·
+*push it back to Thursday morning*, the one time that does not work · the line
+breaking up during the number or email. **Rule of thumb: when a roleplay needs
+Felipe to supply facts, write his half.**
+
+**Wrap-up:** one recall item — leave me a message for a colleague: who you
+are, your surname spelled, a number, what you need and by when.
+
+**Homework:** British Council LearnEnglish, **B1** listening — *A phone call
+from a customer* (Andrea calls Junko to ask for longer payment terms). Task:
+listen before reading the transcript, and write down how Junko answers, how
+Andrea says who she is and why she's calling, and how they end the call.
+Verified in a browser. The A2 *Changing a meeting time* matches block 4 almost
+line for line (*postpone it to the afternoon · bring it forward · What would
+suit you?*) but is a level down — the fallback, or a second listening if
+wanted.
+
+**Next class, as named on the page:** the present perfect — *I've been to …*,
+*I've never …*, *already* and *yet*, *for* and *since*.
+
 ---
 
 ## Carried over
@@ -585,6 +679,10 @@ From **lesson 4**: nothing — all four blocks were reached. Not carried into
 lesson 5 either: the *Say it with there* cards were in its first version and
 dropped when it was rebuilt a level up.
 
+From **lesson 5**: nothing — all four blocks were reached. *Could you …?* and
+*I'm afraid I can't* come back inside lesson 6's phone language rather than as
+a carry.
+
 ---
 
 ## Not yet covered
@@ -592,18 +690,16 @@ dropped when it was rebuilt a level up.
 Sequenced roughly by what he needs next, now that all three time frames and
 comparing are done:
 
-- **Numbers, letters and time** — cut from lesson 0 for time. Zero to a hundred,
-  the *thirteen/thirty* stress contrast, spelling out loud (E/I and G/J are the
-  ones Portuguese speakers mix up), telling the time, days of the week.
+- **The present perfect** — *I've been to …*, *I've never …*, *I haven't …
+  yet*, *for / since*. Kept off lessons 5 and 6 on purpose; at the B1 pitch it
+  is the biggest missing structure. **Named as lesson 7.**
 - **Food, ordering, and shopping** — high-frequency everyday language he will
   actually use.
-- **On the phone and on video calls** — a beginner's version: asking someone to
-  slow down, spelling names, confirming times. Named as lesson 6, **merged with
-  Numbers, letters and time** above. Lesson 5's *Could you …?* and *Can I …?*
-  are its natural ground: *Could you spell that? · Can I call you back?*
-- **The present perfect** — *I've been to …*, *I've never …*, *I haven't …
-  yet*, *for / since*. Kept off lesson 5's page on purpose; at the B1 pitch it
-  is the biggest missing structure.
+- **Video calls in their own right** — lesson 6 only touched them (*you're
+  breaking up*, the microphone card, three deck questions). Screen sharing,
+  *you're on mute*, talking over each other, running a meeting.
+- **Telling the time** — left off lesson 6 as below the pitch. The
+  *thirteen / thirty* contrast and spelling out loud went into its block 1.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
   way it was not before. **Three of the nine false-friend fix cards cut from
