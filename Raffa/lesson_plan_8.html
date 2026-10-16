@@ -1,0 +1,2307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation &mdash; Lesson 8</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- THE WARMTH SCALE (stage 2 reference) ---------- */
+      .warmth-scale {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .warmth-band {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 14px 15px 16px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .warmth-band:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .warmth-band:nth-child(2) {
+        border-top-color: #4a7a52;
+      }
+      .warmth-band:nth-child(3) {
+        border-top-color: #8a7a45;
+      }
+      .warmth-band:nth-child(4) {
+        border-top-color: #a86a35;
+      }
+      .warmth-band:nth-child(5) {
+        border-top-color: #b85c2a;
+      }
+
+      .warmth-band-head {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 3px;
+      }
+
+      .warmth-band-note {
+        font-size: 0.7rem;
+        color: var(--muted);
+        line-height: 1.45;
+        margin-bottom: 11px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .warmth-band ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .warmth-band li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.87rem;
+        color: var(--text);
+        line-height: 1.35;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .warmth-scale {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .warmth-band {
+          padding: 14px 16px;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">People &amp; Personality — Lesson 8</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The People Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Would You Get On?</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up</div>
+          <div class="stage-sub">
+            Describing people is where range shows most. You can talk through a
+            project in real detail, but describe your brother-in-law and it
+            comes out as <em>nice</em>, <em>funny</em> and
+            <em>a bit difficult</em> — true of almost anyone. The words that
+            actually get used for people are short, informal, and rarely in a
+            textbook.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              Think of a friend you've had for years. How did you first run into
+              each other — and what did you make of them at the start?
+            </li>
+            <li>
+              Is there someone you never see eye to eye with, but still
+              genuinely like? What makes it work?
+            </li>
+            <li>
+              Who's the most generous person you know, and who's the most
+              penny-pinching? Has either of them ever surprised you?
+            </li>
+            <li>
+              How would your mother, your team and someone who's met you once
+              each describe you? Who'd be closest to the truth?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: THE PEOPLE TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">The <em>People Toolkit</em></div>
+          <div class="stage-sub">
+            Read the third column of the table out loud — each sentence gives
+            you the pattern two or three times in one go.
+          </div>
+
+          <div class="section-label">What you'd say · what gets said</div>
+
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th style="width: 22%">Correct</th>
+                <th style="width: 26%">What's actually said</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>He's arrogant.</td>
+                <td>
+                  full of himself · a bit up himself · thinks he's God's gift
+                </td>
+                <td>
+                  <em
+                    >He's so full of himself. Twenty minutes on his new car —
+                    he's a bit up himself, honestly, and he thinks he's God's
+                    gift to the office.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>She says exactly what she thinks.</td>
+                <td>she doesn't mince her words · direct · blunt</td>
+                <td>
+                  <em
+                    >My boss doesn't mince her words. She's direct, she can be
+                    blunt, but you always know where you stand with her.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>He's very calm.</td>
+                <td>laid-back · easy-going</td>
+                <td>
+                  <em
+                    >My brother's so laid-back it's ridiculous. Easy-going about
+                    everything — missed flights, lost keys — nothing fazes
+                    him.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>He never changes his mind.</td>
+                <td>set in his ways · once his mind's made up</td>
+                <td>
+                  <em
+                    >My dad's completely set in his ways. Same chair, same
+                    breakfast, and once his mind's made up, he won't budge.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>She's very humble.</td>
+                <td>down-to-earth · no airs and graces</td>
+                <td>
+                  <em
+                    >For someone with that much money, she's so down-to-earth —
+                    no airs and graces, takes the bus, completely normal.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>He's very polite.</td>
+                <td>well-mannered · lovely manners · well brought up</td>
+                <td>
+                  <em
+                    >Their son's so well-mannered. Lovely manners — holds the
+                    door, says thank you. Well brought up, clearly.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>He's shy.</td>
+                <td>
+                  a bit reserved · keeps himself to himself · takes a while to
+                  warm up
+                </td>
+                <td>
+                  <em
+                    >He's a bit reserved at work and keeps himself to himself —
+                    but give it time, he just takes a while to warm up.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>She's very sociable.</td>
+                <td>
+                  a people person · she'd talk to anyone · the life and soul of
+                  the party
+                </td>
+                <td>
+                  <em
+                    >She'd talk to anyone. Total people person — put her in a
+                    room full of strangers and she's the life and soul of the
+                    party in ten minutes.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>He's very kind.</td>
+                <td>
+                  a heart of gold · he'd do anything for you · goes out of his
+                  way
+                </td>
+                <td>
+                  <em
+                    >He's got a heart of gold. He'd do anything for you, and he
+                    goes out of his way for people he's only just met.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>She isn't reliable.</td>
+                <td>flaky · she bailed · you can't count on her</td>
+                <td>
+                  <em
+                    >She's so flaky. Said yes to dinner, bailed an hour before —
+                    again. You just can't count on her.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="panel-note" style="margin-top: -14px">
+            Three of these rows are there because of Portuguese false friends.
+            <em>She's very simple</em> means she isn't very bright — say
+            <em>down-to-earth</em>. <em>He's very educated</em> means he went to
+            university — say <em>well-mannered</em>. And <em>sincere</em> is far
+            more formal than <em>sincero</em> — say <em>direct</em>.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="section-label">
+            What are they like? — five verdicts on a person
+          </div>
+          <div class="warmth-scale">
+            <div class="warmth-band">
+              <div class="warmth-band-head">An absolute gem</div>
+              <div class="warmth-band-note">
+                You'd trust them with your keys.
+              </div>
+              <ul>
+                <li>an absolute gem</li>
+                <li>a sweetheart</li>
+                <li>one of the good ones</li>
+              </ul>
+            </div>
+            <div class="warmth-band">
+              <div class="warmth-band-head">Good company</div>
+              <div class="warmth-band-note">
+                You'd sit next to them on purpose.
+              </div>
+              <ul>
+                <li>great company</li>
+                <li>a good laugh</li>
+                <li>easy to be around</li>
+              </ul>
+            </div>
+            <div class="warmth-band">
+              <div class="warmth-band-head">An acquired taste</div>
+              <div class="warmth-band-note">
+                Not for everyone. Maybe not for you — yet.
+              </div>
+              <ul>
+                <li>an acquired taste</li>
+                <li>takes some getting used to</li>
+                <li>grows on you</li>
+              </ul>
+            </div>
+            <div class="warmth-band">
+              <div class="warmth-band-head">Hard work</div>
+              <div class="warmth-band-note">
+                An hour is fine. A weekend is not.
+              </div>
+              <ul>
+                <li>hard work</li>
+                <li>a bit much</li>
+                <li>high-maintenance</li>
+              </ul>
+            </div>
+            <div class="warmth-band">
+              <div class="warmth-band-head">A nightmare</div>
+              <div class="warmth-band-note">You'd cross the street.</div>
+              <ul>
+                <li>a nightmare</li>
+                <li>a pain in the neck</li>
+                <li>a nasty piece of work</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Idioms</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">wear your heart on your sleeve</div>
+              <div class="idiom-meaning">Show your feelings openly.</div>
+              <div class="idiom-example">
+                <em
+                  >You always know what he's feeling. He wears his heart on his
+                  sleeve.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">a chip on your shoulder</div>
+              <div class="idiom-meaning">
+                An old grudge about being treated unfairly, that colours
+                everything.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >She's got a real chip on her shoulder about not going to
+                  university.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">rub (someone) up the wrong way</div>
+              <div class="idiom-meaning">
+                Irritate someone, often without meaning to.
+              </div>
+              <div class="idiom-example">
+                <em>I can't explain it — he just rubs me up the wrong way.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">a dark horse</div>
+              <div class="idiom-meaning">
+                Someone with a hidden talent or a surprising past.
+              </div>
+              <div class="idiom-example">
+                <em>You play the piano? You're a dark horse.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">the black sheep (of the family)</div>
+              <div class="idiom-meaning">
+                The one who doesn't fit what the family expected.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >My uncle's the black sheep of the family — nobody's quite
+                  sure what he does for a living.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">(her) bark is worse than (her) bite</div>
+              <div class="idiom-meaning">
+                Sounds much scarier than they really are.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >Don't worry about the boss. Her bark's worse than her
+                  bite.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">butter wouldn't melt (in his mouth)</div>
+              <div class="idiom-meaning">
+                Looks completely innocent — and isn't.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >Look at him, sitting there like butter wouldn't melt, after
+                  what he said at dinner.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">not suffer fools (gladly)</div>
+              <div class="idiom-meaning">
+                Have no patience with people who waste your time.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >She doesn't suffer fools. Turn up unprepared and you'll know
+                  about it.</em
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">
+            Phrasal verbs — getting on and falling out
+          </div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">come across (as)</div>
+              <div class="idiom-meaning">
+                Seem, to people who don't know you well.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >He comes across as arrogant, but he's actually just shy.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">hit it off</div>
+              <div class="idiom-meaning">Like each other straight away.</div>
+              <div class="idiom-example">
+                <em
+                  >We hit it off on the first day, and we've been friends for
+                  twenty years.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">get on (with)</div>
+              <div class="idiom-meaning">Have a good relationship.</div>
+              <div class="idiom-example">
+                <em
+                  >I get on really well with my sister-in-law — better than my
+                  brother does.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">fall out / make up</div>
+              <div class="idiom-meaning">
+                Argue and stop speaking / become friends again.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >They fell out over money and didn't make up for ten
+                  years.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">look up to</div>
+              <div class="idiom-meaning">Admire and respect.</div>
+              <div class="idiom-example">
+                <em
+                  >I always looked up to my grandfather — he built the business
+                  from nothing.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">take after</div>
+              <div class="idiom-meaning">Be like an older relative.</div>
+              <div class="idiom-example">
+                <em>I take after my mum — same temper, same laugh.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">open up</div>
+              <div class="idiom-meaning">
+                Start talking about personal things.
+              </div>
+              <div class="idiom-example">
+                <em>It took him months to open up about the divorce.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">drift apart</div>
+              <div class="idiom-meaning">Slowly stop being close.</div>
+              <div class="idiom-example">
+                <em
+                  >We didn't fall out — we just drifted apart after
+                  university.</em
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="rule-box">
+            <div class="rule-badge">Language Tip</div>
+            <div class="rule-title">remember vs. remind</div>
+            <div class="rule-lead">
+              Portuguese runs both through one verb — <em>eu lembro dele</em>,
+              <em>ele me lembra meu pai</em>, <em>me lembra de ligar</em>.
+              English splits it in two. <em>Remember</em> happens inside your
+              own head. <em>Remind</em> is when someone or something puts it
+              into somebody's head — so it always needs a person straight after
+              it.
+            </div>
+
+            <div class="rule-split">
+              <div class="rule-card">
+                <div class="rule-card-head">remember — in your own head</div>
+                <div class="rule-formula">
+                  I remember + <span>someone / something</span><br />
+                  Remember <span>to</span> + verb
+                </div>
+                <ul>
+                  <li>I remember him from university.</li>
+                  <li>Do you remember her name?</li>
+                  <li>Remember to call your mum.</li>
+                </ul>
+              </div>
+              <div class="rule-card">
+                <div class="rule-card-head">
+                  remind — someone puts it in your head
+                </div>
+                <div class="rule-formula">
+                  X reminds <span>me</span> + of someone<br />
+                  Remind <span>me</span> + to + verb
+                </div>
+                <ul>
+                  <li>He reminds me of my brother.</li>
+                  <li>That song always reminds me of Rio.</li>
+                  <li>Remind me to send that email.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-trap">
+              <div class="rule-trap-label">The trap</div>
+              <p>
+                ✗ <em>He remembers me my brother.</em> &nbsp;→&nbsp; ✓
+                <em>He reminds me of my brother.</em>
+              </p>
+              <p>
+                ✗ <em>Remember me to call him.</em> &nbsp;→&nbsp; ✓
+                <em>Remind me to call him.</em>
+              </p>
+              <p>
+                If a person comes straight after the verb, it's almost always
+                <strong>remind</strong>. The one exception you'll hear is
+                <em>Remember me?</em> — which means
+                <em>Don't you recognise me?</em>
+              </p>
+            </div>
+
+            <div class="rule-say">
+              <div class="rule-say-label">
+                One old friend, both sides of the rule — say all four out loud
+              </div>
+              <ol>
+                <li>I remembered his face straight away, but not his name.</li>
+                <li>He had to remind me — Marcos, from the Lisbon office.</li>
+                <li>
+                  His son reminds me of him at twenty — same laugh, same
+                  terrible jokes.
+                </li>
+                <li>
+                  Remind me to call him next week — and remember to save his
+                  number this time.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: WOULD YOU GET ON? -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">Would you <em>get on?</em></div>
+          <div class="stage-sub">
+            Two rounds. First a question deck — answer it, then ask it back.
+            Then a set of people you might have to share a flat, a trip or an
+            office with, and you decide how it would go.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Round one — draw a question
+              </div>
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Take the button, and take whatever comes
+                    out.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawQuestion()">
+                    Draw a question
+                  </button>
+                  <button class="btn" onclick="resetDeck()">Reshuffle</button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                Sum the person up before you tell the story —
+                <em>she's really down-to-earth</em>,
+                <em>he's a bit full of himself</em> — and put them on the scale
+                if they belong there. Then ask it back, and react to the answer.
+              </p>
+
+              <div class="divider"></div>
+
+              <div class="section-label">Round two — would you get on?</div>
+              <div class="scenario-intro">
+                <div class="intro-label">How it works</div>
+                <p>
+                  Draw a person and make the call — click one of the four on the
+                  ladder, and say it with one of its expressions. Then explain
+                  it to me: describe them in the toolkit's words first, then say
+                  exactly where it would go right, or wrong.
+                </p>
+              </div>
+
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text long empty" id="person-text">
+                    Nobody drawn yet. Draw someone.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawPerson()">
+                    Draw a person
+                  </button>
+                  <button class="btn" onclick="resetPeople()">Reshuffle</button>
+                  <span class="deck-count" id="person-count"></span>
+                </div>
+              </div>
+
+              <div class="call-ladder">
+                <button class="call-rung" onclick="makeCall(0)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">Like a house on fire</span>
+                  <span class="call-list">
+                    <span>we'd get on like a house on fire</span>
+                    <span>we'd click straight away</span>
+                    <span>my kind of person</span>
+                  </span>
+                </button>
+                <button class="call-rung" onclick="makeCall(1)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">Get on fine</span>
+                  <span class="call-list">
+                    <span>we'd get on fine</span>
+                    <span>I could see it working</span>
+                    <span>nothing I couldn't handle</span>
+                  </span>
+                </button>
+                <button class="call-rung" onclick="makeCall(2)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">In small doses</span>
+                  <span class="call-list">
+                    <span>fine in small doses</span>
+                    <span>I'd keep it civil</span>
+                    <span>I'd keep my distance</span>
+                  </span>
+                </button>
+                <button class="call-rung" onclick="makeCall(3)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">We'd clash</span>
+                  <span class="call-list">
+                    <span>we'd clash</span>
+                    <span>we'd be at each other's throats</span>
+                    <span>it'd end in tears</span>
+                  </span>
+                </button>
+              </div>
+              <p class="panel-note">
+                A new person clears the ladder. Click your call again to take it
+                back.
+              </p>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Within reach</div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Describing them</div>
+                <div class="vocab-chips">
+                  <span class="chip">He's the kind of person who…</span>
+                  <span class="chip">She's one of those people who…</span>
+                  <span class="chip">He's not the type to…</span>
+                  <span class="chip">To be fair to her, …</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">First impressions</div>
+                <div class="vocab-chips">
+                  <span class="chip">I took to her straight away.</span>
+                  <span class="chip">I couldn't work him out.</span>
+                  <span class="chip">She's not what you'd expect.</span>
+                  <span class="chip"
+                    >He's all right once you get to know him.</span
+                  >
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Reacting</div>
+                <div class="vocab-chips">
+                  <span class="chip">I know exactly the type.</span>
+                  <span class="chip">We've all got one of those.</span>
+                  <span class="chip">Sounds like a character.</span>
+                  <span class="chip">Fair play to her.</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Explaining your call</div>
+                <div class="vocab-chips">
+                  <span class="chip">What would get to me is…</span>
+                  <span class="chip">As long as he…, we'd be fine.</span>
+                  <span class="chip">I could live with (X), but not (Y).</span>
+                  <span class="chip">That would drive me up the wall.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">
+            Wrap-up: <em>what you can still say</em>
+          </div>
+
+          <div class="section-label">Close the page first</div>
+
+          <div class="apply-box">
+            <div class="apply-label">Out loud, now</div>
+            <div class="apply-lead">
+              Ninety seconds. Describe someone you know well — someone I've
+              never met — so clearly that I'd know exactly how a dinner with
+              them would go.
+            </div>
+            <ol class="apply-steps">
+              <li>Put them on the scale first, and name the band.</li>
+              <li>
+                Three things about them, the way they actually get said —
+                nothing from the textbook column.
+              </li>
+              <li>Who they take after, or who they remind you of.</li>
+              <li>
+                How you met — and whether you hit it off straight away, or they
+                grew on you.
+              </li>
+            </ol>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Before next class</div>
+
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Listening</div>
+              <div class="reflection-content">
+                One episode of
+                <a
+                  href="https://www.bbc.co.uk/programmes/b006qnmr"
+                  target="_blank"
+                  rel="noopener"
+                  >Desert Island Discs</a
+                >
+                — one guest, eight records, and the people behind each one.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---------- DECKS — nothing repeats until a deck runs out ---------- */
+      function makeDeck(items, textId, countId, restingText) {
+        let pile = shuffle(items);
+        const textEl = document.getElementById(textId);
+        const countEl = document.getElementById(countId);
+
+        function count() {
+          countEl.textContent =
+            pile.length === 0
+              ? "deck finished — reshuffle to go again"
+              : pile.length + " left in the deck";
+        }
+        count();
+
+        return {
+          draw() {
+            if (pile.length === 0) {
+              textEl.classList.add("empty");
+              textEl.textContent =
+                "That's the whole deck. Reshuffle to start it again.";
+              count();
+              return;
+            }
+            textEl.classList.remove("empty");
+            textEl.textContent = pile.pop();
+            count();
+          },
+          reset() {
+            pile = shuffle(items);
+            textEl.classList.add("empty");
+            textEl.textContent = restingText;
+            count();
+          },
+        };
+      }
+
+      /* ---------- ROUND ONE: QUESTIONS ---------- */
+      const QUESTIONS = [
+        "Who in your family do you take after — and in what way?",
+        "Think of someone you hit it off with straight away. What was it about them?",
+        "Have you ever fallen out with a close friend? Did you make up?",
+        "Who did you look up to when you were growing up — and would you still?",
+        "Is there a friend you've drifted apart from that you'd like to get back in touch with?",
+        "What's a first impression you got completely wrong — in either direction?",
+        "What kind of person rubs you up the wrong way, almost immediately?",
+        "Do you wear your heart on your sleeve, or are you hard to read?",
+        "Who's the funniest person you know? What makes them such good company?",
+        "Who's the most down-to-earth successful person you've ever met?",
+        "Are you more set in your ways than you were ten years ago? In what way?",
+        "Who in your life doesn't mince their words? Do you like it, or does it get to you?",
+        "Describe the best boss you've ever had in three words — then explain each one.",
+        "Who's the dark horse among your friends — the talent or the past nobody saw coming?",
+        "What do people get wrong about you when they first meet you?",
+        "Who's someone that grew on you — not your type at first, now one of your favourite people?",
+        "Is there someone you get on brilliantly with at work, but would never see outside it?",
+        "What's the quality you value most in a friend — and the one you can't stand?",
+        "Who do people say you remind them of? Do you see it?",
+        "Who do you open up to when something's really wrong?",
+        "Every family has a black sheep. Who's yours — and is it you?",
+        "Do you think you're easy to live with? What would a flatmate complain about?",
+        "Who's the most laid-back person you know — and does it ever drive you mad?",
+        "Have you ever had to work closely with someone you couldn't stand? How did you get through it?",
+      ];
+
+      const questionDeck = makeDeck(
+        QUESTIONS,
+        "prompt-text",
+        "deck-count",
+        "Nothing drawn yet. Take the button, and take whatever comes out.",
+      );
+
+      function drawQuestion() {
+        questionDeck.draw();
+      }
+      function resetDeck() {
+        questionDeck.reset();
+      }
+
+      /* ---------- ROUND TWO: WOULD YOU GET ON? ---------- */
+      const PEOPLE = [
+        "A flatmate who's spotless, and labels everything in the fridge — including the milk.",
+        "A travel companion who wants every hour of a week in Rome planned before you land.",
+        "A boss who never sends an email after six, and never answers one before ten.",
+        "A neighbour who's lovely, but stops you for twenty minutes every single time you leave the house.",
+        "A colleague who's brilliant at the job, and takes the credit for everything — including your bits.",
+        "The person next to you on a twelve-hour flight, who wants to tell you their whole life story.",
+        "A friend's new partner who tells you exactly what they think — about your job, your clothes, your football team.",
+        "A client who's charming at dinner and ruthless in the meeting the next morning.",
+        "A brother-in-law who's late to everything, but brings the best wine and the best stories.",
+        "A flatmate who's funny, generous, great to have around — and has never once paid a bill on time.",
+        "A personal trainer who's relentlessly cheerful at six in the morning.",
+        "A business partner who agrees with everything in the meeting, then goes off and does what they want.",
+        "A hiking guide who says about four sentences a day, all of them useful.",
+        "A friend who answers every message within a minute — and expects the same from you.",
+        "A dinner guest who plays devil's advocate on every subject, just for fun.",
+        "A new manager, ten years younger than you, very confident and very new.",
+        "A neighbour who never says hello, but took in your parcels for a month without being asked.",
+        "A colleague who organises drinks every Friday, and takes it personally if you don't come.",
+        "A team member who says nothing in meetings, then sends you a ten-page email afterwards.",
+        "A father-in-law who has the same opinions he had in 1985, and doesn't think your job is a real job.",
+      ];
+
+      const personDeck = makeDeck(
+        PEOPLE,
+        "person-text",
+        "person-count",
+        "Nobody drawn yet. Draw someone.",
+      );
+
+      const rungs = document.querySelectorAll(".call-rung");
+      let myCall = null;
+
+      function paintLadder() {
+        rungs.forEach((el, i) => {
+          const mine = i === myCall;
+          el.classList.toggle("mine", mine);
+          el.querySelector(".call-tag").textContent = mine ? "Your call" : "";
+        });
+      }
+
+      function makeCall(i) {
+        myCall = myCall === i ? null : i;
+        paintLadder();
+      }
+
+      function drawPerson() {
+        personDeck.draw();
+        myCall = null;
+        paintLadder();
+      }
+
+      function resetPeople() {
+        personDeck.reset();
+        myCall = null;
+        paintLadder();
+      }
+    </script>
+  </body>
+</html>

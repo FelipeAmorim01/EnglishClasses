@@ -342,18 +342,117 @@ fence (L5)
 
 ---
 
+## Lesson 8 — People & Personality
+`lesson_plan_8.html` · 16 October 2026
+
+Stages: Warm-up → The People Toolkit → Would You Get On? → Wrap-up
+
+Non-business, the third concrete lexical field in a row after money and health.
+Chosen because describing people is where a fluent adult falls back on *nice*,
+*funny* and *a bit difficult*. Felipe picked it from four options (the others
+were Taste & Recommending, Things Breaking at Home, Meetings & Video Calls).
+Built at 63 items in stage 2, plus 12 on the stage 3 ladder and 16 in the
+sidebar. Felipe trimmed stage 2 to 59 on 16 October before it went live (three
+table expressions and one phrasal verb, noted below), and cut one warm-up
+question.
+
+**Native-speaker patterns** (three-column table, column 3 read aloud):
+*full of himself / a bit up himself / thinks he's God's gift* · *doesn't mince
+her words / direct / blunt* · *laid-back / easy-going* ·
+*set in his ways / once his mind's made up* · *down-to-earth / no airs and
+graces* · *well-mannered / lovely manners / well
+brought up* · *a bit reserved / keeps himself to himself / takes a while to
+warm up* · *a people person / she'd talk to anyone / the life and soul of the
+party* · *a heart of gold / he'd do anything for you / goes out of his way* ·
+*flaky / she bailed / you can't count on her*
+
+Felipe cut *nothing fazes him*, *he won't budge* and *completely normal* from
+column 2 on 16 October. The read-aloud sentences still contain the first two,
+so they still get said but aren't taught as targets.
+
+A one-line `.panel-note` under the table names three Portuguese false friends
+the table answers: *simples* → *down-to-earth* (*she's simple* = not bright),
+*educado* → *well-mannered* (*educated* = schooled), *sincero* → *direct*. It's
+a note, not a second rule box. The one-rule-per-class limit still holds.
+
+**The warmth scale** (5 bands × 3, the L7 `.sev-scale` renamed `.warmth-scale`):
+1 An absolute gem — *an absolute gem* · *a sweetheart* · *one of the good ones*
+2 Good company — *great company* · *a good laugh* · *easy to be around*
+3 An acquired taste — *an acquired taste* · *takes some getting used to* ·
+*grows on you*
+4 Hard work — *hard work* · *a bit much* · *high-maintenance*
+5 A nightmare — *a nightmare* · *a pain in the neck* · *a nasty piece of work*
+
+**Idioms:** wear your heart on your sleeve · a chip on your shoulder · rub
+someone up the wrong way · a dark horse · the black sheep (of the family) · bark
+is worse than bite · butter wouldn't melt · not suffer fools (gladly)
+
+**Phrasal verbs:** come across (as) · hit it off · get on (with) · fall out /
+make up · look up to · take after · open up · drift apart
+
+*stick up for* was built and then cut by Felipe on 16 October, so it's still
+free for a later lesson.
+
+**Language Tip:** *remember* vs. *remind*. Portuguese *lembrar* covers both:
+*ele me lembra meu pai*, *me lembra de ligar*. The trap: *He remembers me my
+brother* and *Remember me to call him*. Rule of thumb on the page: a person
+straight after the verb means *remind*. The exception is *Remember me?*
+(= *don't you recognise me?*). Chosen because *X reminds me of Y* is central to
+describing people.
+
+**Activity:** the L7 shape, at Felipe's request ("question deck + one more
+round"):
+1. **A question deck.** 24 personal questions about the people in your life,
+   most of them built on a stage 2 phrasal verb or idiom. Answer it, then ask it
+   back.
+2. **Would you get on?** A deck of 20 people you might have to share a flat, a
+   trip or an office with, plus a clickable four-rung ladder (the L7
+   `.triage-ladder`, renamed `.call-ladder`): Like a house on fire (*we'd get
+   on like a house on fire* · *we'd click straight away* · *my kind of
+   person*) → Get on fine (*we'd get on fine* · *I could see it working* ·
+   *nothing I couldn't handle*) → In small doses (*fine in small doses* · *I'd
+   keep it civil* · *I'd keep my distance*) → We'd clash (*we'd clash* · *we'd
+   be at each other's throats* · *it'd end in tears*). Raffa picks a rung,
+   describes the person in toolkit words, then explains why. No mirror rung,
+   in line with the L7 decision. The deck descriptions avoid the stage 2
+   words, so that he has to supply them himself.
+
+Sidebar groups: Describing them (*He's the kind of person who…* · *She's one of
+those people who…* · *He's not the type to…* · *To be fair to her, …*) · First
+impressions (*I took to her straight away* · *I couldn't work him out* · *She's
+not what you'd expect* · *He's all right once you get to know him*) · Reacting
+(*I know exactly the type* · *We've all got one of those* · *Sounds like a
+character* · *Fair play to her*) · Explaining your call (*What would get to me
+is…* · *As long as he…, we'd be fine* · *I could live with (X), but not (Y)* ·
+*That would drive me up the wall*).
+
+**Wrap-up:** in class, 90 seconds describing someone Felipe has never met:
+scale band first, three traits, who they take after or remind you of, and
+whether you hit it off or they grew on you.
+
+**Homework:** listening (alternating with L7's speaking). One episode of
+*Desert Island Discs*.
+
+**Recycled into the warm-up:** run into (L4) · see eye to eye (L5) ·
+penny-pinching (L6). A *read the room* (L1) question was cut by Felipe; four
+questions, not five.
+
+---
+
 ## Rules used so far
 
 One per lesson, at the bottom of stage 2. Don't repeat one.
 
 - L6 — *lend* vs. *borrow*
 - L7 — *be cold* vs. *have a cold* (*estar com* → *be* + adj. / *have got* + *a* + noun)
+- L8 — *remember* vs. *remind* (*lembrar*)
 
 Queued, roughly best first (Portuguese-interference ones first, since those are
 errors he actually produces): *make* vs. *do* · *say* vs. *tell* · *either /
 neither / both* · *anything / nothing / everything / something* · *used to* vs.
-*be used to* · *since* vs. *for* · *fewer* vs. *less* · *remember / remind* ·
-*bring* vs. *take* · *win* vs. *earn* vs. *gain*.
+*be used to* · *since* vs. *for* · *fewer* vs. *less* · *bring* vs. *take* ·
+*win* vs. *earn* vs. *gain* · *provar* → *taste* / *try* / *try on* (offered
+with Taste & Recommending, not used yet).
 
 ---
 
