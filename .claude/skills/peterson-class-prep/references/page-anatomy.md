@@ -173,7 +173,8 @@ example answer** rather than idiom definitions.
 `span.chip`. The workhorse. Grouped by function, never more than about six per
 group.
 
-**Roleplay** — `.scenario-intro` (+ `.intro-label`), optional `.scenario-numbers`
+**Roleplay** — *not used from lesson 8 on; see "No roleplays" in `SKILL.md`.
+Kept here so older pages can still be read and edited.* `.scenario-intro` (+ `.intro-label`), optional `.scenario-numbers`
 for the situation, then `.scenario-block` > `.scenario-name` + `.position-split`
 > `.position-card.mine` / `.position-card.counterpart`, with a
 `button.reveal-toggle` calling `toggleReveal('reveal-a', this)`. **Name the roles

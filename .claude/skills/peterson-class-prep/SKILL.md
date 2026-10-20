@@ -222,6 +222,21 @@ prompt demanding on its own instead — two-part questions like *"What do you
 like about your job, and what do you not like?"* do the same work without a
 second mechanism.
 
+### No roleplays — he talks about his real life
+
+Roleplays have been cut three times: lesson 4's *The visitor* (*"takes too
+much time"*), round 2 of lesson 5's *Four favors*, and lesson 8's *Dinner with
+Ana*. On 20 October 2026 Felipe made it general: *"I don't want to have a role
+because usually there's no time for it."*
+
+So the last part of the activity stage is a talk about something real — a
+`.scenario-intro` saying what to talk about, then a `.reflection-grid` of three
+or four prompts, each pulling in a toolkit block, with Felipe asking questions
+as it goes. Lesson 4's *Describe your workplace* and lesson 8's *Your favorite
+place to eat* are the model. Nothing to read first: no menus, no briefs, no
+hidden halves. When the task becomes the whole activity, swap out any deck
+question that asks the same thing.
+
 ## Before you finish
 
 Open the page in a browser and check:

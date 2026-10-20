@@ -646,6 +646,194 @@ wanted.
 **Next class, as named on the page:** the present perfect — *I've been to …*,
 *I've never …*, *already* and *yet*, *for* and *since*.
 
+**What happened (13 October):** all four blocks reached — the fourth lesson in
+a row finished in full under the four-block limit.
+
+---
+
+## Lesson 7 — Have You Ever …?
+`lesson_plan_7.html` · 15 October 2026
+
+Stages: Warm-up → The Experience Toolkit → Been There, Done That → Wrap-up
+
+The present perfect, as named on lesson 6's page, at the B1 pitch. Nothing
+carried in the toolkit (lesson 6 finished in full). Built as proposed, with no
+changes asked for before building.
+
+**Warm-up:** a new ladder (fifth rung: *I've been to Recife three times, but
+the best trip was in 2019 — I went with my whole team*), then *What's new?* —
+I ask · you answer · you keep it going, three rows, no swap. Answer starters:
+*Not much — I've just …* · *I've been really busy with … since …* · *I haven't
+… yet, but I'm going to …* · *I've finally …, and it was …*
+
+**Toolkit**, four blocks, three fix cards each:
+
+1. **Have you ever …? I've never … — your life up to now** — Have you ever …?
+   / Yes, I have / I've never … / She's … · He's never … / once · twice ·
+   three times / then the past for the details. Two chip groups of third
+   forms — *the same as the past* (worked, had, made, met, bought, lost) and
+   *a new one* (been, done, seen, eaten, taken, written) — listen and repeat
+   only, said so in the note (*done* rhymes with *sun*). Fix cards: *been in
+   London* → *been to* · *Have you ever went* → *been* · *I never been* →
+   *I've never been*.
+2. **just, already, yet, still — news at work** — I've just / I've already /
+   … yet? / I haven't … yet / I still haven't / then the past. Fix cards are
+   **word position only**, because *Did you send it yet?* and *I already sent
+   it* are fine in American English and must not be taught as wrong:
+   *finished already the report* · *haven't finished still* → *yet* · *Yes,
+   she already* → *Yes, she has*.
+3. **for and since — how long** — How long have you …? / for / since / I
+   haven't … since · for / one light *I've been …ing* row / *it's over* → the
+   past with *for*. Fix cards: *I work here since 2020* · *since two years* →
+   *for* · *How much time do you work here?* → *How long have you worked
+   here?*
+4. **made, taken, missed — the verbs that go with the words** — the
+   vocabulary block: make a mistake / make a decision / take a course / watch
+   · see / miss the bus · miss a call / spend the weekend · spend time. Fix
+   cards use three parked false friends in present-perfect form: *done a
+   mistake* → *made* · *made an English course* → *taken* · *assisted the new
+   series* → *watched*. *miss the bus* and *spend the weekend* are taught as
+   table rows, which covers *lose the bus* and *pass the weekend* without
+   fix cards.
+
+**Language Tip:** *I've been vs. I went* — a finished time said in the
+sentence takes the past; no time, or a time that isn't over, takes *have* +
+the third form. Trap: *I have visited Paris in 2019*. The prose adds *When
+…?* as always past (*When did you go?*, never *When have you been?*). Picked
+over *I work here since … vs. I've worked here since …* because every block
+ends on the same switch — the *then the past* row in blocks 1–3 and the
+deck's two-part questions.
+
+**Activity:** Been There, Done That — a 24-card deck of two-part questions,
+each a present-perfect opener plus a past-simple detail (*Have you ever been
+abroad? Where did you go, and when?*); **Change the sentence**, 24
+hand-written cards, six each of *Take out the time* (past → *have*) · *Put the
+time in* (the bracketed time forces the past; includes a question and a
+negative) · *Use for or since* (two facts → one sentence; three *for*, three
+*since*, one *been …ing* each side) · *Use just, already or yet*. Then **Two
+truths and a lie** — Peterson says three *I've …* sentences with no times,
+Felipe asks for details in the past to find the lie, then they swap and
+Peterson asks at least two questions per sentence before guessing. No hidden
+half: Felipe makes up his own three, so there are no facts to brief, and the
+`toggleReveal` script was stripped. Sidebar: *Saying it* · *Asking for
+details* · *Guessing* · *If you get stuck*.
+
+**Wrap-up:** one recall item — what's new: something you've just done,
+something you haven't done yet, how long you've worked where you work now,
+then one thing you did last weekend.
+
+**Homework:** British Council LearnEnglish, **B1** listening — *Meeting an old
+friend* (Selina and Patrick meet after fifteen years). The transcript has
+*How have you been?* · *I haven't seen you for …* · *I've been back now for
+almost five months* · *We've just celebrated our tenth anniversary* — and *I
+was in London for a couple of years*, the Language Tip's contrast. Task: write
+down how long Selina has been back, what Patrick has just celebrated, and the
+one sentence where she says *for* with the past. Verified in a browser.
+
+**Next class, as named on the page:** eating out and shopping — ordering,
+asking what's in it, sending something back, paying. **Check it against the
+B1 pitch before building** — taken literally it is A2.
+
+**What happened (15 October):** all four blocks reached — the fifth lesson in
+a row finished in full under the four-block limit.
+
+---
+
+## Lesson 8 — Could I Get the Check?
+`lesson_plan_8.html` · 20 October 2026
+
+Stages: Warm-up → The Ordering Toolkit → Table for Two → Wrap-up
+
+Eating out and shopping, as named on lesson 7's page, **lifted to B1 before
+building** as the log warned: the weight sits in *too / enough* (with *too … to*
+and *too … for me*), polite complaints that reuse lesson 7 (*We've been waiting
+for …*), indirect questions from lesson 5 (*Do you know if it has nuts?*),
+*fit* vs. *suit*, and the false friends *devolve*, *prove* and *account*.
+Nothing carried in the toolkit (lesson 7 finished in full). American English
+throughout — *the check*, with *the bill* named once as the UK word.
+
+Built as proposed, except the Language Tip: the proposal was *very vs. too*;
+Felipe asked for a different one and picked *I'd like vs. I like* from three
+options (the other two were *too salty vs. too much salt* and *big enough vs.
+enough time*).
+
+**Warm-up:** a new ladder (fifth rung: *I really like this jacket, but it's too
+tight — I'd like to try it on in a bigger size*), then *Eating out* — I ask ·
+you answer · you keep it going, three rows, no swap. Answer starters: *There's
+a great … place near …* · *I usually have the …, because …* · *The last time I
+ate out, I had …, and it was …* · *I've never sent anything back, but once …*
+
+**Toolkit**, four blocks, three fix cards each:
+
+1. **I'll have, could I get — ordering** — a table for two / I'll have · Could
+   I get …? / What does it come with? / Do you know if it has …? / without … ·
+   on the side / Could we get the check? Fix cards: *bring me the account* →
+   *the check* · *I want the fish* → *I'll have the fish* · *Is it with rice?*
+   → *Does it come with rice?*
+2. **too salty, not hot enough — too and enough** — too … / too … for me /
+   too … to … / not … enough / … enough / enough + a thing. Fix cards: *too much
+   expensive* · *enough big* · *very hot to eat* → *too hot to eat*.
+3. **I'm afraid this isn't what I ordered — sending it back** — I'm afraid this
+   isn't what I ordered / Sorry, but it's a bit … / We've been waiting for … /
+   I think there's a mistake on the check / I'd like to return this / a refund
+   · exchange it. Fix cards: *I asked a steak* → *ordered* (or *asked for*) ·
+   *I want my money back* → *Could I get a refund?* · *devolve* → *return*.
+4. **Can I try it on? — shopping and paying** — I'm just looking / Do you have
+   this in …? / Can I try it on? / It fits · It doesn't fit / It suits you · It
+   looks good on you / by card · in cash · in installments. *try on* is tied to
+   lesson 6's pronoun-in-the-middle verbs. Fix cards: *Can I prove it?* → *try
+   it on* · *pay with card* → *by card* · *It stays good on you* → *It looks
+   good on you*.
+
+**Language Tip:** *I'd like vs. I like* — *I like* is taste, in general;
+*I'd like* is a polite request, right now. Trap: *I like a coffee, please.* The
+prose adds *Do you like …?* (taste) vs. *Would you like …?* (an offer, answered
+*Yes, please*, never *Yes, I like*).
+
+**Activity:** Table for Two — a 24-card deck of two-part questions (eating out,
+shopping, returning things, paying; several use *would like* and *too*);
+**Change the sentence**, 24 hand-written cards, six each of *Order it
+politely* (one is the Tip's trap: *I like a glass of water* → *I'd like …*) ·
+*Say it with too or enough* · *Complain politely* (one uses lesson 7's *We've
+been waiting for …*) · *Start with Do you know …?* (lesson 5's Tip). Then
+**Your favorite place to eat** — Peterson talks about a real place he likes,
+with Felipe asking questions as he goes, in four prompts: the place · what you
+order (*comes with*, *I'd like to try*) · not perfect (*too … / not …
+enough*) · when it went wrong (any restaurant or store, told in the past). Same
+shape as lesson 4's *Describe your workplace*: `.scenario-intro` +
+`.reflection-grid`, no new CSS. Two deck questions that asked the same thing
+(*What's your favorite restaurant …?* · *Have you ever sent food back …?*) were
+swapped for *What do you usually eat on a Sunday?* and *Do you leave a tip?*
+Sidebar: *The place and the food* · *Not perfect* · *When it went wrong* · *If
+you get stuck*.
+
+**Wrap-up:** one recall item — from memory: how you order a drink and a main,
+how you ask what it comes with, how you send back the wrong dish, how you ask
+for the check.
+
+**Cut during review, do not reintroduce:** the roleplay, *Dinner with Ana* —
+Felipe as the waiter, Peterson ordering for a colleague who doesn't eat meat or
+nuts, a short menu with prices, four steps, and Felipe's hidden half (the fish
+run out, walnuts on the risotto, an extra cake on the check). Felipe: *"I don't
+want to have a role because usually there's no time for it."* Made a standing
+rule in `SKILL.md` (*No roleplays*). The `toggleReveal` script went with it, and
+the wrap-up stopped saying *I'm the waiter again*.
+
+**Homework:** British Council LearnEnglish, **B1** audio series — *A new chef*
+(season 3, episode 4). Carlos orders in a café (*Could I have a coffee,
+please? … I'll just have the coffee*), says the food isn't very good, and
+Tony says *I'm afraid you'll all have to go home*. Task: listen before reading
+the script, and write down the two ways Carlos orders, why he doesn't want to
+eat there, and the sentence where Tony says *I'm afraid*. Verified in a
+browser. The B1 listening strand has nothing on restaurants or shopping (*At
+the chemist* is the closest, and it is about health); *Ordering in a café* is
+A1, too far down. BBC *English at Work* episode 4, *Doing lunch*, was checked
+and is about introductions, not ordering.
+
+**Next class, as named on the page:** video calls at work — *you're on mute*,
+sharing your screen, talking at the same time, running a meeting. Taken from
+the list below; swap the note if something else is wanted.
+
 ---
 
 ## Carried over
@@ -683,29 +871,37 @@ From **lesson 5**: nothing — all four blocks were reached. *Could you …?* an
 *I'm afraid I can't* come back inside lesson 6's phone language rather than as
 a carry.
 
+From **lesson 6**: nothing — all four blocks were reached. *until* turns up in
+one lesson 7 transformation card (*It isn't due until Friday*), not as a carry.
+
+From **lesson 7**: nothing — all four blocks were reached. The present perfect
+comes back in lesson 8 as *We've been waiting for …* (block 3 and one
+*Complain politely* card), not as a carry.
+
 ---
 
 ## Not yet covered
 
-Sequenced roughly by what he needs next, now that all three time frames and
-comparing are done:
+Sequenced roughly by what he needs next, now that all three time frames, the
+present perfect, comparing, and eating out and shopping are done:
 
-- **The present perfect** — *I've been to …*, *I've never …*, *I haven't …
-  yet*, *for / since*. Kept off lessons 5 and 6 on purpose; at the B1 pitch it
-  is the biggest missing structure. **Named as lesson 7.**
-- **Food, ordering, and shopping** — high-frequency everyday language he will
-  actually use.
+- **The present perfect, second pass** — lesson 7 covered experience, news,
+  and *for / since*. Not yet taught: *been* vs. *gone* (*She's gone to Recife*
+  = she's there now), and the present perfect continuous beyond the one
+  *I've been …ing* row.
 - **Video calls in their own right** — lesson 6 only touched them (*you're
   breaking up*, the microphone card, three deck questions). Screen sharing,
-  *you're on mute*, talking over each other, running a meeting.
+  *you're on mute*, talking over each other, running a meeting. **Named as
+  lesson 9.**
 - **Telling the time** — left off lesson 6 as below the pitch. The
   *thirteen / thirty* contrast and spelling out loud went into its block 1.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
-  way it was not before. **Three of the nine false-friend fix cards cut from
-  lesson 1 are still unused**: *assisted* → *watched* · *did a mistake* →
-  *made a mistake* · *realized a project* → *finished a project*.
+  way it was not before. **One of the nine false-friend fix cards cut from
+  lesson 1 is still unused**: *realized a project* → *finished a project*.
   (*very funny* → *really fun* went into lesson 3's block 4; *stayed in home*
-  and *went in the cinema* went into lesson 4's block 4.) (*lost the bus*, *passed time* and *made a course* were
-  written into lesson 2's block 7, which was not reached — so they are still
-  untaught too, along with the rest of that block's collocations.)
+  and *went in the cinema* went into lesson 4's block 4; *did a mistake*,
+  *made a course* and *assisted* went into lesson 7's block 4 as fix cards,
+  and *lost the bus* and *passed time* went in as the table rows *miss the
+  bus* and *spend the weekend*.) The rest of lesson 2's block 7 — *make /
+  take / changing a plan / looking forward to* — is still untaught.
