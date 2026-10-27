@@ -832,7 +832,106 @@ and is about introductions, not ordering.
 
 **Next class, as named on the page:** video calls at work — *you're on mute*,
 sharing your screen, talking at the same time, running a meeting. Taken from
-the list below; swap the note if something else is wanted.
+the list below; swap the note if something else is wanted. **Jumped by
+lesson 9** — Felipe asked for the present perfect instead.
+
+---
+
+## Lesson 9 — What Have You Been Up To?
+`lesson_plan_9.html` · 27 October 2026 (date assumed — next Tuesday after
+lesson 8)
+
+Stages: Warm-up → The Up-to-Now Toolkit → Then and Now → Wrap-up
+
+Felipe asked for *the present perfect (have, has, etc.)*. Lesson 7 had already
+covered it — experience, *just / already / yet*, *for / since* — so this was
+proposed and **approved as a second pass** that adds what lesson 7 left out:
+the continuous for *how long*, *been* vs. *gone*, the present perfect for a
+change you can see now, and the words for time that isn't over. B1 pitch.
+Nothing carried in the toolkit — assumed lesson 8 finished in full; no record
+of the class yet.
+
+**Cut by Felipe right after building, to give the activity stage more time**
+(*"I'll want to spend more time on the third page"*) — do not reintroduce on
+this page: the original block 3, **Prices have gone up — what's different
+now** (go up · go down / get better · get worse / grow / improve · get better
+at / start · stop / get used to; fix cards *The prices raised* · *I've realized
+a big project* · *used to work from home*). Block 4 became block 3, so **the
+toolkit is three blocks**. The ladder's third rung (*Prices have gone up a lot,
+and the traffic has gotten worse*) became *Where have you been? I've been
+trying to call you all morning!*, and the six *Say what's changed* drill cards
+became six *Use so far, in ages or the first time* cards. The change words are
+still in the *Then and now* talk and its sidebar (*… has gone up · gone down*,
+*… has gotten better · worse*, *I've gotten used to …*), on purpose — the talk
+is about change, so they are on screen where he needs them, just not taught as
+a block. That makes the cut block a good start for a later vocabulary page.
+
+**Warm-up:** a new ladder (fifth rung: *I've been writing emails all morning —
+I've written twelve, and I still haven't finished!*), then *What have you been
+up to?* — I ask · you answer · you keep it going, three rows, no swap. Answer
+starters: *I've been working on … since …* · *I've been trying to …, but …* ·
+*Not much — I haven't … in ages.* · *It's the first time I've … this year.*
+
+**Toolkit**, as built — four blocks, three fix cards each (block 3 cut since,
+see above; block 4 is now block 3):
+
+1. **I've been working on … — how long, and still going** — How long have you
+   been …ing? / for / since / I've been trying to … / You look … — have you
+   been …ing? / *I've known · I've had* (know, like, be, have-to-own never take
+   -ing). Fix cards: *I'm working here since 2020* · *How long are you
+   waiting?* · *I've been knowing him*.
+2. **gone or been? — still there, or back again** — She's gone to … / She's
+   been to … / He's just gone out / Everyone has gone home / I've been away /
+   Where have you been? Fix cards: *He's been to lunch — he'll be back at two*
+   → *gone* · *Have you ever gone to Japan?* → *been* · *gone to home* →
+   *gone home*.
+3. **Prices have gone up — what's different now** — the vocabulary block: go
+   up · go down / get better · get worse / grow / improve · get better at /
+   start · stop / get used to. *gotten* as American, *got* named as UK. The
+   note says to listen and repeat *gone up, gotten, grown* before reading them.
+   Fix cards: *The prices raised* → *have gone up* · *I've realized a big
+   project* → *finished* (the last of the nine parked false friends from
+   lesson 1 — **unused again** now the block is cut) · *used to work from
+   home* → *used to working*. **Cut.**
+4. **so far, lately, in ages — time that isn't over** — so far / this week ·
+   this year / lately · recently / I haven't … in ages / It's the first time
+   I've … / I've never … before. Fix cards: *the first time I come here* · *I
+   don't see her for ages* · *I didn't see him lately*.
+
+**Language Tip:** *I've written vs. I've been writing* — the result and how
+many vs. the activity and how long. Trap: *I've been writing three emails this
+morning.* The prose adds that a number always means the third form, that *all
+morning / for two hours / since lunch* want *been …ing*, and that block 1's
+four verbs only take the first.
+
+**Activity:** Then and Now — a 24-card deck of two-part questions, none
+repeated from lesson 7's; **Change the sentence**, 24 hand-written cards, six
+each of *Say how long — use for or since* (one is a *know* card that can't take
+-ing, and the note says so) · *Been or gone?* · *Use so far, in ages or the
+first time* (replaced *Say what's changed* with the block 3 cut) · *Say how
+many, not how long* (the Tip). Then **Then and now** — no roleplay: his life
+five years ago against now, four prompts (work · where you live · you · lately),
+Felipe asking as he goes; the past for back then, *have* for what's changed.
+Deck questions that asked the same thing (neighborhood, company, job, city,
+something you've started or stopped) were left out of the deck.
+Sidebar: *Back then* · *What's changed* · *Lately* · *If you get stuck*.
+
+**Wrap-up:** one recall item — something you've been doing for a long time,
+someone who's gone somewhere, something that's changed where you live, how
+many things you've done so far today.
+
+**Homework:** British Council LearnEnglish, **B1** listening — *Work–life
+balance* (a radio presenter asks an author how working life has changed). The
+transcript has *how the concept of a work–life balance has been changing* and
+*So what has changed? How are things different now?* — the then-and-now theme
+of the activity. Task: listen before reading the transcript, write down Anna's
+two questions about change, what Chris says has changed, and one thing that
+has changed in his own work in the last five years. Verified in a browser.
+*Chatting about a series* and *Arriving late to class* were checked and have
+almost no present perfect.
+
+**Next class, as named on the page:** video calls at work, carried from lesson
+8's note.
 
 ---
 
@@ -878,6 +977,9 @@ From **lesson 7**: nothing — all four blocks were reached. The present perfect
 comes back in lesson 8 as *We've been waiting for …* (block 3 and one
 *Complain politely* card), not as a carry.
 
+From **lesson 8**: not yet recorded. Lesson 9 was built assuming all four
+blocks were reached.
+
 ---
 
 ## Not yet covered
@@ -885,21 +987,20 @@ comes back in lesson 8 as *We've been waiting for …* (block 3 and one
 Sequenced roughly by what he needs next, now that all three time frames, the
 present perfect, comparing, and eating out and shopping are done:
 
-- **The present perfect, second pass** — lesson 7 covered experience, news,
-  and *for / since*. Not yet taught: *been* vs. *gone* (*She's gone to Recife*
-  = she's there now), and the present perfect continuous beyond the one
-  *I've been …ing* row.
 - **Video calls in their own right** — lesson 6 only touched them (*you're
   breaking up*, the microphone card, three deck questions). Screen sharing,
   *you're on mute*, talking over each other, running a meeting. **Named as
-  lesson 9.**
+  lesson 10** (it was named for 9, which went to the present perfect's second
+  pass instead).
 - **Telling the time** — left off lesson 6 as below the pitch. The
   *thirteen / thirty* contrast and spelling out loud went into its block 1.
 - **Vocabulary in its own right** — now that the level is known, a page built
   around collocations and phrasal verbs rather than a structure is viable in a
   way it was not before. **One of the nine false-friend fix cards cut from
-  lesson 1 is still unused**: *realized a project* → *finished a project*.
-  (*very funny* → *really fun* went into lesson 3's block 4; *stayed in home*
+  lesson 1 is still unused**: *realized a project* → *finished a project*. It
+  went into lesson 9's block 3, which was cut before class. That block — *go
+  up / get worse / grow / improve / get used to*, with *The prices raised* →
+  *have gone up* — is ready-made material for this page. (*very funny* → *really fun* went into lesson 3's block 4; *stayed in home*
   and *went in the cinema* went into lesson 4's block 4; *did a mistake*,
   *made a course* and *assisted* went into lesson 7's block 4 as fix cards,
   and *lost the bus* and *passed time* went in as the table rows *miss the
