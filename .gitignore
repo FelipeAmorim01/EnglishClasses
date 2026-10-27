@@ -1,2 +1,5 @@
 .DS_Store
 .claude/settings.local.json
+
+# Teacher-only planning pages (never published)
+Antonio/course_outline.html

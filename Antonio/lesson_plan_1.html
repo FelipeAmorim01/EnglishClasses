@@ -1,0 +1,2943 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DET Prep — Class 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- FOLLOW THE THREAD (stage 3, round three) ---------- */
+      .thread-list {
+        list-style: none;
+        counter-reset: thread;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .thread-list:empty {
+        display: none;
+      }
+
+      .thread-list li {
+        counter-increment: thread;
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--muted);
+        background: var(--bg);
+        border-left: 3px solid var(--border);
+        padding: 10px 14px;
+      }
+
+      .thread-list li::before {
+        content: counter(thread) " · ";
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* the follow-up being answered right now */
+      .thread-list li:last-child {
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left-color: var(--accent);
+        animation: fadeUp 0.25s ease;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .thread-list li {
+          font-size: 0.95rem;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== DET prep additions (Antonio) ===== */
+
+      /* timer, copied from Raffa lesson 4 */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+        margin-bottom: 14px;
+      }
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.2rem;
+      }
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 14px 0 14px;
+      }
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+      .timer-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .timer-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .preset-btn,
+      .mini-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      .preset-btn:hover,
+      .mini-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .preset-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* score overview */
+      .score-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .score-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 16px 18px;
+      }
+      .score-card.target {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .score-big {
+        font-family: "Lora", serif;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .score-card:not(.target) .score-big {
+        color: var(--accent);
+      }
+      .score-cap {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .det-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.86rem;
+      }
+      .det-table th {
+        text-align: left;
+        background: var(--surface2);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        padding: 10px 14px;
+      }
+      .det-table td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .det-table td:first-child {
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+      .det-table td:nth-child(2) {
+        font-weight: 600;
+      }
+      .det-table td:last-child {
+        white-space: nowrap;
+        color: var(--muted);
+      }
+
+      /* task blocks in stage 3 */
+      .task-block {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 20px 22px;
+        margin-bottom: 18px;
+      }
+      .task-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .task-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .task-name span {
+        color: var(--accent2);
+        margin-right: 6px;
+      }
+      .task-time {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 3px 9px;
+        white-space: nowrap;
+      }
+      .task-how {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+        line-height: 1.55;
+      }
+      .task-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        align-items: center;
+      }
+      .task-result {
+        font-size: 0.82rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .word-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .word-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.92rem;
+        padding: 10px 8px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        color: var(--text);
+      }
+      .word-btn:hover {
+        border-color: var(--accent);
+      }
+      .word-btn.picked {
+        background: var(--accent-light);
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .word-btn.ok {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .word-btn.bad {
+        background: var(--accent2);
+        border-color: var(--accent2);
+        color: #fff;
+        text-decoration: line-through;
+      }
+      .word-btn.missed {
+        border: 2px dashed var(--accent);
+      }
+
+      .ctest {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 2.3;
+        background: var(--bg);
+        padding: 16px 18px;
+      }
+      .gap {
+        white-space: nowrap;
+      }
+      .gap input {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        padding: 0 3px;
+        color: var(--text);
+        outline: none;
+      }
+      .gap input:focus {
+        background: var(--accent-light);
+      }
+      .gap input.ok {
+        border-bottom-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .gap input.bad {
+        border-bottom-color: var(--accent2);
+        color: var(--accent2);
+      }
+
+      .type-item {
+        margin-bottom: 14px;
+      }
+      .type-item:last-child {
+        margin-bottom: 0;
+      }
+      .type-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+      .type-box {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        resize: vertical;
+        color: var(--text);
+      }
+      .type-box:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      .type-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 6px;
+        flex-wrap: wrap;
+      }
+      .answer-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--accent);
+        display: none;
+      }
+      .answer-line.shown {
+        display: inline;
+      }
+      .word-count {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .photo-frame {
+        background: var(--surface2);
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .photo-frame svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .speak-prompt {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+      }
+      .speak-prompt ul {
+        margin: 8px 0 0 18px;
+        font-size: 0.95rem;
+      }
+
+      .hidden-qs {
+        position: relative;
+      }
+      .hidden-qs ol {
+        padding-left: 20px;
+        font-family: "Lora", serif;
+        line-height: 1.7;
+        filter: blur(7px);
+        user-select: none;
+        transition: filter 0.2s;
+      }
+      .hidden-qs.revealed ol {
+        filter: none;
+        user-select: auto;
+      }
+      .reflection-content p { margin: 0 0 10px; }
+      .hw-steps, .hw-prompts { margin: 0 0 12px 20px; }
+      .hw-steps li, .hw-prompts li { margin-bottom: 4px; }
+      .hw-prompts { font-family: "Lora", serif; font-style: italic; }
+      .hw-prompts-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .hidden-qs li {
+        margin-bottom: 6px;
+      }
+
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .score-grid,
+        .rules-grid {
+          grid-template-columns: 1fr;
+        }
+        .word-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .det-table td:first-child,
+        .det-table td:last-child {
+          white-space: normal;
+        }
+        .task-block {
+          padding: 16px;
+        }
+      }
+      .language-sidebar .timer-panel {
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .language-sidebar .timer-controls .btn {
+        padding: 8px 12px;
+      }
+      @media (max-width: 900px) {
+        .language-sidebar {
+          order: -1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>Duolingo English Test Prep</h1>
+        <div class="subtitle">Know the Test — Class 1</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">How the Test Works</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Try Every Task</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============ STAGE 1 ============ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">
+            Warm-up: <em>your first practice test</em>
+          </div>
+          <div class="stage-sub">
+            You've already scored 110–120 on the free practice test. Before we
+            plan anything, let's hear how it went.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              How did the practice test feel? Which part went fastest, and which
+              part felt slow?
+            </li>
+            <li>
+              Was there a question type that surprised you, or where you didn't
+              know what to do?
+            </li>
+            <li>
+              When does the college need your score? Do they also ask for a
+              minimum in reading, writing, listening or speaking?
+            </li>
+            <li>
+              Do you type in English often? Do you usually rely on autocorrect?
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ STAGE 2 ============ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">How the test <em>works</em></div>
+          <div class="stage-sub">
+            About one hour, done at home on your computer. The test is adaptive:
+            when you get questions right, the next ones get harder.
+          </div>
+
+          <div class="section-label">Your score</div>
+          <div class="score-grid">
+            <div class="score-card">
+              <div class="score-big">10–160</div>
+              <div class="score-cap">
+                Overall score, in steps of 5. Results usually arrive in about
+                two days.
+              </div>
+            </div>
+            <div class="score-card target">
+              <div class="score-big">120+</div>
+              <div class="score-cap">
+                Our target, so a bad day still gets you over 110.
+              </div>
+            </div>
+          </div>
+          <p class="panel-note">
+            You also get four subscores (reading, writing, listening, speaking)
+            and four combined ones: literacy (reading + writing), comprehension
+            (reading + listening), conversation (speaking + listening) and
+            production (speaking + writing).
+          </p>
+
+          <div class="section-label">The tasks</div>
+          <table class="det-table">
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Task</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reading</td>
+                <td>Read and Select — pick the real English words</td>
+                <td>1 min</td>
+              </tr>
+              <tr>
+                <td>Reading</td>
+                <td>Read and Complete — fill in missing letters</td>
+                <td>3 min</td>
+              </tr>
+              <tr>
+                <td>Reading</td>
+                <td>Fill in the Blanks — finish a word in a sentence</td>
+                <td>~20 s each</td>
+              </tr>
+              <tr>
+                <td>Reading</td>
+                <td>
+                  Interactive Reading — one passage, several question types
+                </td>
+                <td>7–8 min</td>
+              </tr>
+              <tr>
+                <td>Listening</td>
+                <td>Listen and Type — type the sentence you hear</td>
+                <td>1 min</td>
+              </tr>
+              <tr>
+                <td>Listening</td>
+                <td>Interactive Listening — choose replies, then summarize</td>
+                <td>~4 min + summary</td>
+              </tr>
+              <tr>
+                <td>Writing</td>
+                <td>Write About the Photo</td>
+                <td>1 min</td>
+              </tr>
+              <tr>
+                <td>Writing</td>
+                <td>Interactive Writing — answer, then a follow-up</td>
+                <td>5 + 3 min</td>
+              </tr>
+              <tr>
+                <td>Speaking</td>
+                <td>Speak About the Photo</td>
+                <td>20 s prep · up to 90 s</td>
+              </tr>
+              <tr>
+                <td>Speaking</td>
+                <td>Read / Listen, Then Speak</td>
+                <td>20 s prep · up to 90 s</td>
+              </tr>
+              <tr>
+                <td>Speaking</td>
+                <td>Interactive Speaking — a conversation with an avatar</td>
+                <td>35 s per answer</td>
+              </tr>
+              <tr>
+                <td>Both</td>
+                <td>
+                  Writing Sample and Speaking Sample — sent to your college
+                </td>
+                <td>3–5 min</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="section-label">Six rules that move your score</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">Use all the time</div>
+              <div class="idiom-meaning">
+                Speaking and writing are scored on length, range and accuracy. A
+                short, safe answer scores low.
+              </div>
+              <div class="idiom-example">
+                Keep talking until the last 5 seconds.
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Spelling counts</div>
+              <div class="idiom-meaning">
+                Read and Complete, Fill in the Blanks and Listen and Type all
+                need exact spelling.
+              </div>
+              <div class="idiom-example">
+                There's no autocorrect on test day.
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Hard means good</div>
+              <div class="idiom-meaning">
+                The test adapts. If the questions feel hard, it usually means
+                you're doing well.
+              </div>
+              <div class="idiom-example">
+                Don't panic when it gets difficult.
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Never leave it blank</div>
+              <div class="idiom-meaning">
+                A guess can earn partial credit. An empty answer earns nothing.
+              </div>
+              <div class="idiom-example">
+                Write something, even if you're unsure.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label">Test-day rules</div>
+          <div class="apply-box">
+            <div class="apply-label">
+              Break one and your result can be cancelled
+            </div>
+            <div class="apply-lead">
+              The test is watched and recorded. These are the usual rules. Read
+              the official rules page again before you book.
+            </div>
+            <ol class="apply-steps">
+              <li>Be alone in a quiet room with the door closed.</li>
+              <li>No headphones or earbuds, and keep your ears visible.</li>
+              <li>
+                Keep your eyes on the screen. Looking away often is flagged.
+              </li>
+              <li>
+                No notes, paper, phone or second screen, unless the phone is
+                your required second camera.
+              </li>
+              <li>Have your passport or ID ready before you start.</li>
+              <li>
+                Don't read the questions out loud, except on the speaking tasks.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 3 ============ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">Try <em>every task</em></div>
+          <div class="stage-sub">
+            A short sample of each task type, with the real time limits. Open
+            this page on your own computer for this part: the real test is
+            typed, so you type here too.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- A: Read and Select -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>A</span>Read and Select</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  Click every word that is a real English word. Half of them are
+                  made up.
+                </div>
+                <div class="word-grid" id="word-grid"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkWords()">Check</button>
+                  <button class="mini-btn" onclick="resetWords()">Reset</button>
+                  <span class="task-result" id="word-result"></span>
+                </div>
+              </div>
+
+              <!-- B: Read and Complete -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>B</span>Read and Complete</div>
+                  <div class="task-time">3:00</div>
+                </div>
+                <div class="task-how">
+                  Type the missing letters to complete the words in the
+                  paragraph.
+                </div>
+                <div class="ctest" id="ctest">
+                  Many students feel nervous before an important exam. One
+                  <span class="gap">sim<input data-a="ple" size="3" /></span>
+                  way
+                  <span class="gap">t<input data-a="o" size="1" /></span> reduce
+                  <span class="gap">str<input data-a="ess" size="3" /></span> is
+                  <span class="gap">t<input data-a="o" size="1" /></span>
+                  <span class="gap">prac<input data-a="tice" size="4" /></span>
+                  under
+                  <span class="gap">re<input data-a="al" size="2" /></span>
+                  conditions. When
+                  <span class="gap">y<input data-a="ou" size="2" /></span> know
+                  <span class="gap">wh<input data-a="at" size="2" /></span> each
+                  <span class="gap">ques<input data-a="tion" size="4" /></span>
+                  looks
+                  <span class="gap">li<input data-a="ke" size="2" /></span>, you
+                  <span class="gap">c<input data-a="an" size="2" /></span> focus
+                  <span class="gap">o<input data-a="n" size="1" /></span> your
+                  <span class="gap">ans<input data-a="wers" size="4" /></span>
+                  instead
+                  <span class="gap">o<input data-a="f" size="1" /></span> the
+                  <span class="gap"
+                    >instruc<input data-a="tions" size="5" /></span
+                  >.
+                </div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkGaps()">Check</button>
+                  <button class="mini-btn" onclick="showGaps()">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetGaps()">Reset</button>
+                  <span class="task-result" id="gap-result"></span>
+                </div>
+              </div>
+
+              <!-- C: Listen and Type -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>C</span>Listen and Type</div>
+                  <div class="task-time">1:00 each</div>
+                </div>
+                <div class="task-how">
+                  Each sentence is read aloud, up to three times. Type exactly
+                  what you hear, then check your spelling and punctuation.
+                </div>
+                <div id="type-list"></div>
+              </div>
+
+              <!-- D: Write About the Photo -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>D</span>Write About the Photo
+                  </div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  Write about this picture. Aim for two or three full sentences,
+                  not one short one.
+                </div>
+                <div class="photo-frame">
+                  <svg
+                    viewBox="0 0 600 360"
+                    role="img"
+                    aria-label="A desk at night: laptop, coffee, books, lamp, phone, rain on the window, clock at 11:40"
+                  >
+                    <rect width="600" height="360" fill="#e7dfd1" />
+                    <!-- window -->
+                    <rect
+                      x="40"
+                      y="30"
+                      width="230"
+                      height="190"
+                      fill="#1d2b42"
+                    />
+                    <rect
+                      x="40"
+                      y="150"
+                      width="230"
+                      height="70"
+                      fill="#14203a"
+                    />
+                    <rect
+                      x="55"
+                      y="120"
+                      width="40"
+                      height="100"
+                      fill="#0e1729"
+                    />
+                    <rect
+                      x="105"
+                      y="95"
+                      width="50"
+                      height="125"
+                      fill="#111b30"
+                    />
+                    <rect
+                      x="165"
+                      y="130"
+                      width="35"
+                      height="90"
+                      fill="#0e1729"
+                    />
+                    <rect
+                      x="210"
+                      y="105"
+                      width="45"
+                      height="115"
+                      fill="#111b30"
+                    />
+                    <g fill="#e8c46a">
+                      <rect x="63" y="135" width="6" height="6" />
+                      <rect x="80" y="160" width="6" height="6" />
+                      <rect x="115" y="110" width="6" height="6" />
+                      <rect x="135" y="140" width="6" height="6" />
+                      <rect x="115" y="175" width="6" height="6" />
+                      <rect x="175" y="150" width="6" height="6" />
+                      <rect x="220" y="120" width="6" height="6" />
+                      <rect x="238" y="165" width="6" height="6" />
+                    </g>
+                    <g stroke="#9fb4d6" stroke-width="1.5" opacity="0.7">
+                      <line x1="60" y1="40" x2="54" y2="58" />
+                      <line x1="95" y1="55" x2="89" y2="73" />
+                      <line x1="140" y1="38" x2="134" y2="56" />
+                      <line x1="185" y1="60" x2="179" y2="78" />
+                      <line x1="230" y1="42" x2="224" y2="60" />
+                      <line x1="75" y1="90" x2="69" y2="108" />
+                      <line x1="160" y1="85" x2="154" y2="103" />
+                      <line x1="250" y1="80" x2="244" y2="98" />
+                    </g>
+                    <rect
+                      x="40"
+                      y="30"
+                      width="230"
+                      height="190"
+                      fill="none"
+                      stroke="#f4efe6"
+                      stroke-width="10"
+                    />
+                    <line
+                      x1="155"
+                      y1="30"
+                      x2="155"
+                      y2="220"
+                      stroke="#f4efe6"
+                      stroke-width="6"
+                    />
+                    <!-- sticky notes -->
+                    <rect
+                      x="310"
+                      y="45"
+                      width="56"
+                      height="56"
+                      fill="#f2d55c"
+                      transform="rotate(-4 338 73)"
+                    />
+                    <text
+                      x="318"
+                      y="80"
+                      font-family="Inter, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#5a4a14"
+                      transform="rotate(-4 338 73)"
+                    >
+                      EXAM
+                    </text>
+                    <rect
+                      x="378"
+                      y="60"
+                      width="56"
+                      height="56"
+                      fill="#f4a9a0"
+                      transform="rotate(5 406 88)"
+                    />
+                    <text
+                      x="384"
+                      y="94"
+                      font-family="Inter, sans-serif"
+                      font-size="12"
+                      font-weight="600"
+                      fill="#6a2a22"
+                      transform="rotate(5 406 88)"
+                    >
+                      Dec 3
+                    </text>
+                    <!-- clock -->
+                    <circle
+                      cx="510"
+                      cy="80"
+                      r="36"
+                      fill="#fbf8f1"
+                      stroke="#3a3a36"
+                      stroke-width="4"
+                    />
+                    <line
+                      x1="510"
+                      y1="80"
+                      x2="507"
+                      y2="62"
+                      stroke="#1a1a18"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="510"
+                      y1="80"
+                      x2="487"
+                      y2="93"
+                      stroke="#1a1a18"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="510" cy="80" r="3" fill="#b85c2a" />
+                    <!-- lamp light -->
+                    <polygon
+                      points="430,160 360,262 520,262"
+                      fill="#f6e3a3"
+                      opacity="0.55"
+                    />
+                    <line
+                      x1="470"
+                      y1="262"
+                      x2="490"
+                      y2="190"
+                      stroke="#3a3a36"
+                      stroke-width="5"
+                    />
+                    <line
+                      x1="490"
+                      y1="190"
+                      x2="440"
+                      y2="150"
+                      stroke="#3a3a36"
+                      stroke-width="5"
+                    />
+                    <path
+                      d="M420,140 L460,150 L445,172 L410,160 Z"
+                      fill="#2d5f3f"
+                    />
+                    <!-- desk -->
+                    <rect
+                      x="0"
+                      y="262"
+                      width="600"
+                      height="98"
+                      fill="#8a6a4a"
+                    />
+                    <rect
+                      x="0"
+                      y="262"
+                      width="600"
+                      height="10"
+                      fill="#9c7b58"
+                    />
+                    <!-- laptop -->
+                    <rect
+                      x="190"
+                      y="170"
+                      width="170"
+                      height="92"
+                      rx="4"
+                      fill="#2f3338"
+                    />
+                    <rect
+                      x="198"
+                      y="178"
+                      width="154"
+                      height="76"
+                      fill="#d6e6f2"
+                    />
+                    <g fill="#8aa3b8">
+                      <rect x="208" y="188" width="90" height="5" />
+                      <rect x="208" y="200" width="130" height="4" />
+                      <rect x="208" y="210" width="120" height="4" />
+                      <rect x="208" y="220" width="134" height="4" />
+                      <rect x="208" y="230" width="80" height="4" />
+                    </g>
+                    <polygon
+                      points="175,262 375,262 385,272 165,272"
+                      fill="#4a4f56"
+                    />
+                    <!-- books -->
+                    <rect
+                      x="40"
+                      y="238"
+                      width="110"
+                      height="12"
+                      fill="#b85c2a"
+                    />
+                    <rect
+                      x="46"
+                      y="226"
+                      width="100"
+                      height="12"
+                      fill="#2d5f3f"
+                    />
+                    <rect
+                      x="38"
+                      y="250"
+                      width="116"
+                      height="12"
+                      fill="#17304a"
+                    />
+                    <!-- mug -->
+                    <rect
+                      x="395"
+                      y="225"
+                      width="34"
+                      height="37"
+                      rx="4"
+                      fill="#fbf8f1"
+                    />
+                    <path
+                      d="M429,234 q14,0 14,11 q0,11 -14,11"
+                      fill="none"
+                      stroke="#fbf8f1"
+                      stroke-width="5"
+                    />
+                    <path
+                      d="M405,218 q-6,-10 0,-18 M418,218 q-6,-10 0,-18"
+                      fill="none"
+                      stroke="#fbf8f1"
+                      stroke-width="2"
+                      opacity="0.8"
+                    />
+                    <!-- phone -->
+                    <rect
+                      x="470"
+                      y="252"
+                      width="44"
+                      height="10"
+                      rx="2"
+                      fill="#1a1a18"
+                    />
+                    <rect
+                      x="474"
+                      y="254"
+                      width="20"
+                      height="5"
+                      fill="#7fd1a8"
+                    />
+                    <!-- plant -->
+                    <polygon
+                      points="545,262 575,262 580,228 540,228"
+                      fill="#b85c2a"
+                    />
+                    <ellipse
+                      cx="548"
+                      cy="214"
+                      rx="9"
+                      ry="20"
+                      fill="#3d8a57"
+                      transform="rotate(-25 548 214)"
+                    />
+                    <ellipse cx="562" cy="206" rx="9" ry="24" fill="#2d5f3f" />
+                    <ellipse
+                      cx="575"
+                      cy="214"
+                      rx="9"
+                      ry="20"
+                      fill="#3d8a57"
+                      transform="rotate(25 575 214)"
+                    />
+                  </svg>
+                </div>
+                <textarea
+                  class="type-box"
+                  id="photo-text"
+                  rows="4"
+                  placeholder="Start writing…"
+                  oninput="countWords()"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count" id="photo-count">0 words</span>
+                </div>
+              </div>
+
+              <!-- E: Speak About the Photo -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>E</span>Speak About the Photo
+                  </div>
+                  <div class="task-time">20 s prep · 1:30</div>
+                </div>
+                <div class="task-how">
+                  Same picture, now out loud. Use the photo frame on the right,
+                  and keep going until the time runs out.
+                </div>
+              </div>
+
+              <!-- F: Read, Then Speak -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>F</span>Read, Then Speak</div>
+                  <div class="task-time">20 s prep · 1:30</div>
+                </div>
+                <div class="speak-prompt">
+                  Talk about a skill you would like to learn.
+                  <ul>
+                    <li>What is the skill?</li>
+                    <li>Why do you want to learn it?</li>
+                    <li>How would you learn it?</li>
+                    <li>How would it help you in the future?</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- G: Interactive Speaking -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>G</span>Interactive Speaking
+                  </div>
+                  <div class="task-time">35 s each · no prep</div>
+                </div>
+                <div class="task-how">
+                  A conversation about starting college. You hear each question
+                  once and answer straight away. Each answer gets 35 seconds,
+                  and there's no time to prepare.
+                </div>
+                <div class="hidden-qs" id="iq">
+                  <ol>
+                    <li>Why did you choose this college, or this course?</li>
+                    <li>
+                      What do you think will be the hardest part of your first
+                      year?
+                    </li>
+                    <li>How are you getting ready for that?</li>
+                    <li>
+                      Tell me about a time you had to get used to something new.
+                    </li>
+                    <li>
+                      What would you miss most if you studied far from home?
+                    </li>
+                    <li>
+                      Some people say students should work for a year before
+                      college. What do you think?
+                    </li>
+                  </ol>
+                </div>
+                <div class="task-actions">
+                  <button class="reveal-toggle" onclick="toggleQs(this)">
+                    Show questions
+                  </button>
+                  <span class="panel-note"
+                    >The questions are read aloud, so keep them hidden while you
+                    answer.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-panel">
+                <div class="timer-presets" id="timer-presets"></div>
+                <div class="timer-top">
+                  <div class="timer-label" id="timer-label">Pick a time</div>
+                </div>
+                <div class="timer-display" id="timer-display">1:00</div>
+                <div class="timer-bar">
+                  <div class="timer-bar-fill" id="timer-bar-fill"></div>
+                </div>
+                <div class="timer-controls">
+                  <button
+                    class="btn primary"
+                    id="timer-start"
+                    onclick="toggleTimer()"
+                  >
+                    Start
+                  </button>
+                  <button class="btn" onclick="resetTimer()">Reset</button>
+                  <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+                    Sound on
+                  </button>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Photo frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">This picture shows…</span>
+                  <span class="chip">In the foreground…</span>
+                  <span class="chip">On the left / right…</span>
+                  <span class="chip">It looks like…</span>
+                  <span class="chip">It might be… because…</span>
+                  <span class="chip">This reminds me of…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Opinion frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">In my opinion,…</span>
+                  <span class="chip">The main reason is…</span>
+                  <span class="chip">For example,…</span>
+                  <span class="chip">On the other hand,…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Buying time</div>
+                <div class="vocab-chips">
+                  <span class="chip">That's a good question…</span>
+                  <span class="chip">I've never thought about it, but…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 4 ============ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>what's next</em></div>
+
+          <div class="section-label">Out loud, now</div>
+          <div class="apply-box">
+            <div class="apply-label">Close the page first</div>
+            <div class="apply-lead">
+              Without looking, answer these in one minute or less.
+            </div>
+            <ol class="apply-steps">
+              <li>Which two tasks today felt the hardest, and why?</li>
+              <li>
+                Describe the desk photo again in 30 seconds, using the photo
+                frame.
+              </li>
+            </ol>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Practice test</div>
+              <div class="reflection-content">
+                Take the second free practice test on englishtest.duolingo.com.
+                Do it like the real thing: one sitting, a quiet room, no notes,
+                no pausing. Send me your scores.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Word list</div>
+              <div class="reflection-content">
+                Start your word list: 10 new words a day, each one in a sentence
+                of your own. Type them yourself, with autocorrect off.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Writing</div>
+              <div class="reflection-content">
+                <p>
+                  A 5-minute writing sprint, once a day. It trains your writing
+                  and your typing speed together, just like the Interactive
+                  Writing task.
+                </p>
+                <ol class="hw-steps">
+                  <li>Pick one prompt below. Turn autocorrect off.</li>
+                  <li>Set a 5-minute timer and type without stopping. Aim for 100 words or more.</li>
+                  <li>When the timer ends, take 1 minute to reread it and fix mistakes.</li>
+                  <li>Write down your word count, so you can see it go up.</li>
+                  <li>Send me two of your sprints each week.</li>
+                </ol>
+                <div class="hw-prompts-label">Prompts</div>
+                <ol class="hw-prompts">
+                  <li>Describe a place in your city that you would show a visitor. Why that place?</li>
+                  <li>Some people prefer to study alone, others in groups. Which do you prefer, and why?</li>
+                  <li>Write about a mistake that taught you something important.</li>
+                  <li>Should universities make attendance in class mandatory? Give reasons.</li>
+                  <li>Describe a typical weekday in your life. What would you change about it?</li>
+                  <li>Is it better to have one very good friend or many friends? Explain.</li>
+                  <li>What technology could you not live without? Why?</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---- navigation ---- */
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---- A: Read and Select ---- */
+      const WORDS = [
+        ["ancient", true],
+        ["gesture", true],
+        ["reluctant", true],
+        ["harvest", true],
+        ["vivid", true],
+        ["abundant", true],
+        ["thorough", true],
+        ["mischief", true],
+        ["plome", false],
+        ["brintle", false],
+        ["valicious", false],
+        ["sentiful", false],
+        ["dresty", false],
+        ["glimber", false],
+        ["fluctance", false],
+        ["comfortment", false],
+      ];
+      function buildWords() {
+        const grid = document.getElementById("word-grid");
+        grid.innerHTML = "";
+        shuffle(WORDS).forEach(([w, real]) => {
+          const b = document.createElement("button");
+          b.className = "word-btn";
+          b.textContent = w;
+          b.dataset.real = real ? "1" : "0";
+          b.onclick = () => b.classList.toggle("picked");
+          grid.appendChild(b);
+        });
+        document.getElementById("word-result").textContent = "";
+      }
+      function checkWords() {
+        let right = 0;
+        document.querySelectorAll(".word-btn").forEach((b) => {
+          const real = b.dataset.real === "1";
+          const picked = b.classList.contains("picked");
+          b.classList.remove("ok", "bad", "missed");
+          if (picked && real) {
+            b.classList.add("ok");
+            right++;
+          } else if (picked && !real) b.classList.add("bad");
+          else if (!picked && real) b.classList.add("missed");
+          else right++;
+        });
+        document.getElementById("word-result").textContent =
+          right + " / " + WORDS.length + " correct";
+      }
+      function resetWords() {
+        buildWords();
+      }
+
+      /* ---- B: Read and Complete ---- */
+      function gapInputs() {
+        return document.querySelectorAll("#ctest input");
+      }
+      function checkGaps() {
+        let right = 0;
+        gapInputs().forEach((inp) => {
+          const ok = inp.value.trim().toLowerCase() === inp.dataset.a;
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (ok) right++;
+        });
+        document.getElementById("gap-result").textContent =
+          right + " / " + gapInputs().length + " correct";
+      }
+      function showGaps() {
+        gapInputs().forEach((inp) => {
+          if (inp.value.trim().toLowerCase() !== inp.dataset.a) {
+            inp.value = inp.dataset.a;
+            inp.classList.remove("ok");
+            inp.classList.add("bad");
+          }
+        });
+      }
+      function resetGaps() {
+        gapInputs().forEach((inp) => {
+          inp.value = "";
+          inp.classList.remove("ok", "bad");
+        });
+        document.getElementById("gap-result").textContent = "";
+      }
+      gapInputs().forEach((inp) => {
+        inp.maxLength = inp.dataset.a.length;
+        inp.style.width = inp.dataset.a.length + 1 + "ch";
+        inp.setAttribute("autocomplete", "off");
+        inp.setAttribute("spellcheck", "false");
+      });
+
+      /* ---- C: Listen and Type ---- */
+      const SENTENCES = [
+        "The library closes early on Sundays.",
+        "She hasn't decided which university to apply to.",
+        "If it rains tomorrow, we'll have to cancel the trip.",
+        "Most of the students were already tired by the afternoon.",
+      ];
+      document.getElementById("type-list").innerHTML = SENTENCES.map(
+        (s, i) => `
+        <div class="type-item">
+          <div class="type-num">Sentence ${i + 1}</div>
+          <textarea class="type-box" rows="1" spellcheck="false" autocomplete="off" placeholder="Type what you hear…"></textarea>
+          <div class="type-row">
+            <button class="mini-btn" onclick="toggleAnswer(${i}, this)">Show the sentence</button>
+            <span class="answer-line" id="ans-${i}">${s}</span>
+          </div>
+        </div>`,
+      ).join("");
+      function toggleAnswer(i, btn) {
+        const el = document.getElementById("ans-" + i);
+        const on = el.classList.toggle("shown");
+        btn.textContent = on ? "Hide the sentence" : "Show the sentence";
+      }
+
+      /* ---- D: word count ---- */
+      function countWords() {
+        const t = document.getElementById("photo-text").value.trim();
+        const n = t ? t.split(/\s+/).length : 0;
+        document.getElementById("photo-count").textContent =
+          n + (n === 1 ? " word" : " words");
+      }
+
+      /* ---- G: hidden questions ---- */
+      function toggleQs(btn) {
+        const on = document.getElementById("iq").classList.toggle("revealed");
+        btn.textContent = on ? "Hide questions" : "Show questions";
+      }
+
+      /* ---- clock ---- */
+      const PRESETS = [
+        ["0:20", 20, "Prep time"],
+        ["0:35", 35, "Interactive Speaking"],
+        ["1:00", 60, "Read and Select · Listen and Type · Photo"],
+        ["1:30", 90, "Speaking"],
+        ["3:00", 180, "Read and Complete"],
+      ];
+      const clock = {
+        secs: 60,
+        remaining: 60,
+        running: false,
+        tick: null,
+        muted: false,
+      };
+
+      function fmt(s) {
+        return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+      }
+      function renderTimer() {
+        const d = document.getElementById("timer-display");
+        const bar = document.getElementById("timer-bar-fill");
+        const warn = clock.remaining > 0 && clock.remaining <= clock.secs * 0.2;
+        d.textContent =
+          clock.remaining === 0 && clock.running === false && clock.finished
+            ? "Time"
+            : fmt(clock.remaining);
+        d.classList.toggle("warning", warn);
+        d.classList.toggle("done", !!clock.finished);
+        bar.classList.toggle("warning", warn);
+        bar.style.width = (clock.remaining / clock.secs) * 100 + "%";
+      }
+      function buildPresets() {
+        document.getElementById("timer-presets").innerHTML = PRESETS.map(
+          ([label, s], i) =>
+            `<button class="preset-btn${s === clock.secs ? " on" : ""}" onclick="setPreset(${i})">${label}</button>`,
+        ).join("");
+      }
+      function setPreset(i) {
+        const [, s, name] = PRESETS[i];
+        stopTick();
+        clock.secs = s;
+        clock.remaining = s;
+        clock.running = false;
+        clock.finished = false;
+        document.getElementById("timer-label").textContent = name;
+        document.getElementById("timer-start").textContent = "Start";
+        buildPresets();
+        renderTimer();
+      }
+      function stopTick() {
+        if (clock.tick) clearInterval(clock.tick);
+        clock.tick = null;
+      }
+      function toggleTimer() {
+        const btn = document.getElementById("timer-start");
+        if (clock.running) {
+          stopTick();
+          clock.running = false;
+          btn.textContent = "Resume";
+          return;
+        }
+        if (clock.remaining === 0) {
+          clock.remaining = clock.secs;
+          clock.finished = false;
+        }
+        clock.running = true;
+        btn.textContent = "Pause";
+        clock.tick = setInterval(() => {
+          clock.remaining--;
+          if (clock.remaining <= 0) {
+            clock.remaining = 0;
+            clock.running = false;
+            clock.finished = true;
+            stopTick();
+            btn.textContent = "Again";
+            beep();
+          }
+          renderTimer();
+        }, 1000);
+        renderTimer();
+      }
+      function resetTimer() {
+        stopTick();
+        clock.running = false;
+        clock.finished = false;
+        clock.remaining = clock.secs;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      let audioCtx = null;
+      function beep() {
+        if (clock.muted) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) audioCtx = new Ctx();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(
+            0.2,
+            audioCtx.currentTime + 0.02,
+          );
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioCtx.currentTime + 0.45,
+          );
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+      function toggleMute() {
+        clock.muted = !clock.muted;
+        document.getElementById("mute-btn").textContent = clock.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      buildWords();
+      buildPresets();
+      renderTimer();
+    </script>
+  </body>
+</html>
