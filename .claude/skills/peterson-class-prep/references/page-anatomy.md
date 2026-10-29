@@ -231,6 +231,12 @@ wrap-up as the bookend, with the same five sentences both times.
 taught without putting Portuguese on the page. Also good for pronunciation
 contrasts (*thir-TEEN* vs *THIR-ty*).
 
+**Last-class review** — from lesson 10, the warm-up opens with
+`.section-label` + `.panel-note` + `.idiom-grid` of four `.idiom-card`s:
+`.idiom-term` the question, `.idiom-meaning` the words to answer with, no
+`.idiom-example`. Reuses the shared idiom styles, which already collapse to one
+column on mobile. See *Every lesson opens with a review* in `SKILL.md`.
+
 **Word bank** — `.word-bank` > `span.chip`. A denser, ungrouped chip layout for
 long lists of single words (jobs, verbs). Distinct from `.vocab-chips`, which is
 for grouped fixed expressions.

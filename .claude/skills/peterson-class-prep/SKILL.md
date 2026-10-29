@@ -140,7 +140,8 @@ shared between files. See `references/page-anatomy.md`.
 Four stages. The nav sidebar, progress bar and Previous/Next buttons are driven
 by a small script — `references/page-anatomy.md` has the contract.
 
-1. **Warm-up** — a `.ladder` of five sentences, easiest first, each one a block
+1. **Warm-up** — opens with a **quick review of the last class** (see below),
+   then a `.ladder` of five sentences, easiest first, each one a block
    from the toolkit below it, plus a phrase bank for the conversation the lesson
    exists to make possible. Not discussion questions: a beginner cannot hold a
    discussion yet.
@@ -152,6 +153,26 @@ by a small script — `references/page-anatomy.md` has the contract.
 4. **Wrap-up** — recall with the page closed, then homework. **Not the ladder
    again.** Felipe cut that bookend from lesson 1 — *"too repetitive and doesn't
    add anything."* The five sentences appear once, in the warm-up.
+
+### Every lesson opens with a review of the last class
+
+Felipe asked for this on 29 October 2026 and made it standing for every new
+lesson from lesson 10 on. **Do not add it to lessons 0–9.**
+
+It is the first thing in the warm-up, before the ladder: a `.section-label`
+(*Last class — a quick review*), a one-line `.panel-note`, and an
+`.idiom-grid` of **four** `.idiom-card`s — one question per part of the last
+lesson, usually one per toolkit block plus one on its Language Tip.
+
+- `.idiom-term` holds the question — real and about his life, ideally
+  two-part, so the answer has to use the old structure.
+- `.idiom-meaning` holds the words to answer with (*I've been …ing for … ·
+  since …*), not a sentence.
+- **No `.idiom-example`, no example answer.** He produces; he does not read.
+
+Take the questions from what was *actually taught*, which the log records —
+including anything cut before class, which must not be reviewed. It is quick:
+four questions, not a block, and it does not count toward the toolkit limit.
 
 ### Keep the toolkit small — the talking is the point
 
@@ -254,6 +275,8 @@ Open the page in a browser and check:
   example.
 - No who-speaks cues in the toolkit notes; pronunciation-only items still say
   listen-and-repeat.
+- The warm-up opens with four review questions on the last class, with no
+  example answers.
 - The toolkit has four blocks or fewer, counting anything carried over.
 - The toolkit closes with a Language Tip, and it is about one rule, not the page.
 - No Portuguese anywhere on the page.

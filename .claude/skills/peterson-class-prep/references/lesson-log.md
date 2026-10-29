@@ -935,6 +935,93 @@ almost no present perfect.
 
 ---
 
+## Lesson 10 — How Things Used to Be
+`lesson_plan_10.html` · 29 October 2026 (date assumed — the Thursday after
+lesson 9)
+
+Stages: Warm-up → The Back-Then Toolkit → Back Then → Wrap-up
+
+Felipe judged *video calls* (named on lessons 8 and 9) too generic, asked for
+other topics, and picked **used to and would** from a ranked list (the others:
+telling a story with the past continuous, opinions and agreeing, should / have
+to, *enjoy doing* vs. *decide to do*, conditionals, the passive). B1 pitch.
+Nothing carried — no record yet of how lessons 8 and 9 went.
+
+**New this lesson, asked for by Felipe:** a **quick review of the last class**
+at the very start of the warm-up, before the ladder — *"a few questions … to
+answer using that vocabulary."* Four `.idiom-card`s (no new CSS): the question
+in `.idiom-term`, the words to answer with in `.idiom-meaning`, and **no example
+answer**, so he has to produce rather than read. **Made standing for every new lesson** on 29 October
+(*"yes, the next lesson should"*); lessons 0–9 are left without it on purpose.
+Lesson 9's four: *How long have
+you been working at your company?* (been …ing for · since) · *Is anyone you know
+away right now? Where have they gone?* (gone · been) · *What's something you
+haven't done in ages? When was the last time?* (in ages + the past) · *What have
+you been working on this week? How many tasks have you finished so far?* (the
+Tip: been …ing vs. how many).
+
+**Built with three blocks, not four**, to leave room for the review and the
+talk — lesson 9 was cut to three for the same reason. The *then and now* words
+(*not anymore*, *these days · nowadays*) went into block 1's table instead of
+a block of their own.
+
+**Warm-up:** the review, then a new ladder (fifth rung: *I used to work in an
+office, but now I'm used to working from home*), then *When you were a kid* — I
+ask · you answer · you keep it going. Answer starters: *I used to … every …* ·
+*I didn't use to …, but now I …* · *After school, we'd …* · *I don't …
+anymore.*
+
+**Toolkit**, three blocks, three fix cards each:
+
+1. **I used to … — true then, not now** — used to / didn't use to / Did you use
+   to …? / There used to be … / not anymore / these days · nowadays. The note
+   says *used to* is listen-and-repeat (*yoos-tuh*, an *s* not a *z*, and *use
+   to* sounds the same). Fix cards: *I use to wake up at six* → *I usually* ·
+   *didn't used to* → *didn't use to* · *Actually, I work in a bank* → *These
+   days* (the *actually* false friend, first time on this track).
+2. **we'd go, he'd cook — telling the story** — *used to* to set the scene,
+   then *would* for again and again; states stay with *used to*; one time is
+   the past. *we'd* / *he'd* listen-and-repeat. Fix cards: *I would have a dog*
+   → *used to have* · *we would to go* → *we'd go* · *In 2010, I would go to
+   Disney* → *went*.
+3. **I'm used to it — what's normal for you now** — I'm used to / I'm not used
+   to / Are you used to …? / I'm getting used to / I've gotten used to (ties to
+   lesson 9) / I can't get used to. Fix cards: *used with the cold* → *used to*
+   · *I used to the noise now* → *I'm used to* · *get use to* → *get used to*.
+   This uses the *get used to* from lesson 9's cut block 3.
+
+**Language Tip:** *I used to work vs. I'm used to working* — the past that
+stopped vs. normal now; look at what comes before *used to*. Trap: *I'm used to
+work from home.* The prose adds that *to* here works like *to the office* (a
+thing comes after it), and that a habit now is neither — *I usually work*.
+
+**Activity:** Back Then — a 24-card deck of two-part questions (school, first
+job, music, money, technology, getting used to things), none about where he grew
+up, since that is the talk; **Change the sentence**, 24 hand-written cards, six
+each of *Say it with used to* · *Tell it with would* (one is a *have* card that
+can't take *would*, and the note says so) · *Say what's normal now — be used to
+or get used to* · *Fill the gap — used to, usually or I'm used to* (the Tip,
+plus block 1's *usually*). Then **Where you grew up** — no roleplay, four
+prompts: the place (*there used to be*) · a normal week (*would*) · one time
+(the past) · and now (*get used to*, *I'm not used to*). Sidebar: *Back then* ·
+*A normal week* · *And now* · *If you get stuck*.
+
+**Wrap-up:** one recall item — something you used to do and don't anymore,
+something your family would do every weekend, something you didn't use to like,
+and something you're used to now that was hard at first.
+
+**Homework:** British Council LearnEnglish, **B1–B2 grammar** — *Different uses
+of 'used to'*: Grammar test 1 before reading, then the explanation, then Grammar
+test 2, then three true sentences (*used to*, *I'm used to*, *get used to*). A
+grammar page, not a listening: the B1 listening list has nothing on past habits.
+Verified in a browser.
+
+**Next class, as named on the page:** telling a story — the past continuous
+with *when* and *while* (*I was driving to work when my phone rang*), the first
+pick from the ranked list.
+
+---
+
 ## Carried over
 
 From **lesson 0**: block 6 (Yesterday) only. Blocks 1–5 were all reached, which
@@ -980,6 +1067,9 @@ comes back in lesson 8 as *We've been waiting for …* (block 3 and one
 From **lesson 8**: not yet recorded. Lesson 9 was built assuming all four
 blocks were reached.
 
+From **lesson 9**: not yet recorded. Lesson 10 was built assuming all three
+blocks were reached; its opening review re-asks one question from each.
+
 ---
 
 ## Not yet covered
@@ -987,11 +1077,16 @@ blocks were reached.
 Sequenced roughly by what he needs next, now that all three time frames, the
 present perfect, comparing, and eating out and shopping are done:
 
+- **Telling a story — past continuous, *when* / *while*.** Named as lesson 11.
+- **Opinions, agreeing and disagreeing** — the meeting language that *video
+  calls* was really after; Felipe found that topic too generic on 29 October.
+- **should / have to / need to**, ***enjoy doing* vs. *decide to do***, **real
+  vs. imaginary conditionals**, **the passive at work** — the rest of the
+  ranked list from 29 October.
 - **Video calls in their own right** — lesson 6 only touched them (*you're
   breaking up*, the microphone card, three deck questions). Screen sharing,
-  *you're on mute*, talking over each other, running a meeting. **Named as
-  lesson 10** (it was named for 9, which went to the present perfect's second
-  pass instead).
+  *you're on mute*, talking over each other, running a meeting. Named for lessons 9 and 10 and jumped both times; on 29 October Felipe
+  called it too generic.
 - **Telling the time** — left off lesson 6 as below the pitch. The
   *thirteen / thirty* contrast and spelling out loud went into its block 1.
 - **Vocabulary in its own right** — now that the level is known, a page built
