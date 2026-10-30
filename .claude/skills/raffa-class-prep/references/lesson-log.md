@@ -439,6 +439,82 @@ questions, not five.
 
 ---
 
+## Lesson 9 — What Would You Do?
+`lesson_plan_9.html` · 30 October 2026
+
+Stages: Warm-up → The What-If Toolkit → What Would You Do? → Wrap-up
+
+Hypotheticals and dilemmas. The first lesson in the leaner shape Felipe asked
+for on 25 October: **three blocks in stage 2, about 35 items, and most of the
+class in conversation.** He turned down two rounds of topic options first, so
+pick topics that are fun to talk about rather than pure word fields. 36 items in
+stage 2 plus the Language Tip, and 16 in the stage 3 sidebar. The ladder reuses
+toolkit phrases instead of adding new ones.
+
+**Native-speaker patterns** (three-column table, column 3 read aloud):
+*I'd jump at the chance / in a heartbeat / without a second thought* · *not in a
+million years / there's no way I'd… / you couldn't pay me (to)* · *a no-brainer /
+it's an easy one / it's not even close* · *I'd be torn / I keep going back and
+forth / it's a tough call* · *I'd be tempted / I'd think twice / I'd have to sleep on it* ·
+*say… / what if… / suppose…* · *if I were you / in your shoes / if it were up
+to me* · *looking back / if I'd known then what I know now / I'd do it
+differently*
+
+A one-line `.panel-note` under the table says to contract *'d*, because the full
+*I would* sounds like you're insisting.
+
+**Idioms & phrasal verbs** (one 12-card grid): take a chance (on) · get cold
+feet · bite the bullet · between a rock and a hard place · the lesser of two
+evils · play it safe · go for it · think it over · turn down · miss out (on) ·
+settle for · have second thoughts
+
+**Simplified on 30 October 2026** because Felipe didn't know some of the
+phrases. Out: *over my dead body* · *hands down* · *in two minds* · *take the
+plunge* · *cross that bridge* · *weigh up* · *pass up*, plus *splash out* and
+*itchy feet* from the warm-up and the sidebar's *easy to say from the sofa* and
+*off the top of my head*. Those are still untaught, and per the main skill file
+they shouldn't come back.
+
+**Language Tip:** *wish* vs. *hope*. *Desejar* pulls Brazilians toward *I wish
+you get better*. A clause after *wish* is unreal and takes a past form (*I wish
+I had / could / were*, *I wish I'd…* for regrets). *Hope* is for things that
+could happen. The one forward-looking *wish* takes a noun: *I wish you luck*.
+Tied to the topic through the shared past form with *if I were you*.
+
+**Activity:** three conversation rounds with a sticky sidebar:
+1. **A question deck.** 24 personal what-ifs and would-you-rathers. Answer with
+   a verdict before the reason, then ask it back.
+2. **Would you do it?** A deck of 20 dilemmas plus the L8 `.call-ladder` with
+   four rungs: In a heartbeat → I'd be tempted (*I'd probably go for it* · *on
+   one condition…*) → I'd think twice → Not in a million years. Explain your
+   call and say what would change your mind. No mirror rung.
+3. **Follow the thread.** New widget: `.thread-list`. Six big what-ifs, each
+   with five follow-ups revealed one at a time ("Next follow-up · N left"). The
+   current follow-up is highlighted and earlier ones stay visible. Answers have
+   to stay consistent all the way down. `makeDeck()` now returns the drawn item
+   and accepts objects with a `.text`, so this deck uses the same factory.
+
+Sidebar groups: Thinking it through (*It all comes down to…* · *Part of me
+would…, but…* · *The only thing that'd stop me is…* · *My first thought is…*) ·
+Setting conditions (*As long as* · *Only if* · *On one condition* · *Unless*) ·
+Pushing back (*Would you, though?* · *You say that now* · *That's easy to say* ·
+*Be honest — really?*) · Asking it back.
+
+**Wrap-up:** no in-class task. A recall drill plus a 90-second "decision you'd
+change" task was built, and Felipe removed it completely on 30 October. The
+stage is titled "Wrap-up: catching up" and holds only the homework.
+
+**Homework:** no new homework. On 30 October Felipe said the listening and
+voice-note homework wasn't being done, so this lesson asks for **catch-up on
+past homework**. It's a list of the seven earlier assignments (L2 voice note,
+L3 Julian Treasure talk, L4 *The Moth*, L5 *Intelligence Squared*, L6 *Planet
+Money*, L7 voice note, L8 *Desert Island Discs*), each with its link, to do in
+any order. The voice note about a decision being thought over was dropped.
+
+**Recycled into the warm-up:** turn out (L4) · look up to (L8)
+
+---
+
 ## Rules used so far
 
 One per lesson, at the bottom of stage 2. Don't repeat one.
@@ -446,6 +522,7 @@ One per lesson, at the bottom of stage 2. Don't repeat one.
 - L6 — *lend* vs. *borrow*
 - L7 — *be cold* vs. *have a cold* (*estar com* → *be* + adj. / *have got* + *a* + noun)
 - L8 — *remember* vs. *remind* (*lembrar*)
+- L9 — *wish* vs. *hope* (*desejar*)
 
 Queued, roughly best first (Portuguese-interference ones first, since those are
 errors he actually produces): *make* vs. *do* · *say* vs. *tell* · *either /
@@ -474,3 +551,10 @@ Topic ideas raised and not used, with the language each would carry:
 
 Early lessons were all work-shaped; he has since asked for material outside the
 office, so weight the non-business options accordingly.
+
+Offered for Lesson 9 on 25 October 2026 and **turned down**: home & things
+breaking, plans & running late, taste & recommending, meetings & video calls,
+rules & getting away with it, moods & emotions, childhood, sport & fitness, and
+the language-as-topic set (false friends, Latin-root words vs. phrasal verbs,
+make/do/take/get/have, discourse markers). Don't re-offer these unchanged.
+Felipe wants conversational topics, the kind that start a discussion.

@@ -89,6 +89,14 @@ Every activity should have target language attached to it.
 Aim for **60–80 discrete language items** per lesson: expressions, idioms,
 phrasal verbs, collocations, fixed chunks. That is the deliverable.
 
+**Update, 25 October 2026:** Felipe asked for fewer blocks in stage 2 and more
+time in conversation. From Lesson 9 on, the toolkit is **three blocks and about
+35 items**: one three-column phrase table, one idioms + phrasal verbs grid, and
+the Language Tip. Stage 3 is the biggest stage and runs on several rounds of
+conversation. Count the stage 3 ladder and sidebar on top of that, and build
+toward roughly 50–65 items across the whole page rather than 60–80 in the
+toolkit.
+
 ## He can see the screen
 
 Felipe shares his screen with Raffa during class. **Nothing on the page may refer
@@ -114,6 +122,11 @@ payloads, and say what language each one would carry. Check
 `references/lesson-log.md` first so you do not repeat a topic or re-teach the same
 expressions. Note whether he wants business or non-business — the early lessons
 were all work-shaped and he has since asked for material outside the office.
+Favour topics that are fun to *talk about* — hypotheticals, dilemmas, opinions
+on life — over pure word fields. For Lesson 9, Felipe turned down eight
+field-style topics (home repairs, plans, taste, meetings, rules, moods,
+childhood, sport) and a set of language-as-topic options (false friends,
+collocations), then picked "What would you do?".
 
 **2. Confirm the shape.** Ask what the main activity should be if it is not
 obvious. Roleplays with hidden briefs and custom interactive widgets have both
@@ -218,8 +231,22 @@ repeat.
   does not match what was last written, that is him, not corruption. Read the
   current file and build on it. Never restore something back to a previous version
   without asking.
+- **Common, international English only.** On 30 October 2026 Felipe said Lesson
+  9 had phrases even he didn't know. Teach what a fluent speaker hears every
+  week in films, series and at work, in both American and British English.
+  Cut British-only slang (*in two minds*, *splash out*, *itchy feet*, *skint*,
+  *weigh up*), rarer idioms (*take the plunge*, *cross that bridge*, *hands
+  down*), and anything you made up yourself. Check that each idiom means what
+  the sentence uses it for: *over my dead body* is about stopping someone
+  else, not about refusing something yourself. Test: **if Felipe might have
+  to look it up, cut it.** Older lessons (especially 6 and 8) are full of
+  British slang, so don't copy their register forward.
 - **Homework alternates** speaking (a voice note sent to Felipe) and listening (a
   talk or podcast episode). Keep it to two or three items.
+  **But as of 30 October 2026 that homework isn't getting done.** Lesson 9 set
+  no new homework, only catch-up on the old ones. Before setting homework for
+  Lesson 10 or later, ask Felipe what he wants rather than defaulting to the
+  alternation.
 
 ## Before you finish
 

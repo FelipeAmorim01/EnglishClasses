@@ -1,0 +1,2318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation &mdash; Lesson 9</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- FOLLOW THE THREAD (stage 3, round three) ---------- */
+      .thread-list {
+        list-style: none;
+        counter-reset: thread;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .thread-list:empty {
+        display: none;
+      }
+
+      .thread-list li {
+        counter-increment: thread;
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--muted);
+        background: var(--bg);
+        border-left: 3px solid var(--border);
+        padding: 10px 14px;
+      }
+
+      .thread-list li::before {
+        content: counter(thread) " · ";
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* the follow-up being answered right now */
+      .thread-list li:last-child {
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left-color: var(--accent);
+        animation: fadeUp 0.25s ease;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .thread-list li {
+          font-size: 0.95rem;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">What Would You Do? — Lesson 9</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The What-If Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">What Would You Do?</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- STAGE 0: WARM-UP -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up</div>
+          <div class="stage-sub">
+            Hypotheticals are where a conversation gets interesting — and where
+            an answer in English tends to shrink to <em>yes, I would</em> or
+            <em>no, I wouldn't</em>. Today is mostly talking: a short toolkit,
+            then three rounds of what-would-you-do.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              What's the biggest decision you've ever made without really
+              thinking about it — and how did it turn out?
+            </li>
+            <li>
+              If money were no object, what's the first thing you'd spend it on?
+            </li>
+            <li>
+              If you could live in any city in the world for a year, which one
+              would you pick?
+            </li>
+            <li>
+              Who do you look up to — and what would they do in your position
+              right now?
+            </li>
+          </ul>
+        </div>
+
+        <!-- STAGE 1: THE WHAT-IF TOOLKIT -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">The <em>What-If Toolkit</em></div>
+          <div class="stage-sub">
+            A short one this week. Read the third column of the table out loud —
+            each sentence gives you the pattern two or three times in one go.
+          </div>
+
+          <div class="section-label">What you'd say · what gets said</div>
+
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th style="width: 22%">Correct</th>
+                <th style="width: 26%">What's actually said</th>
+                <th>Read it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Yes, I would do it immediately.</td>
+                <td>
+                  I'd jump at the chance · in a heartbeat · without a second
+                  thought
+                </td>
+                <td>
+                  <em
+                    >A year in Lisbon, all paid? I'd jump at the chance. I'd say
+                    yes in a heartbeat — without a second thought.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>No, I would never do that.</td>
+                <td>
+                  not in a million years · there's no way I'd… · you couldn't
+                  pay me (to)
+                </td>
+                <td>
+                  <em
+                    >Skydiving? Not in a million years. There's no way I'd jump
+                    out of a plane — you couldn't pay me to.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>That's an easy choice.</td>
+                <td>a no-brainer · it's an easy one · it's not even close</td>
+                <td>
+                  <em
+                    >Beach or mountains? That's a no-brainer. The beach — it's
+                    an easy one. Honestly, it's not even close.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I can't decide.</td>
+                <td>
+                  I'd be torn · I keep going back and forth · it's a tough call
+                </td>
+                <td>
+                  <em
+                    >Stay or go? I'd be torn. I keep going back and forth on it,
+                    to be honest — it's a really tough call.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Maybe. I'm not sure.</td>
+                <td>
+                  I'd be tempted · I'd think twice · I'd have to sleep on it
+                </td>
+                <td>
+                  <em
+                    >Double the salary? I'd be tempted. But a six-day week — I'd
+                    think twice. I'd have to sleep on it.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Imagine that…</td>
+                <td>say… · what if… · suppose…</td>
+                <td>
+                  <em
+                    >Say you lost your job tomorrow. What if nobody hired you
+                    for a year? Suppose you had to start again from zero — what
+                    would you do?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>In your situation, I would…</td>
+                <td>if I were you · in your shoes · if it were up to me</td>
+                <td>
+                  <em
+                    >If I were you, I'd take it. In your shoes, I wouldn't even
+                    hesitate — and if it were up to me, you'd have said yes
+                    already.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>I regret it.</td>
+                <td>
+                  looking back · if I'd known then what I know now · I'd do it
+                  differently
+                </td>
+                <td>
+                  <em
+                    >Looking back, I'd do it differently. If I'd known then what
+                    I know now, I'd have moved abroad at twenty-five.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="panel-note" style="margin-top: -14px">
+            Almost everything in this table runs on <em>'d</em>. Say it
+            contracted — <em>I'd</em>, <em>you'd</em>, <em>we'd</em>. The full
+            <em>I would</em> sounds like you're insisting.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="section-label">
+            Idioms &amp; phrasal verbs — making the call
+          </div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">take a chance (on)</div>
+              <div class="idiom-meaning">
+                Try something risky that might not work out.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >I took a chance on a tiny startup in 2015, and it really paid
+                  off.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">get cold feet</div>
+              <div class="idiom-meaning">
+                Lose your nerve just before something big.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >I had the contract in front of me, pen in hand — and got cold
+                  feet.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">bite the bullet</div>
+              <div class="idiom-meaning">
+                Do the unpleasant thing you've been putting off.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >In the end I just bit the bullet and told my boss I was
+                  leaving.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">between a rock and a hard place</div>
+              <div class="idiom-meaning">Every option is a bad one.</div>
+              <div class="idiom-example">
+                <em
+                  >Lose the client or lose the team? I'm between a rock and a
+                  hard place.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">the lesser of two evils</div>
+              <div class="idiom-meaning">The option that's less bad.</div>
+              <div class="idiom-example">
+                <em
+                  >Neither is great, but working Saturdays is the lesser of two
+                  evils.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">play it safe</div>
+              <div class="idiom-meaning">Choose the option with less risk.</div>
+              <div class="idiom-example">
+                <em
+                  >I'd love to start my own business, but with two kids I'm
+                  playing it safe for now.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">go for it</div>
+              <div class="idiom-meaning">Take the chance — try it.</div>
+              <div class="idiom-example">
+                <em
+                  >If they offer you the job, go for it. What's the worst that
+                  could happen?</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">think it over</div>
+              <div class="idiom-meaning">
+                Take time to think carefully before deciding.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >I'm still thinking it over — the money's better, but the
+                  commute's awful.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">turn down</div>
+              <div class="idiom-meaning">Say no to an offer.</div>
+              <div class="idiom-example">
+                <em
+                  >I turned down a job in London once. I still think about
+                  it.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">miss out (on)</div>
+              <div class="idiom-meaning">
+                Lose the chance to do or have something good.
+              </div>
+              <div class="idiom-example">
+                <em>A free week in Japan? Go — you don't want to miss out.</em>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">settle for</div>
+              <div class="idiom-meaning">Accept less than you wanted.</div>
+              <div class="idiom-example">
+                <em
+                  >We wanted a house with a garden, but we settled for an
+                  apartment near the beach.</em
+                >
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">have second thoughts</div>
+              <div class="idiom-meaning">
+                Start to doubt a decision you've already made.
+              </div>
+              <div class="idiom-example">
+                <em
+                  >I signed the lease on Monday, and by Wednesday I was having
+                  second thoughts.</em
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="rule-box">
+            <div class="rule-badge">Language Tip</div>
+            <div class="rule-title">wish vs. hope</div>
+            <div class="rule-lead">
+              Portuguese pulls these together through <em>desejar</em> —
+              <em>desejo que você melhore</em> comes out as
+              <em>I wish you get better</em>. But in English, a full sentence
+              after <em>wish</em> means it isn't true and isn't going to be.
+              <em>Hope</em> is for things that could really happen.
+              <em>Wish</em> is for things that can't — which is why it takes the
+              same past form as <em>if I were you</em>.
+            </div>
+
+            <div class="rule-split">
+              <div class="rule-card">
+                <div class="rule-card-head">hope — it could happen</div>
+                <div class="rule-formula">
+                  I hope + <span>present</span> / <span>will</span>
+                </div>
+                <ul>
+                  <li>I hope you get the job.</li>
+                  <li>I hope it doesn't rain on Saturday.</li>
+                  <li>I hope I'll see you there.</li>
+                </ul>
+              </div>
+              <div class="rule-card">
+                <div class="rule-card-head">wish — it isn't true</div>
+                <div class="rule-formula">
+                  I wish + <span>past</span> (had · could · were)<br />
+                  I wish + <span>had done</span> — for regrets
+                </div>
+                <ul>
+                  <li>I wish I had more time.</li>
+                  <li>I wish I could speak Italian.</li>
+                  <li>I wish I'd said yes.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-trap">
+              <div class="rule-trap-label">The trap</div>
+              <p>
+                ✗ <em>I wish you get better soon.</em> &nbsp;→&nbsp; ✓
+                <em>I hope you get better soon.</em>
+              </p>
+              <p>
+                ✗ <em>I hope I had more time.</em> &nbsp;→&nbsp; ✓
+                <em>I wish I had more time.</em>
+              </p>
+              <p>
+                ✗ <em>I wish I can come.</em> &nbsp;→&nbsp; ✓
+                <em>I wish I could come.</em>
+              </p>
+              <p>
+                The one forward-looking <strong>wish</strong> is with a noun,
+                not a sentence: <em>I wish you luck</em>,
+                <em>I wish you all the best</em>.
+              </p>
+            </div>
+
+            <div class="rule-say">
+              <div class="rule-say-label">
+                A friend's job interview, both sides of the rule — say all four
+                out loud
+              </div>
+              <ol>
+                <li>I hope you get it — honestly, you'd be brilliant.</li>
+                <li>I wish I could help you prepare, but I'm away all week.</li>
+                <li>
+                  I wish I'd had a chance like that at your age — I'd have
+                  jumped at it.
+                </li>
+                <li>
+                  Anyway, I wish you all the best — and I hope they call you
+                  back by Friday.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: WHAT WOULD YOU DO? -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">What would <em>you</em> do?</div>
+          <div class="stage-sub">
+            Most of the class. Three rounds: a question deck — answer it, then
+            ask it back — then a set of dilemmas you have to make a call on,
+            then one big what-if, followed all the way down.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Round one — draw a question
+              </div>
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Take the button, and take whatever comes
+                    out.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawQuestion()">
+                    Draw a question
+                  </button>
+                  <button class="btn" onclick="resetDeck()">Reshuffle</button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                Give the verdict before the reason —
+                <em>that's a no-brainer</em>, <em>I'd be torn</em>,
+                <em>not in a million years</em> — then explain it. Then ask it
+                back, and push back on the answer.
+              </p>
+
+              <div class="divider"></div>
+
+              <div class="section-label">Round two — would you do it?</div>
+              <div class="scenario-intro">
+                <div class="intro-label">How it works</div>
+                <p>
+                  Draw a dilemma and make the call — click one of the four on
+                  the ladder, and say it with one of its expressions. Then tell
+                  me what it all comes down to, and what would make you change
+                  your mind.
+                </p>
+              </div>
+
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text long empty" id="dilemma-text">
+                    No dilemma drawn yet. Draw one.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawDilemma()">
+                    Draw a dilemma
+                  </button>
+                  <button class="btn" onclick="resetDilemmas()">
+                    Reshuffle
+                  </button>
+                  <span class="deck-count" id="dilemma-count"></span>
+                </div>
+              </div>
+
+              <div class="call-ladder">
+                <button class="call-rung" onclick="makeCall(0)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">In a heartbeat</span>
+                  <span class="call-list">
+                    <span>I'd jump at the chance</span>
+                    <span>in a heartbeat</span>
+                    <span>it's a no-brainer</span>
+                  </span>
+                </button>
+                <button class="call-rung" onclick="makeCall(1)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">I'd be tempted</span>
+                  <span class="call-list">
+                    <span>I'd be tempted</span>
+                    <span>I'd probably go for it</span>
+                    <span>on one condition…</span>
+                  </span>
+                </button>
+                <button class="call-rung" onclick="makeCall(2)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">I'd think twice</span>
+                  <span class="call-list">
+                    <span>I'd think twice</span>
+                    <span>I'd be torn</span>
+                    <span>I'd have to sleep on it</span>
+                  </span>
+                </button>
+                <button class="call-rung" onclick="makeCall(3)">
+                  <span class="call-tag"></span>
+                  <span class="call-head">Not in a million years</span>
+                  <span class="call-list">
+                    <span>not in a million years</span>
+                    <span>there's no way I'd do that</span>
+                    <span>you couldn't pay me</span>
+                  </span>
+                </button>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                A new dilemma clears the ladder. Click your call again to take
+                it back.
+              </p>
+
+              <div class="divider"></div>
+
+              <div class="section-label">Round three — follow the thread</div>
+              <div class="scenario-intro">
+                <div class="intro-label">How it works</div>
+                <p>
+                  One big what-if, and five follow-ups, one at a time. Answer
+                  each before the next one appears — and keep your answers
+                  consistent all the way down. If you change your mind, say so:
+                  <em>actually, I'm having second thoughts</em>.
+                </p>
+              </div>
+
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text long empty" id="thread-text">
+                    No scenario yet. Pick one.
+                  </div>
+                </div>
+                <ol class="thread-list" id="thread-list"></ol>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawThread()">
+                    New scenario
+                  </button>
+                  <button
+                    class="btn"
+                    id="btn-follow"
+                    onclick="nextFollowUp()"
+                    disabled
+                  >
+                    Next follow-up
+                  </button>
+                  <button class="btn" onclick="resetThreads()">
+                    Reshuffle
+                  </button>
+                  <span class="deck-count" id="thread-count"></span>
+                </div>
+              </div>
+              <p class="panel-note">
+                Keep the <em>'d</em> going all the way down — <em>I'd…</em>,
+                <em>I wouldn't…</em>, <em>I'd have…</em> — and set at least one
+                condition along the way.
+              </p>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Within reach</div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Thinking it through</div>
+                <div class="vocab-chips">
+                  <span class="chip">It all comes down to…</span>
+                  <span class="chip">Part of me would…, but…</span>
+                  <span class="chip">The only thing that'd stop me is…</span>
+                  <span class="chip">My first thought is…</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Setting conditions</div>
+                <div class="vocab-chips">
+                  <span class="chip">As long as…</span>
+                  <span class="chip">Only if…</span>
+                  <span class="chip">On one condition: …</span>
+                  <span class="chip">Unless…</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Pushing back</div>
+                <div class="vocab-chips">
+                  <span class="chip">Would you, though?</span>
+                  <span class="chip">You say that now.</span>
+                  <span class="chip">That's easy to say.</span>
+                  <span class="chip">Be honest — really?</span>
+                </div>
+              </div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Asking it back</div>
+                <div class="vocab-chips">
+                  <span class="chip">What would you do?</span>
+                  <span class="chip">Same question — your turn.</span>
+                  <span class="chip">What about you, in my shoes?</span>
+                  <span class="chip">Would you have done the same?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: WRAP-UP -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>catching up</em></div>
+          <div class="stage-sub">
+            No new homework this week. Go back through the list and do the ones
+            you haven't got to yet, in any order.
+          </div>
+
+          <div class="section-label">Before next class</div>
+
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 2 · Voice note</div>
+              <div class="reflection-content">
+                Two minutes on your last trip, with three phrasal verbs and one idiom from that lesson. Send it to me.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 3 · Listening</div>
+              <div class="reflection-content">
+                <a href="https://www.youtube.com/watch?v=eIho2S0ZahI" target="_blank" rel="noopener">Julian Treasure — “How to speak so that people want to listen”</a> (ten minutes). Write down three phrases he uses to guide the listener through the talk.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 4 · Listening</div>
+              <div class="reflection-content">
+                One episode of <a href="https://themoth.org/podcast" target="_blank" rel="noopener">The Moth</a> — true stories told live. Notice how quickly each one sets the scene.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 5 · Listening</div>
+              <div class="reflection-content">
+                One episode of <a href="https://www.intelligencesquared.com/podcasts" target="_blank" rel="noopener">Intelligence Squared</a> — two sides of a debate, and an audience that votes.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 6 · Listening</div>
+              <div class="reflection-content">
+                One episode of <a href="https://www.npr.org/podcasts/510289/planet-money" target="_blank" rel="noopener">Planet Money</a> — money, in ordinary speech.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 7 · Voice note</div>
+              <div class="reflection-content">
+                Two minutes on the worst you've ever felt: how it started, what you did about it, and how long it took to get over. Send it to me.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Lesson 8 · Listening</div>
+              <div class="reflection-content">
+                One episode of <a href="https://www.bbc.co.uk/programmes/b006qnmr" target="_blank" rel="noopener">Desert Island Discs</a> — one guest, eight songs, and the people behind each one.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+
+        document.querySelectorAll(".stage").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+        });
+
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+
+        current = idx;
+
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+
+        // on mobile the page itself scrolls, not .content
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---------- DECKS — nothing repeats until a deck runs out ----------
+         Items are strings, or objects with a .text (round three).
+         draw() returns the drawn item, or null when the deck is empty. */
+      function makeDeck(items, textId, countId, restingText) {
+        let pile = shuffle(items);
+        const textEl = document.getElementById(textId);
+        const countEl = document.getElementById(countId);
+
+        function count() {
+          countEl.textContent =
+            pile.length === 0
+              ? "deck finished — reshuffle to go again"
+              : pile.length + " left in the deck";
+        }
+        count();
+
+        return {
+          draw() {
+            if (pile.length === 0) {
+              textEl.classList.add("empty");
+              textEl.textContent =
+                "That's the whole deck. Reshuffle to start it again.";
+              count();
+              return null;
+            }
+            const item = pile.pop();
+            textEl.classList.remove("empty");
+            textEl.textContent = typeof item === "string" ? item : item.text;
+            count();
+            return item;
+          },
+          reset() {
+            pile = shuffle(items);
+            textEl.classList.add("empty");
+            textEl.textContent = restingText;
+            count();
+          },
+        };
+      }
+
+      /* ---------- ROUND ONE: QUESTIONS ---------- */
+      const QUESTIONS = [
+        "Say you won ten million reais tomorrow. Who would you tell first — and who would you never tell?",
+        "Would you rather speak every language in the world, or play every instrument?",
+        "If you could give your twenty-year-old self one piece of advice, what would it be?",
+        "What's an offer you turned down that you'd jump at now?",
+        "If you could live in any decade, which would you pick — and what would you miss from today?",
+        "More time or more money — is it a no-brainer?",
+        "If you could swap jobs with anyone for a week, who would it be?",
+        "What's something you'd never do, whatever you were paid?",
+        "If you had to leave Brazil tomorrow and could never come back, where would you go?",
+        "What's something you missed out on that you still think about?",
+        "If you ran your city for a year, what's the first thing you'd change?",
+        "Would you rather be famous and broke, or rich and completely unknown?",
+        "If you could master one skill overnight, what would you go for?",
+        "When did you last take a big chance on something? Would you do it again?",
+        "If you'd known at eighteen what you know now, what would you have done differently?",
+        "Have you ever got cold feet right before something big? What happened?",
+        "If you could know the answer to one question about your future, what would you ask?",
+        "Would you rather give up social media for good, or never watch another film or series?",
+        "What's something you wish you could do, but never learned?",
+        "If you could have dinner with anyone, living or dead, who would it be — and what would you ask?",
+        "Would you rather retire at forty on a modest income, or work until seventy and be rich?",
+        "What's the best “if I were you…” advice anyone's ever given you — and did you take it?",
+        "Is there a decision you keep going back and forth on right now? Which way are you leaning?",
+        "If you could live one year of your life again, which one would you pick?",
+      ];
+
+      const questionDeck = makeDeck(
+        QUESTIONS,
+        "prompt-text",
+        "deck-count",
+        "Nothing drawn yet. Take the button, and take whatever comes out.",
+      );
+
+      function drawQuestion() {
+        questionDeck.draw();
+      }
+      function resetDeck() {
+        questionDeck.reset();
+      }
+
+      /* ---------- ROUND TWO: WOULD YOU DO IT? ---------- */
+      const DILEMMAS = [
+        "Your dream job comes up — in a city you can't stand, at half your current salary.",
+        "A close friend asks you to cover for them: if their partner asks, they were with you last Saturday. They swear it's nothing bad.",
+        "The restaurant forgot to charge you for two bottles of wine. The bill's paid and you're already at the door.",
+        "Someone offers you R$50,000 to never use WhatsApp again.",
+        "You're offered a promotion — but you'd be managing your best friend.",
+        "Your partner's phone lights up on the table: a message from a name you've never heard.",
+        "A free year in a tiny village in Italy. No car, slow internet, nobody speaks English.",
+        "A guaranteed R$5 million — but you can never leave your home city again.",
+        "Your best friend's business idea is terrible, and they're asking you to put in R$20,000.",
+        "A pill that means you only need two hours' sleep a night. Side effects: nobody knows yet.",
+        "Give up coffee — for good — in exchange for a 10% pay rise.",
+        "You find a lottery ticket on the street, and it's a winner: R$200,000. The owner's name is on the back.",
+        "A month with no phone at all, for R$15,000.",
+        "You see a friend's new partner on a dating app — the profile was active yesterday.",
+        "Three months on a reality TV show, cameras everywhere, for R$1 million.",
+        "Quit your job tomorrow and travel for a year, with exactly enough money for that year.",
+        "Your friends choose a tattoo for you, and in return you get a week in the Maldives.",
+        "A colleague is earning 30% more than you for the same job, and you're the only one who knows.",
+        "Move back in with your parents for two years, and save enough to buy an apartment in cash.",
+        "A stranger offers you R$1,000 to swap your aisle seat for their middle seat on a twelve-hour flight.",
+      ];
+
+      const dilemmaDeck = makeDeck(
+        DILEMMAS,
+        "dilemma-text",
+        "dilemma-count",
+        "No dilemma drawn yet. Draw one.",
+      );
+
+      const rungs = document.querySelectorAll(".call-rung");
+      let myCall = null;
+
+      function paintLadder() {
+        rungs.forEach((el, i) => {
+          const mine = i === myCall;
+          el.classList.toggle("mine", mine);
+          el.querySelector(".call-tag").textContent = mine ? "Your call" : "";
+        });
+      }
+
+      function makeCall(i) {
+        myCall = myCall === i ? null : i;
+        paintLadder();
+      }
+
+      function drawDilemma() {
+        dilemmaDeck.draw();
+        myCall = null;
+        paintLadder();
+      }
+
+      function resetDilemmas() {
+        dilemmaDeck.reset();
+        myCall = null;
+        paintLadder();
+      }
+
+      /* ---------- ROUND THREE: FOLLOW THE THREAD ---------- */
+      const THREADS = [
+        {
+          text: "You wake up tomorrow and you've won R$20 million.",
+          follow: [
+            "Who's the first person you tell — and who would you never tell?",
+            "Do you keep working? Doing what?",
+            "What's the first big thing you buy?",
+            "A cousin you haven't spoken to in ten years calls asking for help. What do you say?",
+            "Five years later — are you happier? Be honest.",
+          ],
+        },
+        {
+          text: "You can do your job, same salary, from anywhere in the world — but you have to go within a month.",
+          follow: [
+            "Where — and why there?",
+            "Who's coming with you, and who's going to be a problem?",
+            "What would you miss most in the first week?",
+            "Six months in, you're lonely and it's raining. Do you stay, or come home?",
+            "Would you ever come back? What would it take?",
+          ],
+        },
+        {
+          text: "You can go back and change one decision you've made in your life.",
+          follow: [
+            "Which one — and why that one?",
+            "What would you have done instead?",
+            "What would you lose by changing it?",
+            "Is there anyone who'd be worse off if you did?",
+            "Knowing all that — would you still do it?",
+          ],
+        },
+        {
+          text: "For one year, you're not allowed to work. Your salary keeps arriving anyway.",
+          follow: [
+            "What do you do in the first month?",
+            "What's the thing you'd finally go for?",
+            "What would you get bored of first?",
+            "Would you go back to the same job afterwards?",
+            "What would your family say about the new you?",
+          ],
+        },
+        {
+          text: "You're given a free house. You choose where: a big city, a small town, or the middle of nowhere.",
+          follow: [
+            "Which one — is it a no-brainer?",
+            "What would you be giving up by choosing it?",
+            "What does a normal week look like there?",
+            "What would make you change your mind after a year?",
+            "Who'd come and visit you — and who wouldn't?",
+          ],
+        },
+        {
+          text: "You're offered the chance to live to 150 in perfect health — but everyone you know lives a normal life.",
+          follow: [
+            "Jump at it, or turn it down?",
+            "What would you do with the extra 50-70 years?",
+            "How would you handle watching everyone else get old?",
+            "Would you tell people? Who?",
+            "Would you have second thoughts at 120?",
+          ],
+        },
+      ];
+
+      const threadDeck = makeDeck(
+        THREADS,
+        "thread-text",
+        "thread-count",
+        "No scenario yet. Pick one.",
+      );
+      const threadList = document.getElementById("thread-list");
+      const followBtn = document.getElementById("btn-follow");
+      let thread = null;
+      let step = 0;
+
+      function paintThread() {
+        threadList.innerHTML = "";
+        if (thread) {
+          thread.follow.slice(0, step).forEach((q) => {
+            const li = document.createElement("li");
+            li.textContent = q;
+            threadList.appendChild(li);
+          });
+        }
+        const left = thread ? thread.follow.length - step : 0;
+        followBtn.disabled = left === 0;
+        followBtn.textContent = !thread
+          ? "Next follow-up"
+          : left === 0
+            ? "End of the thread"
+            : "Next follow-up · " + left + " left";
+      }
+
+      function drawThread() {
+        thread = threadDeck.draw();
+        step = 0;
+        paintThread();
+      }
+
+      function nextFollowUp() {
+        if (thread && step < thread.follow.length) {
+          step++;
+          paintThread();
+        }
+      }
+
+      function resetThreads() {
+        threadDeck.reset();
+        thread = null;
+        step = 0;
+        paintThread();
+      }
+    </script>
+  </body>
+</html>
