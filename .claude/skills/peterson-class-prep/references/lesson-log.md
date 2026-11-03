@@ -936,8 +936,8 @@ almost no present perfect.
 ---
 
 ## Lesson 10 — How Things Used to Be
-`lesson_plan_10.html` · 29 October 2026 (date assumed — the Thursday after
-lesson 9)
+`lesson_plan_10.html` · 3 November 2026 (built for 29 October; he couldn't
+join that day, so the class moved)
 
 Stages: Warm-up → The Back-Then Toolkit → Back Then → Wrap-up
 
