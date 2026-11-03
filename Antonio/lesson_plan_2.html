@@ -1,0 +1,3105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DET Prep — Class 2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- FOLLOW THE THREAD (stage 3, round three) ---------- */
+      .thread-list {
+        list-style: none;
+        counter-reset: thread;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .thread-list:empty {
+        display: none;
+      }
+
+      .thread-list li {
+        counter-increment: thread;
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--muted);
+        background: var(--bg);
+        border-left: 3px solid var(--border);
+        padding: 10px 14px;
+      }
+
+      .thread-list li::before {
+        content: counter(thread) " · ";
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* the follow-up being answered right now */
+      .thread-list li:last-child {
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left-color: var(--accent);
+        animation: fadeUp 0.25s ease;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .thread-list li {
+          font-size: 0.95rem;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== DET prep additions (Antonio) ===== */
+
+      /* timer, copied from Raffa lesson 4 */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+        margin-bottom: 14px;
+      }
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.2rem;
+      }
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 14px 0 14px;
+      }
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+      .timer-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .timer-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .preset-btn,
+      .mini-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      .preset-btn:hover,
+      .mini-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .preset-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* score overview */
+      .score-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .score-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 16px 18px;
+      }
+      .score-card.target {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .score-big {
+        font-family: "Lora", serif;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .score-card:not(.target) .score-big {
+        color: var(--accent);
+      }
+      .score-cap {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .det-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.86rem;
+      }
+      .det-table th {
+        text-align: left;
+        background: var(--surface2);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        padding: 10px 14px;
+      }
+      .det-table td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .det-table td:first-child {
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+      .det-table td:nth-child(2) {
+        font-weight: 600;
+      }
+      .det-table td:last-child {
+        white-space: nowrap;
+        color: var(--muted);
+      }
+
+      /* task blocks in stage 3 */
+      .task-block {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 20px 22px;
+        margin-bottom: 18px;
+      }
+      .task-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .task-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .task-name span {
+        color: var(--accent2);
+        margin-right: 6px;
+      }
+      .task-time {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 3px 9px;
+        white-space: nowrap;
+      }
+      .task-how {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+        line-height: 1.55;
+      }
+      .task-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        align-items: center;
+      }
+      .task-result {
+        font-size: 0.82rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .word-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .word-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.92rem;
+        padding: 10px 8px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        color: var(--text);
+      }
+      .word-btn:hover {
+        border-color: var(--accent);
+      }
+      .word-btn.picked {
+        background: var(--accent-light);
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .word-btn.ok {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .word-btn.bad {
+        background: var(--accent2);
+        border-color: var(--accent2);
+        color: #fff;
+        text-decoration: line-through;
+      }
+      .word-btn.missed {
+        border: 2px dashed var(--accent);
+      }
+
+      .ctest {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 2.3;
+        background: var(--bg);
+        padding: 16px 18px;
+      }
+      .gap {
+        white-space: nowrap;
+      }
+      .gap input {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        padding: 0 3px;
+        color: var(--text);
+        outline: none;
+      }
+      .gap input:focus {
+        background: var(--accent-light);
+      }
+      .gap input.ok {
+        border-bottom-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .gap input.bad {
+        border-bottom-color: var(--accent2);
+        color: var(--accent2);
+      }
+
+      .type-item {
+        margin-bottom: 14px;
+      }
+      .type-item:last-child {
+        margin-bottom: 0;
+      }
+      .type-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+      .type-box {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        resize: vertical;
+        color: var(--text);
+      }
+      .type-box:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      .type-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 6px;
+        flex-wrap: wrap;
+      }
+      .answer-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--accent);
+        display: none;
+      }
+      .answer-line.shown {
+        display: inline;
+      }
+      .word-count {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .photo-frame {
+        background: var(--surface2);
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .photo-frame svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .speak-prompt {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+      }
+      .speak-prompt ul {
+        margin: 8px 0 0 18px;
+        font-size: 0.95rem;
+      }
+
+      .hidden-qs {
+        position: relative;
+      }
+      .hidden-qs ol {
+        padding-left: 20px;
+        font-family: "Lora", serif;
+        line-height: 1.7;
+        filter: blur(7px);
+        user-select: none;
+        transition: filter 0.2s;
+      }
+      .hidden-qs.revealed ol {
+        filter: none;
+        user-select: auto;
+      }
+      .reflection-content p {
+        margin: 0 0 10px;
+      }
+      .hw-steps,
+      .hw-prompts {
+        margin: 0 0 12px 20px;
+      }
+      .hw-steps li,
+      .hw-prompts li {
+        margin-bottom: 4px;
+      }
+      .hw-prompts {
+        font-family: "Lora", serif;
+        font-style: italic;
+      }
+      .hw-prompts-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .hidden-qs li {
+        margin-bottom: 6px;
+      }
+
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .score-grid,
+        .rules-grid {
+          grid-template-columns: 1fr;
+        }
+        .word-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .det-table td:first-child,
+        .det-table td:last-child {
+          white-space: normal;
+        }
+        .task-block {
+          padding: 16px;
+        }
+      }
+      .language-sidebar .timer-panel {
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .language-sidebar .timer-controls .btn {
+        padding: 8px 12px;
+      }
+      @media (max-width: 900px) {
+        .language-sidebar {
+          order: -1;
+        }
+      }
+
+      /* ---- Class 2 additions ---- */
+      /* long words (acquaintance) need wider cells than a fixed 4 columns */
+      .word-grid {
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      }
+      .word-btn {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .round-tabs {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .round-tabs .mini-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .round-note {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      .pair-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 18px;
+      }
+      .pair-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .fam-list {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2.2;
+        background: var(--bg);
+        padding: 12px 18px 12px 38px;
+        margin: 0;
+      }
+      .fam-list .root {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-left: 6px;
+      }
+      .gap input.bad {
+        text-decoration: line-through;
+      }
+      .fix-ans {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 1px 6px;
+        margin-left: 4px;
+      }
+      .why-list {
+        margin: 10px 0 0 18px;
+        font-size: 0.86rem;
+        line-height: 1.6;
+        display: none;
+      }
+      .why-list.shown {
+        display: block;
+      }
+      .why-list li {
+        margin-bottom: 4px;
+      }
+      @media (max-width: 720px) {
+        .pair-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>Duolingo English Test Prep</h1>
+        <div class="subtitle">Real Words &amp; Missing Letters — Class 2</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Real or Fake?</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Missing Letters</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Spelling Traps</div>
+        </div>
+        <div class="nav-item" onclick="goTo(4)">
+          <div class="nav-num">05</div>
+          <div class="nav-label">Extra Practice</div>
+        </div>
+        <div class="nav-item" onclick="goTo(5)">
+          <div class="nav-num">06</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============ STAGE 1 ============ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 06</div>
+          <div class="stage-title">Warm-up</div>
+          <div class="stage-sub">
+            A quick look at your homework before we start. Today is all about
+            words: spotting real ones, finishing half-written ones, and spelling
+            them exactly.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>How's your week going so far?</li>
+            <li>
+              Show me three words from your word list. Use each one in a new
+              sentence, out loud.
+            </li>
+            <li>
+              How did the writing sprints go? What was your best word count in 5
+              minutes?
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ STAGE 2 ============ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 06</div>
+          <div class="stage-title">Real or <em>fake?</em></div>
+          <div class="stage-sub">
+            In Read and Select, fake words are built to look real. Many of them
+            are a real root with the wrong ending, or a real word spelled wrong.
+            Learn the patterns and the fakes start to stand out.
+          </div>
+
+          <div class="section-label">How fakes are made</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">Wrong ending</div>
+              <div class="idiom-meaning">
+                A real root with a suffix that doesn't belong to it.
+              </div>
+              <div class="idiom-example">
+                comfort → comfortable, not <s>comfortment</s>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Misspelled real word</div>
+              <div class="idiom-meaning">
+                One letter missing, doubled or swapped. It's still a fake.
+              </div>
+              <div class="idiom-example">
+                necessary is real, <s>neccessary</s> is fake
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Sounds English, means nothing</div>
+              <div class="idiom-meaning">
+                Normal letter patterns, but you can't give it a meaning or use
+                it in a sentence.
+              </div>
+              <div class="idiom-example">
+                <s>brintle</s>, <s>glimber</s>, <s>plome</s>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Pick only what you know</div>
+              <div class="idiom-meaning">
+                Picking a fake word costs you points. If you can't use it in a
+                sentence, leave it.
+              </div>
+              <div class="idiom-example">
+                Test: "Can I say a sentence with this word?"
+              </div>
+            </div>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- A: Build the word -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>A</span>Build the word</div>
+                  <div class="task-time">No timer</div>
+                </div>
+                <div class="task-how">
+                  Type the right form of the word in brackets. Knowing which
+                  ending a root takes is how you catch the fakes.
+                </div>
+                <ol class="fam-list" id="fam">
+                  <li>
+                    Her <input data-a="decision" /> to move abroad surprised
+                    everyone. <span class="root">(decide)</span>
+                  </li>
+                  <li>
+                    Please read the instructions
+                    <input data-a="carefully" /> before you start.
+                    <span class="root">(care)</span>
+                  </li>
+                  <li>
+                    The project was very <input data-a="successful" />.
+                    <span class="root">(succeed)</span>
+                  </li>
+                  <li>
+                    The city needs more economic
+                    <input data-a="development" />.
+                    <span class="root">(develop)</span>
+                  </li>
+                  <li>
+                    Taking care of the dog is your
+                    <input data-a="responsibility" />.
+                    <span class="root">(responsible)</span>
+                  </li>
+                  <li>
+                    The story was so strange it was almost
+                    <input data-a="unbelievable" />.
+                    <span class="root">(believe)</span>
+                  </li>
+                  <li>
+                    We were all impressed by his
+                    <input data-a="generosity" />.
+                    <span class="root">(generous)</span>
+                  </li>
+                  <li>
+                    Prices have <input data-a="increased" /> a lot since last
+                    year. <span class="root">(increase)</span>
+                  </li>
+                </ol>
+                <div class="task-actions">
+                  <button
+                    class="mini-btn"
+                    onclick="checkSet('fam', 'fam-result')"
+                  >
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showSet('fam')">
+                    Show answers
+                  </button>
+                  <button
+                    class="mini-btn"
+                    onclick="resetSet('fam', 'fam-result')"
+                  >
+                    Reset
+                  </button>
+                  <span class="task-result" id="fam-result"></span>
+                </div>
+              </div>
+
+              <!-- B: Read and Select rounds -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>B</span>Read and Select</div>
+                  <div class="task-time">1:00 per round</div>
+                </div>
+                <div class="task-how">
+                  Click every real English word. Start the 1-minute clock, then
+                  check. After each round, explain why the fakes are fake.
+                </div>
+                <div class="round-tabs" id="main-tabs"></div>
+                <div class="round-note" id="main-note"></div>
+                <div class="word-grid" id="main-grid"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkWords('main')">Check</button>
+                  <button class="mini-btn" onclick="buildWords('main')">Reset</button>
+                  <span class="task-result" id="main-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Real prefixes</div>
+                <div class="vocab-chips">
+                  <span class="chip">un- (unable)</span>
+                  <span class="chip">dis- (disagree)</span>
+                  <span class="chip">mis- (misread)</span>
+                  <span class="chip">re- (rebuild)</span>
+                  <span class="chip">pre- (preview)</span>
+                  <span class="chip">over- (overcome)</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Noun endings</div>
+                <div class="vocab-chips">
+                  <span class="chip">-tion / -sion</span>
+                  <span class="chip">-ment</span>
+                  <span class="chip">-ness</span>
+                  <span class="chip">-ity</span>
+                  <span class="chip">-ance / -ence</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Adjective endings</div>
+                <div class="vocab-chips">
+                  <span class="chip">-ful / -less</span>
+                  <span class="chip">-ous</span>
+                  <span class="chip">-ive</span>
+                  <span class="chip">-able / -ible</span>
+                  <span class="chip">-al</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 3 ============ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 06</div>
+          <div class="stage-title">Missing <em>letters</em></div>
+          <div class="stage-sub">
+            In Read and Complete, the first and last sentences are complete, and
+            many words in between are cut in half. The grammar around each word
+            tells you how it has to end.
+          </div>
+
+          <div class="section-label">Three steps</div>
+          <div class="apply-box">
+            <div class="apply-label">Do it in this order</div>
+            <ol class="apply-steps">
+              <li>
+                <strong>Read the first sentence.</strong> It's complete and
+                tells you the topic. Spend 10 seconds on it.
+              </li>
+              <li>
+                <strong>Fill in the small words first:</strong> the, of, to, in,
+                and, is, that. They are quick points.
+              </li>
+              <li>
+                <strong>Then use grammar for the rest.</strong> Look at the word
+                just before the gap and ask: noun, verb or adjective? Singular
+                or plural? Past or present?
+              </li>
+            </ol>
+          </div>
+
+          <div class="section-label">Grammar clues</div>
+          <table class="det-table">
+            <thead>
+              <tr>
+                <th>If you see…</th>
+                <th>The word probably…</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>many, several, two, these</td>
+                <td>is plural: -s, -es, -ies</td>
+                <td>several stu<b>dies</b></td>
+              </tr>
+              <tr>
+                <td>he, she, it, a single noun</td>
+                <td>takes -s in the present</td>
+                <td>air quality impr<b>oves</b></td>
+              </tr>
+              <tr>
+                <td>yesterday, last year, has, was</td>
+                <td>ends in -ed, -en or -ing</td>
+                <td>what they stu<b>died</b></td>
+              </tr>
+              <tr>
+                <td>the, a, his, their</td>
+                <td>is a noun or an adjective</td>
+                <td>their deci<b>sion</b></td>
+              </tr>
+              <tr>
+                <td>more, than, very</td>
+                <td>is an adjective, maybe -er</td>
+                <td>har<b>der</b> than</td>
+              </tr>
+              <tr>
+                <td>after a verb</td>
+                <td>may be an adverb in -ly</td>
+                <td>improves quick<b>ly</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- C: Passage 1 -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>C</span>Read and Complete · Sleep
+                  </div>
+                  <div class="task-time">3:00</div>
+                </div>
+                <div class="task-how">
+                  Type the missing letters. Each box fits exactly the missing
+                  letters.
+                </div>
+                <div class="ctest" id="ct1">
+                  Sleep is one of the most important habits for students.
+                  Research
+                  <span class="gap">sh<input data-a="ows" /></span> that
+                  <span class="gap">peo<input data-a="ple" /></span> who sleep
+                  <span class="gap">le<input data-a="ss" /></span> than seven
+                  <span class="gap">ho<input data-a="urs" /></span> a night
+                  <span class="gap">reme<input data-a="mber" /></span> less
+                  <span class="gap">o<input data-a="f" /></span> what they
+                  <span class="gap">stu<input data-a="died" /></span> the day
+                  <span class="gap">bef<input data-a="ore" /></span>. They
+                  <span class="gap">al<input data-a="so" /></span> find it
+                  <span class="gap">har<input data-a="der" /></span> to
+                  concentrate
+                  <span class="gap">i<input data-a="n" /></span> class and
+                  <span class="gap">ma<input data-a="ke" /></span> more mistakes
+                  <span class="gap">o<input data-a="n" /></span> tests. Even so,
+                  <span class="gap">ma<input data-a="ny" /></span> students
+                  still
+                  <span class="gap">sacr<input data-a="ifice" /></span> sleep to
+                  study <span class="gap">la<input data-a="te" /></span>. A good
+                  night's rest may be the cheapest way to improve your grades.
+                </div>
+                <div class="task-actions">
+                  <button
+                    class="mini-btn"
+                    onclick="checkSet('ct1', 'ct1-result')"
+                  >
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showSet('ct1')">
+                    Show answers
+                  </button>
+                  <button
+                    class="mini-btn"
+                    onclick="resetSet('ct1', 'ct1-result')"
+                  >
+                    Reset
+                  </button>
+                  <span class="task-result" id="ct1-result"></span>
+                </div>
+              </div>
+
+              <!-- D: Passage 2 -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>D</span>Read and Complete · Cities
+                  </div>
+                  <div class="task-time">3:00</div>
+                </div>
+                <div class="task-how">
+                  A harder one. Two gaps start with the same letters: let the
+                  sentence decide.
+                </div>
+                <div class="ctest" id="ct2">
+                  Many cities around the world are trying to reduce the number
+                  of cars on their streets. One
+                  <span class="gap">com<input data-a="mon" /></span> approach
+                  <span class="gap">i<input data-a="s" /></span> to make
+                  <span class="gap">pub<input data-a="lic" /></span> transport
+                  cheaper <span class="gap">a<input data-a="nd" /></span> more
+                  reliable. <span class="gap">Ot<input data-a="her" /></span>
+                  cities charge
+                  <span class="gap">dri<input data-a="vers" /></span> a fee
+                  <span class="gap">t<input data-a="o" /></span> enter the
+                  busiest
+                  <span class="gap">ar<input data-a="eas" /></span> during the
+                  <span class="gap">d<input data-a="ay" /></span>. Critics
+                  <span class="gap">ar<input data-a="gue" /></span> that these
+                  <span class="gap">poli<input data-a="cies" /></span> hurt
+                  small <span class="gap">busin<input data-a="esses" /></span>,
+                  but <span class="gap">stu<input data-a="dies" /></span> from
+                  several
+                  <span class="gap">Euro<input data-a="pean" /></span> cities
+                  suggest <span class="gap">th<input data-a="at" /></span> air
+                  quality
+                  <span class="gap">impr<input data-a="oves" /></span> quickly.
+                  The debate is likely to continue for years.
+                </div>
+                <div class="task-actions">
+                  <button
+                    class="mini-btn"
+                    onclick="checkSet('ct2', 'ct2-result')"
+                  >
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showSet('ct2')">
+                    Show answers
+                  </button>
+                  <button
+                    class="mini-btn"
+                    onclick="resetSet('ct2', 'ct2-result')"
+                  >
+                    Reset
+                  </button>
+                  <span class="task-result" id="ct2-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Quick small words</div>
+                <div class="vocab-chips">
+                  <span class="chip">the</span>
+                  <span class="chip">of</span>
+                  <span class="chip">to</span>
+                  <span class="chip">in</span>
+                  <span class="chip">on</span>
+                  <span class="chip">and</span>
+                  <span class="chip">is</span>
+                  <span class="chip">that</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Check before you move on</div>
+                <div class="vocab-chips">
+                  <span class="chip">Plural?</span>
+                  <span class="chip">Past tense?</span>
+                  <span class="chip">he / she / it + s?</span>
+                  <span class="chip">Noun or adjective?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 4 ============ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 06</div>
+          <div class="stage-title">Spelling <em>traps</em></div>
+          <div class="stage-sub">
+            These words are misspelled all the time, even by native speakers. On
+            the test, the wrong spelling can show up as a fake word, and there's
+            no autocorrect to save you.
+          </div>
+
+          <div class="task-block">
+            <div class="task-head">
+              <div class="task-name"><span>E</span>Pick the right spelling</div>
+              <div class="task-time">2:00</div>
+            </div>
+            <div class="task-how">
+              In each pair, click the correct spelling. Any you miss go on your
+              personal spelling list.
+            </div>
+            <div class="pair-list" id="pair-list"></div>
+            <div class="task-actions">
+              <button class="mini-btn" onclick="checkPairs()">Check</button>
+              <button class="mini-btn" onclick="buildPairs()">Reset</button>
+              <button class="mini-btn" onclick="toggleWhy(this)">
+                Show the tricks
+              </button>
+              <span class="task-result" id="pair-result"></span>
+            </div>
+            <ul class="why-list" id="why-list">
+              <li>
+                <b>i before e, except after c:</b> believe, achieve, but
+                receive, ceiling.
+              </li>
+              <li>
+                <b>Double consonant</b> when a short stressed syllable ends in
+                one consonant: begin → beginning, occur → occurred.
+              </li>
+              <li>
+                <b>Hidden letters</b> you don't hear: environment, government,
+                February, Wednesday.
+              </li>
+              <li>
+                <b>Final e drops</b> before -ing but not always before -ment:
+                argue → argument, but manage → management.
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-label">Your spelling list</div>
+          <p class="panel-note">
+            Keep a separate list of every word you misspell this month: from
+            today, from your sprints, and from my corrections. Write each one
+            correctly three times, then use it in a sentence. Bring the list to
+            every class.
+          </p>
+        </div>
+
+        <!-- ============ STAGE 5 ============ -->
+        <div class="stage" id="stage-4">
+          <div class="stage-eyebrow">Stage 05 of 06</div>
+          <div class="stage-title">Extra <em>practice</em></div>
+          <div class="stage-sub">
+            More rounds of today's tasks, all with the real time limits. Do as
+            many as time allows.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- F: Read and Select, harder -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>F</span>Read and Select · Harder</div>
+                  <div class="task-time">1:00 per round</div>
+                </div>
+                <div class="task-how">
+                  Two harder rounds. Same rule: pick only the words you could
+                  use in a sentence.
+                </div>
+                <div class="round-tabs" id="extra-tabs"></div>
+                <div class="round-note" id="extra-note"></div>
+                <div class="word-grid" id="extra-grid"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkWords('extra')">Check</button>
+                  <button class="mini-btn" onclick="buildWords('extra')">Reset</button>
+                  <span class="task-result" id="extra-result"></span>
+                </div>
+              </div>
+
+              <!-- G: Read and Complete, Online learning -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>G</span>Read and Complete · Online learning</div>
+                  <div class="task-time">3:00</div>
+                </div>
+                <div class="task-how">
+                  Small words first, then grammar for the rest.
+                </div>
+                <div class="ctest" id="ct3">
+                  Online courses have become very popular in the last ten
+                  years. They <span class="gap">al<input data-a="low" /></span>
+                  students to
+                  <span class="gap">st<input data-a="udy" /></span> from
+                  <span class="gap">ho<input data-a="me" /></span> and
+                  <span class="gap">cho<input data-a="ose" /></span> their
+                  <span class="gap">o<input data-a="wn" /></span> schedule.
+                  <span class="gap">How<input data-a="ever" /></span>, many
+                  <span class="gap">lear<input data-a="ners" /></span> find
+                  <span class="gap">i<input data-a="t" /></span> difficult
+                  <span class="gap">t<input data-a="o" /></span> stay
+                  <span class="gap">moti<input data-a="vated" /></span> without
+                  a <span class="gap">tea<input data-a="cher" /></span> or
+                  <span class="gap">class<input data-a="mates" /></span> around
+                  <span class="gap">th<input data-a="em" /></span>. Some
+                  <span class="gap">univer<input data-a="sities" /></span> now
+                  <span class="gap">com<input data-a="bine" /></span> online and
+                  face-to-face classes. This mix may offer the best of both
+                  worlds.
+                </div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkSet('ct3', 'ct3-result')">Check</button>
+                  <button class="mini-btn" onclick="showSet('ct3')">Show answers</button>
+                  <button class="mini-btn" onclick="resetSet('ct3', 'ct3-result')">Reset</button>
+                  <span class="task-result" id="ct3-result"></span>
+                </div>
+              </div>
+
+              <!-- H: Read and Complete, Coffee -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>H</span>Read and Complete · Coffee</div>
+                  <div class="task-time">3:00</div>
+                </div>
+                <div class="task-how">
+                  Watch the verbs: is the sentence about now, or about
+                  something that has already happened?
+                </div>
+                <div class="ctest" id="ct4">
+                  Coffee is one of the most traded products in the world. Most
+                  of it is <span class="gap">gr<input data-a="own" /></span> in
+                  countries <span class="gap">ne<input data-a="ar" /></span> the
+                  equator, <span class="gap">wh<input data-a="ere" /></span> the
+                  climate <span class="gap">i<input data-a="s" /></span> warm
+                  and <span class="gap">w<input data-a="et" /></span>. Brazil
+                  <span class="gap">prod<input data-a="uces" /></span> more
+                  coffee <span class="gap">th<input data-a="an" /></span> any
+                  other <span class="gap">cou<input data-a="ntry" /></span>. In
+                  <span class="gap">rec<input data-a="ent" /></span> years,
+                  <span class="gap">cha<input data-a="nges" /></span> in the
+                  weather <span class="gap">ha<input data-a="ve" /></span> made
+                  harvests <span class="gap">le<input data-a="ss" /></span>
+                  predictable, <span class="gap">a<input data-a="nd" /></span>
+                  prices have <span class="gap">ri<input data-a="sen" /></span>
+                  sharply. Coffee lovers may soon have to pay more for their
+                  morning cup.
+                </div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkSet('ct4', 'ct4-result')">Check</button>
+                  <button class="mini-btn" onclick="showSet('ct4')">Show answers</button>
+                  <button class="mini-btn" onclick="resetSet('ct4', 'ct4-result')">Reset</button>
+                  <span class="task-result" id="ct4-result"></span>
+                </div>
+              </div>
+
+              <!-- I: Make your own fakes -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>I</span>Make your own fakes</div>
+                  <div class="task-time">No timer</div>
+                </div>
+                <div class="task-how">
+                  Now you write the test. Type eight words: four real ones, and
+                  four fakes made from real roots with the wrong ending. Read
+                  them out in a random order. Felipe has to spot the fakes,
+                  and you explain each one.
+                </div>
+                <textarea class="type-box" rows="3" spellcheck="false" autocomplete="off" placeholder="e.g. kindness, kindful, …"></textarea>
+              </div>
+
+              <!-- J: Writing sprint -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>J</span>Writing sprint</div>
+                  <div class="task-time">5:00 + 1:00 check</div>
+                </div>
+                <div class="speak-prompt">
+                  Some people say spelling doesn't matter anymore because
+                  computers fix it for us. Do you agree?
+                </div>
+                <div class="task-how" style="margin-top: 12px">
+                  Type for five minutes without stopping, and aim for 100
+                  words. Then take one minute to reread and fix your spelling
+                  before we look at it together.
+                </div>
+                <textarea class="type-box" id="sprint-text" rows="7" spellcheck="false" autocomplete="off" placeholder="Start writing…" oninput="countWords('sprint-text', 'sprint-count')"></textarea>
+                <div class="type-row">
+                  <span class="word-count" id="sprint-count">0 words</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Opinion frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">In my opinion,…</span>
+                  <span class="chip">The main reason is that…</span>
+                  <span class="chip">For example, when I…</span>
+                  <span class="chip">On the other hand,…</span>
+                  <span class="chip">So overall, I believe…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Check before you move on</div>
+                <div class="vocab-chips">
+                  <span class="chip">Plural?</span>
+                  <span class="chip">Past tense?</span>
+                  <span class="chip">he / she / it + s?</span>
+                  <span class="chip">Noun or adjective?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 6 ============ -->
+        <div class="stage" id="stage-5">
+          <div class="stage-eyebrow">Stage 06 of 06</div>
+          <div class="stage-title">Wrap-up: <em>what's next</em></div>
+
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Practice test</div>
+              <div class="reflection-content">
+                If you haven't taken the second practice test yet, take it
+                before Class 3, like the real thing. Send me your score and the
+                two hardest tasks.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Word list</div>
+              <div class="reflection-content">
+                Keep going with 10 new words a day. New rule: for each word,
+                also write two other forms of it (decide → decision, decisive).
+                Autocorrect off.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Spelling list</div>
+              <div class="reflection-content">
+                Add the words you missed today. Every day, cover the list and
+                write five of them from memory.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Writing</div>
+              <div class="reflection-content">
+                <p>
+                  Keep the daily 5-minute sprint. After each one, circle any
+                  word you weren't sure how to spell and look it up. Send me two
+                  sprints this week.
+                </p>
+                <div class="hw-prompts-label">New prompts</div>
+                <ol class="hw-prompts">
+                  <li>
+                    Should cities ban cars from their centers? Why or why not?
+                  </li>
+                  <li>Describe a habit that helps you study better.</li>
+                  <li>What is the best advice a teacher ever gave you?</li>
+                  <li>
+                    Is it better to live in a big city or a small town when
+                    you're young?
+                  </li>
+                  <li>Describe a time you had to make a difficult decision.</li>
+                  <li>Should students be allowed to use phones in class?</li>
+                  <li>
+                    What would you change about your school or university?
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- one clock, moved into the active stage's sidebar -->
+    <div id="timer-home" hidden>
+      <div class="timer-panel" id="timer-panel">
+        <div class="timer-presets" id="timer-presets"></div>
+        <div class="timer-top">
+          <div class="timer-label" id="timer-label">Pick a time</div>
+        </div>
+        <div class="timer-display" id="timer-display">1:00</div>
+        <div class="timer-bar">
+          <div class="timer-bar-fill" id="timer-bar-fill"></div>
+        </div>
+        <div class="timer-controls">
+          <button class="btn primary" id="timer-start" onclick="toggleTimer()">
+            Start
+          </button>
+          <button class="btn" onclick="resetTimer()">Reset</button>
+          <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+            Sound on
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 6</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---- navigation ---- */
+      let current = 0;
+      const total = 6;
+      const done = [false, false, false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        const slot = document
+          .getElementById("stage-" + idx)
+          .querySelector(".timer-slot");
+        if (slot) slot.appendChild(document.getElementById("timer-panel"));
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---- typed answers (Build the word, Read and Complete) ---- */
+      function setInputs(id) {
+        return document.querySelectorAll("#" + id + " input");
+      }
+      function isRight(inp) {
+        return inp.value.trim().toLowerCase() === inp.dataset.a.toLowerCase();
+      }
+      function checkSet(id, resultId) {
+        let right = 0;
+        const all = setInputs(id);
+        all.forEach((inp) => {
+          const ok = isRight(inp);
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (ok) right++;
+        });
+        document.getElementById(resultId).textContent =
+          right + " / " + all.length + " correct";
+      }
+      /* keeps what was typed; puts the right answer beside each wrong one */
+      function showSet(id) {
+        setInputs(id).forEach((inp) => {
+          const old = inp.parentElement.querySelector(".fix-ans");
+          if (old) old.remove();
+          const ok = isRight(inp);
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (!ok) {
+            const fix = document.createElement("span");
+            fix.className = "fix-ans";
+            fix.textContent = inp.dataset.a;
+            inp.after(fix);
+          }
+        });
+      }
+      function resetSet(id, resultId) {
+        setInputs(id).forEach((inp) => {
+          inp.value = "";
+          inp.classList.remove("ok", "bad");
+        });
+        document
+          .querySelectorAll("#" + id + " .fix-ans")
+          .forEach((el) => el.remove());
+        document.getElementById(resultId).textContent = "";
+      }
+      document
+        .querySelectorAll(".gap input, .fam-list input")
+        .forEach((inp) => {
+          const len = inp.dataset.a.length;
+          if (inp.closest(".gap")) inp.maxLength = len;
+          inp.style.width = (inp.closest(".gap") ? len + 1 : len + 3) + "ch";
+          inp.setAttribute("autocomplete", "off");
+          inp.setAttribute("autocapitalize", "off");
+          inp.setAttribute("spellcheck", "false");
+        });
+      document.querySelectorAll(".fam-list input").forEach((inp) => {
+        const gap = document.createElement("span");
+        gap.className = "gap";
+        inp.replaceWith(gap);
+        gap.appendChild(inp);
+      });
+
+      /* ---- B: Read and Select rounds ---- */
+      const ROUNDS = [
+        {
+          name: "Round 1 · Everyday",
+          note: "Fakes here mostly add the wrong ending to a real word.",
+          words: [
+            ["weigh", true],
+            ["journey", true],
+            ["neighbor", true],
+            ["frequent", true],
+            ["wisdom", true],
+            ["recover", true],
+            ["threat", true],
+            ["borrow", true],
+            ["wisdomful", false],
+            ["journeal", false],
+            ["frequid", false],
+            ["neighbent", false],
+            ["borrence", false],
+            ["threatment", false],
+            ["weighly", false],
+            ["recovage", false],
+          ],
+        },
+        {
+          name: "Round 2 · Academic",
+          note: "Harder roots. Each fake is a real root with the wrong ending.",
+          words: [
+            ["scarce", true],
+            ["adjacent", true],
+            ["coherent", true],
+            ["tedious", true],
+            ["ambiguous", true],
+            ["diminish", true],
+            ["plausible", true],
+            ["retain", true],
+            ["plaudible", false],
+            ["ambigent", false],
+            ["tedify", false],
+            ["adjacious", false],
+            ["coherate", false],
+            ["diminate", false],
+            ["retainous", false],
+            ["scarcial", false],
+          ],
+        },
+        {
+          name: "Round 3 · Spelling",
+          note: "Every fake here is a real word spelled wrong. Read each letter.",
+          words: [
+            ["meticulous", true],
+            ["inevitable", true],
+            ["deteriorate", true],
+            ["endeavor", true],
+            ["resilient", true],
+            ["eloquent", true],
+            ["scrutiny", true],
+            ["nuance", true],
+            ["seperate", false],
+            ["recieve", false],
+            ["definately", false],
+            ["enviroment", false],
+            ["goverment", false],
+            ["untill", false],
+            ["occurence", false],
+            ["arguement", false],
+          ],
+        },
+      ];
+      const EXTRA_ROUNDS = [
+        {
+          name: "Round 4 · Hard academic",
+          note: "Long academic roots. Each fake has the wrong ending.",
+          words: [
+            ["substantial", true], ["hypothesis", true], ["prevalent", true], ["alleviate", true],
+            ["comprehensive", true], ["feasible", true], ["inherent", true], ["mitigate", true],
+            ["substantious", false], ["prevalate", false], ["alleviant", false], ["comprehensal", false],
+            ["feasive", false], ["inherious", false], ["mitigous", false], ["hypothesal", false],
+          ],
+        },
+        {
+          name: "Round 5 · Tricky spelling",
+          note: "Real words people often misspell, next to their misspellings.",
+          words: [
+            ["thoroughly", true], ["acquaintance", true], ["conscience", true], ["rhythm", true],
+            ["privilege", true], ["maintenance", true], ["guarantee", true], ["occasionally", true],
+            ["aquaintance", false], ["concience", false], ["rythm", false], ["priviledge", false],
+            ["maintainance", false], ["garantee", false], ["occasionaly", false], ["thoroughfully", false],
+          ],
+        },
+      ];
+      /* one Read and Select widget per key: ids are <key>-tabs, -note, -grid, -result */
+      const SELECTS = {
+        main: { rounds: ROUNDS, round: 0 },
+        extra: { rounds: EXTRA_ROUNDS, round: 0 },
+      };
+      function buildRoundTabs(k) {
+        const s = SELECTS[k];
+        document.getElementById(k + "-tabs").innerHTML = s.rounds
+          .map(
+            (r, i) =>
+              `<button class="mini-btn${i === s.round ? " on" : ""}" onclick="setRound('${k}', ${i})">${r.name}</button>`,
+          )
+          .join("");
+        document.getElementById(k + "-note").textContent = s.rounds[s.round].note;
+      }
+      function setRound(k, i) {
+        SELECTS[k].round = i;
+        buildRoundTabs(k);
+        buildWords(k);
+      }
+      function buildWords(k) {
+        const s = SELECTS[k];
+        const grid = document.getElementById(k + "-grid");
+        grid.innerHTML = "";
+        shuffle(s.rounds[s.round].words).forEach(([w, real]) => {
+          const b = document.createElement("button");
+          b.className = "word-btn";
+          b.textContent = w;
+          b.dataset.real = real ? "1" : "0";
+          b.onclick = () => b.classList.toggle("picked");
+          grid.appendChild(b);
+        });
+        document.getElementById(k + "-result").textContent = "";
+      }
+      function checkWords(k) {
+        let right = 0;
+        const btns = document.querySelectorAll("#" + k + "-grid .word-btn");
+        btns.forEach((b) => {
+          const real = b.dataset.real === "1";
+          const picked = b.classList.contains("picked");
+          b.classList.remove("ok", "bad", "missed");
+          if (picked && real) {
+            b.classList.add("ok");
+            right++;
+          } else if (picked && !real) b.classList.add("bad");
+          else if (!picked && real) b.classList.add("missed");
+          else right++;
+        });
+        document.getElementById(k + "-result").textContent =
+          right + " / " + btns.length + " correct";
+      }
+
+      function countWords(textId, outId) {
+        const v = document.getElementById(textId).value.trim();
+        const n = v ? v.split(/\s+/).length : 0;
+        document.getElementById(outId).textContent =
+          n + (n === 1 ? " word" : " words");
+      }
+
+      /* ---- E: spelling pairs ---- */
+      const PAIRS = [
+        ["necessary", "neccessary"],
+        ["environment", "enviroment"],
+        ["receive", "recieve"],
+        ["separate", "seperate"],
+        ["definitely", "definately"],
+        ["government", "goverment"],
+        ["beginning", "begining"],
+        ["occurred", "occured"],
+        ["believe", "beleive"],
+        ["argument", "arguement"],
+        ["accommodate", "accomodate"],
+        ["until", "untill"],
+        ["tomorrow", "tommorow"],
+        ["business", "buisness"],
+        ["successful", "succesful"],
+        ["which", "wich"],
+      ];
+      function buildPairs() {
+        document.getElementById("pair-list").innerHTML = PAIRS.map(
+          ([good, bad], i) => {
+            const opts = shuffle([
+              [good, 1],
+              [bad, 0],
+            ]);
+            return `<div class="pair-row" data-i="${i}">${opts
+              .map(
+                ([w, ok]) =>
+                  `<button class="word-btn" data-ok="${ok}" onclick="pickPair(this)">${w}</button>`,
+              )
+              .join("")}</div>`;
+          },
+        ).join("");
+        document.getElementById("pair-result").textContent = "";
+      }
+      function pickPair(btn) {
+        btn.parentElement
+          .querySelectorAll(".word-btn")
+          .forEach((b) => b.classList.remove("picked", "ok", "bad", "missed"));
+        btn.classList.add("picked");
+      }
+      function checkPairs() {
+        let right = 0;
+        document.querySelectorAll(".pair-row").forEach((row) => {
+          row.querySelectorAll(".word-btn").forEach((b) => {
+            const ok = b.dataset.ok === "1";
+            const picked = b.classList.contains("picked");
+            b.classList.remove("ok", "bad", "missed");
+            if (picked && ok) {
+              b.classList.add("ok");
+              right++;
+            } else if (picked && !ok) b.classList.add("bad");
+            else if (!picked && ok) b.classList.add("missed");
+          });
+        });
+        document.getElementById("pair-result").textContent =
+          right + " / " + PAIRS.length + " correct";
+      }
+      function toggleWhy(btn) {
+        const on = document
+          .getElementById("why-list")
+          .classList.toggle("shown");
+        btn.textContent = on ? "Hide the tricks" : "Show the tricks";
+      }
+
+      /* ---- clock ---- */
+      const PRESETS = [
+        ["1:00", 60, "Read and Select"],
+        ["2:00", 120, "Spelling pairs"],
+        ["3:00", 180, "Read and Complete"],
+        ["5:00", 300, "Writing sprint"],
+      ];
+      const clock = {
+        secs: 60,
+        remaining: 60,
+        running: false,
+        tick: null,
+        muted: false,
+      };
+
+      function fmt(s) {
+        return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+      }
+      function renderTimer() {
+        const d = document.getElementById("timer-display");
+        const bar = document.getElementById("timer-bar-fill");
+        const warn = clock.remaining > 0 && clock.remaining <= clock.secs * 0.2;
+        d.textContent =
+          clock.remaining === 0 && clock.running === false && clock.finished
+            ? "Time"
+            : fmt(clock.remaining);
+        d.classList.toggle("warning", warn);
+        d.classList.toggle("done", !!clock.finished);
+        bar.classList.toggle("warning", warn);
+        bar.style.width = (clock.remaining / clock.secs) * 100 + "%";
+      }
+      function buildPresets() {
+        document.getElementById("timer-presets").innerHTML = PRESETS.map(
+          ([label, s], i) =>
+            `<button class="preset-btn${s === clock.secs ? " on" : ""}" onclick="setPreset(${i})">${label}</button>`,
+        ).join("");
+      }
+      function setPreset(i) {
+        const [, s, name] = PRESETS[i];
+        stopTick();
+        clock.secs = s;
+        clock.remaining = s;
+        clock.running = false;
+        clock.finished = false;
+        document.getElementById("timer-label").textContent = name;
+        document.getElementById("timer-start").textContent = "Start";
+        buildPresets();
+        renderTimer();
+      }
+      function stopTick() {
+        if (clock.tick) clearInterval(clock.tick);
+        clock.tick = null;
+      }
+      function toggleTimer() {
+        const btn = document.getElementById("timer-start");
+        if (clock.running) {
+          stopTick();
+          clock.running = false;
+          btn.textContent = "Resume";
+          return;
+        }
+        if (clock.remaining === 0) {
+          clock.remaining = clock.secs;
+          clock.finished = false;
+        }
+        clock.running = true;
+        btn.textContent = "Pause";
+        clock.tick = setInterval(() => {
+          clock.remaining--;
+          if (clock.remaining <= 0) {
+            clock.remaining = 0;
+            clock.running = false;
+            clock.finished = true;
+            stopTick();
+            btn.textContent = "Again";
+            beep();
+          }
+          renderTimer();
+        }, 1000);
+        renderTimer();
+      }
+      function resetTimer() {
+        stopTick();
+        clock.running = false;
+        clock.finished = false;
+        clock.remaining = clock.secs;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      let audioCtx = null;
+      function beep() {
+        if (clock.muted) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) audioCtx = new Ctx();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(
+            0.2,
+            audioCtx.currentTime + 0.02,
+          );
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioCtx.currentTime + 0.45,
+          );
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+      function toggleMute() {
+        clock.muted = !clock.muted;
+        document.getElementById("mute-btn").textContent = clock.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      Object.keys(SELECTS).forEach((k) => {
+        buildRoundTabs(k);
+        buildWords(k);
+      });
+      buildPairs();
+      buildPresets();
+      renderTimer();
+    </script>
+  </body>
+</html>

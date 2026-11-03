@@ -261,6 +261,183 @@
         border-color: var(--border);
       }
 
+      /* EXAM CALENDAR */
+      .cal-frame {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px 16px;
+        margin-bottom: 40px;
+      }
+      .cal-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .cal-head .section-label {
+        margin-bottom: 0;
+      }
+      .cal-countdown {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: var(--accent);
+      }
+      .cal-countdown b {
+        font-size: 1.15rem;
+      }
+      .cal {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+        margin-bottom: 14px;
+      }
+      .cal-dow {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        text-align: center;
+        padding-bottom: 2px;
+      }
+      .cal-day {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        min-height: 50px;
+        padding: 4px 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        text-decoration: none;
+        color: inherit;
+        min-width: 0;
+      }
+      .cal-day.off {
+        background: transparent;
+        border-color: transparent;
+      }
+      .cal-num {
+        font-size: 0.7rem;
+        color: var(--muted);
+      }
+      .cal-num .mon {
+        font-weight: 600;
+        color: var(--text);
+        margin-right: 3px;
+      }
+      .cal-day.class {
+        border-color: var(--accent);
+        background: var(--accent-light);
+      }
+      a.cal-day.class:hover {
+        background: #d9e8de;
+      }
+      .cal-day.class .cal-tag {
+        font-size: 0.62rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .cal-title {
+        font-size: 0.68rem;
+        line-height: 1.25;
+        color: var(--text);
+        overflow-wrap: anywhere;
+      }
+      .cal-day.cancelled {
+        background: transparent;
+        border: 1px dashed var(--border);
+      }
+      .cal-day.cancelled .cal-title {
+        color: var(--muted);
+        font-style: italic;
+      }
+      /* past: grey and dashed, so the classes ahead stand out */
+      .cal-day.past .cal-num {
+        opacity: 0.45;
+      }
+      .cal-day.class.done {
+        background: var(--bg);
+        border: 1px dashed var(--border);
+      }
+      .cal-day.class.done .cal-tag,
+      .cal-day.class.done .cal-title {
+        color: var(--muted);
+        opacity: 0.75;
+      }
+      a.cal-day.class.done:hover {
+        background: var(--surface2);
+      }
+      .cal-day.done .cal-tag::after {
+        content: " ✓";
+      }
+      .cal-day.exam {
+        background: var(--accent2);
+        border-color: var(--accent2);
+        color: #fff;
+      }
+      .cal-day.exam .cal-num,
+      .cal-day.exam .cal-num .mon,
+      .cal-day.exam .cal-title {
+        color: #fff;
+      }
+      .cal-day.exam .cal-tag {
+        font-size: 0.62rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .cal-day.today {
+        outline: 2px solid var(--text);
+        outline-offset: -2px;
+      }
+      .cal-legend {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+      .cal-legend .lg-done::before {
+        background: var(--bg);
+        border: 1px dashed var(--muted);
+      }
+      .cal-legend span::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        vertical-align: -1px;
+        border: 1px solid var(--accent);
+        background: var(--accent-light);
+      }
+      .cal-legend .lg-exam::before {
+        background: var(--accent2);
+        border-color: var(--accent2);
+      }
+      .cal-legend .lg-today::before {
+        background: var(--surface);
+        border: 2px solid var(--text);
+      }
+      @media (max-width: 720px) {
+        .cal {
+          gap: 3px;
+        }
+        .cal-frame {
+          padding: 14px 10px 12px;
+        }
+        .cal-day {
+          min-height: 46px;
+          padding: 4px;
+        }
+        .cal-title {
+          display: none;
+        }
+      }
+
       /* FOOTER */
       footer {
         background: var(--surface);
@@ -329,6 +506,20 @@
         each session.
       </div>
 
+      <div class="cal-frame">
+        <div class="cal-head">
+          <div class="section-label">Your road to the exam</div>
+          <div class="cal-countdown" id="cal-countdown"></div>
+        </div>
+        <div class="cal" id="cal"></div>
+        <div class="cal-legend">
+          <span class="lg-done">Done</span>
+          <span>Class (Tuesday &amp; Thursday)</span>
+          <span class="lg-exam">Exam day</span>
+          <span class="lg-today">Today</span>
+        </div>
+      </div>
+
       <div class="section-label">Available now</div>
       <div class="lesson-grid" id="lesson-grid"></div>
     </main>
@@ -357,6 +548,12 @@
           date: "27 October 2026",
           desc: "How the Duolingo English Test is scored, the rules on test day, and a timed sample of every task type.",
         },
+        {
+          file: "lesson_plan_2.html",
+          title: "Real Words & Missing Letters",
+          date: "3 November 2026",
+          desc: "Spotting fake words in Read and Select, using grammar to finish words in Read and Complete, and the spelling traps to avoid.",
+        },
       ];
 
       const grid = document.getElementById("lesson-grid");
@@ -379,6 +576,93 @@
 
         grid.appendChild(card);
       });
+
+      /* ------------------------------------------------------------------
+         EXAM CALENDAR: classes every Tuesday and Thursday, exam on EXAM.
+         To change the plan, edit EXAM, SCHEDULE and CANCELLED (YYYY-MM-DD).
+         A class links to its lesson once that lesson is in LESSONS above.
+      ------------------------------------------------------------------ */
+      const EXAM = "2026-12-01";
+      const SCHEDULE = [
+        ["2026-10-27", "Know the Test"],
+        ["2026-11-03", "Real Words & Missing Letters"],
+        ["2026-11-05", "Reading Strategies"],
+        ["2026-11-10", "Listening Accuracy"],
+        ["2026-11-12", "Speaking: Photos & Prompts"],
+        ["2026-11-17", "Writing: Sentences That Score"],
+        ["2026-11-19", "Interactive Speaking & Writing Sample"],
+        ["2026-11-24", "Full Mock Exam"],
+        ["2026-11-26", "Weak Spots & Test Day"],
+      ];
+      /* class days that didn't happen: [date, label] */
+      const CANCELLED = [["2026-10-29", "Cancelled"]];
+
+      function parseDay(s) {
+        const [y, m, d] = s.split("-").map(Number);
+        return new Date(y, m - 1, d);
+      }
+      function dayKey(d) {
+        return (
+          d.getFullYear() +
+          "-" +
+          String(d.getMonth() + 1).padStart(2, "0") +
+          "-" +
+          String(d.getDate()).padStart(2, "0")
+        );
+      }
+      const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      function buildCalendar() {
+        const cal = document.getElementById("cal");
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const exam = parseDay(EXAM);
+        const classes = {};
+        SCHEDULE.forEach(([d, title], i) => (classes[d] = { n: i + 1, title }));
+
+        /* weeks run Monday to Sunday, from the first class to the exam week */
+        const start = parseDay(SCHEDULE[0][0]);
+        start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
+        const end = new Date(exam);
+        end.setDate(end.getDate() + (6 - ((end.getDay() + 6) % 7)));
+
+        let html = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+          .map((d) => `<div class="cal-dow">${d}</div>`)
+          .join("");
+        for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+          const key = dayKey(d);
+          const isFirst = d.getDate() === 1 || +d === +start;
+          const num = `<div class="cal-num">${isFirst ? `<span class="mon">${MONTHS[d.getMonth()]}</span>` : ""}${d.getDate()}</div>`;
+          const todayCls = (+d === +today ? " today" : "") + (d < today ? " past" : "");
+          const c = classes[key];
+          if (c) {
+            const lesson = LESSONS[c.n - 1];
+            const linked = lesson && !lesson.soon;
+            const tag = linked ? "a" : "div";
+            const done = d < today ? " done" : "";
+            html += `<${tag} class="cal-day class${done}${todayCls}"${linked ? ` href="${lesson.file}"` : ""}>
+              ${num}<div class="cal-tag">Class ${c.n}</div><div class="cal-title">${c.title}</div></${tag}>`;
+          } else if (CANCELLED.some(([c]) => c === key)) {
+            const label = CANCELLED.find(([c]) => c === key)[1];
+            html += `<div class="cal-day cancelled${todayCls}">${num}<div class="cal-title">${label}</div></div>`;
+          } else if (key === EXAM) {
+            html += `<div class="cal-day exam${todayCls}">${num}<div class="cal-tag">Exam</div><div class="cal-title">Duolingo English Test</div></div>`;
+          } else {
+            html += `<div class="cal-day off${todayCls}">${num}</div>`;
+          }
+        }
+        cal.innerHTML = html;
+
+        const days = Math.round((exam - today) / 86400000);
+        const left = SCHEDULE.filter(([d]) => parseDay(d) >= today).length;
+        document.getElementById("cal-countdown").innerHTML =
+          days > 0
+            ? `<b>${days}</b> ${days === 1 ? "day" : "days"} to go · ${left} ${left === 1 ? "class" : "classes"} left`
+            : days === 0
+              ? "<b>Exam day.</b> Good luck!"
+              : "Exam done";
+      }
+      buildCalendar();
 
       const ready = LESSONS.filter((l) => !l.soon).length;
       document.getElementById("lesson-count").textContent =
