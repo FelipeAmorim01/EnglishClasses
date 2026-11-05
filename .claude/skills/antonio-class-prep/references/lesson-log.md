@@ -3,8 +3,8 @@
 What each class covered and what was set for homework. Read before building the
 next class. Keep it updated when a lesson is added or Felipe changes one.
 
-**Next up: Class 3, Reading strategies** (Fill in the Blanks, Interactive
-Reading), 5 November. Plan is now 9 classes (outline 7 + 8 merged), see
+**Next up: Class 4, Listening accuracy** (Listen and Type, Interactive
+Listening), 10 November. Plan is now 9 classes (outline 7 + 8 merged), see
 SKILL.md.
 
 29 October was cancelled; Class 2 moved to 3 November.
@@ -73,3 +73,37 @@ with new prompts, circle unsure spellings, send 2 this week.
 
 The outline puts the 2nd practice test under Class 2's homework, but Class 1
 had already set it, so Class 2 only repeats it as a fallback.
+
+---
+
+## Class 3 — Reading Strategies
+`lesson_plan_3.html` · 5 November 2026
+
+Stages: Warm-up → Fill in the Blanks → Interactive Reading → Main Idea & Titles → Extra Practice → Wrap-up
+
+- Warm-up: practice test 2 score and hardest tasks, a word from the list with
+  two other forms, five spelling-list words spelled aloud, sprints.
+- Fill in the Blanks: 4 cards (read the whole sentence, words come in pairs,
+  count the boxes, check the grammar). A. Find the partner, 12 rows
+  (make/do/take/pay + heavy/strong/high). B. Pairs set (decision, attention,
+  reduce, responsibility, traffic, meet). C. Context set (survive, effect,
+  solution, evidence, rise, public). Inputs now show one box per missing
+  letter (`.fib`, monospace). Sidebar: make/do/take chips.
+- Interactive Reading: 3 steps (skim 30 s, keyword then exact words, main idea
+  and title last). D. "The four-day week": 5 drop-downs, missing sentence
+  (fills the slot in the passage), 2 highlight questions (click the question,
+  drag across the passage), main idea, title — one Check, out of 10. Hedged
+  that parts can vary on the real test (Complete the Passage is not in the
+  outline's task table).
+- Main idea & titles: cards Too narrow / Too broad / Not in the text / Just
+  right; each option shows its label after Check. E. Volunteering, F.
+  Multitasking, G. Food waste (main idea + title each).
+- Extra Practice: H. Fill in the Blanks harder (invest, agreement, causes,
+  feedback, competition, believed), I. Interactive Reading "City birds", J.
+  make your own blanks, K. 5-minute sprint on a four-day week.
+- Clock presets: 0:20, 2:00 (6 × 20 s), 1:00, 7:00, 5:00.
+
+**Homework:** daily short article (guess from the title first, main idea in
+one sentence, two word pairs) · word list now with its collocation · spelling
+list, 5 from memory · sprints with 2+ linking words, 7 new prompts, send 2 ·
+practice test 2 only if still not taken.

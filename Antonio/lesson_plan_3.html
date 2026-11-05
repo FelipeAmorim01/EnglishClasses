@@ -1,0 +1,3471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DET Prep — Class 3</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- FOLLOW THE THREAD (stage 3, round three) ---------- */
+      .thread-list {
+        list-style: none;
+        counter-reset: thread;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .thread-list:empty {
+        display: none;
+      }
+
+      .thread-list li {
+        counter-increment: thread;
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--muted);
+        background: var(--bg);
+        border-left: 3px solid var(--border);
+        padding: 10px 14px;
+      }
+
+      .thread-list li::before {
+        content: counter(thread) " · ";
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* the follow-up being answered right now */
+      .thread-list li:last-child {
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left-color: var(--accent);
+        animation: fadeUp 0.25s ease;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .thread-list li {
+          font-size: 0.95rem;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== DET prep additions (Antonio) ===== */
+
+      /* timer, copied from Raffa lesson 4 */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+        margin-bottom: 14px;
+      }
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.2rem;
+      }
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 14px 0 14px;
+      }
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+      .timer-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .timer-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .preset-btn,
+      .mini-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      .preset-btn:hover,
+      .mini-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .preset-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* score overview */
+      .score-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .score-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 16px 18px;
+      }
+      .score-card.target {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .score-big {
+        font-family: "Lora", serif;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .score-card:not(.target) .score-big {
+        color: var(--accent);
+      }
+      .score-cap {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .det-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.86rem;
+      }
+      .det-table th {
+        text-align: left;
+        background: var(--surface2);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        padding: 10px 14px;
+      }
+      .det-table td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .det-table td:first-child {
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+      .det-table td:nth-child(2) {
+        font-weight: 600;
+      }
+      .det-table td:last-child {
+        white-space: nowrap;
+        color: var(--muted);
+      }
+
+      /* task blocks in stage 3 */
+      .task-block {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 20px 22px;
+        margin-bottom: 18px;
+      }
+      .task-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .task-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .task-name span {
+        color: var(--accent2);
+        margin-right: 6px;
+      }
+      .task-time {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 3px 9px;
+        white-space: nowrap;
+      }
+      .task-how {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+        line-height: 1.55;
+      }
+      .task-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        align-items: center;
+      }
+      .task-result {
+        font-size: 0.82rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .word-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .word-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.92rem;
+        padding: 10px 8px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        color: var(--text);
+      }
+      .word-btn:hover {
+        border-color: var(--accent);
+      }
+      .word-btn.picked {
+        background: var(--accent-light);
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .word-btn.ok {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .word-btn.bad {
+        background: var(--accent2);
+        border-color: var(--accent2);
+        color: #fff;
+        text-decoration: line-through;
+      }
+      .word-btn.missed {
+        border: 2px dashed var(--accent);
+      }
+
+      .ctest {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 2.3;
+        background: var(--bg);
+        padding: 16px 18px;
+      }
+      .gap {
+        white-space: nowrap;
+      }
+      .gap input {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        padding: 0 3px;
+        color: var(--text);
+        outline: none;
+      }
+      .gap input:focus {
+        background: var(--accent-light);
+      }
+      .gap input.ok {
+        border-bottom-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .gap input.bad {
+        border-bottom-color: var(--accent2);
+        color: var(--accent2);
+      }
+
+      .type-item {
+        margin-bottom: 14px;
+      }
+      .type-item:last-child {
+        margin-bottom: 0;
+      }
+      .type-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+      .type-box {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        resize: vertical;
+        color: var(--text);
+      }
+      .type-box:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      .type-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 6px;
+        flex-wrap: wrap;
+      }
+      .answer-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--accent);
+        display: none;
+      }
+      .answer-line.shown {
+        display: inline;
+      }
+      .word-count {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .photo-frame {
+        background: var(--surface2);
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .photo-frame svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .speak-prompt {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+      }
+      .speak-prompt ul {
+        margin: 8px 0 0 18px;
+        font-size: 0.95rem;
+      }
+
+      .hidden-qs {
+        position: relative;
+      }
+      .hidden-qs ol {
+        padding-left: 20px;
+        font-family: "Lora", serif;
+        line-height: 1.7;
+        filter: blur(7px);
+        user-select: none;
+        transition: filter 0.2s;
+      }
+      .hidden-qs.revealed ol {
+        filter: none;
+        user-select: auto;
+      }
+      .reflection-content p {
+        margin: 0 0 10px;
+      }
+      .hw-steps,
+      .hw-prompts {
+        margin: 0 0 12px 20px;
+      }
+      .hw-steps li,
+      .hw-prompts li {
+        margin-bottom: 4px;
+      }
+      .hw-prompts {
+        font-family: "Lora", serif;
+        font-style: italic;
+      }
+      .hw-prompts-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .hidden-qs li {
+        margin-bottom: 6px;
+      }
+
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .score-grid,
+        .rules-grid {
+          grid-template-columns: 1fr;
+        }
+        .word-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .det-table td:first-child,
+        .det-table td:last-child {
+          white-space: normal;
+        }
+        .task-block {
+          padding: 16px;
+        }
+      }
+      .language-sidebar .timer-panel {
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .language-sidebar .timer-controls .btn {
+        padding: 8px 12px;
+      }
+      @media (max-width: 900px) {
+        .language-sidebar {
+          order: -1;
+        }
+      }
+
+      /* ---- Class 2 additions ---- */
+      /* long words (acquaintance) need wider cells than a fixed 4 columns */
+      .word-grid {
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      }
+      .word-btn {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .round-tabs {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .round-tabs .mini-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .round-note {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      .pair-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 18px;
+      }
+      .pair-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .fam-list {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2.2;
+        background: var(--bg);
+        padding: 12px 18px 12px 38px;
+        margin: 0;
+      }
+      .fam-list .root {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-left: 6px;
+      }
+      .gap input.bad {
+        text-decoration: line-through;
+      }
+      .fix-ans {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 1px 6px;
+        margin-left: 4px;
+      }
+      .why-list {
+        margin: 10px 0 0 18px;
+        font-size: 0.86rem;
+        line-height: 1.6;
+        display: none;
+      }
+      .why-list.shown {
+        display: block;
+      }
+      .why-list li {
+        margin-bottom: 4px;
+      }
+      @media (max-width: 720px) {
+        .pair-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---- Class 3 additions ---- */
+      /* Fill in the Blanks: one box per missing letter, like the real task */
+      .fib input {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.02rem;
+        letter-spacing: 0.5ch;
+        padding: 0 0 0 0.2ch;
+        border-bottom: none;
+        background: repeating-linear-gradient(
+            90deg,
+            var(--accent) 0 1.1ch,
+            transparent 1.1ch 1.5ch
+          )
+          left bottom / 100% 2px no-repeat,
+          var(--surface);
+      }
+      .fib input.ok {
+        background-color: var(--accent-light);
+      }
+      .fib input.bad {
+        background-color: #f7ebe3;
+      }
+      .choice-set {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .choice-q {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 8px;
+        align-items: center;
+      }
+      .choice-prompt {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+      }
+      .choice-opts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+      }
+      .choice-set.stack .choice-q {
+        grid-template-columns: 1fr;
+      }
+      .choice-set.stack .choice-prompt {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .choice-set.stack .choice-opts {
+        grid-template-columns: 1fr;
+      }
+      .choice-set.stack .word-btn {
+        text-align: left;
+        padding: 10px 12px;
+        line-height: 1.4;
+      }
+      .opt-why {
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 600;
+        margin-top: 3px;
+        opacity: 0.9;
+        text-decoration: none;
+      }
+      .opt-why[hidden] {
+        display: none;
+      }
+      .word-btn.bad .opt-why {
+        text-decoration: none;
+        display: inline-block;
+      }
+      .ir-passage {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2;
+        background: var(--bg);
+        padding: 16px 18px;
+        margin-bottom: 14px;
+      }
+      .ir-passage p {
+        margin-bottom: 12px;
+      }
+      .ir-passage p:last-child {
+        margin-bottom: 0;
+      }
+      .ir-passage select {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        color: var(--text);
+        padding: 0 2px;
+      }
+      .ir-passage select.ok {
+        background: var(--accent-light);
+      }
+      .ir-passage select.bad {
+        background: #f7ebe3;
+      }
+      .ir-slot {
+        background: var(--surface);
+        border-bottom: 2px dashed var(--accent2);
+        padding: 0 4px;
+        color: var(--muted);
+      }
+      .ir-slot.filled {
+        color: var(--text);
+        border-bottom-style: solid;
+      }
+      .ir-passage ::selection {
+        background: #f3d36b;
+      }
+      .ir-part {
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent2);
+        margin: 18px 0 8px;
+      }
+      .hl-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .hl-q {
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 10px 12px;
+        cursor: pointer;
+        font-size: 0.92rem;
+      }
+      .hl-q.active {
+        border: 2px solid var(--accent);
+        background: var(--accent-light);
+      }
+      .hl-q.ok {
+        border-color: var(--accent);
+      }
+      .hl-q.bad {
+        border-color: var(--accent2);
+      }
+      .hl-ans {
+        display: block;
+        margin-top: 6px;
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--muted);
+      }
+      .hl-q.ok .hl-ans {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .hl-q.bad .hl-ans {
+        color: var(--accent2);
+        text-decoration: line-through;
+      }
+      .mini-para {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        line-height: 1.8;
+        background: var(--bg);
+        padding: 14px 18px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 720px) {
+        .choice-q {
+          grid-template-columns: 1fr;
+        }
+        .choice-opts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>Duolingo English Test Prep</h1>
+        <div class="subtitle">Reading Strategies — Class 3</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Fill in the Blanks</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Interactive Reading</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Main Idea &amp; Titles</div>
+        </div>
+        <div class="nav-item" onclick="goTo(4)">
+          <div class="nav-num">05</div>
+          <div class="nav-label">Extra Practice</div>
+        </div>
+        <div class="nav-item" onclick="goTo(5)">
+          <div class="nav-num">06</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============ STAGE 1 ============ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 06</div>
+          <div class="stage-title">Warm-up</div>
+          <div class="stage-sub">
+            A quick look at your homework. Today moves from single words to
+            sentences and whole passages: finishing a word from its context,
+            then reading a passage fast and finding exact answers in it.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              Did you take the second practice test? What was your score, and
+              which two tasks felt hardest?
+            </li>
+            <li>
+              Give me one word from your word list and its two other forms
+              (decide → decision, decisive).
+            </li>
+            <li>
+              Spelling list: I'll say five of your words. Spell each one out
+              loud.
+            </li>
+            <li>
+              Which writing sprint prompt did you enjoy most? Which words did
+              you circle because you weren't sure of the spelling?
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ STAGE 2 ============ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 06</div>
+          <div class="stage-title">Fill in the <em>blanks</em></div>
+          <div class="stage-sub">
+            You see a sentence with one word half-written: the first letters,
+            then a box for each missing letter. You have about 20 seconds. The
+            words around the gap tell you which word it is.
+          </div>
+
+          <div class="section-label">How to find the word</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">Read the whole sentence</div>
+              <div class="idiom-meaning">
+                The clue is often after the gap, not before it. Read to the
+                full stop first.
+              </div>
+              <div class="idiom-example">
+                red___ <b>the risk</b> of heart disease → reduce
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Words come in pairs</div>
+              <div class="idiom-meaning">
+                English has fixed partners (collocations). Learn the pair, not
+                just the word.
+              </div>
+              <div class="idiom-example">
+                make a decision · pay attention · heavy traffic
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Count the boxes</div>
+              <div class="idiom-meaning">
+                Each box is one letter. Two words can start the same way, but
+                only one has the right length.
+              </div>
+              <div class="idiom-example">
+                evi + 5 boxes → evidence, not evident
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Check the grammar last</div>
+              <div class="idiom-meaning">
+                Right word, wrong form still loses the point. Plural? Past
+                tense? Noun or verb?
+              </div>
+              <div class="idiom-example">
+                one of the main cau<b>ses</b>, not cause
+              </div>
+            </div>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- A: Collocations -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>A</span>Find the partner</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  Click the word that goes with each one. These pairs come up
+                  again and again in the blanks.
+                </div>
+                <div class="choice-set" id="coll"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkChoices('coll', 'coll-result')">Check</button>
+                  <button class="mini-btn" onclick="buildChoices('coll')">Reset</button>
+                  <span class="task-result" id="coll-result"></span>
+                </div>
+              </div>
+
+              <!-- B: Fill in the Blanks, set 1 -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>B</span>Fill in the Blanks · Pairs</div>
+                  <div class="task-time">0:20 each</div>
+                </div>
+                <div class="task-how">
+                  Type the missing letters. Start the 2:00 clock for all six,
+                  about 20 seconds each.
+                </div>
+                <ol class="fam-list fib" id="fib1">
+                  <li>
+                    It took me weeks to make a
+                    <span class="gap">dec<input data-a="ision" /></span> about
+                    which university to choose.
+                  </li>
+                  <li>
+                    Please pay close
+                    <span class="gap">att<input data-a="ention" /></span> to
+                    the instructions before you start.
+                  </li>
+                  <li>
+                    Regular exercise can
+                    <span class="gap">red<input data-a="uce" /></span> the risk
+                    of heart disease.
+                  </li>
+                  <li>
+                    The manager agreed to take
+                    <span class="gap">resp<input data-a="onsibility" /></span>
+                    for the mistake.
+                  </li>
+                  <li>
+                    We were late because of the heavy
+                    <span class="gap">tra<input data-a="ffic" /></span> during
+                    rush hour.
+                  </li>
+                  <li>
+                    With rent so high, many young people struggle to make ends
+                    <span class="gap">m<input data-a="eet" /></span>.
+                  </li>
+                </ol>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkSet('fib1', 'fib1-result')">Check</button>
+                  <button class="mini-btn" onclick="showSet('fib1')">Show answers</button>
+                  <button class="mini-btn" onclick="resetSet('fib1', 'fib1-result')">Reset</button>
+                  <span class="task-result" id="fib1-result"></span>
+                </div>
+              </div>
+
+              <!-- C: Fill in the Blanks, set 2 -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>C</span>Fill in the Blanks · Context</div>
+                  <div class="task-time">0:20 each</div>
+                </div>
+                <div class="task-how">
+                  Fewer fixed pairs here. Read the whole sentence, then count
+                  the boxes.
+                </div>
+                <ol class="fam-list fib" id="fib2">
+                  <li>
+                    Without enough water, most plants cannot
+                    <span class="gap">surv<input data-a="ive" /></span>.
+                  </li>
+                  <li>
+                    The new law will come into
+                    <span class="gap">eff<input data-a="ect" /></span> next
+                    January.
+                  </li>
+                  <li>
+                    Most experts agree that the problem has no simple
+                    <span class="gap">sol<input data-a="ution" /></span>.
+                  </li>
+                  <li>
+                    Her argument was convincing because she gave clear
+                    <span class="gap">evi<input data-a="dence" /></span> for
+                    every claim.
+                  </li>
+                  <li>
+                    Prices tend to
+                    <span class="gap">ri<input data-a="se" /></span> when
+                    demand is higher than supply.
+                  </li>
+                  <li>
+                    The museum is closed to the
+                    <span class="gap">pub<input data-a="lic" /></span> on
+                    Mondays.
+                  </li>
+                </ol>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkSet('fib2', 'fib2-result')">Check</button>
+                  <button class="mini-btn" onclick="showSet('fib2')">Show answers</button>
+                  <button class="mini-btn" onclick="resetSet('fib2', 'fib2-result')">Reset</button>
+                  <span class="task-result" id="fib2-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">make</div>
+                <div class="vocab-chips">
+                  <span class="chip">a decision</span>
+                  <span class="chip">a mistake</span>
+                  <span class="chip">progress</span>
+                  <span class="chip">an effort</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">do</div>
+                <div class="vocab-chips">
+                  <span class="chip">research</span>
+                  <span class="chip">homework</span>
+                  <span class="chip">your best</span>
+                  <span class="chip">damage</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">take</div>
+                <div class="vocab-chips">
+                  <span class="chip">a break</span>
+                  <span class="chip">responsibility</span>
+                  <span class="chip">place</span>
+                  <span class="chip">part in</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Check before you move on</div>
+                <div class="vocab-chips">
+                  <span class="chip">Plural?</span>
+                  <span class="chip">Past tense?</span>
+                  <span class="chip">he / she / it + s?</span>
+                  <span class="chip">Noun or adjective?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 3 ============ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 06</div>
+          <div class="stage-title">Interactive <em>reading</em></div>
+          <div class="stage-sub">
+            One passage, several questions about it, about 7–8 minutes in
+            all. On the test the questions come one screen at a time and the
+            exact parts can vary, but the skills are the same: read fast, then
+            find the exact words.
+          </div>
+
+          <div class="section-label">Three steps</div>
+          <div class="apply-box">
+            <div class="apply-label">Do it in this order</div>
+            <ol class="apply-steps">
+              <li>
+                <strong>Skim first, about 30 seconds.</strong> Read the first
+                line of each paragraph and ask: what is this paragraph for?
+              </li>
+              <li>
+                <strong>Find the keyword, then the exact words.</strong> Take a
+                word from the question, find it in the passage, and highlight
+                only the words that answer, not the whole sentence.
+              </li>
+              <li>
+                <strong>Main idea and title last.</strong> By then you've read
+                everything. The right answer covers the whole passage, not one
+                paragraph.
+              </li>
+            </ol>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- D: Interactive Reading, Four-day week -->
+              <div class="task-block" id="ir1">
+                <div class="task-head">
+                  <div class="task-name"><span>D</span>Interactive Reading · The four-day week</div>
+                  <div class="task-time">7:00</div>
+                </div>
+                <div class="task-how">
+                  Start the 7:00 clock. Work through parts 1 to 5, then check
+                  everything at once.
+                </div>
+
+                <div class="ir-passage" id="ir1-text">
+                  <p>
+                    For most of the last century, a full-time job meant working
+                    five days a week. In recent years, however, a growing
+                    <select data-a="number"><option value="">Select</option><option>amount</option><option>number</option><option>deal</option></select>
+                    of companies have started to
+                    <select data-a="test"><option value="">Select</option><option>testing</option><option>tested</option><option>test</option></select>
+                    a shorter week. Employees work four days instead of five,
+                    but they
+                    <select data-a="receive"><option value="">Select</option><option>receive</option><option>achieve</option><option>perceive</option></select>
+                    the same salary. Supporters say the idea is not as
+                    <select data-a="risky"><option value="">Select</option><option>risked</option><option>risking</option><option>risky</option></select>
+                    as it sounds, because people who are less tired often get
+                    more done in
+                    <select data-a="less"><option value="">Select</option><option>fewer</option><option>less</option><option>lower</option></select>
+                    time.
+                  </p>
+                  <p>
+                    In one well-known trial, dozens of companies in the United
+                    Kingdom tried the four-day week for six months.
+                    <span class="ir-slot" id="ir1-slot">(missing sentence)</span>
+                    Staff said they felt less stressed and slept better, and
+                    many companies found it easier to hire new workers. At the
+                    end of the trial, most of them decided to keep the new
+                    schedule.
+                  </p>
+                  <p>
+                    Not everyone is convinced, however. Critics point out that
+                    the model works best in offices, where work can be planned
+                    in advance. It is much harder to apply in hospitals,
+                    schools or shops, which need staff every day of the week.
+                    Others worry that fitting five days of work into four could
+                    make each day longer and more tiring. For now, the four-day
+                    week looks less like a solution for everyone and more like
+                    an option that suits some jobs better than others.
+                  </p>
+                </div>
+
+                <div class="ir-part">1 · Complete the sentences</div>
+                <div class="task-how">
+                  Choose the best word for each gap in the first paragraph.
+                </div>
+
+                <div class="ir-part">2 · Complete the passage</div>
+                <div class="task-how">
+                  Choose the sentence that fits the gap in the second
+                  paragraph. Read the sentence after the gap too.
+                </div>
+                <div class="choice-set stack" id="ir1gap"></div>
+
+                <div class="ir-part">3 · Highlight the answer</div>
+                <div class="task-how">
+                  Click a question, then drag across the words in the passage
+                  that answer it. Highlight as few words as you can.
+                </div>
+                <div class="hl-list" id="ir1-hl">
+                  <div class="hl-q" data-key="they felt less stressed and slept better" onclick="setHL(this)">
+                    What did staff say about the trial?
+                    <span class="hl-ans">Nothing highlighted yet</span>
+                  </div>
+                  <div class="hl-q" data-key="which need staff every day of the week" onclick="setHL(this)">
+                    Why is the four-day week harder to use in hospitals,
+                    schools or shops?
+                    <span class="hl-ans">Nothing highlighted yet</span>
+                  </div>
+                </div>
+
+                <div class="ir-part">4 · Identify the idea &nbsp;·&nbsp; 5 · Title the passage</div>
+                <div class="choice-set stack" id="ir1q"></div>
+
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkIR('ir1')">Check</button>
+                  <button class="mini-btn" onclick="showIR('ir1')">Show answers</button>
+                  <button class="mini-btn" onclick="resetIR('ir1')">Reset</button>
+                  <span class="task-result" id="ir1-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Question word → look for</div>
+                <div class="vocab-chips">
+                  <span class="chip">Why → because, so, which</span>
+                  <span class="chip">When → dates, before, after</span>
+                  <span class="chip">How → by, with, -ing</span>
+                  <span class="chip">What did they say → said, felt</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Clues for the missing sentence</div>
+                <div class="vocab-chips">
+                  <span class="chip">it / they / this → what?</span>
+                  <span class="chip">however = a change</span>
+                  <span class="chip">also = more of the same</span>
+                  <span class="chip">Does it contradict the text?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 4 ============ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 06</div>
+          <div class="stage-title">Main idea &amp; <em>titles</em></div>
+          <div class="stage-sub">
+            The wrong answers in main-idea and title questions are wrong in
+            the same few ways. Name the way, and you can rule them out fast.
+          </div>
+
+          <div class="section-label">Three wrong answers and a right one</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">Too narrow</div>
+              <div class="idiom-meaning">
+                True, but it's one detail from one paragraph.
+              </div>
+              <div class="idiom-example">
+                "Hospitals need staff every day."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Too broad</div>
+              <div class="idiom-meaning">
+                So general it could be the title of a whole book.
+              </div>
+              <div class="idiom-example">"The World of Work"</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Not in the text</div>
+              <div class="idiom-meaning">
+                Sounds reasonable, but the passage never says it, or says the
+                opposite.
+              </div>
+              <div class="idiom-example">
+                "Everyone should work four days a week."
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Just right</div>
+              <div class="idiom-meaning">
+                Covers every paragraph, and nothing in it goes beyond the
+                text.
+              </div>
+              <div class="idiom-example">
+                "The Four-Day Week: Promise and Limits"
+              </div>
+            </div>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- E: three short paragraphs -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>E</span>Main idea and title · Volunteering</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="mini-para">
+                  Many students volunteer while they are at university. Some
+                  help at food banks, others teach children to read or clean
+                  up local parks. Volunteering looks good on a CV, but students
+                  who do it often say the biggest benefits are personal: they
+                  make new friends, feel more connected to their city and learn
+                  skills they never practised in class.
+                </div>
+                <div class="choice-set stack" id="mi1"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkChoices('mi1', 'mi1-result')">Check</button>
+                  <button class="mini-btn" onclick="buildChoices('mi1')">Reset</button>
+                  <span class="task-result" id="mi1-result"></span>
+                </div>
+              </div>
+
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>F</span>Main idea and title · Multitasking</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="mini-para">
+                  Many people believe that doing several things at once saves
+                  time. In fact, research suggests the opposite. When we switch
+                  between tasks, such as writing an email and checking a
+                  message, the brain needs a moment to refocus each time. These
+                  small delays add up, and mistakes become more common. People
+                  who focus on one task at a time usually finish sooner and
+                  make fewer errors.
+                </div>
+                <div class="choice-set stack" id="mi2"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkChoices('mi2', 'mi2-result')">Check</button>
+                  <button class="mini-btn" onclick="buildChoices('mi2')">Reset</button>
+                  <span class="task-result" id="mi2-result"></span>
+                </div>
+              </div>
+
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>G</span>Main idea and title · Food waste</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="mini-para">
+                  Around the world, a large share of the food that is produced
+                  is never eaten. Some of it is lost on farms or during
+                  transport, but a lot is thrown away at home, often because
+                  people buy more than they need or misunderstand the dates on
+                  the label. Planning meals, freezing leftovers and checking
+                  what is already in the fridge are simple ways to waste less.
+                </div>
+                <div class="choice-set stack" id="mi3"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkChoices('mi3', 'mi3-result')">Check</button>
+                  <button class="mini-btn" onclick="buildChoices('mi3')">Reset</button>
+                  <span class="task-result" id="mi3-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Ask of every option</div>
+                <div class="vocab-chips">
+                  <span class="chip">Does it cover every part?</span>
+                  <span class="chip">Does the text say this?</span>
+                  <span class="chip">Could it fit a whole book?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Where the main idea hides</div>
+                <div class="vocab-chips">
+                  <span class="chip">first sentence</span>
+                  <span class="chip">after "but" / "however"</span>
+                  <span class="chip">last sentence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 5 ============ -->
+        <div class="stage" id="stage-4">
+          <div class="stage-eyebrow">Stage 05 of 06</div>
+          <div class="stage-title">Extra <em>practice</em></div>
+          <div class="stage-sub">
+            More rounds of today's tasks, all with the real time limits. Do as
+            many as time allows.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- H: Fill in the Blanks, harder -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>H</span>Fill in the Blanks · Harder</div>
+                  <div class="task-time">0:20 each</div>
+                </div>
+                <div class="task-how">
+                  Longer, more academic words. Same steps: whole sentence,
+                  count the boxes, check the grammar.
+                </div>
+                <ol class="fam-list fib" id="fib3">
+                  <li>
+                    The government plans to
+                    <span class="gap">inv<input data-a="est" /></span> heavily
+                    in renewable energy.
+                  </li>
+                  <li>
+                    The two countries finally reached an
+                    <span class="gap">agr<input data-a="eement" /></span> after
+                    months of talks.
+                  </li>
+                  <li>
+                    Smoking is one of the main
+                    <span class="gap">cau<input data-a="ses" /></span> of lung
+                    cancer.
+                  </li>
+                  <li>
+                    Children often learn faster when they get immediate
+                    <span class="gap">fee<input data-a="dback" /></span> on
+                    their work.
+                  </li>
+                  <li>
+                    The company is facing strong
+                    <span class="gap">com<input data-a="petition" /></span>
+                    from cheaper brands.
+                  </li>
+                  <li>
+                    It is widely
+                    <span class="gap">bel<input data-a="ieved" /></span> that
+                    breakfast is the most important meal of the day.
+                  </li>
+                </ol>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkSet('fib3', 'fib3-result')">Check</button>
+                  <button class="mini-btn" onclick="showSet('fib3')">Show answers</button>
+                  <button class="mini-btn" onclick="resetSet('fib3', 'fib3-result')">Reset</button>
+                  <span class="task-result" id="fib3-result"></span>
+                </div>
+              </div>
+
+              <!-- I: Interactive Reading, City birds -->
+              <div class="task-block" id="ir2">
+                <div class="task-head">
+                  <div class="task-name"><span>I</span>Interactive Reading · City birds</div>
+                  <div class="task-time">7:00</div>
+                </div>
+                <div class="task-how">
+                  A second passage, start to finish. Skim it first.
+                </div>
+
+                <div class="ir-passage" id="ir2-text">
+                  <p>
+                    Cities are noisy places, and the animals that live in them
+                    have had to
+                    <select data-a="adapt"><option value="">Select</option><option>adopt</option><option>adept</option><option>adapt</option></select>.
+                    Birds depend
+                    <select data-a="on"><option value="">Select</option><option>on</option><option>in</option><option>at</option></select>
+                    song to find a partner and to defend their territory, so
+                    traffic noise is a serious
+                    <select data-a="problem"><option value="">Select</option><option>solution</option><option>problem</option><option>reason</option></select>
+                    for them. Researchers have
+                    <select data-a="found"><option value="">Select</option><option>founded</option><option>find</option><option>found</option></select>
+                    that some city birds now sing at a higher pitch than birds
+                    of the same species in the countryside. A higher song is
+                    <select data-a="easier"><option value="">Select</option><option>easier</option><option>easiest</option><option>easily</option></select>
+                    to hear over the low sound of engines.
+                  </p>
+                  <p>
+                    Pitch is not the only thing that has changed.
+                    <span class="ir-slot" id="ir2-slot">(missing sentence)</span>
+                    Others simply start singing earlier in the morning, before
+                    the traffic begins. In both cases, the aim is the same: to
+                    be heard when the city is at its quietest.
+                  </p>
+                  <p>
+                    These changes may come at a cost. A higher song may sound
+                    less attractive to a partner, and singing at night uses
+                    energy that birds would normally save. Scientists are now
+                    studying whether quieter roads and more parks could help
+                    city birds return to their natural songs.
+                  </p>
+                </div>
+
+                <div class="ir-part">1 · Complete the sentences</div>
+                <div class="task-how">
+                  Choose the best word for each gap in the first paragraph.
+                </div>
+
+                <div class="ir-part">2 · Complete the passage</div>
+                <div class="choice-set stack" id="ir2gap"></div>
+
+                <div class="ir-part">3 · Highlight the answer</div>
+                <div class="task-how">
+                  Click a question, then drag across the words that answer it.
+                </div>
+                <div class="hl-list" id="ir2-hl">
+                  <div class="hl-q" data-key="earlier in the morning, before the traffic begins" onclick="setHL(this)">
+                    When do some birds start singing to avoid the noise?
+                    <span class="hl-ans">Nothing highlighted yet</span>
+                  </div>
+                  <div class="hl-q" data-key="whether quieter roads and more parks could help city birds" onclick="setHL(this)">
+                    What are scientists studying now?
+                    <span class="hl-ans">Nothing highlighted yet</span>
+                  </div>
+                </div>
+
+                <div class="ir-part">4 · Identify the idea &nbsp;·&nbsp; 5 · Title the passage</div>
+                <div class="choice-set stack" id="ir2q"></div>
+
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkIR('ir2')">Check</button>
+                  <button class="mini-btn" onclick="showIR('ir2')">Show answers</button>
+                  <button class="mini-btn" onclick="resetIR('ir2')">Reset</button>
+                  <span class="task-result" id="ir2-result"></span>
+                </div>
+              </div>
+
+              <!-- J: Make your own blanks -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>J</span>Make your own blanks</div>
+                  <div class="task-time">No timer</div>
+                </div>
+                <div class="task-how">
+                  Now you write the test. Type four sentences, each with a
+                  word pair from today (make progress, heavy rain, …). Read
+                  each one out with the word cut in half, like "We made a lot
+                  of pro… this year". Felipe has to finish the word, and you
+                  say if the box count would make it the only answer.
+                </div>
+                <textarea class="type-box" rows="4" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="1. "></textarea>
+              </div>
+
+              <!-- K: Writing sprint -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>K</span>Writing sprint</div>
+                  <div class="task-time">5:00 + 1:00 check</div>
+                </div>
+                <div class="speak-prompt">
+                  Would you like to work or study only four days a week? Why or
+                  why not?
+                </div>
+                <div class="task-how" style="margin-top: 12px">
+                  Type for five minutes without stopping, and aim for 100
+                  words. Use at least two linking words. Then take one minute
+                  to reread and fix your spelling.
+                </div>
+                <textarea class="type-box" id="sprint-text" rows="7" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Start writing…" oninput="countWords('sprint-text', 'sprint-count')"></textarea>
+                <div class="type-row">
+                  <span class="word-count" id="sprint-count">0 words</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Opinion frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">In my opinion,…</span>
+                  <span class="chip">The main reason is that…</span>
+                  <span class="chip">For example, when I…</span>
+                  <span class="chip">On the other hand,…</span>
+                  <span class="chip">So overall, I believe…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Linking words</div>
+                <div class="vocab-chips">
+                  <span class="chip">moreover, in addition, also</span>
+                  <span class="chip">however, although, whereas</span>
+                  <span class="chip">because, as a result, therefore</span>
+                  <span class="chip">for instance, such as</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 6 ============ -->
+        <div class="stage" id="stage-5">
+          <div class="stage-eyebrow">Stage 06 of 06</div>
+          <div class="stage-title">Wrap-up: <em>what's next</em></div>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Reading</div>
+              <div class="reflection-content">
+                Read one short article in English every day. Before you read,
+                look only at the title and guess what it's about. After
+                reading, type the main idea in one sentence and note two word
+                pairs you found (like "reach an agreement").
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Word list</div>
+              <div class="reflection-content">
+                Keep going with 10 new words a day, with two other forms of
+                each. New rule: add the word it usually goes with (decision →
+                make a decision). Autocorrect off.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Spelling list</div>
+              <div class="reflection-content">
+                Add any words you missed today. Every day, cover the list and
+                write five of them from memory.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Writing</div>
+              <div class="reflection-content">
+                <p>
+                  Keep the daily 5-minute sprint. New rule: use at least two
+                  linking words in each one (however, as a result, for
+                  instance…). Send me two sprints this week.
+                </p>
+                <div class="hw-prompts-label">New prompts</div>
+                <ol class="hw-prompts">
+                  <li>Describe a time you tried to do too many things at once.</li>
+                  <li>
+                    Should supermarkets be fined for throwing away food that
+                    could still be eaten?
+                  </li>
+                  <li>Is volunteering something every student should do?</li>
+                  <li>What is one thing your city could do to be less noisy?</li>
+                  <li>Do you prefer reading on paper or on a screen? Why?</li>
+                  <li>Describe an article or book that changed your mind about something.</li>
+                  <li>What makes a good title for a story or an article?</li>
+                </ol>
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Practice test</div>
+              <div class="reflection-content">
+                If you still haven't taken the second practice test, take it
+                before Tuesday, like the real thing, and send me the score.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- one clock, moved into the active stage's sidebar -->
+    <div id="timer-home" hidden>
+      <div class="timer-panel" id="timer-panel">
+        <div class="timer-presets" id="timer-presets"></div>
+        <div class="timer-top">
+          <div class="timer-label" id="timer-label">Pick a time</div>
+        </div>
+        <div class="timer-display" id="timer-display">0:20</div>
+        <div class="timer-bar">
+          <div class="timer-bar-fill" id="timer-bar-fill"></div>
+        </div>
+        <div class="timer-controls">
+          <button class="btn primary" id="timer-start" onclick="toggleTimer()">
+            Start
+          </button>
+          <button class="btn" onclick="resetTimer()">Reset</button>
+          <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+            Sound on
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 6</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---- navigation ---- */
+      let current = 0;
+      const total = 6;
+      const done = [false, false, false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        const slot = document
+          .getElementById("stage-" + idx)
+          .querySelector(".timer-slot");
+        if (slot) slot.appendChild(document.getElementById("timer-panel"));
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      /* ---- typed answers and drop-downs ---- */
+      function setInputs(id) {
+        return document.querySelectorAll("#" + id + " input, #" + id + " select");
+      }
+      function isRight(inp) {
+        return inp.value.trim().toLowerCase() === inp.dataset.a.toLowerCase();
+      }
+      function markSet(id) {
+        let right = 0;
+        const all = setInputs(id);
+        all.forEach((inp) => {
+          const ok = isRight(inp);
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (ok) right++;
+        });
+        return [right, all.length];
+      }
+      function checkSet(id, resultId) {
+        const [right, n] = markSet(id);
+        document.getElementById(resultId).textContent =
+          right + " / " + n + " correct";
+      }
+      /* keeps what was typed; puts the right answer beside each wrong one */
+      function showSet(id) {
+        setInputs(id).forEach((inp) => {
+          const old = inp.nextElementSibling;
+          if (old && old.classList.contains("fix-ans")) old.remove();
+          const ok = isRight(inp);
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (!ok) {
+            const fix = document.createElement("span");
+            fix.className = "fix-ans";
+            fix.textContent = inp.dataset.a;
+            inp.after(fix);
+          }
+        });
+      }
+      function resetSet(id, resultId) {
+        setInputs(id).forEach((inp) => {
+          inp.value = "";
+          inp.classList.remove("ok", "bad");
+        });
+        document
+          .querySelectorAll("#" + id + " .fix-ans")
+          .forEach((el) => el.remove());
+        if (resultId) document.getElementById(resultId).textContent = "";
+      }
+      document.querySelectorAll(".gap input").forEach((inp) => {
+        const len = inp.dataset.a.length;
+        inp.maxLength = len;
+        inp.style.width = inp.closest(".fib")
+          ? len * 1.5 + 0.3 + "ch"
+          : len + 1 + "ch";
+        inp.setAttribute("autocomplete", "off");
+        inp.setAttribute("autocapitalize", "off");
+        inp.setAttribute("spellcheck", "false");
+      });
+
+      /* ---- choice rows: one pick per question ---- */
+      const CHOICES = {
+        coll: [
+          { q: "___ a mistake", opts: ["make", "do", "take", "pay"], a: 0 },
+          { q: "___ your homework", opts: ["make", "do", "take", "pay"], a: 1 },
+          { q: "___ a photo", opts: ["make", "do", "take", "pay"], a: 2 },
+          { q: "___ attention", opts: ["make", "do", "take", "pay"], a: 3 },
+          { q: "___ a break", opts: ["make", "do", "take", "pay"], a: 2 },
+          { q: "___ research", opts: ["make", "do", "take", "pay"], a: 1 },
+          { q: "___ the bill", opts: ["make", "do", "take", "pay"], a: 3 },
+          { q: "___ progress", opts: ["make", "do", "take", "pay"], a: 0 },
+          { q: "___ rain", opts: ["heavy", "strong", "high"], a: 0 },
+          { q: "___ coffee", opts: ["heavy", "strong", "high"], a: 1 },
+          { q: "___ prices", opts: ["heavy", "strong", "high"], a: 2 },
+          { q: "a ___ smoker", opts: ["heavy", "strong", "high"], a: 0 },
+        ],
+        ir1gap: [
+          {
+            q: "Missing sentence",
+            slot: "ir1-slot",
+            opts: [
+              ["The four-day week was first suggested by an economist almost a century ago.", "Off topic here"],
+              ["However, the trial was cancelled after only two weeks.", "Contradicts the text"],
+              ["The results surprised many experts: in most companies, work got done just as well, or better.", "Fits: leads into “Staff said…”"],
+              ["Some workers prefer to work from home instead.", "Off topic here"],
+            ],
+            a: 2,
+          },
+        ],
+        ir1q: [
+          {
+            q: "Main idea",
+            opts: [
+              ["Working four days a week makes employees lazy.", "Not in the text"],
+              ["A shorter working week has clear benefits but does not suit every job.", "Just right"],
+              ["Hospitals have started to use the four-day week.", "Not in the text"],
+              ["Most companies in the United Kingdom now work four days a week.", "Not in the text"],
+            ],
+            a: 1,
+          },
+          {
+            q: "Best title",
+            opts: [
+              ["Why Hospitals Need More Staff", "Too narrow"],
+              ["The History of Work", "Too broad"],
+              ["How to Find a Job in the UK", "Not in the text"],
+              ["The Four-Day Week: Promise and Limits", "Just right"],
+            ],
+            a: 3,
+          },
+        ],
+        mi1: [
+          {
+            q: "Main idea",
+            opts: [
+              ["Food banks need more student volunteers.", "Not in the text"],
+              ["University is the best time of your life.", "Too broad"],
+              ["Students gain more from volunteering than a better CV.", "Just right"],
+              ["Students should be paid for volunteering.", "Not in the text"],
+            ],
+            a: 2,
+          },
+          {
+            q: "Best title",
+            opts: [
+              ["More Than a Line on a CV", "Just right"],
+              ["Food Banks in Our City", "Too narrow"],
+              ["Life as a Student", "Too broad"],
+              ["Why Volunteers Should Be Paid", "Not in the text"],
+            ],
+            a: 0,
+          },
+        ],
+        mi2: [
+          {
+            q: "Main idea",
+            opts: [
+              ["Checking messages causes mistakes in emails.", "Too narrow"],
+              ["Doing one thing at a time is usually faster than multitasking.", "Just right"],
+              ["The human brain is very complex.", "Too broad"],
+              ["Multitasking is a skill anyone can learn.", "Not in the text"],
+            ],
+            a: 1,
+          },
+          {
+            q: "Best title",
+            opts: [
+              ["Inside the Human Brain", "Too broad"],
+              ["Train Yourself to Multitask", "Not in the text"],
+              ["The Myth of Multitasking", "Just right"],
+              ["How to Write a Better Email", "Too narrow"],
+            ],
+            a: 2,
+          },
+        ],
+        mi3: [
+          {
+            q: "Main idea",
+            opts: [
+              ["Supermarkets should give away old food.", "Not in the text"],
+              ["Food is often lost during transport.", "Too narrow"],
+              ["Farming is important for every country.", "Too broad"],
+              ["A lot of food is wasted, and households can do simple things to waste less.", "Just right"],
+            ],
+            a: 3,
+          },
+          {
+            q: "Best title",
+            opts: [
+              ["Problems with Food Transport", "Too narrow"],
+              ["Less Waste Starts at Home", "Just right"],
+              ["Why Supermarkets Are to Blame", "Not in the text"],
+              ["The World of Food", "Too broad"],
+            ],
+            a: 1,
+          },
+        ],
+        ir2gap: [
+          {
+            q: "Missing sentence",
+            slot: "ir2-slot",
+            opts: [
+              ["Some birds, such as robins, have been seen singing at night, when the streets are almost empty.", "Fits: leads into “Others…”"],
+              ["Birds in the countryside usually have brighter feathers.", "Off topic here"],
+              ["Most city birds have already disappeared because of the noise.", "Contradicts the text"],
+              ["However, traffic in most cities has been falling for years.", "Not in the text"],
+            ],
+            a: 0,
+          },
+        ],
+        ir2q: [
+          {
+            q: "Main idea",
+            opts: [
+              ["Robins are the only birds that sing at night.", "Not in the text"],
+              ["Traffic noise has no real effect on wildlife.", "Not in the text"],
+              ["Some city birds have changed how and when they sing so they can be heard over the noise.", "Just right"],
+              ["Birds in the countryside sing more than birds in cities.", "Not in the text"],
+            ],
+            a: 2,
+          },
+          {
+            q: "Best title",
+            opts: [
+              ["Animals Around the World", "Too broad"],
+              ["Robins at Night", "Too narrow"],
+              ["How to Build a Bird House", "Not in the text"],
+              ["Singing Over the City Noise", "Just right"],
+            ],
+            a: 3,
+          },
+        ],
+      };
+      function buildChoices(id) {
+        const box = document.getElementById(id);
+        box.innerHTML = CHOICES[id]
+          .map(
+            (item, qi) =>
+              `<div class="choice-q" data-q="${qi}"><div class="choice-prompt">${item.q}</div><div class="choice-opts">${item.opts
+                .map((o, oi) => {
+                  const [text, why] = Array.isArray(o) ? o : [o, ""];
+                  return `<button class="word-btn" data-i="${oi}" onclick="pickChoice(this, '${id}')">${text}${why ? `<span class="opt-why" hidden>${why}</span>` : ""}</button>`;
+                })
+                .join("")}</div></div>`,
+          )
+          .join("");
+        CHOICES[id].forEach((item) => {
+          if (!item.slot) return;
+          const slot = document.getElementById(item.slot);
+          slot.textContent = "(missing sentence)";
+          slot.classList.remove("filled");
+        });
+        const res = document.getElementById(id + "-result");
+        if (res) res.textContent = "";
+      }
+      function pickChoice(btn, id) {
+        const row = btn.closest(".choice-q");
+        row.querySelectorAll(".word-btn").forEach((b) => {
+          b.classList.remove("picked", "ok", "bad", "missed");
+          b.querySelectorAll(".opt-why").forEach((w) => (w.hidden = true));
+        });
+        btn.classList.add("picked");
+        const item = CHOICES[id][row.dataset.q];
+        if (item.slot) {
+          const slot = document.getElementById(item.slot);
+          slot.textContent = item.opts[btn.dataset.i][0];
+          slot.classList.add("filled");
+        }
+      }
+      function markChoices(id) {
+        let right = 0;
+        document.querySelectorAll("#" + id + " .choice-q").forEach((row) => {
+          const a = CHOICES[id][row.dataset.q].a;
+          row.querySelectorAll(".word-btn").forEach((b) => {
+            const ok = Number(b.dataset.i) === a;
+            const picked = b.classList.contains("picked");
+            b.classList.remove("ok", "bad", "missed");
+            if (picked && ok) {
+              b.classList.add("ok");
+              right++;
+            } else if (picked && !ok) b.classList.add("bad");
+            else if (!picked && ok) b.classList.add("missed");
+            b.querySelectorAll(".opt-why").forEach((w) => (w.hidden = false));
+          });
+        });
+        return [right, CHOICES[id].length];
+      }
+      function checkChoices(id, resultId) {
+        const [right, n] = markChoices(id);
+        document.getElementById(resultId).textContent =
+          right + " / " + n + " correct";
+      }
+
+      /* ---- highlight the answer: drag across words in the passage ---- */
+      let activeHL = null;
+      function setHL(q) {
+        document
+          .querySelectorAll(".hl-q")
+          .forEach((el) => el.classList.toggle("active", el === q));
+        activeHL = q;
+      }
+      function norm(s) {
+        return s
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function setHLText(q, text) {
+        q.dataset.val = text;
+        q.classList.remove("ok", "bad");
+        q.querySelector(".hl-ans").textContent = text
+          ? "“" + text + "”"
+          : "Nothing highlighted yet";
+        const fix = q.querySelector(".fix-ans");
+        if (fix) fix.remove();
+      }
+      function captureHL(e) {
+        if (!activeHL) return;
+        const passage = e.currentTarget;
+        const sel = window.getSelection();
+        const text = sel.toString().replace(/\s+/g, " ").trim();
+        if (!text || !passage.contains(sel.anchorNode)) return;
+        if (!activeHL.closest(".task-block").contains(passage)) return;
+        setHLText(activeHL, text);
+      }
+      document.querySelectorAll(".ir-passage").forEach((p) => {
+        p.addEventListener("mouseup", captureHL);
+        p.addEventListener("touchend", captureHL);
+      });
+      /* right if it holds the key words and adds at most 4 extra words */
+      function hlRight(q) {
+        const val = norm(q.dataset.val || "");
+        const key = norm(q.dataset.key);
+        return (
+          val.includes(key) &&
+          val.split(" ").length <= key.split(" ").length + 4
+        );
+      }
+      function markHL(irId) {
+        let right = 0;
+        const qs = document.querySelectorAll("#" + irId + "-hl .hl-q");
+        qs.forEach((q) => {
+          const ok = hlRight(q);
+          q.classList.toggle("ok", ok);
+          q.classList.toggle("bad", !ok);
+          if (ok) right++;
+        });
+        return [right, qs.length];
+      }
+
+      /* ---- a whole Interactive Reading block ---- */
+      function irParts(irId) {
+        return [
+          markSet(irId + "-text"),
+          markChoices(irId + "gap"),
+          markHL(irId),
+          markChoices(irId + "q"),
+        ];
+      }
+      function checkIR(irId) {
+        let right = 0,
+          n = 0;
+        irParts(irId).forEach(([r, t]) => {
+          right += r;
+          n += t;
+        });
+        document.getElementById(irId + "-result").textContent =
+          right + " / " + n + " correct";
+      }
+      function showIR(irId) {
+        checkIR(irId);
+        showSet(irId + "-text");
+        document.querySelectorAll("#" + irId + "-hl .hl-q").forEach((q) => {
+          const old = q.querySelector(".fix-ans");
+          if (old) old.remove();
+          if (q.classList.contains("ok")) return;
+          const fix = document.createElement("span");
+          fix.className = "fix-ans";
+          fix.textContent = q.dataset.key;
+          q.appendChild(fix);
+        });
+      }
+      function resetIR(irId) {
+        resetSet(irId + "-text");
+        buildChoices(irId + "gap");
+        buildChoices(irId + "q");
+        document
+          .querySelectorAll("#" + irId + "-hl .hl-q")
+          .forEach((q) => {
+            setHLText(q, "");
+            q.classList.remove("active");
+          });
+        activeHL = null;
+        document.getElementById(irId + "-result").textContent = "";
+      }
+
+      function countWords(textId, outId) {
+        const v = document.getElementById(textId).value.trim();
+        const n = v ? v.split(/\s+/).length : 0;
+        document.getElementById(outId).textContent =
+          n + (n === 1 ? " word" : " words");
+      }
+
+      /* ---- clock ---- */
+      const PRESETS = [
+        ["0:20", 20, "Fill in the Blanks · 1 sentence"],
+        ["2:00", 120, "Fill in the Blanks · 6 sentences"],
+        ["1:00", 60, "Main idea and title"],
+        ["7:00", 420, "Interactive Reading"],
+        ["5:00", 300, "Writing sprint"],
+      ];
+      const clock = {
+        secs: 20,
+        remaining: 20,
+        running: false,
+        tick: null,
+        muted: false,
+      };
+
+      function fmt(s) {
+        return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+      }
+      function renderTimer() {
+        const d = document.getElementById("timer-display");
+        const bar = document.getElementById("timer-bar-fill");
+        const warn = clock.remaining > 0 && clock.remaining <= clock.secs * 0.2;
+        d.textContent =
+          clock.remaining === 0 && clock.running === false && clock.finished
+            ? "Time"
+            : fmt(clock.remaining);
+        d.classList.toggle("warning", warn);
+        d.classList.toggle("done", !!clock.finished);
+        bar.classList.toggle("warning", warn);
+        bar.style.width = (clock.remaining / clock.secs) * 100 + "%";
+      }
+      function buildPresets() {
+        document.getElementById("timer-presets").innerHTML = PRESETS.map(
+          ([label, s], i) =>
+            `<button class="preset-btn${s === clock.secs ? " on" : ""}" onclick="setPreset(${i})">${label}</button>`,
+        ).join("");
+      }
+      function setPreset(i) {
+        const [, s, name] = PRESETS[i];
+        stopTick();
+        clock.secs = s;
+        clock.remaining = s;
+        clock.running = false;
+        clock.finished = false;
+        document.getElementById("timer-label").textContent = name;
+        document.getElementById("timer-start").textContent = "Start";
+        buildPresets();
+        renderTimer();
+      }
+      function stopTick() {
+        if (clock.tick) clearInterval(clock.tick);
+        clock.tick = null;
+      }
+      function toggleTimer() {
+        const btn = document.getElementById("timer-start");
+        if (clock.running) {
+          stopTick();
+          clock.running = false;
+          btn.textContent = "Resume";
+          return;
+        }
+        if (clock.remaining === 0) {
+          clock.remaining = clock.secs;
+          clock.finished = false;
+        }
+        clock.running = true;
+        btn.textContent = "Pause";
+        clock.tick = setInterval(() => {
+          clock.remaining--;
+          if (clock.remaining <= 0) {
+            clock.remaining = 0;
+            clock.running = false;
+            clock.finished = true;
+            stopTick();
+            btn.textContent = "Again";
+            beep();
+          }
+          renderTimer();
+        }, 1000);
+        renderTimer();
+      }
+      function resetTimer() {
+        stopTick();
+        clock.running = false;
+        clock.finished = false;
+        clock.remaining = clock.secs;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      let audioCtx = null;
+      function beep() {
+        if (clock.muted) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) audioCtx = new Ctx();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(
+            0.2,
+            audioCtx.currentTime + 0.02,
+          );
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioCtx.currentTime + 0.45,
+          );
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+      function toggleMute() {
+        clock.muted = !clock.muted;
+        document.getElementById("mute-btn").textContent = clock.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      Object.keys(CHOICES).forEach(buildChoices);
+      buildPresets();
+      renderTimer();
+    </script>
+  </body>
+</html>
