@@ -1018,7 +1018,87 @@ Verified in a browser.
 
 **Next class, as named on the page:** telling a story — the past continuous
 with *when* and *while* (*I was driving to work when my phone rang*), the first
-pick from the ranked list.
+pick from the ranked list. **Rejected for lesson 11** — see below.
+
+Note: the committed page has **two** fix cards in blocks 1 and 2, not three
+(*we would to go* is not on it). Recorded as found on 5 November.
+
+---
+
+## Lesson 11 — It Had Already Started
+`lesson_plan_11.html` · 10 November 2026 (date assumed — next Tuesday after
+lesson 10)
+
+Stages: Warm-up → The Story Toolkit → What Happened? → Wrap-up
+
+The topic named on lesson 10's page was the past continuous with *when* /
+*while*. Proposed, and **rejected by Felipe as too easy**: *"He already know how
+to say 'I was doing x'."* So **do not build a past continuous block** — he
+already uses it; it appears on this page only as background (*It was …, and I
+was …ing* in the sidebar and the talk's first prompt). Rebuilt one step up as
+**narrative tenses — the past perfect**, approved as proposed. B1+ pitch.
+Nothing carried — no record yet of how lesson 10 went.
+
+**Warm-up:** the review of lesson 10 — *something you used to do every weekend
+and don't anymore* (used to · didn't use to · not anymore) · *what your family
+would do on Sundays* (we'd · would · used to be) · *what was hard at first in
+your job and is normal now* (I'm used to · got used to) · *how you used to work
+five years ago and what you're used to now* (the Tip). Then a new ladder
+(fifth rung: *By the time I got to the airport, my flight had already left —
+I'd been stuck in traffic for two hours*), then *A story that went wrong* — I
+ask · you answer · you keep it going. Answer starters: *When I got there, …
+had already …* · *I'd been …ing for … when …* · *It turned out that …* · *In
+the end, …*
+
+**Toolkit**, three blocks:
+
+1. **It had already started — the earlier past** — had already / had just /
+   I'd never … before / by the time / because … had … / Had you … before?
+   *'d* is listen-and-repeat, tied to lesson 10's *would* (*'d* + third form =
+   *had*). Fix cards: *had went* → *had gone* · *I never had seen* → *I'd
+   never seen* · *She said she finished* → *she'd finished*.
+2. **I'd been waiting for an hour — how long, before it happened** — lesson
+   9's *I've been …ing* moved into the past: I'd been …ing for … when … /
+   since / because … had been …ing / How long had you been …ing? / *I'd
+   known · I'd had*. Two fix cards: *I was waiting for an hour when* → *I'd
+   been waiting* · *I'd been knowing him* → *I'd known*.
+3. **Long story short — words that tell a story** — the vocabulary block: all
+   of a sudden · suddenly / to make matters worse / it turned out (that) /
+   luckily · unfortunately / the funny thing is / in the end · long story
+   short. Fix cards: *At the end, we took a taxi* → *In the end* · *Eventually,
+   I go to the gym* → *Sometimes* (the *eventually* false friend, first time on
+   this track) · *Suddenly, the lights were going out* → *went out*.
+
+**Language Tip:** *the meeting started vs. the meeting had started* — were you
+there when it began, or had it begun before? Trap: *When I got to the station,
+the train left.* The prose says the first one means you watched it go, and
+*already* makes it clearer.
+
+**Activity:** Tell me what happened — a 24-card deck of two-part questions
+(late, missed transport, lost things, first times, *how long had you been …*),
+none asking for a whole day that went wrong, since that is the talk; **Change
+the sentence**, 24 hand-written cards, six each of *Put it further back — use
+had* · *Say how long — had been …ing* (one is a *know* card, and the note
+says so) · *Started or had started? — use the verb* (the Tip, three each way)
+· *Tell it with the story word*. Then **A day that went wrong** — no roleplay,
+four prompts: the setting · already wrong · what happened next · in the end.
+Sidebar: *The setting* · *What had happened* · *Telling it* · *If you get
+stuck*. American spelling throughout (*canceled*).
+
+**Wrap-up:** one recall item — a time you got somewhere and something had
+already happened, something you'd never done before this year, how long you'd
+been doing something when something stopped you, a short story ending with
+*in the end*.
+
+**Homework:** British Council LearnEnglish, **B1–B2 grammar** — *Past
+perfect* (`/free-resources/grammar/b1-b2/past-perfect` — note the path is
+`b1-b2`, not `b1-b2-grammar`; the latter 404s for this page). Grammar test 1,
+the explanation, Grammar test 2, then a four-or-five-sentence story with *had
+already*, *I'd been …ing* and *in the end*. Verified in a browser (the site
+returns 403 to curl).
+
+**Next class, as named on the page:** opinions — agreeing and disagreeing
+politely (*I see your point, but …*), next on the list below.
 
 ---
 
@@ -1070,6 +1150,9 @@ blocks were reached.
 From **lesson 9**: not yet recorded. Lesson 10 was built assuming all three
 blocks were reached; its opening review re-asks one question from each.
 
+From **lesson 10**: not yet recorded. Lesson 11 was built assuming all three
+blocks were reached.
+
 ---
 
 ## Not yet covered
@@ -1077,9 +1160,11 @@ blocks were reached; its opening review re-asks one question from each.
 Sequenced roughly by what he needs next, now that all three time frames, the
 present perfect, comparing, and eating out and shopping are done:
 
-- **Telling a story — past continuous, *when* / *while*.** Named as lesson 11.
+- ~~Telling a story — past continuous, *when* / *while*~~ — rejected as too
+  easy on 5 November; lesson 11 did the past perfect instead.
 - **Opinions, agreeing and disagreeing** — the meeting language that *video
   calls* was really after; Felipe found that topic too generic on 29 October.
+  Named as lesson 12.
 - **should / have to / need to**, ***enjoy doing* vs. *decide to do***, **real
   vs. imaginary conditionals**, **the passive at work** — the rest of the
   ranked list from 29 October.

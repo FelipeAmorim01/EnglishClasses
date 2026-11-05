@@ -1,0 +1,2465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>English Conversation — Lesson 11</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .idiom-example {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-left: 2px solid var(--border);
+        padding-left: 10px;
+        line-height: 1.5;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+
+      /* ---------- THE STORY MACHINE ---------- */
+      /* grid items default to min-width:auto, which lets the wider panels
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* the prompt deck */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      @media (max-width: 1180px) {
+      }
+
+      .reset-row {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* ---------- THE REACTION DRILL ---------- */
+      .drill-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 18px;
+      }
+
+      .drill-line {
+        font-family: "Lora", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--accent);
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+
+      .drill-line.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+      }
+
+      .drill-controls {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .drill-controls .spacer {
+        flex: 1;
+      }
+
+      .drill-status {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        padding-left: 2px;
+      }
+
+      .drill-status strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 720px) {
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .drill-panel {
+          padding: 20px;
+        }
+
+        .drill-line {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+
+      /* ==================================================================
+         BEGINNER-TRACK COMPONENTS
+         ================================================================== */
+
+      /* Ladder — five sentences, easiest first */
+      .ladder {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        margin-bottom: 28px;
+      }
+
+      .ladder-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ladder-step:last-child {
+        border-bottom: none;
+      }
+
+      .ladder-num {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent-light);
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+      }
+
+      .ladder-body {
+        min-width: 0;
+      }
+
+      .ladder-say {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-style: italic;
+        line-height: 1.5;
+      }
+
+      .ladder-note {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 4px;
+        letter-spacing: 0.02em;
+      }
+
+      /* Fix cards — a wrong form struck out, the right one beside it */
+      .fix-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .fix-card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 14px 16px;
+      }
+
+      .fix-bad {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: var(--accent2);
+        margin-bottom: 6px;
+      }
+
+      .fix-bad::before {
+        content: "✗ ";
+        text-decoration: none;
+        color: var(--accent2);
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+      }
+
+      .fix-good {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .fix-good::before {
+        content: "✓ ";
+        font-family: "Inter", sans-serif;
+      }
+
+      .fix-note {
+        font-size: 0.74rem;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.5;
+      }
+
+      /* Word bank — compact chips with no functional grouping */
+      .word-bank {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 18px;
+      }
+
+      .word-bank .chip {
+        background: var(--surface);
+      }
+
+      @media (max-width: 720px) {
+        .fix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ladder-step {
+          padding: 12px 14px;
+        }
+
+        .ladder-say {
+          font-size: 0.95rem;
+        }
+      }
+
+      .apply-box p.apply-text {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+
+      .apply-link {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 18px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
+
+      .apply-link:hover {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+      }
+
+      /* ---------- LANGUAGE TIP (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- Transformation deck — the instruction line ---------- */
+      .trans-task {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-bottom: 4px;
+      }
+
+      .trans-task-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .trans-task-value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent2);
+        letter-spacing: -0.01em;
+      }
+
+      .trans-task-value.waiting {
+        font-weight: 400;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      @media (max-width: 720px) {
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>English Conversation</h1>
+        <div class="subtitle">It Had Already Started — Lesson 11</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">The Story Toolkit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">What Happened?</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============================================================
+             STAGE 0: WARM-UP
+             ============================================================ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 04</div>
+          <div class="stage-title">Warm-up: <em>it had already started</em></div>
+          <div class="stage-sub"></div>
+
+          <div class="section-label">Last class — a quick review</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Four questions with last class's words. Answer with something true,
+            and use the words under the question.
+          </p>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">
+                What's something you used to do every weekend that you don't do
+                anymore? Why did you stop?
+              </div>
+              <div class="idiom-meaning">
+                I used to … · I didn't use to … · not anymore
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">
+                What would your family do on Sundays when you were a kid? Who
+                would cook?
+              </div>
+              <div class="idiom-meaning">
+                We'd … · My … would … · used to be (a state)
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">
+                What was hard at first in your job, but is normal now? How long
+                did it take to get used to it?
+              </div>
+              <div class="idiom-meaning">
+                I'm used to … · I got used to … · I'm still not used to …
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">
+                How did you use to work five years ago, and what are you used to
+                now?
+              </div>
+              <div class="idiom-meaning">
+                I used to work … · now I'm used to …ing
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">Five sentences — try them now</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            These are yours to read out loud. They get harder as they go down,
+            and each one is a piece of the next stage.
+          </p>
+          <div class="ladder">
+            <div class="ladder-step">
+              <div class="ladder-num">1</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "When I got to the office, the meeting had already started."
+                </div>
+                <div class="ladder-note">had already started</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">2</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I'd never seen snow before I went to Canada."
+                </div>
+                <div class="ladder-note">I'd never … before</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">3</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "By the time we got to the party, everyone had gone home."
+                </div>
+                <div class="ladder-note">by the time · had gone</div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">4</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "I'd been waiting for an hour when the bus finally came — and to
+                  make matters worse, it was full."
+                </div>
+                <div class="ladder-note">
+                  I'd been …ing for … when · to make matters worse
+                </div>
+              </div>
+            </div>
+            <div class="ladder-step">
+              <div class="ladder-num">5</div>
+              <div class="ladder-body">
+                <div class="ladder-say">
+                  "By the time I got to the airport, my flight had already left —
+                  I'd been stuck in traffic for two hours."
+                </div>
+                <div class="ladder-note">
+                  had already left · I'd been stuck for …
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-label">A story that went wrong</div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            The conversation this whole lesson is for, and you have it for real
+            — nothing here is for repeating. I ask you from the first row. You
+            answer by finishing one of the second row with something true, and
+            keep it going with the third.
+          </p>
+          <div class="chip-group">
+            <div class="chip-group-label">1 · I ask you</div>
+            <div class="vocab-chips">
+              <span class="chip">Has a trip ever gone wrong for you?</span>
+              <span class="chip">What happened the last time you were late?</span>
+              <span class="chip">What's the worst day you've had at work?</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">
+              2 · You answer — finish one with something true
+            </div>
+            <div class="vocab-chips">
+              <span class="chip">When I got there, … had already …</span>
+              <span class="chip">I'd been …ing for … when …</span>
+              <span class="chip">It turned out that …</span>
+              <span class="chip">In the end, …</span>
+            </div>
+          </div>
+          <div class="chip-group">
+            <div class="chip-group-label">3 · You keep it going</div>
+            <div class="vocab-chips">
+              <span class="chip">Has that ever happened to you?</span>
+              <span class="chip">What would you do?</span>
+              <span class="chip">What about you?</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 1: THE STORY TOOLKIT
+             ============================================================ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 04</div>
+          <div class="stage-title">Your <em>story toolkit</em></div>
+          <div class="stage-sub">
+            Three blocks: what had already happened, how long it had been going
+            on, and the words that make it a story.
+          </div>
+
+          <!-- BLOCK 1 -->
+          <div class="section-label" style="margin-top: 0">
+            1 · It had already started — the earlier past
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            A story is in the past. When you jump back to something
+            <em>even earlier</em>, use <em>had</em> + the third form — the same
+            form that comes after <em>have</em>: <em>gone</em>,
+            <em>seen</em>, <em>left</em>. It's the same for every person:
+            <em>I had</em>, <em>she had</em>, <em>they had</em>. Listen and
+            repeat only: in speech <em>had</em> becomes a very short
+            <em>'d</em> — <em>I'd</em>, <em>she'd</em>, <em>we'd</em> — the same
+            sound as last class's <em>would</em>. With a third form after it,
+            it's <em>had</em>.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>What you're saying</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>it was over when you got there</td>
+                <td>had already …</td>
+                <td>
+                  <em
+                    >When I got there, the meeting had already started. The
+                    others had already left.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>a moment before</td>
+                <td>had just …</td>
+                <td>
+                  <em
+                    >I'd just sat down when the phone rang. She'd just gone
+                    out.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>the first time</td>
+                <td>I'd never … before</td>
+                <td>
+                  <em
+                    >I'd never flown before that trip. I'd never seen snow
+                    before.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>a deadline in the story</td>
+                <td>by the time …</td>
+                <td>
+                  <em
+                    >By the time I arrived, everyone had gone home. By the time
+                    she called, I'd fallen asleep.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>the reason</td>
+                <td>because … had …</td>
+                <td>
+                  <em
+                    >I was late because I'd missed the bus. She was angry
+                    because I'd forgotten her birthday.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>asking</td>
+                <td>Had you … before?</td>
+                <td>
+                  <em
+                    >Had you been there before? Had you met him before the
+                    meeting?</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">Everyone had went home.</div>
+              <div class="fix-good">Everyone had gone home.</div>
+              <div class="fix-note">
+                After <em>had</em>, the third form — the one after
+                <em>have</em>: <em>gone</em>, not <em>went</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I never had seen the sea before.</div>
+              <div class="fix-good">I'd never seen the sea before.</div>
+              <div class="fix-note">
+                <em>never</em> goes after <em>had</em>, just like
+                <em>I've never</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">She said she finished the report.</div>
+              <div class="fix-good">She said she'd finished the report.</div>
+              <div class="fix-note">
+                <em>She said</em> is already the past, and the report came
+                before it — so <em>had finished</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 2 -->
+          <div class="section-label">
+            2 · I'd been waiting for an hour — how long, before it happened
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            Lesson 9's <em>I've been working here for …</em>, moved back into
+            the past. <em>had been</em> + <em>-ing</em> says how long something
+            had been going on when something else happened — or why someone
+            was tired, wet or angry. The same verbs as lesson 9 never take
+            <em>-ing</em>: <em>know</em>, <em>like</em>, <em>be</em>, and
+            <em>have</em> for things you own — <em>I'd known him for years</em>.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>What you're saying</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>how long, then something happened</td>
+                <td>I'd been …ing for … when …</td>
+                <td>
+                  <em
+                    >I'd been waiting for an hour when the bus came. We'd been
+                    talking for ten minutes when the call dropped.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>since when</td>
+                <td>had been …ing since …</td>
+                <td>
+                  <em
+                    >She'd been working there since 2015 when they closed the
+                    office.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>the reason you could see</td>
+                <td>because … had been …ing</td>
+                <td>
+                  <em
+                    >He was tired because he'd been driving all night. The
+                    street was wet — it had been raining.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>asking how long</td>
+                <td>How long had you been …ing?</td>
+                <td>
+                  <em
+                    >How long had you been living there? How long had you been
+                    waiting?</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>know, like, be, have</td>
+                <td>I'd known · I'd had</td>
+                <td>
+                  <em
+                    >I'd known him for years. I'd had the car for ten years when
+                    it broke down.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">
+                I was waiting for an hour when the bus came.
+              </div>
+              <div class="fix-good">
+                I'd been waiting for an hour when the bus came.
+              </div>
+              <div class="fix-note">
+                <em>for an hour</em> counts the time up to that moment — so
+                <em>had been …ing</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">I'd been knowing him for years.</div>
+              <div class="fix-good">I'd known him for years.</div>
+              <div class="fix-note">
+                <em>know</em> never takes <em>-ing</em> — not now, not then.
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 3 -->
+          <div class="section-label">
+            3 · Long story short — words that tell a story
+          </div>
+          <p class="panel-note" style="margin-bottom: 16px">
+            These turn a list of sentences into a story people want to hear.
+            Most of them start the sentence, with a comma after them.
+          </p>
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th>What you're saying</th>
+                <th>The words</th>
+                <th>Say it out loud</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>nobody expected it</td>
+                <td>all of a sudden · suddenly</td>
+                <td>
+                  <em
+                    >All of a sudden, the lights went out. Suddenly, everyone
+                    was looking at me.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>bad, then worse</td>
+                <td>to make matters worse</td>
+                <td>
+                  <em
+                    >I missed the bus, and to make matters worse, it started to
+                    rain.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>you found out later</td>
+                <td>it turned out (that) …</td>
+                <td>
+                  <em
+                    >It turned out that the meeting had been canceled. It
+                    turned out he was the new CEO!</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>good luck, bad luck</td>
+                <td>luckily · unfortunately</td>
+                <td>
+                  <em
+                    >Luckily, I'd saved the file. Unfortunately, nobody had told
+                    me.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>the surprise in the story</td>
+                <td>the funny thing is …</td>
+                <td>
+                  <em
+                    >The funny thing is, I'd never met him before. The funny
+                    thing is, nobody noticed.</em
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>how it ended</td>
+                <td>in the end · long story short</td>
+                <td>
+                  <em
+                    >In the end, we took a taxi. Long story short, I got the
+                    job.</em
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="fix-grid">
+            <div class="fix-card">
+              <div class="fix-bad">At the end, we took a taxi.</div>
+              <div class="fix-good">In the end, we took a taxi.</div>
+              <div class="fix-note">
+                <em>in the end</em> = after everything.
+                <em>at the end</em> needs <em>of</em>: <em>at the end of the
+                day</em>, <em>at the end of the movie</em>.
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">Eventually, I go to the gym.</div>
+              <div class="fix-good">Sometimes I go to the gym.</div>
+              <div class="fix-note">
+                <em>eventually</em> means in the end, after a long time:
+                <em>Eventually, the bus came.</em>
+              </div>
+            </div>
+            <div class="fix-card">
+              <div class="fix-bad">Suddenly, the lights were going out.</div>
+              <div class="fix-good">Suddenly, the lights went out.</div>
+              <div class="fix-note">
+                The sudden thing is short — one moment. That's the past.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="rule-box">
+            <div class="rule-badge">Language Tip</div>
+            <div class="rule-title">
+              The meeting started vs. the meeting had started
+            </div>
+            <div class="rule-lead">
+              Both are the past — the choice is about <em>order</em>. If you
+              were there when it began, it's the past. If it began before you got
+              there — it was already going, or already over — it's
+              <em>had</em> + the third form. So ask: which happened first?
+            </div>
+
+            <div class="rule-split">
+              <div class="rule-card">
+                <div class="rule-card-head">
+                  It started — you were there, then it began
+                </div>
+                <div class="rule-formula">
+                  when + past, <span>past</span>
+                </div>
+                <ul>
+                  <li>When I sat down, the movie started.</li>
+                  <li>When she called, I left. (her call came first)</li>
+                  <li>When the boss came in, everyone stopped talking.</li>
+                </ul>
+              </div>
+              <div class="rule-card">
+                <div class="rule-card-head">
+                  It had started — it began before you got there
+                </div>
+                <div class="rule-formula">
+                  when + past, <span>had + third form</span>
+                </div>
+                <ul>
+                  <li>When I sat down, the movie had started.</li>
+                  <li>When she called, I'd left. (I was already gone)</li>
+                  <li>When the boss came in, everyone had stopped talking.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-trap">
+              <div class="rule-trap-label">The trap</div>
+              <p>
+                ✗ <em>When I got to the station, the train left.</em>
+                &nbsp;→&nbsp; ✓
+                <em>When I got to the station, the train had left.</em>
+              </p>
+              <p>
+                <strong>The first one says you watched it go.</strong> You got
+                there, and then it left. If it was already gone — you missed it —
+                it's <em>had left</em>. Add <em>already</em> and it's even
+                clearer: <em>the train had already left</em>.
+              </p>
+            </div>
+
+            <div class="rule-say">
+              <div class="rule-say-label">
+                Both sides — say all four out loud
+              </div>
+              <ol>
+                <li>
+                  When I got to the office, the meeting started — I was just in
+                  time.
+                </li>
+                <li>
+                  When I got to the office, the meeting had already started — I
+                  was late.
+                </li>
+                <li>
+                  When she said hello, I knew her voice — I'd met her years
+                  before.
+                </li>
+                <li>
+                  By the time we got to the restaurant, the kitchen had closed,
+                  so we went for a pizza.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 2: WHAT HAPPENED?
+             ============================================================ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 04</div>
+          <div class="stage-title">Tell me <em>what happened</em></div>
+          <div class="stage-sub">
+            Answer the question, then ask the same question back.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <div class="section-label" style="margin-top: 0">
+                Draw a question
+              </div>
+              <div class="prompt-deck">
+                <div class="prompt-card">
+                  <div class="prompt-text empty" id="prompt-text">
+                    Nothing drawn yet. Take the button, and take whatever comes
+                    out.
+                  </div>
+                </div>
+                <div class="deck-controls">
+                  <button class="btn primary" onclick="drawQuestion()">
+                    Draw a question
+                  </button>
+                  <button class="btn" onclick="resetDeck()">Reshuffle</button>
+                  <span class="deck-count" id="deck-count"></span>
+                </div>
+              </div>
+              <p class="panel-note" style="margin-bottom: 30px">
+                Both halves of the card, in full sentences, with a reason. Then
+                ask it back.
+              </p>
+
+              <div class="section-label">Change the sentence</div>
+              <div class="drill-panel">
+                <div class="trans-task">
+                  <span class="trans-task-label">Change it how?</span>
+                  <span class="trans-task-value waiting" id="trans-task"
+                    >press Next sentence</span
+                  >
+                </div>
+                <div class="drill-line empty" id="trans-line">
+                  Press Next sentence. Say the new one out loud before you check
+                  it.
+                </div>
+                <div class="drill-controls">
+                  <button class="btn primary" onclick="drawTransform()">
+                    Next sentence
+                  </button>
+                  <button class="btn" onclick="revealTransform()">
+                    Show the answer
+                  </button>
+                  <button class="btn" onclick="resetTransform()">
+                    Reshuffle
+                  </button>
+                  <span class="spacer"></span>
+                  <span class="drill-status" id="trans-status"></span>
+                </div>
+              </div>
+              <p class="panel-note">
+                Say the new sentence out loud before you check it. Some cards
+                have more than one right answer — the one shown is only one of
+                them. One of the <em>Say how long</em> cards can't take
+                <em>-ing</em>.
+              </p>
+
+              <div class="divider"></div>
+
+              <div class="section-label">A day that went wrong</div>
+              <div class="scenario-intro">
+                <div class="intro-label">You talk, I ask</div>
+                <p>
+                  Think of a real day when things went wrong — a trip, a day at
+                  work, getting somewhere on time. Tell me the story, and I'll
+                  ask questions as you go. The past for what happened, and
+                  <em>had</em> for anything earlier.
+                </p>
+              </div>
+              <div class="reflection-grid">
+                <div class="reflection-row">
+                  <div class="reflection-label">1 · The setting</div>
+                  <div class="reflection-content">
+                    When was it, and where were you? What were you doing when it
+                    started?
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">2 · Already wrong</div>
+                  <div class="reflection-content">
+                    What had already happened, or gone wrong, before you
+                    noticed? How long had you been waiting, or trying?
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">3 · What happened next</div>
+                  <div class="reflection-content">
+                    What did you do? Did anything happen all of a sudden — or
+                    make matters worse?
+                  </div>
+                </div>
+                <div class="reflection-row">
+                  <div class="reflection-label">4 · In the end</div>
+                  <div class="reflection-content">
+                    How did it end? Did anything turn out to be different from
+                    what you thought?
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Keep these in view</div>
+              <div class="chip-group">
+                <div class="chip-group-label">The setting</div>
+                <div class="vocab-chips">
+                  <span class="chip">It was …, and I was …ing</span>
+                  <span class="chip">I'd been …ing for … when …</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">What had happened</div>
+                <div class="vocab-chips">
+                  <span class="chip">… had already …</span>
+                  <span class="chip">I'd forgotten to …</span>
+                  <span class="chip">By the time I …, …</span>
+                  <span class="chip">I'd never … before</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Telling it</div>
+                <div class="vocab-chips">
+                  <span class="chip">All of a sudden, …</span>
+                  <span class="chip">To make matters worse, …</span>
+                  <span class="chip">It turned out that …</span>
+                  <span class="chip">In the end, …</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">If you get stuck</div>
+                <div class="vocab-chips">
+                  <span class="chip">Sorry, I don't understand.</span>
+                  <span class="chip">Can you say that again?</span>
+                  <span class="chip">Let me think.</span>
+                  <span class="chip">How do you say this in English?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             STAGE 3: WRAP-UP
+             ============================================================ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 04</div>
+          <div class="stage-title">Wrap-up: <em>nothing on the screen</em></div>
+          <div class="stage-sub">Close the page for these.</div>
+
+          <div class="section-label" style="margin-top: 0">Close the page</div>
+
+          <ul class="q-list">
+            <li>
+              From memory: a time you got somewhere and something had already
+              happened, something you'd never done before this year, how long
+              you'd been doing something when something stopped you, and a
+              short story that ends with <em>in the end</em>.
+            </li>
+          </ul>
+
+          <div class="apply-box">
+            <div class="apply-label">Before next class</div>
+            <div class="apply-lead">
+              Two short grammar tests on <em>had</em> + the third form.
+            </div>
+            <p class="apply-text">
+              British Council LearnEnglish, Past perfect — B1. Do Grammar test 1
+              before you read anything. Then read the explanation, and do
+              Grammar test 2. Last, write a short story about you — four or five
+              sentences — with <em>had already</em>, <em>I'd been …ing</em> and
+              <em>in the end</em>. Bring it to class.
+            </p>
+            <a
+              class="apply-link"
+              href="https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/past-perfect"
+              target="_blank"
+              rel="noopener"
+              >Practice — Past perfect</a
+            >
+          </div>
+
+          <div class="section-label">Next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Coming up</div>
+              <div class="reflection-content">
+                Opinions — saying what you think, agreeing and disagreeing
+                politely: <em>I see your point, but …</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 4</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---------------- NAVIGATION ---------------- */
+      let current = 0;
+      const total = 4;
+      const done = [false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      function shuffle(arr) {
+        const out = arr.slice();
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      /* ---------------- QUESTION DECK ---------------- */
+      const QUESTIONS = [
+        "Have you ever arrived somewhere and found it had closed? What did you do?",
+        "What's the latest you've ever been for something important? Why were you late?",
+        "Have you ever missed a flight, a train or a bus? What had happened?",
+        "Before your first day at your job, what had you heard about the company? Was it true?",
+        "Have you ever met someone famous? Had you seen them on TV before?",
+        "What's something you'd never done before this year? How was it?",
+        "Have you ever left something important at home? When did you notice?",
+        "Have you ever lost your phone or your wallet? Where had you left it?",
+        "When you started your first job, had you worked before? What had you done?",
+        "Have you ever gone to a meeting that had been canceled? Why didn't anyone tell you?",
+        "Before these classes, had you studied English before? Where, and for how long?",
+        "Have you ever been really tired at work? What had you been doing the night before?",
+        "When you found your home, how long had you been looking? Was it hard?",
+        "Have you ever finished a series and felt sad? How long had you been watching it?",
+        "Have you ever planned a surprise for someone? Had they found out before?",
+        "What's the best news you've had at work? Had you been waiting for it?",
+        "Have you ever had a problem with a hotel booking? What had gone wrong?",
+        "Have you ever been to a place you'd wanted to see for years? Was it what you'd expected?",
+        "Have you ever tried a food you'd never eaten before? What was it like?",
+        "Have you ever found out something surprising about a colleague? How did you find out?",
+        "Have you ever arrived at a party too late? What had everyone already done?",
+        "Have you ever made a mistake at work that turned out fine? What happened?",
+        "Have you ever met an old friend by chance? How long had it been since you'd seen them?",
+        "Have you ever studied hard for a test and still failed? What had gone wrong?",
+      ];
+
+      let qDeck = shuffle(QUESTIONS);
+
+      function updateDeckCount() {
+        const el = document.getElementById("deck-count");
+        el.textContent =
+          qDeck.length === 0
+            ? "deck finished — reshuffle to go again"
+            : qDeck.length + " left in the deck";
+      }
+
+      function drawQuestion() {
+        const textEl = document.getElementById("prompt-text");
+        if (qDeck.length === 0) {
+          textEl.classList.add("empty");
+          textEl.textContent =
+            "That's the whole deck. Reshuffle to start it again.";
+          updateDeckCount();
+          return;
+        }
+        textEl.classList.remove("empty");
+        textEl.textContent = qDeck.pop();
+        updateDeckCount();
+      }
+
+      function resetDeck() {
+        qDeck = shuffle(QUESTIONS);
+        const textEl = document.getElementById("prompt-text");
+        textEl.classList.add("empty");
+        textEl.textContent =
+          "Nothing drawn yet. Take the button, and take whatever comes out.";
+        updateDeckCount();
+      }
+
+      /* ---------------- CHANGE THE SENTENCE ---------------- */
+      /* Six of each job, hand-written and checked. */
+      const TRANSFORM = [
+        {
+          task: "Put it further back — use had",
+          given: "First the movie started. Then we arrived.",
+          answer: "When we arrived, the movie had already started.",
+        },
+        {
+          task: "Put it further back — use had",
+          given: "First everyone went home. Then I got to the party.",
+          answer: "When I got to the party, everyone had gone home.",
+        },
+        {
+          task: "Put it further back — use had",
+          given: "My trip to Canada was the first time I saw snow.",
+          answer: "I'd never seen snow before my trip to Canada.",
+        },
+        {
+          task: "Put it further back — use had",
+          given: "She said: \"I finished the report.\"",
+          answer: "She said she'd finished the report.",
+        },
+        {
+          task: "Put it further back — use had",
+          given: "I sat down. One second later, the phone rang.",
+          answer: "I'd just sat down when the phone rang.",
+        },
+        {
+          task: "Put it further back — use had",
+          given: "First they sold all the tickets. Then I got to the cinema.",
+          answer: "By the time I got to the cinema, they'd sold all the tickets.",
+        },
+
+        {
+          task: "Say how long — had been …ing",
+          given: "I started waiting at seven. The bus came at eight.",
+          answer: "I'd been waiting for an hour when the bus came.",
+        },
+        {
+          task: "Say how long — had been …ing",
+          given: "He drove all night. In the morning, he was tired.",
+          answer: "He was tired because he'd been driving all night.",
+        },
+        {
+          task: "Say how long — had been …ing",
+          given: "The street was wet. It rained all night.",
+          answer: "The street was wet — it had been raining all night.",
+        },
+        {
+          task: "Say how long — had been …ing",
+          given: "She started working there in 2015. They closed the office in 2023.",
+          answer:
+            "She'd been working there for eight years when they closed the office.",
+        },
+        {
+          task: "Say how long — had been …ing",
+          given: "We moved to Rio in 2018. We left in 2022.",
+          answer: "We'd been living in Rio for four years when we left.",
+        },
+        {
+          task: "Say how long — had been …ing",
+          given: "I met him in 2010. He became my boss in 2020.",
+          answer:
+            "I'd known him for ten years when he became my boss. (know — no -ing)",
+        },
+
+        {
+          task: "Started or had started? — use the verb",
+          given: "When I got to the station, the train ___ (leave). I missed it.",
+          answer: "When I got to the station, the train had left.",
+        },
+        {
+          task: "Started or had started? — use the verb",
+          given: "When I sat down, the movie ___ (start). I didn't miss anything.",
+          answer: "When I sat down, the movie started.",
+        },
+        {
+          task: "Started or had started? — use the verb",
+          given:
+            "When I got home, my wife ___ (cook) dinner, so we ate right away.",
+          answer: "When I got home, my wife had already cooked dinner.",
+        },
+        {
+          task: "Started or had started? — use the verb",
+          given: "When I got home, I ___ (cook) dinner, and we ate at nine.",
+          answer: "When I got home, I cooked dinner.",
+        },
+        {
+          task: "Started or had started? — use the verb",
+          given: "When she called, I ___ (go) to bed, so I didn't answer.",
+          answer: "When she called, I'd already gone to bed.",
+        },
+        {
+          task: "Started or had started? — use the verb",
+          given:
+            "When the boss walked in, everyone ___ (stop) talking. The room went quiet.",
+          answer: "When the boss walked in, everyone stopped talking.",
+        },
+
+        {
+          task: "Tell it with the story word",
+          given:
+            "We found out later: the meeting was canceled. (it turned out)",
+          answer: "It turned out that the meeting had been canceled.",
+        },
+        {
+          task: "Tell it with the story word",
+          given: "I missed the bus. Then it started to rain. (to make matters worse)",
+          answer:
+            "I missed the bus, and to make matters worse, it started to rain.",
+        },
+        {
+          task: "Tell it with the story word",
+          given: "We waited for an hour. Then, finally, we took a taxi. (in the end)",
+          answer: "We waited for an hour. In the end, we took a taxi.",
+        },
+        {
+          task: "Tell it with the story word",
+          given: "The lights went out. Nobody expected it. (all of a sudden)",
+          answer: "All of a sudden, the lights went out.",
+        },
+        {
+          task: "Tell it with the story word",
+          given: "I'd saved the file. That was good luck! (luckily)",
+          answer: "Luckily, I'd saved the file.",
+        },
+        {
+          task: "Tell it with the story word",
+          given: "Nobody had told me about the change. That was bad. (unfortunately)",
+          answer: "Unfortunately, nobody had told me about the change.",
+        },
+      ];
+
+      let tDeck = [];
+      let tCurrent = null;
+
+      function updateTransformStatus() {
+        document.getElementById("trans-status").innerHTML =
+          tDeck.length === 0
+            ? "deck finished — <strong>reshuffle to go again</strong>"
+            : "<strong>" + tDeck.length + "</strong> left in the deck";
+      }
+
+      function drawTransform() {
+        const line = document.getElementById("trans-line");
+        const task = document.getElementById("trans-task");
+        if (tDeck.length === 0) {
+          line.classList.add("empty");
+          line.textContent =
+            "That is the whole deck. Reshuffle to start it again.";
+          task.classList.add("waiting");
+          task.textContent = "press Reshuffle";
+          tCurrent = null;
+          updateTransformStatus();
+          return;
+        }
+        tCurrent = tDeck.pop();
+        line.classList.remove("empty");
+        task.classList.remove("waiting");
+        task.textContent = tCurrent.task;
+        line.textContent = tCurrent.given;
+        updateTransformStatus();
+      }
+
+      function revealTransform() {
+        if (!tCurrent) return;
+        document.getElementById("trans-line").textContent =
+          tCurrent.given + "  →  " + tCurrent.answer;
+      }
+
+      function resetTransform() {
+        tDeck = shuffle(TRANSFORM);
+        tCurrent = null;
+        const line = document.getElementById("trans-line");
+        line.classList.add("empty");
+        line.textContent =
+          "Press Next sentence. Say the new one out loud before you check it.";
+        const task = document.getElementById("trans-task");
+        task.classList.add("waiting");
+        task.textContent = "press Next sentence";
+        updateTransformStatus();
+      }
+
+      /* ---------------- INIT ---------------- */
+      resetTransform();
+      updateDeckCount();
+      goTo(0);
+    </script>
+  </body>
+</html>
