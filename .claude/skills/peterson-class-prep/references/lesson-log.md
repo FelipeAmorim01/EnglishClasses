@@ -1026,8 +1026,8 @@ Note: the committed page has **two** fix cards in blocks 1 and 2, not three
 ---
 
 ## Lesson 11 — It Had Already Started
-`lesson_plan_11.html` · 10 November 2026 (date assumed — next Tuesday after
-lesson 10)
+`lesson_plan_11.html` · 5 November 2026 (a Thursday — built the same day; the
+classes are not always on Tuesdays)
 
 Stages: Warm-up → The Story Toolkit → What Happened? → Wrap-up
 
