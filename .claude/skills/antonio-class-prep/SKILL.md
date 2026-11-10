@@ -29,7 +29,7 @@ If a request does not name the student, **ask which one** before building.
 ## The student and the goal
 
 Antonio started in October 2026. He is preparing for the **Duolingo English
-Test**, set for **Tuesday 1 December 2026** (it may still move). Classes are
+Test**, set for **Friday 27 November 2026** (moved from 1 December; it may still move). Classes are
 **every Tuesday and Thursday**. Antonio cancelled 29 October, so Class 2 moved
 to 3 November and **only 9 classes fit** before the exam. Following the
 outline's "exam moves earlier" plan, **Classes 7 and 8 are merged** into one
@@ -74,7 +74,7 @@ what was actually covered, since a lesson can run short or change.
 | 7 | Nov 19 | Interactive Speaking & Writing Sample (outline 7 + 8) | Interactive Speaking, Speaking Sample, Writing Sample, summaries |
 | 8 | Nov 24 | Full mock, exam conditions (outline 9) | full test |
 | 9 | Nov 26 | Weak spots & test day (outline 10) | weakest tasks, rules & setup |
-| Exam | Dec 1 | Duolingo English Test | |
+| Exam | Nov 27 (Fri) | Duolingo English Test | |
 
 The outline also has a plan for the exam moving earlier or later (section 4)
 and the **toolkit frames** (section 5: photo frame, opinion frame, phrases to

@@ -1,0 +1,3768 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DET Prep — Class 4</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- FOLLOW THE THREAD (stage 3, round three) ---------- */
+      .thread-list {
+        list-style: none;
+        counter-reset: thread;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .thread-list:empty {
+        display: none;
+      }
+
+      .thread-list li {
+        counter-increment: thread;
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--muted);
+        background: var(--bg);
+        border-left: 3px solid var(--border);
+        padding: 10px 14px;
+      }
+
+      .thread-list li::before {
+        content: counter(thread) " · ";
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* the follow-up being answered right now */
+      .thread-list li:last-child {
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left-color: var(--accent);
+        animation: fadeUp 0.25s ease;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .thread-list li {
+          font-size: 0.95rem;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== DET prep additions (Antonio) ===== */
+
+      /* timer, copied from Raffa lesson 4 */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+        margin-bottom: 14px;
+      }
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.2rem;
+      }
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 14px 0 14px;
+      }
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+      .timer-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .timer-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .preset-btn,
+      .mini-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      .preset-btn:hover,
+      .mini-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .preset-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* score overview */
+      .score-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .score-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 16px 18px;
+      }
+      .score-card.target {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .score-big {
+        font-family: "Lora", serif;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .score-card:not(.target) .score-big {
+        color: var(--accent);
+      }
+      .score-cap {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .det-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.86rem;
+      }
+      .det-table th {
+        text-align: left;
+        background: var(--surface2);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        padding: 10px 14px;
+      }
+      .det-table td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .det-table td:first-child {
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+      .det-table td:nth-child(2) {
+        font-weight: 600;
+      }
+      .det-table td:last-child {
+        white-space: nowrap;
+        color: var(--muted);
+      }
+
+      /* task blocks in stage 3 */
+      .task-block {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 20px 22px;
+        margin-bottom: 18px;
+      }
+      .task-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .task-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .task-name span {
+        color: var(--accent2);
+        margin-right: 6px;
+      }
+      .task-time {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 3px 9px;
+        white-space: nowrap;
+      }
+      .task-how {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+        line-height: 1.55;
+      }
+      .task-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        align-items: center;
+      }
+      .task-result {
+        font-size: 0.82rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .word-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .word-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.92rem;
+        padding: 10px 8px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        color: var(--text);
+      }
+      .word-btn:hover {
+        border-color: var(--accent);
+      }
+      .word-btn.picked {
+        background: var(--accent-light);
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .word-btn.ok {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .word-btn.bad {
+        background: var(--accent2);
+        border-color: var(--accent2);
+        color: #fff;
+        text-decoration: line-through;
+      }
+      .word-btn.missed {
+        border: 2px dashed var(--accent);
+      }
+
+      .ctest {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 2.3;
+        background: var(--bg);
+        padding: 16px 18px;
+      }
+      .gap {
+        white-space: nowrap;
+      }
+      .gap input {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        padding: 0 3px;
+        color: var(--text);
+        outline: none;
+      }
+      .gap input:focus {
+        background: var(--accent-light);
+      }
+      .gap input.ok {
+        border-bottom-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .gap input.bad {
+        border-bottom-color: var(--accent2);
+        color: var(--accent2);
+      }
+
+      .type-item {
+        margin-bottom: 14px;
+      }
+      .type-item:last-child {
+        margin-bottom: 0;
+      }
+      .type-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+      .type-box {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        resize: vertical;
+        color: var(--text);
+      }
+      .type-box:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      .type-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 6px;
+        flex-wrap: wrap;
+      }
+      .answer-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--accent);
+        display: none;
+      }
+      .answer-line.shown {
+        display: inline;
+      }
+      .word-count {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .photo-frame {
+        background: var(--surface2);
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .photo-frame svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .speak-prompt {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+      }
+      .speak-prompt ul {
+        margin: 8px 0 0 18px;
+        font-size: 0.95rem;
+      }
+
+      .hidden-qs {
+        position: relative;
+      }
+      .hidden-qs ol {
+        padding-left: 20px;
+        font-family: "Lora", serif;
+        line-height: 1.7;
+        filter: blur(7px);
+        user-select: none;
+        transition: filter 0.2s;
+      }
+      .hidden-qs.revealed ol {
+        filter: none;
+        user-select: auto;
+      }
+      .reflection-content p {
+        margin: 0 0 10px;
+      }
+      .hw-steps,
+      .hw-prompts {
+        margin: 0 0 12px 20px;
+      }
+      .hw-steps li,
+      .hw-prompts li {
+        margin-bottom: 4px;
+      }
+      .hw-prompts {
+        font-family: "Lora", serif;
+        font-style: italic;
+      }
+      .hw-prompts-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .hidden-qs li {
+        margin-bottom: 6px;
+      }
+
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .score-grid,
+        .rules-grid {
+          grid-template-columns: 1fr;
+        }
+        .word-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .det-table td:first-child,
+        .det-table td:last-child {
+          white-space: normal;
+        }
+        .task-block {
+          padding: 16px;
+        }
+      }
+      .language-sidebar .timer-panel {
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .language-sidebar .timer-controls .btn {
+        padding: 8px 12px;
+      }
+      @media (max-width: 900px) {
+        .language-sidebar {
+          order: -1;
+        }
+      }
+
+      /* ---- Class 2 additions ---- */
+      /* long words (acquaintance) need wider cells than a fixed 4 columns */
+      .word-grid {
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      }
+      .word-btn {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .round-tabs {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .round-tabs .mini-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .round-note {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      .pair-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 18px;
+      }
+      .pair-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .fam-list {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2.2;
+        background: var(--bg);
+        padding: 12px 18px 12px 38px;
+        margin: 0;
+      }
+      .fam-list .root {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-left: 6px;
+      }
+      .gap input.bad {
+        text-decoration: line-through;
+      }
+      .fix-ans {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 1px 6px;
+        margin-left: 4px;
+      }
+      .why-list {
+        margin: 10px 0 0 18px;
+        font-size: 0.86rem;
+        line-height: 1.6;
+        display: none;
+      }
+      .why-list.shown {
+        display: block;
+      }
+      .why-list li {
+        margin-bottom: 4px;
+      }
+      @media (max-width: 720px) {
+        .pair-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---- Class 3 additions ---- */
+      /* Fill in the Blanks: one box per missing letter, like the real task */
+      .fib input {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.02rem;
+        letter-spacing: 0.5ch;
+        padding: 0 0 0 0.2ch;
+        border-bottom: none;
+        background:
+          repeating-linear-gradient(
+              90deg,
+              var(--accent) 0 1.1ch,
+              transparent 1.1ch 1.5ch
+            )
+            left bottom / 100% 2px no-repeat,
+          var(--surface);
+      }
+      .fib input.ok {
+        background-color: var(--accent-light);
+      }
+      .fib input.bad {
+        background-color: #f7ebe3;
+      }
+      .choice-set {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .choice-q {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 8px;
+        align-items: center;
+      }
+      .choice-prompt {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+      }
+      .choice-opts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+      }
+      .choice-set.stack .choice-q {
+        grid-template-columns: 1fr;
+      }
+      .choice-set.stack .choice-prompt {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .choice-set.stack .choice-opts {
+        grid-template-columns: 1fr;
+      }
+      .choice-set.stack .word-btn {
+        text-align: left;
+        padding: 10px 12px;
+        line-height: 1.4;
+      }
+      .opt-why {
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 600;
+        margin-top: 3px;
+        opacity: 0.9;
+        text-decoration: none;
+      }
+      .opt-why[hidden] {
+        display: none;
+      }
+      .word-btn.bad .opt-why {
+        text-decoration: none;
+        display: inline-block;
+      }
+      .ir-passage {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2;
+        background: var(--bg);
+        padding: 16px 18px;
+        margin-bottom: 14px;
+      }
+      .ir-passage p {
+        margin-bottom: 12px;
+      }
+      .ir-passage p:last-child {
+        margin-bottom: 0;
+      }
+      .ir-passage select {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        color: var(--text);
+        padding: 0 2px;
+      }
+      .ir-passage select.ok {
+        background: var(--accent-light);
+      }
+      .ir-passage select.bad {
+        background: #f7ebe3;
+      }
+      .ir-slot {
+        background: var(--surface);
+        border-bottom: 2px dashed var(--accent2);
+        padding: 0 4px;
+        color: var(--muted);
+      }
+      .ir-slot.filled {
+        color: var(--text);
+        border-bottom-style: solid;
+      }
+      .ir-passage ::selection {
+        background: #f3d36b;
+      }
+      .ir-part {
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent2);
+        margin: 18px 0 8px;
+      }
+      .hl-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .hl-q {
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 10px 12px;
+        cursor: pointer;
+        font-size: 0.92rem;
+      }
+      .hl-q.active {
+        border: 2px solid var(--accent);
+        background: var(--accent-light);
+      }
+      .hl-q.ok {
+        border-color: var(--accent);
+      }
+      .hl-q.bad {
+        border-color: var(--accent2);
+      }
+      .hl-ans {
+        display: block;
+        margin-top: 6px;
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--muted);
+      }
+      .hl-q.ok .hl-ans {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .hl-q.bad .hl-ans {
+        color: var(--accent2);
+        text-decoration: line-through;
+      }
+      .mini-para {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        line-height: 1.8;
+        background: var(--bg);
+        padding: 14px 18px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 720px) {
+        .choice-q {
+          grid-template-columns: 1fr;
+        }
+        .choice-opts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* ---- Class 4 additions ---- */
+      /* play button: the page reads the audio with the computer's voice */
+      .play-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+      .play-btn:hover {
+        filter: brightness(1.1);
+      }
+      .play-btn:disabled {
+        background: var(--surface2);
+        border-color: var(--border);
+        color: var(--muted);
+        cursor: default;
+        filter: none;
+      }
+      .play-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .open-gaps .gap input {
+        width: 7ch !important;
+      }
+      .type-box.ok {
+        border-color: var(--accent);
+        background: var(--accent-light);
+      }
+      .type-box.bad {
+        border-color: var(--accent2);
+      }
+      .lt-tag {
+        font-size: 0.76rem;
+        font-weight: 600;
+      }
+      .lt-tag.ok {
+        color: var(--accent);
+      }
+      .lt-tag.bad {
+        color: var(--accent2);
+      }
+      .lt-key {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        background: var(--accent-light);
+        padding: 6px 10px;
+        margin-top: 6px;
+      }
+      .lt-key[hidden] {
+        display: none;
+      }
+      .lt-key .miss {
+        color: var(--accent2);
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+      }
+      .lt-extra {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 0.76rem;
+        color: var(--accent2);
+        margin-top: 2px;
+      }
+      .fix-was {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .il-scenario {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 12px 16px;
+        margin-bottom: 4px;
+      }
+      .il-scenario b {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent2);
+        display: block;
+        margin-bottom: 2px;
+      }
+      .il-turn {
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+      .il-turn:first-child {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .il-turn-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .il-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--muted);
+        filter: blur(6px);
+        user-select: none;
+        transition: filter 0.2s;
+        margin: 2px 0 8px;
+      }
+      .il-line.shown {
+        filter: none;
+        user-select: auto;
+      }
+      /* own line, and still not struck through */
+      .il-turn .word-btn.bad .opt-why {
+        width: 100%;
+      }
+      .il-turn .word-btn:disabled {
+        cursor: default;
+        opacity: 1;
+      }
+      .il-model {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        line-height: 1.6;
+        background: var(--accent-light);
+        padding: 10px 14px;
+        margin-top: 8px;
+      }
+      .il-model[hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>Duolingo English Test Prep</h1>
+        <div class="subtitle">Listening Accuracy — Class 4</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Listen and Type</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Check Before You Submit</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Interactive Listening</div>
+        </div>
+        <div class="nav-item" onclick="goTo(4)">
+          <div class="nav-num">05</div>
+          <div class="nav-label">Extra Practice</div>
+        </div>
+        <div class="nav-item" onclick="goTo(5)">
+          <div class="nav-num">06</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============ STAGE 1 ============ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 06</div>
+          <div class="stage-title">Warm-up</div>
+          <div class="stage-sub">
+            A quick look at your homework. Today is all listening: typing
+            exactly what you hear, then following a conversation and choosing
+            what to say next.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>How was your weekend? Did you do anything interesting?</li>
+            <li>
+              Which article did you read this week? Tell me its main idea in one
+              sentence, and one word pair you found in it.
+            </li>
+            <li>
+              Give me a word from your list and the word it usually goes with
+              (decision → make a decision).
+            </li>
+            <li>
+              Writing sprints: which linking words did you use? Did you take the
+              second practice test yet?
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ STAGE 2 ============ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 06</div>
+          <div class="stage-title">Listen and <em>type</em></div>
+          <div class="stage-sub">
+            You hear one sentence and type exactly what you heard. You get one
+            minute, and you can play it up to three times: the first time and
+            two replays. Every word counts, including the small ones.
+          </div>
+
+          <div class="section-label">Why words go missing</div>
+          <div class="idiom-grid">
+            <div class="idiom-card">
+              <div class="idiom-term">Small words go quiet</div>
+              <div class="idiom-meaning">
+                In fast speech, a, the, of, to, and, have shrink to a tiny
+                sound. They are still in the sentence, so they must be in your
+                answer.
+              </div>
+              <div class="idiom-example">a cup of tea → "a cup-uh tea"</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Contractions</div>
+              <div class="idiom-meaning">
+                Type what you hear. If you hear "I'd", type I'd, not I would.
+                Then check what it stands for, because it changes the next word.
+              </div>
+              <div class="idiom-example">
+                I'd known (I had) · I'd go (I would)
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Endings you barely hear</div>
+              <div class="idiom-meaning">
+                The -s and -ed at the end of a word are short, and the next word
+                often swallows them. Grammar tells you if they're there.
+              </div>
+              <div class="idiom-example">
+                She work<b>s</b> · we walk<b>ed</b> to · two student<b>s</b>
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Use the three plays</div>
+              <div class="idiom-meaning">
+                Play 1: just listen, then type everything you can. Play 2: fill
+                the holes. Play 3: read your sentence while it plays.
+              </div>
+              <div class="idiom-example">listen → fill → check</div>
+            </div>
+          </div>
+
+          <div class="panel-note" style="margin-top: 14px">
+            The page reads each sentence with your computer's voice. If there's
+            no voice, or it sounds wrong, the sentence is read aloud instead.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- A: Small words -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>A</span>Hear the small words
+                  </div>
+                  <div class="task-time">2:00</div>
+                </div>
+                <div class="task-how">
+                  Play each sentence and type the missing words. Every gap is
+                  one word, and the boxes are all the same size, so you can't
+                  guess from the length.
+                </div>
+                <ol class="fam-list open-gaps" id="sw"></ol>
+                <div class="task-actions">
+                  <button
+                    class="mini-btn"
+                    onclick="checkSet('sw', 'sw-result')"
+                  >
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showSet('sw')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetSmall()">Reset</button>
+                  <span class="task-result" id="sw-result"></span>
+                </div>
+              </div>
+
+              <!-- B: Listen and Type, everyday -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>B</span>Listen and Type · Everyday
+                  </div>
+                  <div class="task-time">1:00 each</div>
+                </div>
+                <div class="task-how">
+                  Start the 1:00 clock for each sentence. Type exactly what you
+                  hear, with a capital letter and a full stop.
+                </div>
+                <div class="lt-set" id="lt1"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkLT('lt1')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showLT('lt1')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetLT('lt1')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="lt1-result"></span>
+                </div>
+              </div>
+
+              <!-- C: Listen and Type, academic -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>C</span>Listen and Type · Academic
+                  </div>
+                  <div class="task-time">1:00 each</div>
+                </div>
+                <div class="task-how">
+                  Longer sentences, more formal words. Same rules: one minute,
+                  three plays.
+                </div>
+                <div class="lt-set" id="lt2"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkLT('lt2')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showLT('lt2')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetLT('lt2')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="lt2-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">
+                  What the small words sound like
+                </div>
+                <div class="vocab-chips">
+                  <span class="chip">a → "uh"</span>
+                  <span class="chip">of → "uv" / "uh"</span>
+                  <span class="chip">to → "tuh"</span>
+                  <span class="chip">and → "n"</span>
+                  <span class="chip">have → "uv"</span>
+                  <span class="chip">them → "em"</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Contractions</div>
+                <div class="vocab-chips">
+                  <span class="chip">I'd = I would / I had</span>
+                  <span class="chip">she's = she is / she has</span>
+                  <span class="chip">should've = should have</span>
+                  <span class="chip">they're ≠ their ≠ there</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 3 ============ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 06</div>
+          <div class="stage-title">Check before you <em>submit</em></div>
+          <div class="stage-sub">
+            Most points in Listen and Type are lost on tiny things: a missing
+            -s, the wrong tense, a forgotten "the". Keep your last play for
+            checking, and read your sentence once more against this list.
+          </div>
+
+          <div class="section-label">The last ten seconds</div>
+          <table class="det-table">
+            <thead>
+              <tr>
+                <th>Check</th>
+                <th>Ask yourself</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verb + s</td>
+                <td>Is the subject he, she, it or one thing?</td>
+                <td>She work<b>s</b> at a hospital.</td>
+              </tr>
+              <tr>
+                <td>Past tense</td>
+                <td>Do other verbs or time words say past?</td>
+                <td>We walk<b>ed</b> there and played football.</td>
+              </tr>
+              <tr>
+                <td>Plural</td>
+                <td>One thing or more? Look at the verb and "a lot of".</td>
+                <td>The student<b>s</b> asked a lot of questions.</td>
+              </tr>
+              <tr>
+                <td>have / has</td>
+                <td>Is there a past participle (seen, been, done)?</td>
+                <td>I<b>'ve</b> already seen it.</td>
+              </tr>
+              <tr>
+                <td>a / the / of</td>
+                <td>Does the sentence sound right without it?</td>
+                <td>Most <b>of the</b> information was useful.</td>
+              </tr>
+              <tr>
+                <td>Start and end</td>
+                <td>Capital letter? Full stop or question mark?</td>
+                <td>Where did you put the keys<b>?</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- D: Fix the typing -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>D</span>Fix the typing</div>
+                  <div class="task-time">0:30 each</div>
+                </div>
+                <div class="task-how">
+                  Someone typed these sentences after listening, and each one
+                  has one mistake. Play the sentence, find the mistake and fix
+                  it in the box. You get 30 seconds each, like the end of a real
+                  Listen and Type.
+                </div>
+                <div class="lt-set" id="fix"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkLT('fix')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showLT('fix')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetLT('fix')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="fix-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Before you submit</div>
+                <div class="vocab-chips">
+                  <span class="chip">he / she / it + s?</span>
+                  <span class="chip">Past tense?</span>
+                  <span class="chip">Plural?</span>
+                  <span class="chip">have / has?</span>
+                  <span class="chip">a / the / of?</span>
+                  <span class="chip">Capital + full stop?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Small but different</div>
+                <div class="vocab-chips">
+                  <span class="chip">a few = some</span>
+                  <span class="chip">few = almost none</span>
+                  <span class="chip">a / the</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 4 ============ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 06</div>
+          <div class="stage-title">Interactive <em>listening</em></div>
+          <div class="stage-sub">
+            You read a situation, then follow a conversation one line at a time.
+            You hear each line only once and choose the best reply, and you see
+            straight away if you were right. At the end you write a short
+            summary of the whole conversation. The exact parts can vary on the
+            real test, so check them on the official practice test.
+          </div>
+
+          <div class="section-label">Three steps</div>
+          <div class="apply-box">
+            <div class="apply-label">Do it in this order</div>
+            <ol class="apply-steps">
+              <li>
+                <strong>Read the situation first.</strong> Who are you, who is
+                the other person, and why are you talking? A professor and a
+                friend need different replies.
+              </li>
+              <li>
+                <strong>Answer the last thing they said.</strong> The right
+                reply answers the question or moves the plan forward. Watch out
+                for options that repeat a word you heard but mean something
+                else.
+              </li>
+              <li>
+                <strong>Summarize in three sentences.</strong> Who talked and
+                why, what they said, and how it ended. Use your own words.
+              </li>
+            </ol>
+          </div>
+
+          <div class="panel-note" style="margin-top: 14px">
+            Prep sites say the summary gets about 75 seconds. That isn't on
+            Duolingo's own pages, so check it on the official practice test.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- E: Office hours -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>E</span>Interactive Listening · Office hours
+                  </div>
+                  <div class="task-time">4:00 + 1:15</div>
+                </div>
+                <div id="il1"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkIL('il1')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showIL('il1')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetIL('il1')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="il1-result"></span>
+                </div>
+              </div>
+
+              <!-- F: Group project -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>F</span>Interactive Listening · Group project
+                  </div>
+                  <div class="task-time">4:00 + 1:15</div>
+                </div>
+                <div id="il2"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkIL('il2')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showIL('il2')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetIL('il2')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="il2-result"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Ask of every reply</div>
+                <div class="vocab-chips">
+                  <span class="chip">Does it answer the last line?</span>
+                  <span class="chip">Right tone for this person?</span>
+                  <span class="chip">Does it move things forward?</span>
+                  <span class="chip">Same word, different meaning?</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Summary frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">A student and a … talked about …</span>
+                  <span class="chip">The student explained that …</span>
+                  <span class="chip">In the end, they agreed that …</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Linking words</div>
+                <div class="vocab-chips">
+                  <span class="chip">because, as a result, therefore</span>
+                  <span class="chip">however, although, whereas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 5 ============ -->
+        <div class="stage" id="stage-4">
+          <div class="stage-eyebrow">Stage 05 of 06</div>
+          <div class="stage-title">Extra <em>practice</em></div>
+          <div class="stage-sub">
+            More rounds of today's tasks, all with the real time limits. Do as
+            many as time allows.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- G: Listen and Type, harder -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>G</span>Listen and Type · Harder
+                  </div>
+                  <div class="task-time">1:00 each</div>
+                </div>
+                <div class="task-how">
+                  Long sentences with an extra clause in the middle. Write the
+                  start and the end first, then fill the middle on the replay.
+                </div>
+                <div class="lt-set" id="lt3"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkLT('lt3')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showLT('lt3')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetLT('lt3')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="lt3-result"></span>
+                </div>
+              </div>
+
+              <!-- H: Library desk -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>H</span>Interactive Listening · Library desk
+                  </div>
+                  <div class="task-time">4:00 + 1:15</div>
+                </div>
+                <div id="il3"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkIL('il3')">
+                    Check
+                  </button>
+                  <button class="mini-btn" onclick="showIL('il3')">
+                    Show answers
+                  </button>
+                  <button class="mini-btn" onclick="resetIL('il3')">
+                    Reset
+                  </button>
+                  <span class="task-result" id="il3-result"></span>
+                </div>
+              </div>
+
+              <!-- I: Your dictation -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>I</span>Your turn to read</div>
+                  <div class="task-time">No timer</div>
+                </div>
+                <div class="task-how">
+                  Now you make the test. Write three sentences, each with a
+                  contraction (I'd, she's, should've) and at least two small
+                  words (a, the, of, to). Read each one out at normal speed.
+                  Felipe types it, and you check his answer word by word.
+                </div>
+                <textarea
+                  class="type-box"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="1. "
+                ></textarea>
+              </div>
+
+              <!-- J: Writing sprint -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>J</span>Writing sprint</div>
+                  <div class="task-time">5:00 + 1:15 summary</div>
+                </div>
+                <div class="speak-prompt">
+                  Do you learn more from listening (podcasts, videos, classes)
+                  or from reading? Why?
+                </div>
+                <div class="task-how" style="margin-top: 12px">
+                  Type for five minutes without stopping, and aim for 100 words.
+                  Use at least two linking words. Then start the 1:15 clock and
+                  summarize your own answer in three sentences, like the
+                  Interactive Listening summary.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="sprint-text"
+                  rows="7"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="Start writing…"
+                  oninput="countWords('sprint-text', 'sprint-count')"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count" id="sprint-count">0 words</span>
+                </div>
+                <textarea
+                  class="type-box"
+                  rows="3"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="Three-sentence summary…"
+                  style="margin-top: 10px"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Opinion frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">In my opinion,…</span>
+                  <span class="chip">The main reason is that…</span>
+                  <span class="chip">For example, when I…</span>
+                  <span class="chip">On the other hand,…</span>
+                  <span class="chip">So overall, I believe…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Linking words</div>
+                <div class="vocab-chips">
+                  <span class="chip">moreover, in addition, also</span>
+                  <span class="chip">however, although, whereas</span>
+                  <span class="chip">because, as a result, therefore</span>
+                  <span class="chip">for instance, such as</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 6 ============ -->
+        <div class="stage" id="stage-5">
+          <div class="stage-eyebrow">Stage 06 of 06</div>
+          <div class="stage-title">Wrap-up: <em>what's next</em></div>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Listening</div>
+              <div class="reflection-content">
+                <p>
+                  Watch or listen to one short English video or podcast every
+                  day (5–10 minutes). Each day:
+                </p>
+                <ol class="hw-steps">
+                  <li>
+                    Pick two sentences and write them down exactly as you hear
+                    them.
+                  </li>
+                  <li>Play each one three times at most, like the test.</li>
+                  <li>
+                    Check with the subtitles or transcript, and circle every
+                    word you missed.
+                  </li>
+                </ol>
+                <p>Send me two of your sentences with the circles.</p>
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Word list</div>
+              <div class="reflection-content">
+                Keep going with 10 new words a day, with the word they usually
+                go with. New rule: play each word in an online dictionary and
+                listen to it before you write it down. Autocorrect off.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Spelling list</div>
+              <div class="reflection-content">
+                Add the words you missed today and in your daily sentences.
+                Every day, cover the list and write five of them from memory.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Writing</div>
+              <div class="reflection-content">
+                <p>
+                  Keep the daily 5-minute sprint with two linking words. New
+                  rule: when you finish, set a 75-second timer and summarize
+                  your own answer in three sentences. Send me two sprints with
+                  their summaries this week.
+                </p>
+                <div class="hw-prompts-label">New prompts</div>
+                <ol class="hw-prompts">
+                  <li>Describe a conversation that changed your plans.</li>
+                  <li>
+                    Should university lectures be recorded and put online?
+                  </li>
+                  <li>What is the best way to ask a teacher for help?</li>
+                  <li>Do you prefer working alone or in a group? Why?</li>
+                  <li>
+                    Describe a podcast, song or video you have listened to many
+                    times.
+                  </li>
+                  <li>
+                    Is it rude to use your phone while someone is talking to
+                    you?
+                  </li>
+                  <li>
+                    What would you do if you missed an important deadline?
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Practice test</div>
+              <div class="reflection-content">
+                If you still haven't taken the second practice test, take it
+                before Thursday, like the real thing, and send me the score.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- one clock, moved into the active stage's sidebar -->
+    <div id="timer-home" hidden>
+      <div class="timer-panel" id="timer-panel">
+        <div class="timer-presets" id="timer-presets"></div>
+        <div class="timer-top">
+          <div class="timer-label" id="timer-label">Pick a time</div>
+        </div>
+        <div class="timer-display" id="timer-display">1:00</div>
+        <div class="timer-bar">
+          <div class="timer-bar-fill" id="timer-bar-fill"></div>
+        </div>
+        <div class="timer-controls">
+          <button class="btn primary" id="timer-start" onclick="toggleTimer()">
+            Start
+          </button>
+          <button class="btn" onclick="resetTimer()">Reset</button>
+          <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+            Sound on
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 6</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---- navigation ---- */
+      let current = 0;
+      const total = 6;
+      const done = [false, false, false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        const slot = document
+          .getElementById("stage-" + idx)
+          .querySelector(".timer-slot");
+        if (slot) slot.appendChild(document.getElementById("timer-panel"));
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+      /* ---- the voice: plays a line with the computer's speech ---- */
+      const SAYS = [];
+      const PREFERRED = [
+        "Samantha",
+        "Daniel",
+        "Karen",
+        "Moira",
+        "Alex",
+        "Google US English",
+        "Google UK English Female",
+        "Microsoft Aria Online (Natural) - English (United States)",
+      ];
+      const NOVELTY =
+        /albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|junior|ralph|fred|kathy|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley/i;
+      const hasVoice = "speechSynthesis" in window;
+      function voiceList() {
+        if (!hasVoice) return [];
+        const en = speechSynthesis
+          .getVoices()
+          .filter((v) => /^en[-_]/i.test(v.lang));
+        const pref = PREFERRED.map((n) => en.find((v) => v.name === n)).filter(
+          Boolean,
+        );
+        return pref.length ? pref : en.filter((v) => !NOVELTY.test(v.name));
+      }
+      if (hasVoice) speechSynthesis.getVoices();
+
+      function playBtn(text, plays, voice) {
+        SAYS.push(text);
+        return `<button class="play-btn" data-s="${SAYS.length - 1}" data-max="${plays}" data-left="${plays}" data-voice="${voice}" onclick="play(this)">▶ Play</button>`;
+      }
+      function playLabel(btn) {
+        const left = Number(btn.dataset.left);
+        const max = Number(btn.dataset.max);
+        btn.disabled = left <= 0;
+        if (!hasVoice) btn.textContent = "No voice: read it aloud";
+        else if (left <= 0) btn.textContent = "No plays left";
+        else if (left === max) btn.textContent = "▶ Play";
+        else btn.textContent = "▶ Replay · " + left + " left";
+      }
+      function play(btn) {
+        if (!hasVoice) return playLabel(btn);
+        const left = Number(btn.dataset.left);
+        if (left <= 0) return;
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(SAYS[btn.dataset.s]);
+        const voices = voiceList();
+        if (voices.length) {
+          u.voice = voices[Number(btn.dataset.voice) % voices.length];
+          u.lang = u.voice.lang;
+        } else u.lang = "en-US";
+        u.rate = 0.95;
+        speechSynthesis.speak(u);
+        btn.dataset.left = left - 1;
+        playLabel(btn);
+      }
+      function resetPlays(root) {
+        root.querySelectorAll(".play-btn").forEach((b) => {
+          b.dataset.left = b.dataset.max;
+          playLabel(b);
+        });
+      }
+
+      /* ---- typed answers (gaps) ---- */
+      function setInputs(id) {
+        return document.querySelectorAll(
+          "#" + id + " input, #" + id + " select",
+        );
+      }
+      function isRight(inp) {
+        return (
+          inp.value.trim().toLowerCase().replace(/[’‘]/g, "'") ===
+          inp.dataset.a.toLowerCase()
+        );
+      }
+      function markSet(id) {
+        let right = 0;
+        const all = setInputs(id);
+        all.forEach((inp) => {
+          const ok = isRight(inp);
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (ok) right++;
+        });
+        return [right, all.length];
+      }
+      function checkSet(id, resultId) {
+        const [right, n] = markSet(id);
+        document.getElementById(resultId).textContent =
+          right + " / " + n + " correct";
+      }
+      /* keeps what was typed; puts the right answer beside each wrong one */
+      function showSet(id) {
+        setInputs(id).forEach((inp) => {
+          const old = inp.nextElementSibling;
+          if (old && old.classList.contains("fix-ans")) old.remove();
+          const ok = isRight(inp);
+          inp.classList.toggle("ok", ok);
+          inp.classList.toggle("bad", !ok);
+          if (!ok) {
+            const fix = document.createElement("span");
+            fix.className = "fix-ans";
+            fix.textContent = inp.dataset.a;
+            inp.after(fix);
+          }
+        });
+      }
+      function resetSet(id, resultId) {
+        setInputs(id).forEach((inp) => {
+          inp.value = "";
+          inp.classList.remove("ok", "bad");
+        });
+        document
+          .querySelectorAll("#" + id + " .fix-ans")
+          .forEach((el) => el.remove());
+        if (resultId) document.getElementById(resultId).textContent = "";
+      }
+      /* "We [have] left" → text with a gap input for each bracketed word */
+      function gapHTML(s) {
+        return s.replace(
+          /\[([^\]]+)\]/g,
+          (m, w) => `<span class="gap"><input data-a="${w}" /></span>`,
+        );
+      }
+      function plain(s) {
+        return s.replace(/\[([^\]]+)\]/g, "$1");
+      }
+      function sizeGaps(root) {
+        root.querySelectorAll(".gap input").forEach((inp) => {
+          const len = inp.dataset.a.length;
+          const open = inp.closest(".open-gaps");
+          inp.maxLength = open ? 12 : len;
+          inp.style.width = len + 1 + "ch";
+          inp.setAttribute("autocomplete", "off");
+          inp.setAttribute("autocapitalize", "off");
+          inp.setAttribute("spellcheck", "false");
+        });
+      }
+
+      /* ---- A: hear the small words ---- */
+      const SMALL = [
+        "I'd like [a] cup [of] tea, please.",
+        "We should [have] left earlier.",
+        "She's been working here [for] [a] year.",
+        "What [do] you want [to] do after class?",
+        "He told me [that] he [had] already finished.",
+        "There [were] a lot [of] people [at] the station.",
+        "I can't decide which [of] [the] two to buy.",
+        "It [has] been raining since [this] morning.",
+      ];
+      function buildSmall() {
+        const box = document.getElementById("sw");
+        box.innerHTML = SMALL.map(
+          (s) =>
+            `<li><span class="play-row" style="display:inline-flex;margin:0 8px 0 0">${playBtn(plain(s), 3, 0)}</span>${gapHTML(s)}</li>`,
+        ).join("");
+        sizeGaps(box);
+      }
+      function resetSmall() {
+        resetSet("sw", "sw-result");
+        resetPlays(document.getElementById("sw"));
+      }
+
+      /* ---- Listen and Type: whole sentences, checked word by word ---- */
+      const LT = {
+        lt1: {
+          voice: 0,
+          items: [
+            "The bus was late, so I missed the start of the meeting.",
+            "She's lived in this city since she was a child.",
+            "Could you send me the notes from yesterday's class?",
+            "They didn't expect the tickets to be so expensive.",
+            "If I'd known about the traffic, I would have left earlier.",
+          ],
+        },
+        lt2: {
+          voice: 1,
+          items: [
+            "The results of the study were published last month.",
+            "Researchers have found that most students sleep less during exams.",
+            "The number of people working from home has increased in recent years.",
+            "Although the theory is popular, there isn't much evidence to support it.",
+            "The professor asked us to compare the two approaches in our essays.",
+          ],
+        },
+        lt3: {
+          voice: 2,
+          items: [
+            "Neither of the candidates had enough experience for the position.",
+            "The museum, which was built next to the river, attracts thousands of visitors every year.",
+            "You'd better check the instructions before you start the experiment.",
+            "It's not the first time this kind of problem has happened.",
+            "The government has promised to reduce the cost of public transport.",
+          ],
+        },
+        /* [what was said, what someone typed] */
+        fix: {
+          voice: 0,
+          plays: 1,
+          items: [
+            [
+              "She works at a hospital near the station.",
+              "She work at a hospital near the station.",
+            ],
+            [
+              "We walked to the park and played football.",
+              "We walk to the park and played football.",
+            ],
+            [
+              "The students asked a lot of questions.",
+              "The student asked a lot of questions.",
+            ],
+            ["I've already seen that film.", "I already seen that film."],
+            [
+              "There are a few things we need to discuss.",
+              "There are few things we need to discuss.",
+            ],
+            [
+              "Most of the information was useful.",
+              "Most of information was useful.",
+            ],
+            ["Where did you put the keys?", "Where did you put keys?"],
+          ],
+        },
+      };
+      function keyOf(item) {
+        return Array.isArray(item) ? item[0] : item;
+      }
+      function buildLT(id) {
+        const set = LT[id];
+        const box = document.getElementById(id);
+        box.innerHTML = set.items
+          .map((item, i) => {
+            const key = keyOf(item);
+            const pre = Array.isArray(item) ? item[1] : "";
+            return `<div class="type-item">
+              <div class="type-num">Sentence ${i + 1}</div>
+              <div class="play-row">${playBtn(key, set.plays || 3, set.voice)}</div>
+              <textarea class="type-box" rows="${key.length > 60 ? 2 : 1}" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Type what you hear…"></textarea>
+              <div class="type-row"><span class="lt-tag"></span></div>
+              <div class="lt-key" hidden></div>
+            </div>`;
+          })
+          .join("");
+        box.querySelectorAll(".type-box").forEach((t, i) => {
+          const item = set.items[i];
+          t.value = Array.isArray(item) ? item[1] : "";
+        });
+      }
+      function toks(s, keepCase) {
+        return (keepCase ? s : s.toLowerCase())
+          .replace(/[’‘]/g, "'")
+          .replace(/-/g, " ")
+          .replace(/[^a-zA-Z0-9'\s]/g, " ")
+          .split(/\s+/)
+          .map((w) => w.replace(/^'+|'+$/g, ""))
+          .filter(Boolean);
+      }
+      /* longest common subsequence of words: which key words were typed */
+      function align(key, typed) {
+        const a = toks(key),
+          b = toks(typed);
+        const dp = Array.from({ length: a.length + 1 }, () =>
+          new Array(b.length + 1).fill(0),
+        );
+        for (let i = a.length - 1; i >= 0; i--)
+          for (let j = b.length - 1; j >= 0; j--)
+            dp[i][j] =
+              a[i] === b[j]
+                ? dp[i + 1][j + 1] + 1
+                : Math.max(dp[i + 1][j], dp[i][j + 1]);
+        const hitA = new Array(a.length).fill(false),
+          hitB = new Array(b.length).fill(false);
+        let i = 0,
+          j = 0;
+        while (i < a.length && j < b.length) {
+          if (a[i] === b[j]) {
+            hitA[i] = hitB[j] = true;
+            i++;
+            j++;
+          } else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+          else j++;
+        }
+        return {
+          a,
+          b,
+          hitA,
+          missed: hitA.filter((h) => !h).length,
+          extra: toks(typed, true).filter((w, k) => !hitB[k]),
+        };
+      }
+      function checkLT(id) {
+        const set = LT[id];
+        let exact = 0;
+        document.querySelectorAll("#" + id + " .type-item").forEach((el, i) => {
+          const key = keyOf(set.items[i]);
+          const box = el.querySelector(".type-box");
+          const tag = el.querySelector(".lt-tag");
+          const typed = box.value.trim();
+          const r = align(key, typed);
+          const ok = typed && r.missed === 0 && r.extra.length === 0;
+          box.classList.toggle("ok", !!ok);
+          box.classList.toggle("bad", !ok);
+          tag.className = "lt-tag " + (ok ? "ok" : "bad");
+          if (!typed) tag.textContent = "Not answered";
+          else if (ok) {
+            exact++;
+            const neat = /^[A-Z]/.test(typed) && /[.?!]$/.test(typed);
+            tag.textContent = neat
+              ? "✓ Exact"
+              : "✓ Words exact · add the capital and the full stop";
+          } else {
+            const n = Math.max(r.missed, r.extra.length);
+            tag.textContent = n + (n === 1 ? " word to fix" : " words to fix");
+          }
+        });
+        document.getElementById(id + "-result").textContent =
+          exact + " / " + set.items.length + " exact";
+      }
+      /* keeps what was typed; shows the sentence with the missed words marked */
+      function showLT(id) {
+        checkLT(id);
+        const set = LT[id];
+        document.querySelectorAll("#" + id + " .type-item").forEach((el, i) => {
+          const key = keyOf(set.items[i]);
+          const r = align(key, el.querySelector(".type-box").value);
+          let k = 0;
+          const html = key
+            .split(" ")
+            .map((word) => {
+              const n = toks(word).length;
+              const miss = r.hitA.slice(k, k + n).some((h) => !h);
+              k += n;
+              return miss ? `<span class="miss">${word}</span>` : word;
+            })
+            .join(" ");
+          const extra = r.extra.length
+            ? `<span class="lt-extra">You typed instead: ${r.extra.join(", ")}</span>`
+            : "";
+          const out = el.querySelector(".lt-key");
+          out.innerHTML = html + extra;
+          out.hidden = false;
+        });
+      }
+      function resetLT(id) {
+        buildLT(id);
+        document.getElementById(id + "-result").textContent = "";
+        resetPlays(document.getElementById(id));
+      }
+
+      /* ---- Interactive Listening ---- */
+      const IL = {
+        il1: {
+          voice: 1,
+          who: "You are a student. You go to your history professor's office to talk about your essay.",
+          first:
+            "Come in. You're in my Tuesday history [seminar], aren't you? What [can] I help you [with]?",
+          turns: [
+            {
+              line: null,
+              opts: [
+                [
+                  "Yes, that's right. I wanted to ask about the essay that's due on Friday.",
+                  "Fits",
+                ],
+                ["Yeah, whatever. Is the essay important?", "Too rude"],
+                ["I'm fine, thank you. And you?", "Doesn't answer"],
+                ["The library is on the second floor.", "Off topic"],
+              ],
+              a: 0,
+            },
+            {
+              line: "Of course. Is there a problem with the topic, or is it the deadline?",
+              opts: [
+                ["Yes.", "Doesn't answer"],
+                [
+                  "It's the deadline. I've been ill this week, and I'm worried I won't finish in time.",
+                  "Fits",
+                ],
+                ["I don't like history very much.", "Too rude"],
+                ["The topic is the deadline.", "Doesn't make sense"],
+              ],
+              a: 1,
+            },
+            {
+              line: "I'm sorry to hear that. How much of it have you written so far?",
+              opts: [
+                ["I'm feeling much better now, thanks.", "Doesn't answer"],
+                ["Every Tuesday.", "Doesn't answer"],
+                [
+                  "About half. I've done the research, but I still need to write the conclusion.",
+                  "Fits",
+                ],
+                ["So far is a long way.", "Same word, different meaning"],
+              ],
+              a: 2,
+            },
+            {
+              line: "All right. I can give you until Monday, but I'll need a note from your doctor.",
+              opts: [
+                ["Why do you need my doctor?", "Too rude"],
+                ["Monday is the first day of the week.", "Off topic"],
+                ["I'll write you a note about the essay.", "Misunderstands"],
+                [
+                  "Thank you so much. I'll bring the note tomorrow morning.",
+                  "Fits",
+                ],
+              ],
+              a: 3,
+            },
+            {
+              line: "Good. And if you get stuck on the conclusion, feel free to email me.",
+              opts: [
+                ["Thanks, I will. See you on Tuesday.", "Fits"],
+                ["You're welcome.", "Wrong reply: that answers thanks"],
+                ["The conclusion is the last part.", "Off topic"],
+                [
+                  "I'm not stuck, I'm in your office.",
+                  "Same word, different meaning",
+                ],
+              ],
+              a: 0,
+            },
+          ],
+          model:
+            "A student visited a professor because the history essay was due on Friday and the student had been ill. The student had written about half of it but still needed the conclusion. The professor agreed to give the student until Monday, as long as the student brought a note from a doctor.",
+        },
+        il2: {
+          voice: 0,
+          who: "You are a student. A classmate stops you after class to talk about your group presentation next week.",
+          first:
+            "Hey! Did you get my [message] about the presentation? I think we need to [meet] [before] Thursday.",
+          turns: [
+            {
+              line: null,
+              opts: [
+                [
+                  "Good morning. How can I help you today?",
+                  "Wrong situation: sounds like a shop",
+                ],
+                ["Yes, I got it, and I agree. When are you free?", "Fits"],
+                ["Thursday is a busy day for everyone.", "Doesn't answer"],
+                ["No, I don't like presentations.", "Too rude"],
+              ],
+              a: 1,
+            },
+            {
+              line: "How about Tuesday afternoon in the library? We could book one of the study rooms.",
+              opts: [
+                [
+                  "I've read a lot of books in the library.",
+                  "Same word, different meaning",
+                ],
+                ["I usually study in my room.", "Off topic"],
+                [
+                  "Tuesday afternoon works for me. Should I book the room?",
+                  "Fits",
+                ],
+                ["No.", "Doesn't help: no reason, no new time"],
+              ],
+              a: 2,
+            },
+            {
+              line: "That would be great. Also, I was thinking you could do the introduction, since you know the topic best.",
+              opts: [
+                [
+                  "Sure, I'm happy to do the introduction. Who's doing the conclusion?",
+                  "Fits",
+                ],
+                [
+                  "I know the best restaurant in town.",
+                  "Same word, different meaning",
+                ],
+                ["The topic is very interesting, isn't it?", "Doesn't answer"],
+                ["You do it.", "Too rude"],
+              ],
+              a: 0,
+            },
+            {
+              line: "Maria said she'd do the conclusion, and I'll prepare the slides.",
+              opts: [
+                ["Maria is a beautiful name.", "Off topic"],
+                ["I don't need any slides, thanks.", "Misunderstands"],
+                ["Next week I'm going on holiday.", "Off topic"],
+                [
+                  "Perfect, that sounds like a good plan. I'll send you my part by Monday.",
+                  "Fits",
+                ],
+              ],
+              a: 3,
+            },
+            {
+              line: "Great. See you on Tuesday, then. Don't forget your laptop!",
+              opts: [
+                ["You're welcome.", "Wrong reply: that answers thanks"],
+                ["I won't. See you then!", "Fits"],
+                ["Yes, I forgot it.", "Doesn't make sense"],
+                ["My laptop is very old.", "Off topic"],
+              ],
+              a: 1,
+            },
+          ],
+          model:
+            "Two classmates talked about their group presentation for next week. They agreed to meet on Tuesday afternoon in a study room at the library. The student will do the introduction, Maria will do the conclusion and the classmate will prepare the slides.",
+        },
+        il3: {
+          voice: 2,
+          who: "You are a student at the university library's help desk, collecting a book you reserved.",
+          first:
+            "Hi there. The book you [reserved] has just come [back], but someone has [damaged] the cover.",
+          turns: [
+            {
+              line: null,
+              opts: [
+                ["I didn't do it, I promise!", "Misunderstands"],
+                ["Can I reserve a table for two?", "Wrong situation"],
+                ["Oh, that's a shame. Can I still read the inside?", "Fits"],
+                ["Yes, I like books.", "Doesn't answer"],
+              ],
+              a: 2,
+            },
+            {
+              line: "Yes, all the pages are fine. But you'll need to sign this form, so we know the damage was there before you borrowed it.",
+              opts: [
+                ["No problem. Where do I sign?", "Fits"],
+                ["I don't sign forms.", "Too rude"],
+                ["The pages are very interesting.", "Off topic"],
+                ["Fine, I'm fine too, thanks.", "Same word, different meaning"],
+              ],
+              a: 0,
+            },
+            {
+              line: "Just here at the bottom. You can keep the book for three weeks.",
+              opts: [
+                [
+                  "Three weeks ago I was on holiday.",
+                  "Same word, different meaning",
+                ],
+                ["The bottom of the page is empty.", "Off topic"],
+                ["Can I keep it for three years?", "Not realistic"],
+                [
+                  "Great. Can I renew it online if I need it for longer?",
+                  "Fits",
+                ],
+              ],
+              a: 3,
+            },
+            {
+              line: "Yes, through your student account, as long as nobody else has reserved it.",
+              opts: [
+                ["Nobody likes this book.", "Off topic"],
+                ["Perfect. Thanks for your help.", "Fits"],
+                ["I don't have a reservation.", "Misunderstands"],
+                ["My account is fine, thank you.", "Doesn't make sense"],
+              ],
+              a: 1,
+            },
+          ],
+          model:
+            "A student went to the library to collect a reserved book, but its cover was damaged. The pages were fine, so the student signed a form to show the damage was already there. The student can keep the book for three weeks and renew it online if nobody else has reserved it.",
+        },
+      };
+      function buildIL(id) {
+        const c = IL[id];
+        const box = document.getElementById(id);
+        const turns = c.turns
+          .map(
+            (t, ti) => `<div class="il-turn" data-t="${ti}">
+              <div class="il-turn-num">Turn ${ti + 1}</div>
+              ${
+                t.line
+                  ? `<div class="play-row">${playBtn(t.line, 1, c.voice)}<button class="mini-btn" onclick="toggleLine(this)">Show the line</button></div><div class="il-line">${t.line}</div>`
+                  : `<div class="task-how" style="margin:2px 0 8px">Reply to the first line you heard.</div>`
+              }
+              <div class="choice-set stack"><div class="choice-q"><div class="choice-opts">${t.opts
+                .map(
+                  ([text, why], oi) =>
+                    `<button class="word-btn" data-i="${oi}" onclick="pickIL(this, '${id}', ${ti})">${text}<span class="opt-why" hidden>${why}</span></button>`,
+                )
+                .join("")}</div></div></div>
+            </div>`,
+          )
+          .join("");
+        box.innerHTML = `
+          <div class="il-scenario"><b>The situation</b>${c.who}</div>
+          <div class="ir-part">1 · Listen and complete</div>
+          <div class="task-how">Start the 4:00 clock. Play the first line (you hear it once), then type the missing words.</div>
+          <div class="play-row">${playBtn(plain(c.first), 1, c.voice)}</div>
+          <div class="mini-para" id="${id}-fill">${gapHTML(c.first)}</div>
+          <div class="ir-part">2 · Listen and respond</div>
+          <div class="task-how">Play each line once and choose the best reply. You see straight away if it was right.</div>
+          <div id="${id}-turns">${turns}</div>
+          <div class="ir-part">3 · Summarize the conversation</div>
+          <div class="task-how">Start the 1:15 clock. Write three sentences: who talked and why, what they said, how it ended.</div>
+          <textarea class="type-box" id="${id}-sum" rows="4" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Write your summary…" oninput="countWords('${id}-sum', '${id}-count')"></textarea>
+          <div class="type-row">
+            <span class="word-count" id="${id}-count">0 words</span>
+            <button class="mini-btn" onclick="toggleModel(this)">Show a model summary</button>
+          </div>
+          <div class="il-model" hidden>${c.model}</div>`;
+        sizeGaps(box);
+      }
+      function toggleLine(btn) {
+        const line = btn.closest(".il-turn").querySelector(".il-line");
+        const on = line.classList.toggle("shown");
+        btn.textContent = on ? "Hide the line" : "Show the line";
+      }
+      function toggleModel(btn) {
+        const m = btn.closest(".type-row").nextElementSibling;
+        m.hidden = !m.hidden;
+        btn.textContent = m.hidden
+          ? "Show a model summary"
+          : "Hide the model summary";
+      }
+      /* marks a turn: the pick, the right answer, every option's reason */
+      function markTurn(turn, a, picked) {
+        turn.querySelectorAll(".word-btn").forEach((b) => {
+          const i = Number(b.dataset.i);
+          b.disabled = true;
+          b.classList.remove("picked", "ok", "bad", "missed");
+          if (i === picked) b.classList.add(i === a ? "ok" : "bad");
+          else if (i === a) b.classList.add("missed");
+          b.querySelector(".opt-why").hidden = false;
+        });
+      }
+      function pickIL(btn, id, ti) {
+        const turn = btn.closest(".il-turn");
+        if (turn.dataset.picked !== undefined) return;
+        const picked = Number(btn.dataset.i);
+        turn.dataset.picked = picked;
+        markTurn(turn, IL[id].turns[ti].a, picked);
+      }
+      function checkIL(id) {
+        const [gr, gn] = markSet(id + "-fill");
+        let tr = 0;
+        document
+          .querySelectorAll("#" + id + "-turns .il-turn")
+          .forEach((turn, ti) => {
+            if (Number(turn.dataset.picked) === IL[id].turns[ti].a) tr++;
+          });
+        document.getElementById(id + "-result").textContent =
+          gr + tr + " / " + (gn + IL[id].turns.length) + " correct";
+      }
+      function showIL(id) {
+        checkIL(id);
+        showSet(id + "-fill");
+        document
+          .querySelectorAll("#" + id + "-turns .il-turn")
+          .forEach((turn, ti) => {
+            if (turn.dataset.picked === undefined)
+              markTurn(turn, IL[id].turns[ti].a, -1);
+            const line = turn.querySelector(".il-line");
+            if (line) {
+              line.classList.add("shown");
+              turn.querySelector(".play-row .mini-btn").textContent =
+                "Hide the line";
+            }
+          });
+      }
+      function resetIL(id) {
+        buildIL(id);
+        document.getElementById(id + "-result").textContent = "";
+      }
+
+      function countWords(textId, outId) {
+        const v = document.getElementById(textId).value.trim();
+        const n = v ? v.split(/\s+/).length : 0;
+        document.getElementById(outId).textContent =
+          n + (n === 1 ? " word" : " words");
+      }
+
+      /* ---- clock ---- */
+      const PRESETS = [
+        ["0:30", 30, "Fix the typing"],
+        ["1:00", 60, "Listen and Type"],
+        ["2:00", 120, "Hear the small words"],
+        ["4:00", 240, "Interactive Listening · conversation"],
+        ["1:15", 75, "Interactive Listening · summary"],
+        ["5:00", 300, "Writing sprint"],
+      ];
+      const clock = {
+        secs: 60,
+        remaining: 60,
+        running: false,
+        tick: null,
+        muted: false,
+      };
+
+      function fmt(s) {
+        return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+      }
+      function renderTimer() {
+        const d = document.getElementById("timer-display");
+        const bar = document.getElementById("timer-bar-fill");
+        const warn = clock.remaining > 0 && clock.remaining <= clock.secs * 0.2;
+        d.textContent =
+          clock.remaining === 0 && clock.running === false && clock.finished
+            ? "Time"
+            : fmt(clock.remaining);
+        d.classList.toggle("warning", warn);
+        d.classList.toggle("done", !!clock.finished);
+        bar.classList.toggle("warning", warn);
+        bar.style.width = (clock.remaining / clock.secs) * 100 + "%";
+      }
+      function buildPresets() {
+        document.getElementById("timer-presets").innerHTML = PRESETS.map(
+          ([label, s], i) =>
+            `<button class="preset-btn${s === clock.secs ? " on" : ""}" onclick="setPreset(${i})">${label}</button>`,
+        ).join("");
+      }
+      function setPreset(i) {
+        const [, s, name] = PRESETS[i];
+        stopTick();
+        clock.secs = s;
+        clock.remaining = s;
+        clock.running = false;
+        clock.finished = false;
+        document.getElementById("timer-label").textContent = name;
+        document.getElementById("timer-start").textContent = "Start";
+        buildPresets();
+        renderTimer();
+      }
+      function stopTick() {
+        if (clock.tick) clearInterval(clock.tick);
+        clock.tick = null;
+      }
+      function toggleTimer() {
+        const btn = document.getElementById("timer-start");
+        if (clock.running) {
+          stopTick();
+          clock.running = false;
+          btn.textContent = "Resume";
+          return;
+        }
+        if (clock.remaining === 0) {
+          clock.remaining = clock.secs;
+          clock.finished = false;
+        }
+        clock.running = true;
+        btn.textContent = "Pause";
+        clock.tick = setInterval(() => {
+          clock.remaining--;
+          if (clock.remaining <= 0) {
+            clock.remaining = 0;
+            clock.running = false;
+            clock.finished = true;
+            stopTick();
+            btn.textContent = "Again";
+            beep();
+          }
+          renderTimer();
+        }, 1000);
+        renderTimer();
+      }
+      function resetTimer() {
+        stopTick();
+        clock.running = false;
+        clock.finished = false;
+        clock.remaining = clock.secs;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      let audioCtx = null;
+      function beep() {
+        if (clock.muted) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) audioCtx = new Ctx();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(
+            0.2,
+            audioCtx.currentTime + 0.02,
+          );
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioCtx.currentTime + 0.45,
+          );
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+      function toggleMute() {
+        clock.muted = !clock.muted;
+        document.getElementById("mute-btn").textContent = clock.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      buildSmall();
+      Object.keys(LT).forEach(buildLT);
+      Object.keys(IL).forEach(buildIL);
+      document.querySelectorAll(".play-btn").forEach(playLabel);
+      buildPresets();
+      renderTimer();
+    </script>
+  </body>
+</html>
