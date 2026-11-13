@@ -211,7 +211,7 @@ function shuffle(arr) {
 
 ## Registering the lesson
 
-Append one object to the `LESSONS` array in `Raffa/index.html` (there is a comment
+Append one object to the `LESSONS` array in `Raffa/lessons.js` (`window.LESSONS_BY_STUDENT.Raffa`; `index.html` and the teacher home page both load it; there is a comment
 block above it explaining the fields). The card label and the count both derive
 from the array, so nothing else needs editing.
 

@@ -84,6 +84,23 @@ scene (no external images), `textarea#photo-text` with a live `.word-count`.
 `toggleQs()` adds `.revealed`. The questions are only heard on the test, so they
 stay hidden while he answers.
 
+**Recorder** (Lesson 5) — `<div class="rec" id="…"></div>`, built by
+`buildRec()`. `data-prep` (default 20, `0` = no prep) and `data-talk`
+(default 90). Start → prep countdown → beep → MediaRecorder + analyser
+(RMS every 100 ms) → time up or Stop (unlocks after 30 s). `addTake()` adds
+audio, Save link, `.take-map` canvas (voice green, pauses of 2+ s orange,
+click seeks) and stats. One recording at a time (`recNow`). Test it with a
+fake `getUserMedia` returning an oscillator stream with gated gain.
+
+**Choice drills** (Lesson 5) — `CH[id]` with `kind` `wide` (shared `labels`,
+items `[text, answerIndex]`), `stack` (items `{q, opts: [[text, why]], a}`) or
+`three` (`opts` plain strings). `buildCH`, `pickCH`, `checkCH`, `showCH`,
+`resetCH`; result in `#<id>-result`.
+
+**Model answers** — `.type-row > button[onclick=toggleNext(this)]` followed by
+`.il-model[hidden]` holding `.play-row[data-say]` and `.model-text`; the play
+button has `plays = 0` (no limit, toggles stop).
+
 ## The clock
 
 One timer panel per page. `PRESETS = [[label, seconds, name], …]`, built into
@@ -106,7 +123,7 @@ Use the existing tokens (`--accent`, `--accent2`, `--bg`, `--surface`,
 
 ## Registering
 
-`Antonio/index.html` → append to `LESSONS`:
+`Antonio/lessons.js` → append to the `LESSONS` array (`window.LESSONS_BY_STUDENT.Antonio`). `index.html` and the teacher home page both load this file, so the list lives only here:
 
 ```js
 {

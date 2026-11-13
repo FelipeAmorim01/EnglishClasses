@@ -336,7 +336,7 @@ drill this track keeps.
 
 ## Registering the lesson
 
-Append one object to the `LESSONS` array in `Peterson/index.html`:
+Append one object to the `LESSONS` array in `Peterson/lessons.js` (`window.LESSONS_BY_STUDENT.Peterson`). `index.html` and the teacher home page both load this file, so the list lives only here:
 
 ```js
 {

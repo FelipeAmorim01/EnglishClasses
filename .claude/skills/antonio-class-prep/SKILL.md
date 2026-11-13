@@ -39,7 +39,7 @@ current plan; the outline file still shows the original 10.
 `Antonio/index.html` shows a calendar of this ("Your road to the exam"). It
 reads `EXAM`, `SCHEDULE` and `CANCELLED` in its script: if the date or a
 class day moves, update those, and the countdown and done marks update themselves. Each
-class links to its lesson once the lesson is in `LESSONS`.
+class links to its lesson once the lesson is in `LESSONS` (`Antonio/lessons.js`).
 
 - His college needs **110** overall.
 - He scored **110–120** on the free official practice test and has never taken
@@ -159,7 +159,7 @@ you book."). If a lesson turns up a difference, update the outline's task table.
    shared between files. Update the `<title>` (`DET Prep — Class N`) and the
    header subtitle (`<Class title> — Class N`). See
    `references/page-anatomy.md`.
-3. **Register it** in the `LESSONS` array in `Antonio/index.html`: file, title,
+3. **Register it** in the `LESSONS` array in `Antonio/lessons.js` (not in `index.html`): file, title,
    date (the class day, e.g. "29 October 2026"), one-line desc.
 4. **Verify it in a browser** (the `lessons` launch config serves the repo on
    port 8765). See the checklist below.

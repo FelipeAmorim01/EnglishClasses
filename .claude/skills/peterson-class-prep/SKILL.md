@@ -131,7 +131,7 @@ building.
 fullest CSS, and the house style is deliberately copy-forwarded rather than
 shared between files. See `references/page-anatomy.md`.
 
-**3. Register it** in the `LESSONS` array in `Peterson/index.html`.
+**3. Register it** in the `LESSONS` array in `Peterson/lessons.js` (not in `index.html`).
 
 **4. Verify it in a browser** before saying it is done. See the checklist below.
 

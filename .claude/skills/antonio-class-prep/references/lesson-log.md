@@ -3,8 +3,9 @@
 What each class covered and what was set for homework. Read before building the
 next class. Keep it updated when a lesson is added or Felipe changes one.
 
-**Next up: Class 5, Speaking: photos & prompts** (Speak About the Photo,
-Read/Listen Then Speak), 12 November. Plan is now 9 classes (outline 7 + 8
+**Next up: Class 6, Writing: sentences that score** (Write About the Photo,
+Interactive Writing), 17 November. Outline homework for it: 1 timed
+Interactive Writing every other day; start the grammar-error log. Plan is now 9 classes (outline 7 + 8
 merged), see SKILL.md.
 
 29 October was cancelled; Class 2 moved to 3 November.
@@ -149,3 +150,44 @@ plays, check with subtitles, circle misses, send 2) · word list, now listened
 to in a dictionary first · spelling list adds today's misses · sprints + a
 75-second three-sentence summary of each, 7 new prompts, send 2 · practice
 test 2 only if still not taken.
+
+---
+
+## Class 5 — Speaking: Photos & Prompts
+`lesson_plan_5.html` · 12 November 2026
+
+Stages: Warm-up → Speak About the Photo → Read / Listen, Then Speak → Listen Back & Fix → Extra Practice → Wrap-up
+
+- First page with an in-page recorder (`.rec`): Start runs a 20 s prep
+  countdown, beeps, then records 1:30 by itself (Stop unlocks after 0:30, Skip
+  prep, Cancel during prep). Each take: audio, Save (download), a strip of
+  voice vs. pauses of 2+ s (click to jump), and a line "1:30 recorded · voice
+  until 1:24 · 2 pauses of 2+ seconds". Nothing is uploaded. Without a mic the
+  timer still runs and says to record on the phone.
+- Warm-up: listening sentences and missed small words, a word said as the
+  dictionary said it, a 75-second summary, practice test 2, recording himself.
+- Speak About the Photo: photo frame as an apply-box (toolkit wording), cards
+  (-ing for actions, never "I don't know", go round twice, bigger words).
+  A. Which part of the frame? (8 sentences about the park photo: Overview /
+  Detail / Story / Personal link). B. the park out loud, C. the station
+  (delayed 08:15, clock 8:20, bench, newspaper). Model answers, with ▶ Hear it.
+- Read / Listen, Then Speak: cards (three keywords, no full sentences, pick a
+  side fast, bullets are a plan) + opinion frame. D. Pick the best notes
+  (4 prompts × 3 note sets, reason on each). E. Read Then Speak, place to
+  recommend (3 keyword boxes). F. Listen Then Speak, phones (1 play, hedged:
+  check play count on the practice test).
+- Listen back & fix: table (long silence, restarts, um/uh, same word, stopping
+  before 1:00, same sentence starts). G. Swap the safe word (spacious,
+  exhausted, terrible, crowded, delighted, stunning, an excellent, freezing;
+  distractors are wrong form or wrong meaning). H. Record it twice (daily
+  routine), two fixes between takes.
+- Extra Practice: I. the market photo, J. prompt deck (8 prompts), K. his own
+  phone photo while Felipe sketches, L. sprint (speaking vs writing) then say
+  it with the text hidden.
+- Clock presets: 0:20, 1:00, 1:30, 5:00.
+
+**Homework:** one 90-second recording a day (20 s, 3 keywords, record,
+listen back for pauses/repeats/one safe word, record again), 7 prompts, send 2
+first + second takes · word list, use 2 list words in each recording ·
+listening continues, retell it as the recording on prompt 2 · 3 sprints, on
+the previous day's prompt · practice test 2 only if still not taken.

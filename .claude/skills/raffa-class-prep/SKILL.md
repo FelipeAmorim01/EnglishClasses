@@ -137,7 +137,7 @@ fullest CSS, and the house style is deliberately copy-forwarded rather than shar
 between files. Replace the content. See `references/page-anatomy.md` for the
 template, the component class names and the JavaScript contract.
 
-**4. Register it** in the `LESSONS` array in `Raffa/index.html`.
+**4. Register it** in the `LESSONS` array in `Raffa/lessons.js` (not in `index.html`).
 
 **5. Verify it in a browser** before saying it is done. See the checklist below.
 
