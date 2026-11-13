@@ -69,7 +69,7 @@ what was actually covered, since a lesson can run short or change.
 | 2 | Nov 3 | Real words & missing letters | Read and Select, Read and Complete |
 | 3 | Nov 5 | Reading strategies | Fill in the Blanks, Interactive Reading |
 | 4 | Nov 10 | Listening accuracy | Listen and Type, Interactive Listening |
-| 5 | Nov 12 | Speaking: photos & prompts | Speak About the Photo, Read/Listen Then Speak |
+| 5 | Nov 13 (Fri, moved from Thu 12) | Speaking: photos & prompts | Speak About the Photo, Read/Listen Then Speak |
 | 6 | Nov 17 | Writing: sentences that score | Write About the Photo, Interactive Writing |
 | 7 | Nov 19 | Interactive Speaking & Writing Sample (outline 7 + 8) | Interactive Speaking, Speaking Sample, Writing Sample, summaries |
 | 8 | Nov 24 | Full mock, exam conditions (outline 9) | full test |

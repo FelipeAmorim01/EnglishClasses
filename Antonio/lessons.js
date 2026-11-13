@@ -42,7 +42,7 @@ window.LESSONS_BY_STUDENT.Antonio = [
   {
     file: "lesson_plan_5.html",
     title: "Speaking: Photos & Prompts",
-    date: "12 November 2026",
+    date: "13 November 2026",
     desc: "The photo frame for Speak About the Photo, three keywords in 20 seconds for Read and Listen, Then Speak, and recording yourself to find the pauses and repeated words.",
   },
 ];

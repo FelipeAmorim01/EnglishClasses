@@ -154,7 +154,7 @@ test 2 only if still not taken.
 ---
 
 ## Class 5 — Speaking: Photos & Prompts
-`lesson_plan_5.html` · 12 November 2026
+`lesson_plan_5.html` · 13 November 2026 (moved from Thursday 12 November)
 
 Stages: Warm-up → Speak About the Photo → Read / Listen, Then Speak → Listen Back & Fix → Extra Practice → Wrap-up
 
