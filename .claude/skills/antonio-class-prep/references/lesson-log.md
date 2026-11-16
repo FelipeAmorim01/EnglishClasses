@@ -3,10 +3,11 @@
 What each class covered and what was set for homework. Read before building the
 next class. Keep it updated when a lesson is added or Felipe changes one.
 
-**Next up: Class 6, Writing: sentences that score** (Write About the Photo,
-Interactive Writing), 17 November. Outline homework for it: 1 timed
-Interactive Writing every other day; start the grammar-error log. Plan is now 9 classes (outline 7 + 8
-merged), see SKILL.md.
+**Next up: Class 7, Interactive Speaking & Writing Sample** (outline 7 + 8
+merged), 19 November: Interactive Speaking, Speaking Sample, Writing Sample,
+summaries, and the error-log review (top 3 repeated mistakes). Outline homework
+for it: 3rd official practice test (log the score) · daily speaking recording
+continues. Plan is now 9 classes (outline 7 + 8 merged), see SKILL.md.
 
 29 October was cancelled; Class 2 moved to 3 November.
 
@@ -191,3 +192,46 @@ listen back for pauses/repeats/one safe word, record again), 7 prompts, send 2
 first + second takes · word list, use 2 list words in each recording ·
 listening continues, retell it as the recording on prompt 2 · 3 sprints, on
 the previous day's prompt · practice test 2 only if still not taken.
+
+---
+
+## Class 6 — Writing: Sentences That Score
+`lesson_plan_6.html` · 16 November 2026 (Monday, moved from Tuesday 17 November)
+
+Stages: Warm-up → Write About the Photo → Interactive Writing → Link & Check → Extra Practice → Wrap-up
+
+- Warm-up: recordings (first vs second take), two list words used in them,
+  a sprint and the word not said aloud, practice test 2, which writing
+  mistakes he thinks he makes.
+- Write About the Photo: photo frame in writing (first 3 toolkit steps), cards
+  (three facts per sentence, join with while/which/so, vary starts, keep 10 s to
+  check). A. Which sentence scores higher? (café SVG, 4 `stack` items: rich vs
+  too simple vs one grammar mistake). B. the café, typed, 1:00. C. the bus stop
+  (new SVG: red umbrella, man on phone, number 42 bus, puddles). Model answers
+  are text only (no ▶ Hear it), with live word counts.
+- Interactive Writing: answer → reason → example → close via the opinion frame
+  (toolkit wording), cards (answer in sentence one, a real example, the
+  follow-up is new, last 30 s check). D. Which part is it? (8 sentences on a
+  second language, Answer/Reason/Example/Close, cued by their starters). E.
+  homework every day? (5:00) + blurred follow-up "If you were a teacher…"
+  (3:00), models for both. Hedged: follow-up appears after part 1, check on
+  the practice test.
+- Link & Check: mistake table (he/she/it -s, plurals, past with last/ago,
+  have + participle, a/an, preposition after the word, comma splice). F. Pick
+  the linking word (8, `three`: however, although, as a result, whereas, such
+  as, moreover, because vs because of, therefore). G. Find the mistake — new
+  `SPOT` widget, click the wrong word, correction tag after Check (work, student,
+  go, saw, a, of, don't, on). H. Change the starts (rewrite a "There is…" ×5
+  paragraph). Error log started on the page (3 rows: mistake / correct / rule).
+- Extra Practice: I. park and J. market (Class 5 SVGs, now written), K.
+  Interactive Writing big vs small company + follow-up ideal first job, L. plant
+  three mistakes for Felipe to find, M. sprint (what to study at college).
+- Clock presets: 1:00, 2:00, 3:00, 5:00. No recorder or speech voice on this
+  page (code dropped).
+
+**Homework:** one timed Interactive Writing every other day (5:00 + 3:00, 4
+prompt + follow-up pairs, send each) · error log after every piece of writing,
+bring it to Class 7 · Write About the Photo from a phone photo on the other days ·
+daily 90-second recording continues, one linking word from each group, 4
+prompts, send 1 · word list (2 list words per Interactive Writing) and listening
+continue · practice test 2 only if still not taken; the 3rd comes after Class 7.

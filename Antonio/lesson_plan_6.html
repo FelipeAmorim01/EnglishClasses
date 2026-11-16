@@ -1,0 +1,4205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DET Prep — Class 6</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f2ee;
+        --surface: #ffffff;
+        --surface2: #ede9e3;
+        --border: #d8d2c8;
+        --accent: #2d5f3f;
+        --accent-light: #e8f0eb;
+        --accent2: #b85c2a;
+        --text: #1a1a18;
+        --muted: #7a7368;
+        --sidebar-w: 210px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      header {
+        background: var(--surface);
+        padding: 20px 40px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "Lora", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      header .subtitle {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 2px;
+        letter-spacing: 0.03em;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 2px;
+        color: var(--muted);
+        background: var(--bg);
+      }
+
+      .back-link {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 7px 14px;
+        white-space: nowrap;
+        transition:
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .back-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* PROGRESS */
+      .progress-wrap {
+        height: 3px;
+        background: var(--border);
+      }
+      .progress-fill {
+        height: 3px;
+        background: var(--accent);
+        transition: width 0.4s ease;
+        width: 0%;
+      }
+
+      /* LAYOUT */
+      main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* SIDEBAR */
+      aside {
+        width: var(--sidebar-w);
+        min-width: var(--sidebar-w);
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+        user-select: none;
+      }
+
+      .nav-item:hover {
+        background: var(--bg);
+      }
+
+      .nav-item.active {
+        border-left-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .nav-item.done {
+        opacity: 0.45;
+      }
+
+      .nav-num {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2px;
+      }
+
+      .nav-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .nav-item.active .nav-label {
+        color: var(--accent);
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 44px 52px;
+        overflow-y: auto;
+        max-height: calc(100vh - 106px);
+      }
+
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+        animation: fadeUp 0.25s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* STAGE HEADER */
+      .stage-eyebrow {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .stage-title {
+        font-family: "Lora", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .stage-title em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .stage-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      /* QUESTION CARDS */
+      .q-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      .q-list li {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 13px 18px;
+        line-height: 1.5;
+      }
+
+      /* VOCAB TABLE */
+      .vocab-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .vocab-table th {
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+      }
+
+      .vocab-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        line-height: 1.6;
+        vertical-align: top;
+      }
+
+      .vocab-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .vocab-table td:first-child {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .vocab-table td:nth-child(2) {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 28px;
+      }
+
+      .section-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 28px 0;
+      }
+
+      /* IDIOM SPOTLIGHT */
+      .idiom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .idiom-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 16px 20px;
+      }
+
+      .idiom-term {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .idiom-meaning {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      /* the example is the line that gets read out loud — size it for that */
+      .idiom-example {
+        font-size: 0.9rem;
+        color: var(--text);
+        border-left: 2px solid var(--accent2);
+        padding-left: 12px;
+        line-height: 1.6;
+      }
+
+      /* SCENARIOS */
+      .scenario-intro {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        margin-bottom: 28px;
+      }
+
+      .scenario-intro .intro-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.7;
+        margin-bottom: 8px;
+      }
+
+      .scenario-intro p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .scenario-block {
+        margin-bottom: 40px;
+      }
+
+      .scenario-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .scenario-name span {
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-style: normal;
+      }
+
+      .scenario-numbers {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .position-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .position-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .position-card.mine {
+        border-left: 3px solid var(--accent);
+      }
+
+      .position-card.counterpart {
+        border-left: 3px solid var(--accent2);
+      }
+
+      .position-role {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .position-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .position-card li {
+        font-size: 0.83rem;
+        color: var(--text);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .reveal-toggle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--accent2);
+        background: none;
+        border: 1px dashed var(--accent2);
+        padding: 6px 14px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .reveal-toggle:hover {
+        background: #fbf1ea;
+      }
+
+      .position-card.counterpart .position-content {
+        display: none;
+      }
+
+      .position-card.counterpart.revealed .position-content {
+        display: block;
+      }
+
+      .position-card.counterpart .hint-text {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .position-card.counterpart.revealed .hint-text {
+        display: none;
+      }
+
+      .vocab-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .chip-group-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+
+      /* ROLEPLAY LAYOUT — scenarios + sticky language sidebar side by side */
+      .negotiation-layout {
+        display: grid;
+        grid-template-columns: 1fr 230px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .language-sidebar {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 18px;
+      }
+
+      .language-sidebar .section-label {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group {
+        margin-bottom: 16px;
+      }
+
+      .language-sidebar .chip-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .language-sidebar .vocab-chips {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .language-sidebar .chip {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .negotiation-layout {
+          grid-template-columns: 1fr;
+        }
+        .language-sidebar {
+          position: static;
+        }
+      }
+
+      /* SAFE / RISKY TOPIC COLUMNS */
+      .topic-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .topic-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+      }
+
+      .topic-card.safe {
+        border-top: 3px solid var(--accent);
+      }
+
+      .topic-card.risky {
+        border-top: 3px solid var(--accent2);
+      }
+
+      .topic-head {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .topic-card li {
+        font-size: 0.83rem;
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid var(--border);
+      }
+
+      .topic-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 12px;
+      }
+
+      /* WRAP-UP */
+      .apply-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 24px 28px;
+        margin-bottom: 32px;
+      }
+
+      .apply-box .apply-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .apply-box .apply-lead {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .apply-steps {
+        list-style: none;
+        counter-reset: apply-counter;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .apply-steps li {
+        counter-increment: apply-counter;
+        display: flex;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .apply-steps li::before {
+        content: counter(apply-counter);
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .apply-steps li strong {
+        color: var(--accent);
+      }
+
+      .reflection-grid {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .reflection-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .reflection-row:last-child {
+        border-bottom: none;
+      }
+
+      .reflection-label {
+        padding: 16px 18px;
+        background: var(--surface2);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .reflection-content a,
+      .q-list a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent2);
+        padding-bottom: 1px;
+        transition: color 0.12s;
+      }
+
+      .reflection-content a:hover,
+      .q-list a:hover {
+        color: var(--accent2);
+      }
+
+      .reflection-content {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .nav-bar {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 9px 22px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: none;
+        color: var(--text);
+        transition: all 0.12s;
+      }
+
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.primary:hover:not(:disabled) {
+        background: #1e4a2e;
+        border-color: #1e4a2e;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+
+      .step-counter {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      /* MOBILE — desktop layout is untouched above this line */
+      @media (max-width: 720px) {
+        .idiom-grid,
+        .position-split,
+        .topic-split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding: 14px 18px;
+          gap: 12px;
+        }
+
+        .back-link {
+          font-size: 0.68rem;
+          padding: 6px 10px;
+        }
+
+        header h1 {
+          font-size: 1.15rem;
+        }
+
+        main {
+          flex-direction: column;
+        }
+
+        /* sidebar becomes a horizontal tab strip */
+        aside {
+          width: 100%;
+          min-width: 0;
+          flex-direction: row;
+          gap: 0;
+          padding: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+
+        aside::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-item {
+          flex: 0 0 auto;
+          padding: 12px 16px;
+          border-left: none;
+          border-bottom: 3px solid transparent;
+          white-space: nowrap;
+        }
+
+        .nav-item.active {
+          border-bottom-color: var(--accent);
+        }
+
+        .nav-num {
+          display: none;
+        }
+
+        .content {
+          padding: 26px 18px 34px;
+          max-height: none;
+          overflow-y: visible;
+        }
+
+        .stage-title {
+          font-size: 1.5rem;
+        }
+
+        .stage-sub {
+          margin-bottom: 26px;
+        }
+
+        .q-list li {
+          font-size: 0.95rem;
+          padding: 12px 14px;
+        }
+
+        /* table rows stack into cards */
+        .vocab-table,
+        .vocab-table tbody,
+        .vocab-table tr,
+        .vocab-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .vocab-table thead {
+          display: none;
+        }
+
+        .vocab-table tr {
+          padding: 12px 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .vocab-table tr:last-child {
+          border-bottom: none;
+        }
+
+        .vocab-table td {
+          padding: 2px 0;
+          border-bottom: none;
+        }
+
+        .vocab-table td:nth-child(2)::before {
+          content: "→ ";
+        }
+
+        .scenario-intro {
+          padding: 18px 20px;
+        }
+
+        .scenario-intro p {
+          font-size: 0.95rem;
+        }
+
+        .scenario-block {
+          margin-bottom: 32px;
+        }
+
+        .apply-box {
+          padding: 18px 20px;
+        }
+
+        .reflection-row {
+          grid-template-columns: 1fr;
+        }
+
+        .reflection-label {
+          padding: 10px 16px;
+        }
+
+        .reflection-content {
+          padding: 12px 16px;
+        }
+
+        /* keep Previous / Next reachable while scrolling */
+        .nav-bar {
+          position: sticky;
+          bottom: 0;
+          padding: 12px 16px;
+          gap: 10px;
+        }
+
+        .btn {
+          padding: 9px 16px;
+        }
+      }
+      /* ---------- carried forward ---------- */
+      /* grid items default to min-width:auto, which lets a wide child
+         push the whole page past the viewport — this stops that */
+      .negotiation-main {
+        min-width: 0;
+      }
+
+      .panel-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      /* stacked phrase banks in the main column need room between them —
+         .language-sidebar .chip-group keeps its own tighter spacing */
+      .chip-group {
+        margin-bottom: 18px;
+      }
+
+      /* ---------- FOLLOW THE THREAD (stage 3, round three) ---------- */
+      .thread-list {
+        list-style: none;
+        counter-reset: thread;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .thread-list:empty {
+        display: none;
+      }
+
+      .thread-list li {
+        counter-increment: thread;
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--muted);
+        background: var(--bg);
+        border-left: 3px solid var(--border);
+        padding: 10px 14px;
+      }
+
+      .thread-list li::before {
+        content: counter(thread) " · ";
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* the follow-up being answered right now */
+      .thread-list li:last-child {
+        color: var(--accent);
+        background: var(--accent-light);
+        border-left-color: var(--accent);
+        animation: fadeUp 0.25s ease;
+      }
+
+      /* ---------- LANGUAGE TARGET inside a scenario ---------- */
+      .lang-target {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .lang-target .lang-target-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .lang-target em {
+        color: var(--accent);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      /* ---------- VOCABULARY RULE (stage 2 closer, recurring) ---------- */
+      .rule-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 22px 26px 24px;
+      }
+
+      .rule-badge {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent2);
+        padding: 4px 10px;
+        margin-bottom: 11px;
+      }
+
+      .rule-title {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent2);
+        margin-bottom: 5px;
+      }
+
+      .rule-lead {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .rule-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .rule-card {
+        background: var(--bg);
+        border-left: 3px solid var(--accent);
+        padding: 15px 18px;
+        min-width: 0;
+      }
+
+      .rule-card-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-formula {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 7px 11px;
+        margin-bottom: 11px;
+        line-height: 1.5;
+      }
+
+      .rule-formula span {
+        color: var(--accent2);
+      }
+
+      .rule-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rule-card li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .rule-trap {
+        background: #fbf1ea;
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+        margin-bottom: 16px;
+      }
+
+      .rule-trap-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .rule-trap p {
+        font-size: 0.86rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      .rule-trap p + p {
+        margin-top: 7px;
+      }
+
+      .rule-trap em {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+      }
+
+      .rule-say {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      .rule-say-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .rule-say ol {
+        margin-left: 18px;
+      }
+
+      .rule-say li {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+
+      /* ---------- THE PROMPT DECK (stage 3, both rounds) ---------- */
+      .prompt-deck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent2);
+        padding: 24px 26px 22px;
+        margin-bottom: 20px;
+      }
+
+      .prompt-card {
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .prompt-text {
+        font-family: "Lora", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+
+      /* people run longer than questions — a size down */
+      .prompt-text.long {
+        font-size: 1.25rem;
+      }
+
+      .prompt-text.empty {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .deck-count {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-left: auto;
+      }
+
+      /* ---------- THE CALL LADDER (stage 3, round two) ---------- */
+      .call-ladder {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .call-rung {
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        padding: 11px 14px 14px;
+        color: var(--text);
+        cursor: pointer;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.12s;
+      }
+
+      .call-rung:nth-child(1) {
+        border-top-color: #2d5f3f;
+      }
+      .call-rung:nth-child(2) {
+        border-top-color: #6a7a48;
+      }
+      .call-rung:nth-child(3) {
+        border-top-color: #a86a35;
+      }
+      .call-rung:nth-child(4) {
+        border-top-color: #b85c2a;
+      }
+
+      .call-rung:hover {
+        background: var(--bg);
+      }
+
+      .call-tag {
+        display: block;
+        min-height: 1.1em;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 3px;
+      }
+
+      .call-head {
+        display: block;
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .call-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .call-list span {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .call-rung.mine {
+        background: var(--accent-light);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .call-rung.mine .call-tag {
+        color: var(--accent);
+      }
+
+      /* four rungs need about 640px; below that, two by two */
+      @media (max-width: 1220px) {
+        .call-ladder {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- MOBILE for the new components ---------- */
+      @media (max-width: 720px) {
+        .thread-list li {
+          font-size: 0.95rem;
+        }
+
+        .prompt-deck {
+          padding: 20px;
+        }
+
+        .prompt-text {
+          font-size: 1.25rem;
+        }
+
+        .prompt-text.long {
+          font-size: 1.1rem;
+        }
+
+        .deck-count {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        .rule-split {
+          grid-template-columns: 1fr;
+        }
+
+        .rule-box {
+          padding: 18px 20px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .call-ladder {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== DET prep additions (Antonio) ===== */
+
+      /* timer, copied from Raffa lesson 4 */
+      .timer-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 20px;
+        margin-bottom: 14px;
+      }
+      .timer-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .timer-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .timer-display {
+        font-family: "Lora", serif;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .timer-display.warning {
+        color: var(--accent2);
+      }
+      .timer-display.done {
+        color: var(--accent2);
+        font-style: italic;
+        font-size: 2.2rem;
+      }
+      .timer-bar {
+        height: 4px;
+        background: var(--surface2);
+        margin: 14px 0 14px;
+      }
+      .timer-bar-fill {
+        height: 100%;
+        width: 100%;
+        background: var(--accent);
+        transition: width 0.2s linear;
+      }
+      .timer-bar-fill.warning {
+        background: var(--accent2);
+      }
+      .timer-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .timer-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .preset-btn,
+      .mini-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      .preset-btn:hover,
+      .mini-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .preset-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .mute-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        color: var(--muted);
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .mute-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* score overview */
+      .score-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .score-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 16px 18px;
+      }
+      .score-card.target {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .score-big {
+        font-family: "Lora", serif;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .score-card:not(.target) .score-big {
+        color: var(--accent);
+      }
+      .score-cap {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .det-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.86rem;
+      }
+      .det-table th {
+        text-align: left;
+        background: var(--surface2);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        padding: 10px 14px;
+      }
+      .det-table td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .det-table td:first-child {
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+      .det-table td:nth-child(2) {
+        font-weight: 600;
+      }
+      .det-table td:last-child {
+        white-space: nowrap;
+        color: var(--muted);
+      }
+
+      /* task blocks in stage 3 */
+      .task-block {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 20px 22px;
+        margin-bottom: 18px;
+      }
+      .task-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .task-name {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .task-name span {
+        color: var(--accent2);
+        margin-right: 6px;
+      }
+      .task-time {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 3px 9px;
+        white-space: nowrap;
+      }
+      .task-how {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+        line-height: 1.55;
+      }
+      .task-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        align-items: center;
+      }
+      .task-result {
+        font-size: 0.82rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .word-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .word-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.92rem;
+        padding: 10px 8px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        color: var(--text);
+      }
+      .word-btn:hover {
+        border-color: var(--accent);
+      }
+      .word-btn.picked {
+        background: var(--accent-light);
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .word-btn.ok {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .word-btn.bad {
+        background: var(--accent2);
+        border-color: var(--accent2);
+        color: #fff;
+        text-decoration: line-through;
+      }
+      .word-btn.missed {
+        border: 2px dashed var(--accent);
+      }
+
+      .ctest {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 2.3;
+        background: var(--bg);
+        padding: 16px 18px;
+      }
+      .gap {
+        white-space: nowrap;
+      }
+      .gap input {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        padding: 0 3px;
+        color: var(--text);
+        outline: none;
+      }
+      .gap input:focus {
+        background: var(--accent-light);
+      }
+      .gap input.ok {
+        border-bottom-color: var(--accent);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .gap input.bad {
+        border-bottom-color: var(--accent2);
+        color: var(--accent2);
+      }
+
+      .type-item {
+        margin-bottom: 14px;
+      }
+      .type-item:last-child {
+        margin-bottom: 0;
+      }
+      .type-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+      .type-box {
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        resize: vertical;
+        color: var(--text);
+      }
+      .type-box:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      .type-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 6px;
+        flex-wrap: wrap;
+      }
+      .answer-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--accent);
+        display: none;
+      }
+      .answer-line.shown {
+        display: inline;
+      }
+      .word-count {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .photo-frame {
+        background: var(--surface2);
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .photo-frame svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .speak-prompt {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 14px 18px;
+      }
+      .speak-prompt ul {
+        margin: 8px 0 0 18px;
+        font-size: 0.95rem;
+      }
+
+      .hidden-qs {
+        position: relative;
+      }
+      .hidden-qs ol {
+        padding-left: 20px;
+        font-family: "Lora", serif;
+        line-height: 1.7;
+        filter: blur(7px);
+        user-select: none;
+        transition: filter 0.2s;
+      }
+      .hidden-qs.revealed ol {
+        filter: none;
+        user-select: auto;
+      }
+      .reflection-content p {
+        margin: 0 0 10px;
+      }
+      .hw-steps,
+      .hw-prompts {
+        margin: 0 0 12px 20px;
+      }
+      .hw-steps li,
+      .hw-prompts li {
+        margin-bottom: 4px;
+      }
+      .hw-prompts {
+        font-family: "Lora", serif;
+        font-style: italic;
+      }
+      .hw-prompts-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .hidden-qs li {
+        margin-bottom: 6px;
+      }
+
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .score-grid,
+        .rules-grid {
+          grid-template-columns: 1fr;
+        }
+        .word-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .det-table td:first-child,
+        .det-table td:last-child {
+          white-space: normal;
+        }
+        .task-block {
+          padding: 16px;
+        }
+      }
+      .language-sidebar .timer-panel {
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .language-sidebar .timer-controls .btn {
+        padding: 8px 12px;
+      }
+      @media (max-width: 900px) {
+        .language-sidebar {
+          order: -1;
+        }
+      }
+
+      /* ---- Class 2 additions ---- */
+      /* long words (acquaintance) need wider cells than a fixed 4 columns */
+      .word-grid {
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      }
+      .word-btn {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .round-tabs {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .round-tabs .mini-btn.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .round-note {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      .pair-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 18px;
+      }
+      .pair-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .fam-list {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2.2;
+        background: var(--bg);
+        padding: 12px 18px 12px 38px;
+        margin: 0;
+      }
+      .fam-list .root {
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-left: 6px;
+      }
+      .gap input.bad {
+        text-decoration: line-through;
+      }
+      .fix-ans {
+        font-family: "Inter", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 1px 6px;
+        margin-left: 4px;
+      }
+      .why-list {
+        margin: 10px 0 0 18px;
+        font-size: 0.86rem;
+        line-height: 1.6;
+        display: none;
+      }
+      .why-list.shown {
+        display: block;
+      }
+      .why-list li {
+        margin-bottom: 4px;
+      }
+      @media (max-width: 720px) {
+        .pair-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---- Class 3 additions ---- */
+      /* Fill in the Blanks: one box per missing letter, like the real task */
+      .fib input {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.02rem;
+        letter-spacing: 0.5ch;
+        padding: 0 0 0 0.2ch;
+        border-bottom: none;
+        background:
+          repeating-linear-gradient(
+              90deg,
+              var(--accent) 0 1.1ch,
+              transparent 1.1ch 1.5ch
+            )
+            left bottom / 100% 2px no-repeat,
+          var(--surface);
+      }
+      .fib input.ok {
+        background-color: var(--accent-light);
+      }
+      .fib input.bad {
+        background-color: #f7ebe3;
+      }
+      .choice-set {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .choice-q {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 8px;
+        align-items: center;
+      }
+      .choice-prompt {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+      }
+      .choice-opts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+      }
+      .choice-set.stack .choice-q {
+        grid-template-columns: 1fr;
+      }
+      .choice-set.stack .choice-prompt {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .choice-set.stack .choice-opts {
+        grid-template-columns: 1fr;
+      }
+      .choice-set.stack .word-btn {
+        text-align: left;
+        padding: 10px 12px;
+        line-height: 1.4;
+      }
+      .opt-why {
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 600;
+        margin-top: 3px;
+        opacity: 0.9;
+        text-decoration: none;
+      }
+      .opt-why[hidden] {
+        display: none;
+      }
+      .word-btn.bad .opt-why {
+        text-decoration: none;
+        display: inline-block;
+      }
+      .ir-passage {
+        font-family: "Lora", serif;
+        font-size: 1.02rem;
+        line-height: 2;
+        background: var(--bg);
+        padding: 16px 18px;
+        margin-bottom: 14px;
+      }
+      .ir-passage p {
+        margin-bottom: 12px;
+      }
+      .ir-passage p:last-child {
+        margin-bottom: 0;
+      }
+      .ir-passage select {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        border: none;
+        border-bottom: 2px solid var(--accent);
+        background: var(--surface);
+        color: var(--text);
+        padding: 0 2px;
+      }
+      .ir-passage select.ok {
+        background: var(--accent-light);
+      }
+      .ir-passage select.bad {
+        background: #f7ebe3;
+      }
+      .ir-slot {
+        background: var(--surface);
+        border-bottom: 2px dashed var(--accent2);
+        padding: 0 4px;
+        color: var(--muted);
+      }
+      .ir-slot.filled {
+        color: var(--text);
+        border-bottom-style: solid;
+      }
+      .ir-passage ::selection {
+        background: #f3d36b;
+      }
+      .ir-part {
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent2);
+        margin: 18px 0 8px;
+      }
+      .hl-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .hl-q {
+        border: 1px solid var(--border);
+        background: var(--bg);
+        padding: 10px 12px;
+        cursor: pointer;
+        font-size: 0.92rem;
+      }
+      .hl-q.active {
+        border: 2px solid var(--accent);
+        background: var(--accent-light);
+      }
+      .hl-q.ok {
+        border-color: var(--accent);
+      }
+      .hl-q.bad {
+        border-color: var(--accent2);
+      }
+      .hl-ans {
+        display: block;
+        margin-top: 6px;
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--muted);
+      }
+      .hl-q.ok .hl-ans {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .hl-q.bad .hl-ans {
+        color: var(--accent2);
+        text-decoration: line-through;
+      }
+      .mini-para {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        line-height: 1.8;
+        background: var(--bg);
+        padding: 14px 18px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 720px) {
+        .choice-q {
+          grid-template-columns: 1fr;
+        }
+        .choice-opts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* ---- Class 4 additions ---- */
+      /* play button: the page reads the audio with the computer's voice */
+      .play-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 0.74rem;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+      .play-btn:hover {
+        filter: brightness(1.1);
+      }
+      .play-btn:disabled {
+        background: var(--surface2);
+        border-color: var(--border);
+        color: var(--muted);
+        cursor: default;
+        filter: none;
+      }
+      .play-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+      .open-gaps .gap input {
+        width: 7ch !important;
+      }
+      .type-box.ok {
+        border-color: var(--accent);
+        background: var(--accent-light);
+      }
+      .type-box.bad {
+        border-color: var(--accent2);
+      }
+      .lt-tag {
+        font-size: 0.76rem;
+        font-weight: 600;
+      }
+      .lt-tag.ok {
+        color: var(--accent);
+      }
+      .lt-tag.bad {
+        color: var(--accent2);
+      }
+      .lt-key {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        background: var(--accent-light);
+        padding: 6px 10px;
+        margin-top: 6px;
+      }
+      .lt-key[hidden] {
+        display: none;
+      }
+      .lt-key .miss {
+        color: var(--accent2);
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+      }
+      .lt-extra {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 0.76rem;
+        color: var(--accent2);
+        margin-top: 2px;
+      }
+      .fix-was {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .il-scenario {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        background: var(--bg);
+        border-left: 3px solid var(--accent2);
+        padding: 12px 16px;
+        margin-bottom: 4px;
+      }
+      .il-scenario b {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent2);
+        display: block;
+        margin-bottom: 2px;
+      }
+      .il-turn {
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+      .il-turn:first-child {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .il-turn-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .il-line {
+        font-family: "Lora", serif;
+        font-style: italic;
+        color: var(--muted);
+        filter: blur(6px);
+        user-select: none;
+        transition: filter 0.2s;
+        margin: 2px 0 8px;
+      }
+      .il-line.shown {
+        filter: none;
+        user-select: auto;
+      }
+      /* own line, and still not struck through */
+      .il-turn .word-btn.bad .opt-why {
+        width: 100%;
+      }
+      .il-turn .word-btn:disabled {
+        cursor: default;
+        opacity: 1;
+      }
+      .il-model {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        line-height: 1.6;
+        background: var(--accent-light);
+        padding: 10px 14px;
+        margin-top: 8px;
+      }
+      .il-model[hidden] {
+        display: none;
+      }
+      /* ---- Class 5 additions ---- */
+      .choice-set.wide .choice-q,
+      .choice-set.three .choice-q {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+      .choice-set.wide .choice-q:last-child,
+      .choice-set.three .choice-q:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .choice-set.three .choice-opts {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .choice-prompt b {
+        color: var(--accent2);
+      }
+      .choice-set .word-btn:disabled {
+        cursor: default;
+        opacity: 1;
+      }
+      .il-line {
+        filter: blur(6px);
+      }
+      .speak-prompt.il-line {
+        font-style: normal;
+        color: var(--text);
+        margin: 0;
+      }
+      .kw-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .kw-row input {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        min-width: 0;
+      }
+      .kw-row input:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+      .kw-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+        margin-top: 12px;
+      }
+
+      /* recorder: prep countdown, then it records by itself */
+      .rec {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        padding: 12px 14px;
+        margin-top: 12px;
+      }
+      .rec-bar {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .rec-bar .btn {
+        padding: 8px 14px;
+      }
+      .rec-phase {
+        margin-left: auto;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+      .rec-phase.prep {
+        color: var(--accent2);
+      }
+      .rec-phase.talk {
+        color: #c0392b;
+      }
+      .rec-phase.talk::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #c0392b;
+        margin-right: 6px;
+        vertical-align: 1px;
+      }
+      .rec-time {
+        font-family: "Lora", serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        min-width: 3.4ch;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      .rec-meter {
+        height: 6px;
+        background: var(--surface2);
+        margin-top: 10px;
+      }
+      .rec-level {
+        height: 100%;
+        width: 0;
+        background: var(--accent);
+        transition: width 0.1s;
+      }
+      .rec-note {
+        font-size: 0.78rem;
+        color: var(--accent2);
+        margin-top: 8px;
+      }
+      .rec-note[hidden] {
+        display: none;
+      }
+      .take {
+        border-top: 1px solid var(--border);
+        margin-top: 12px;
+        padding-top: 10px;
+      }
+      .take-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+      .take-head a {
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+      .take audio {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+      }
+      .take-map {
+        display: block;
+        width: 100%;
+        height: 26px;
+        cursor: pointer;
+        background: var(--surface2);
+      }
+      .take-key {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 0.7rem;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .take-key i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 4px;
+        vertical-align: -1px;
+      }
+      .take-stats {
+        font-size: 0.82rem;
+        margin-top: 6px;
+      }
+      .deck-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      @media (max-width: 720px) {
+        .choice-set.three .choice-opts,
+        .choice-set.wide .choice-opts {
+          grid-template-columns: 1fr 1fr;
+        }
+        .kw-row {
+          grid-template-columns: 1fr;
+        }
+        .rec-phase {
+          margin-left: 0;
+        }
+      }
+
+      /* ---- Class 6 additions ---- */
+      .spot-set {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .spot-q {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+      .spot-q:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .spot-n {
+        font-family: "Lora", serif;
+        margin-right: 4px;
+      }
+      .spot-w {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        padding: 4px 8px;
+      }
+      .spot-w:disabled {
+        cursor: default;
+        opacity: 1;
+      }
+      .spot-q .fix-ans[hidden] {
+        display: none;
+      }
+      .log-table {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .log-head {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent2);
+        font-weight: 600;
+      }
+      .log-table input {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        min-width: 0;
+      }
+      .log-table input:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+      @media (max-width: 720px) {
+        .log-table {
+          grid-template-columns: 1fr;
+        }
+        .log-head {
+          display: none;
+        }
+        .log-table input:nth-of-type(3n + 1) {
+          margin-top: 8px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>Duolingo English Test Prep</h1>
+        <div class="subtitle">Writing: Sentences That Score — Class 6</div>
+      </div>
+      <a class="back-link" href="index.html">&larr; All classes</a>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main>
+      <aside>
+        <div class="nav-item active" onclick="goTo(0)">
+          <div class="nav-num">01</div>
+          <div class="nav-label">Warm-up</div>
+        </div>
+        <div class="nav-item" onclick="goTo(1)">
+          <div class="nav-num">02</div>
+          <div class="nav-label">Write About the Photo</div>
+        </div>
+        <div class="nav-item" onclick="goTo(2)">
+          <div class="nav-num">03</div>
+          <div class="nav-label">Interactive Writing</div>
+        </div>
+        <div class="nav-item" onclick="goTo(3)">
+          <div class="nav-num">04</div>
+          <div class="nav-label">Link &amp; Check</div>
+        </div>
+        <div class="nav-item" onclick="goTo(4)">
+          <div class="nav-num">05</div>
+          <div class="nav-label">Extra Practice</div>
+        </div>
+        <div class="nav-item" onclick="goTo(5)">
+          <div class="nav-num">06</div>
+          <div class="nav-label">Wrap-up</div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <!-- ============ STAGE 1 ============ -->
+        <div class="stage active" id="stage-0">
+          <div class="stage-eyebrow">Stage 01 of 06</div>
+          <div class="stage-title">Warm-up</div>
+          <div class="stage-sub">
+            A quick look at your homework. Today is all writing: rich sentences
+            about a photo, a full Interactive Writing answer, and the mistakes
+            to check for before time runs out.
+          </div>
+
+          <div class="section-label">Let's talk</div>
+          <ul class="q-list">
+            <li>
+              Play me one of your recordings, first and second take. What did
+              you fix between them?
+            </li>
+            <li>
+              Which two words from your list did you use in your recordings?
+              Use one of them in a new sentence now.
+            </li>
+            <li>
+              Read me a writing sprint from this week. Which word didn't you
+              say out loud in the recording? Did you take the second practice
+              test yet?
+            </li>
+            <li>
+              When you write in English, which mistakes do you think you make
+              most often?
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ STAGE 2 ============ -->
+        <div class="stage" id="stage-1">
+          <div class="stage-eyebrow">Stage 02 of 06</div>
+          <div class="stage-title">Write about the <em>photo</em></div>
+          <div class="stage-sub">
+            You see a picture and get one minute to write about it. One simple
+            sentence scores low. Two or three rich sentences, with details and
+            a guess, score high.
+          </div>
+
+          <div class="section-label">Three sentences in one minute</div>
+          <div class="apply-box">
+            <div class="apply-label">The photo frame, in writing</div>
+            <div class="apply-lead">
+              The same frame you use for speaking. One minute is enough for the
+              first three steps.
+            </div>
+            <ol class="apply-steps">
+              <li>
+                <strong>This picture shows… (overview)</strong> Where it is and
+                what is happening, in one sentence.
+              </li>
+              <li>
+                <strong>In the foreground / On the left, there is… (2–3 details)</strong>
+                Join two details in one sentence.
+              </li>
+              <li>
+                <strong>It looks like… / They might be… (guess the story)</strong>
+                Why they are there, or what happens next.
+              </li>
+            </ol>
+          </div>
+
+          <div class="idiom-grid" style="margin-top: 18px">
+            <div class="idiom-card">
+              <div class="idiom-term">Three facts per sentence</div>
+              <div class="idiom-meaning">
+                Who, doing what, and where. Never stop at "There is a woman."
+              </div>
+              <div class="idiom-example">
+                A young woman is working on her laptop next to the window.
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Join with while, which, so</div>
+              <div class="idiom-meaning">
+                One longer sentence with a linking word shows more grammar than
+                two short ones.
+              </div>
+              <div class="idiom-example">
+                …ordering at the counter while the barista makes coffee.
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Start each sentence differently</div>
+              <div class="idiom-meaning">
+                Not "There is… There is… There is…". Begin with a place, a
+                person or a guess.
+              </div>
+              <div class="idiom-example">
+                On the table… · In the background… · It looks like…
+              </div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Keep 10 seconds to check</div>
+              <div class="idiom-meaning">
+                There's no autocorrect. Check the verb endings, the plurals and
+                any word you're unsure how to spell.
+              </div>
+              <div class="idiom-example">a woman are → a woman is</div>
+            </div>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- A: Which sentence scores higher? -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>A</span>Which sentence scores higher?
+                  </div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  Three people wrote about this photo. For each part of the
+                  picture, click the sentence that would score best.
+                </div>
+                <div class="photo-frame">
+                  <svg
+                    viewBox="0 0 600 360"
+                    role="img"
+                    aria-label="Inside a café on a rainy day: a young woman works on a laptop at a small table by the window, with a cup of coffee and a croissant beside her; in the background a customer orders at the counter while a barista stands at the coffee machine under a chalkboard menu"
+                  >
+                    <rect width="600" height="360" fill="#efe3d3" />
+                    <rect y="292" width="600" height="68" fill="#b08968" />
+                    <!-- window with rain -->
+                    <rect x="24" y="36" width="214" height="196" fill="#6b4f3a" />
+                    <rect x="34" y="46" width="194" height="176" fill="#b8c7d1" />
+                    <rect x="34" y="176" width="194" height="46" fill="#8d9aa3" />
+                    <line x1="131" y1="46" x2="131" y2="222" stroke="#6b4f3a" stroke-width="6" />
+                    <g stroke="#ffffff" stroke-width="1.5" opacity="0.8">
+                      <line x1="48" y1="60" x2="42" y2="78" /><line x1="78" y1="54" x2="72" y2="72" />
+                      <line x1="104" y1="92" x2="98" y2="110" /><line x1="60" y1="120" x2="54" y2="138" />
+                      <line x1="92" y1="150" x2="86" y2="168" /><line x1="152" y1="58" x2="146" y2="76" />
+                      <line x1="186" y1="84" x2="180" y2="102" /><line x1="210" y1="126" x2="204" y2="144" />
+                      <line x1="166" y1="140" x2="160" y2="158" /><line x1="198" y1="176" x2="192" y2="194" />
+                    </g>
+                    <!-- someone outside with an umbrella -->
+                    <path d="M168 150 q22 -24 44 0 z" fill="#2b2b2b" />
+                    <line x1="190" y1="150" x2="190" y2="170" stroke="#2b2b2b" stroke-width="2" />
+                    <rect x="183" y="160" width="14" height="30" fill="#5c6b7a" />
+                    <!-- chalkboard menu -->
+                    <rect x="268" y="34" width="140" height="92" fill="#2b2b2b" stroke="#7a5230" stroke-width="5" />
+                    <text x="312" y="56" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">MENU</text>
+                    <g fill="#e8e8e8" font-family="monospace" font-size="11">
+                      <text x="280" y="78">Coffee  2.50</text>
+                      <text x="280" y="96">Tea     2.00</text>
+                      <text x="280" y="114">Cake    3.00</text>
+                    </g>
+                    <!-- barista behind the counter -->
+                    <path d="M528 196 L534 136 q18 -10 36 0 L576 196 z" fill="#3d8a57" />
+                    <path d="M540 150 L564 150 L568 196 L536 196 z" fill="#f4efe6" />
+                    <circle cx="552" cy="120" r="14" fill="#c68b5e" />
+                    <path d="M538 116 q14 -20 28 0 q-6 -6 -14 -6 q-8 0 -14 6 z" fill="#3b2a1e" />
+                    <!-- counter and coffee machine -->
+                    <rect x="420" y="160" width="74" height="40" rx="4" fill="#9aa3ab" />
+                    <rect x="430" y="168" width="22" height="12" fill="#5c6b7a" />
+                    <rect x="462" y="168" width="22" height="12" fill="#5c6b7a" />
+                    <rect x="400" y="196" width="200" height="12" fill="#a0703f" />
+                    <rect x="408" y="208" width="192" height="86" fill="#7a5230" />
+                    <!-- customer at the counter -->
+                    <rect x="372" y="268" width="9" height="40" fill="#33415c" />
+                    <rect x="386" y="268" width="9" height="40" fill="#33415c" />
+                    <path d="M364 274 L370 198 q14 -10 28 0 L404 274 z" fill="#b85c2a" />
+                    <circle cx="384" cy="182" r="13" fill="#8a5a3c" />
+                    <path d="M371 180 q13 -20 26 0 q-5 -5 -13 -5 q-8 0 -13 5 z" fill="#1d1d1d" />
+                    <path d="M398 214 L418 202" stroke="#b85c2a" stroke-width="7" stroke-linecap="round" />
+                    <!-- woman at the table -->
+                    <rect x="54" y="246" width="56" height="10" fill="#5c3b25" />
+                    <rect x="58" y="256" width="6" height="50" fill="#5c3b25" />
+                    <rect x="100" y="196" width="6" height="110" fill="#5c3b25" />
+                    <path d="M62 250 L70 182 q18 -12 36 0 L112 250 z" fill="#3f6fb5" />
+                    <path d="M70 150 q18 -30 36 0 l2 34 q-20 6 -40 0 z" fill="#6b4f3a" />
+                    <circle cx="88" cy="160" r="15" fill="#e0b48c" />
+                    <path d="M106 208 L146 236" stroke="#3f6fb5" stroke-width="8" stroke-linecap="round" />
+                    <rect x="96" y="250" width="60" height="12" rx="6" fill="#33415c" />
+                    <rect x="150" y="262" width="8" height="44" fill="#33415c" />
+                    <!-- table -->
+                    <ellipse cx="200" cy="246" rx="96" ry="14" fill="#f4efe6" stroke="#a0703f" stroke-width="2" />
+                    <rect x="196" y="258" width="8" height="46" fill="#5c3b25" />
+                    <rect x="170" y="302" width="60" height="6" fill="#5c3b25" />
+                    <!-- laptop -->
+                    <path d="M150 238 L204 238 L212 244 L142 244 z" fill="#5c6b7a" />
+                    <path d="M160 238 L166 204 L214 204 L208 238 z" fill="#9aa3ab" />
+                    <path d="M165 234 L170 208 L208 208 L203 234 z" fill="#cfe5f2" />
+                    <!-- coffee and croissant -->
+                    <path d="M232 226 L250 226 L247 242 L235 242 z" fill="#ffffff" stroke="#7a5230" stroke-width="2" />
+                    <path d="M250 230 q8 2 0 8" stroke="#7a5230" stroke-width="2" fill="none" />
+                    <path d="M237 222 q-3 -6 0 -12 M244 222 q-3 -6 0 -12" stroke="#9e9488" stroke-width="1.5" fill="none" />
+                    <ellipse cx="272" cy="243" rx="18" ry="5" fill="#ffffff" stroke="#bbbbbb" stroke-width="1" />
+                    <path d="M258 240 q14 -16 28 0 q-14 -4 -28 0 z" fill="#e8a33c" />
+                  </svg>
+                </div>
+                <div id="ch-rich"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkCH('ch-rich')">Check</button>
+                  <button class="mini-btn" onclick="showCH('ch-rich')">Show answers</button>
+                  <button class="mini-btn" onclick="resetCH('ch-rich')">Reset</button>
+                  <span class="task-result" id="ch-rich-result"></span>
+                </div>
+              </div>
+
+              <!-- B: The café -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>B</span>Write About the Photo · The café
+                  </div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  Now write about the same café in your own words. Set the clock
+                  to 1:00, write three sentences with the frame, and stop when
+                  it beeps.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="w-cafe"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="This picture shows…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">This picture shows a cosy café on a rainy day, where a young woman is working on her laptop at a small table next to the window. Beside her laptop, there is a cup of coffee and a croissant that she hasn't touched yet. In the background, a customer is ordering at the counter while the barista makes coffee.</span>
+                </div>
+              </div>
+
+              <!-- C: The bus stop -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>C</span>Write About the Photo · The bus stop
+                  </div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  A new picture. Look for the detail that tells a story, then
+                  write. Keep the last 10 seconds to check.
+                </div>
+                <div class="photo-frame">
+                  <svg
+                    viewBox="0 0 600 360"
+                    role="img"
+                    aria-label="A bus stop on a rainy afternoon: under a glass shelter, a woman holding a red umbrella looks towards a number 42 bus arriving from the left, while a man next to her reads his phone; the bus lights reflect in puddles on the road"
+                  >
+                    <rect width="600" height="360" fill="#aab4bc" />
+                    <g fill="#8d979f">
+                      <rect x="0" y="40" width="120" height="190" />
+                      <rect x="460" y="20" width="140" height="210" />
+                    </g>
+                    <g fill="#c9d2d8">
+                      <rect x="20" y="62" width="22" height="26" /><rect x="66" y="62" width="22" height="26" />
+                      <rect x="20" y="112" width="22" height="26" /><rect x="66" y="112" width="22" height="26" />
+                      <rect x="484" y="44" width="22" height="26" /><rect x="530" y="44" width="22" height="26" />
+                      <rect x="484" y="94" width="22" height="26" /><rect x="530" y="94" width="22" height="26" />
+                    </g>
+                    <!-- road and pavement -->
+                    <rect y="230" width="600" height="56" fill="#5d6166" />
+                    <rect y="286" width="600" height="74" fill="#9a9a94" />
+                    <rect y="282" width="600" height="6" fill="#d8d8d0" />
+                    <!-- bus -->
+                    <rect x="-20" y="126" width="230" height="128" rx="12" fill="#c0392b" />
+                    <rect x="-20" y="140" width="214" height="44" fill="#cfe5f2" />
+                    <g stroke="#c0392b" stroke-width="5">
+                      <line x1="40" y1="140" x2="40" y2="184" /><line x1="100" y1="140" x2="100" y2="184" />
+                    </g>
+                    <rect x="150" y="128" width="54" height="14" fill="#1b1b1b" />
+                    <text x="166" y="140" fill="#f2c14e" font-family="monospace" font-size="12" font-weight="bold">42</text>
+                    <rect x="194" y="140" width="16" height="44" fill="#9fd3ff" />
+                    <circle cx="204" cy="226" r="7" fill="#f2c14e" />
+                    <circle cx="40" cy="254" r="16" fill="#1b1b1b" />
+                    <circle cx="160" cy="254" r="16" fill="#1b1b1b" />
+                    <!-- puddles with reflected light -->
+                    <ellipse cx="250" cy="274" rx="40" ry="6" fill="#7d8c99" />
+                    <ellipse cx="246" cy="274" rx="10" ry="2.5" fill="#f2c14e" opacity="0.8" />
+                    <ellipse cx="380" cy="268" rx="34" ry="5" fill="#7d8c99" />
+                    <!-- shelter -->
+                    <rect x="300" y="150" width="190" height="10" fill="#4a5560" />
+                    <rect x="304" y="160" width="6" height="150" fill="#4a5560" />
+                    <rect x="480" y="160" width="6" height="150" fill="#4a5560" />
+                    <rect x="310" y="160" width="170" height="110" fill="#dbe8ef" opacity="0.45" />
+                    <rect x="420" y="174" width="50" height="34" fill="#ffffff" />
+                    <text x="428" y="196" fill="#1b1b1b" font-family="sans-serif" font-size="11" font-weight="bold">BUS</text>
+                    <!-- man with phone -->
+                    <rect x="404" y="282" width="9" height="40" fill="#33415c" />
+                    <rect x="418" y="282" width="9" height="40" fill="#33415c" />
+                    <path d="M396 288 L402 210 q14 -10 28 0 L436 288 z" fill="#2d5f3f" />
+                    <circle cx="416" cy="192" r="13" fill="#c68b5e" />
+                    <path d="M403 190 q13 -20 26 0 q-5 -5 -13 -5 q-8 0 -13 5 z" fill="#1d1d1d" />
+                    <path d="M404 222 L410 236 L418 226" stroke="#2d5f3f" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <rect x="413" y="214" width="9" height="14" rx="2" fill="#9fd3ff" stroke="#1b1b1b" stroke-width="1.5" />
+                    <!-- woman with red umbrella, looking left -->
+                    <rect x="340" y="282" width="9" height="40" fill="#33415c" />
+                    <rect x="354" y="282" width="9" height="40" fill="#33415c" />
+                    <path d="M332 288 L338 210 q14 -10 28 0 L372 288 z" fill="#e8892b" />
+                    <circle cx="350" cy="192" r="13" fill="#e0b48c" />
+                    <path d="M340 186 q10 -16 24 -4 l0 16 q-4 -8 -6 -12 q-8 -4 -18 0 z" fill="#3b2a1e" />
+                    <path d="M338 218 L326 196" stroke="#e8892b" stroke-width="7" stroke-linecap="round" />
+                    <line x1="326" y1="196" x2="326" y2="120" stroke="#333333" stroke-width="2.5" />
+                    <path d="M282 128 q44 -50 88 0 z" fill="#c0392b" />
+                    <!-- rain -->
+                    <g stroke="#ffffff" stroke-width="1.5" opacity="0.55">
+                      <line x1="230" y1="30" x2="222" y2="54" /><line x1="270" y1="70" x2="262" y2="94" />
+                      <line x1="250" y1="120" x2="242" y2="144" /><line x1="300" y1="40" x2="292" y2="64" />
+                      <line x1="380" y1="30" x2="372" y2="54" /><line x1="420" y1="80" x2="412" y2="104" />
+                      <line x1="520" y1="250" x2="512" y2="274" /><line x1="560" y1="180" x2="552" y2="204" />
+                      <line x1="140" y1="40" x2="132" y2="64" /><line x1="90" y1="270" x2="82" y2="294" />
+                      <line x1="240" y1="300" x2="232" y2="324" /><line x1="550" y1="310" x2="542" y2="334" />
+                    </g>
+                  </svg>
+                </div>
+                <textarea
+                  class="type-box"
+                  id="w-bus"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="This picture shows…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">This picture shows a bus stop on a rainy afternoon, where two people are waiting under a glass shelter. A woman holding a red umbrella is looking towards the number 42 bus, while the man next to her is reading something on his phone. It looks like the bus has just arrived, so they might be on their way home from work.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Photo frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">This picture shows…</span>
+                  <span class="chip">In the foreground / On the left, there is…</span>
+                  <span class="chip">It looks like… / They might be…</span>
+                  <span class="chip">This reminds me of…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Join two details</div>
+                <div class="vocab-chips">
+                  <span class="chip">…while…</span>
+                  <span class="chip">…, which…</span>
+                  <span class="chip">…, where…</span>
+                  <span class="chip">…holding / wearing…</span>
+                  <span class="chip">…next to / beside…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Guessing the story</div>
+                <div class="vocab-chips">
+                  <span class="chip">It looks like…</span>
+                  <span class="chip">They might be…</span>
+                  <span class="chip">probably · maybe</span>
+                  <span class="chip">…, so they…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 3 ============ -->
+        <div class="stage" id="stage-2">
+          <div class="stage-eyebrow">Stage 03 of 06</div>
+          <div class="stage-title">Interactive <em>writing</em></div>
+          <div class="stage-sub">
+            You answer a written prompt in 5 minutes. Then a follow-up question
+            on the same topic appears, and you get 3 more minutes. Use all the
+            time: longer, well-linked answers score higher.
+          </div>
+
+          <div class="section-label">Answer → reason → example → close</div>
+          <div class="apply-box">
+            <div class="apply-label">The opinion frame, in writing</div>
+            <div class="apply-lead">
+              Four parts, one or two sentences each. The optional line adds
+              range when you have time.
+            </div>
+            <ol class="apply-steps">
+              <li><strong>In my opinion,…</strong> (clear answer)</li>
+              <li><strong>The main reason is that…</strong></li>
+              <li><strong>For example, when I…</strong></li>
+              <li><strong>On the other hand,…</strong> (optional, adds range)</li>
+              <li><strong>So overall, I believe…</strong></li>
+            </ol>
+          </div>
+
+          <div class="idiom-grid" style="margin-top: 18px">
+            <div class="idiom-card">
+              <div class="idiom-term">Answer in sentence one</div>
+              <div class="idiom-meaning">
+                The reader should know your side after the first line. Don't
+                repeat the question first.
+              </div>
+              <div class="idiom-example">In my opinion, students should…</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">A real example</div>
+              <div class="idiom-meaning">
+                A short story from your life is the easiest way to add length,
+                past tenses and detail.
+              </div>
+              <div class="idiom-example">For example, when I was at school…</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">The follow-up is new</div>
+              <div class="idiom-meaning">
+                It asks something different about the same topic. Answer it
+                directly. Don't copy your first answer.
+              </div>
+              <div class="idiom-example">If I were a teacher, I would…</div>
+            </div>
+            <div class="idiom-card">
+              <div class="idiom-term">Last 30 seconds: check</div>
+              <div class="idiom-meaning">
+                Stop adding ideas and read it once: verb endings, a/an/the,
+                plurals and spelling.
+              </div>
+              <div class="idiom-example">He don't → He doesn't</div>
+            </div>
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- D: Which part is it? -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>D</span>Which part is it?</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="speak-prompt">
+                  Should every student learn a second language at school?
+                </div>
+                <div class="task-how" style="margin: 12px 0">
+                  These sentences come from one answer, mixed up. Click the part
+                  of the frame each one belongs to.
+                </div>
+                <div id="ch-order"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkCH('ch-order')">Check</button>
+                  <button class="mini-btn" onclick="showCH('ch-order')">Show answers</button>
+                  <button class="mini-btn" onclick="resetCH('ch-order')">Reset</button>
+                  <span class="task-result" id="ch-order-result"></span>
+                </div>
+              </div>
+
+              <!-- E: Interactive Writing -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>E</span>Interactive Writing · Homework
+                  </div>
+                  <div class="task-time">5:00 + 3:00</div>
+                </div>
+                <div class="speak-prompt">
+                  Some people think students should have homework every day.
+                  Others think it isn't necessary. What do you think?
+                </div>
+                <div class="task-how" style="margin: 12px 0 8px">
+                  Set the clock to 5:00 and write with the frame. When it beeps,
+                  show the follow-up question and set the clock to 3:00.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="iw-1"
+                  rows="8"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="In my opinion,…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">In my opinion, students should have some homework, but not every single day. The main reason is that homework helps you remember what you learned in class, but too much of it leaves no time for rest, sport or family. For example, when I was in secondary school, we had homework in almost every subject, and I often stayed up until midnight to finish it. As a result, I was tired in class the next morning and learned less, not more. On the other hand, I understand why teachers give homework, because one lesson is not enough to practise a new skill properly. So overall, I believe two or three short assignments a week are much more useful than a long list every day.</span>
+                </div>
+
+                <div class="kw-label">Follow-up question</div>
+                <div class="speak-prompt il-line" id="fu-1">If you were a teacher, how much homework would you give, and what kind?</div>
+                <div class="type-row" style="margin-top: 6px">
+                  <button class="mini-btn" onclick="toggleBlur(this, 'fu-1', 'the follow-up')">Show the follow-up</button>
+                </div>
+                <textarea
+                  class="type-box"
+                  id="iw-1b"
+                  rows="6"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="If I were a teacher,…"
+                  oninput="countWords(this)"
+                  style="margin-top: 8px"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">If I were a teacher, I would give two short pieces of homework a week, and each one would take about thirty minutes. Instead of long exercises from the book, I would ask students to use what we learned in real life, such as writing an email, recording a short video or interviewing someone in their family. In my view, this kind of homework is more interesting, so students are more likely to actually do it.</span>
+                </div>
+                <div class="panel-note" style="margin-top: 12px">
+                  On the test, the follow-up only appears after the first part.
+                  The details can change, so check it on the official practice
+                  test.
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Opinion frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">In my opinion,…</span>
+                  <span class="chip">The main reason is that…</span>
+                  <span class="chip">For example, when I…</span>
+                  <span class="chip">On the other hand,…</span>
+                  <span class="chip">So overall, I believe…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Linking words</div>
+                <div class="vocab-chips">
+                  <span class="chip">moreover, in addition, also</span>
+                  <span class="chip">however, although, whereas</span>
+                  <span class="chip">because, as a result, therefore</span>
+                  <span class="chip">for instance, such as</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Starting the follow-up</div>
+                <div class="vocab-chips">
+                  <span class="chip">If I were…, I would…</span>
+                  <span class="chip">The best way to… is…</span>
+                  <span class="chip">I would recommend…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 4 ============ -->
+        <div class="stage" id="stage-3">
+          <div class="stage-eyebrow">Stage 04 of 06</div>
+          <div class="stage-title">Link it, then <em>check it</em></div>
+          <div class="stage-sub">
+            Linking words and different sentence starts make your writing read
+            better. A quick check for your usual mistakes keeps the grammar
+            score up. Today you start a log of those mistakes.
+          </div>
+
+          <div class="section-label">Mistakes to check for</div>
+          <table class="det-table">
+            <thead>
+              <tr>
+                <th>Check</th>
+                <th>Wrong</th>
+                <th>Right</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verb after he / she / it</td>
+                <td>She work in a bank.</td>
+                <td>She works in a bank.</td>
+              </tr>
+              <tr>
+                <td>Plural after many, two, a lot of</td>
+                <td>many student</td>
+                <td>many students</td>
+              </tr>
+              <tr>
+                <td>Past tense with last, ago, yesterday</td>
+                <td>Last year I go to London.</td>
+                <td>Last year I went to London.</td>
+              </tr>
+              <tr>
+                <td>Have + past participle</td>
+                <td>I have saw it.</td>
+                <td>I have seen it.</td>
+              </tr>
+              <tr>
+                <td>a / an before jobs and vowel sounds</td>
+                <td>She is engineer.</td>
+                <td>She is an engineer.</td>
+              </tr>
+              <tr>
+                <td>The preposition after the word</td>
+                <td>It depends of the weather.</td>
+                <td>It depends on the weather.</td>
+              </tr>
+              <tr>
+                <td>Two sentences joined by a comma</td>
+                <td>I was tired, I went to bed.</td>
+                <td>I was tired, so I went to bed.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- F: Pick the linking word -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>F</span>Pick the linking word</div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  Only one option fits the meaning and the grammar of each
+                  sentence. Click it.
+                </div>
+                <div id="ch-link"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="checkCH('ch-link')">Check</button>
+                  <button class="mini-btn" onclick="showCH('ch-link')">Show answers</button>
+                  <button class="mini-btn" onclick="resetCH('ch-link')">Reset</button>
+                  <span class="task-result" id="ch-link-result"></span>
+                </div>
+              </div>
+
+              <!-- G: Find the mistake -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>G</span>Find the mistake</div>
+                  <div class="task-time">2:00</div>
+                </div>
+                <div class="task-how">
+                  Each sentence has one wrong word. Click it. After Check, the
+                  correct word appears next to the sentence.
+                </div>
+                <div class="spot-set" id="spot"></div>
+                <div class="task-actions">
+                  <button class="mini-btn" onclick="markSpot(false)">Check</button>
+                  <button class="mini-btn" onclick="markSpot(true)">Show answers</button>
+                  <button class="mini-btn" onclick="buildSpot()">Reset</button>
+                  <span class="task-result" id="spot-result"></span>
+                </div>
+              </div>
+
+              <!-- H: Change the starts -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>H</span>Change the starts</div>
+                  <div class="task-time">2:00</div>
+                </div>
+                <div class="task-how">
+                  This description of the café is correct, but every sentence
+                  starts the same way. Rewrite it as three sentences, each with
+                  a different start and at least one linking word.
+                </div>
+                <div class="speak-prompt" style="font-style: normal">
+                  There is a woman in a café. There is a laptop on her table.
+                  There is a cup of coffee next to it. There is a customer at
+                  the counter. There is rain outside.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="w-starts"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="Your three sentences…"
+                  oninput="countWords(this)"
+                  style="margin-top: 10px"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">On a rainy day, a woman is sitting in a café with her laptop open on the table. Next to it, she has a cup of coffee, which is probably still hot. In the background, a customer is waiting at the counter, although nobody seems to be in a hurry.</span>
+                </div>
+              </div>
+
+              <!-- Error log -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">Start your error log</div>
+                  <div class="task-time">3 rows</div>
+                </div>
+                <div class="task-how">
+                  Look back at what you wrote today in B, C and E. Write down
+                  the three mistakes you made, the correct version, and the
+                  rule from the table above. Then copy this into a document
+                  and keep it going: you'll add to it after every piece of
+                  writing.
+                </div>
+                <div class="log-table">
+                  <div class="log-head">My mistake</div>
+                  <div class="log-head">Correct</div>
+                  <div class="log-head">Rule</div>
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="1" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="2" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="3" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" />
+                  <input spellcheck="false" autocomplete="off" autocapitalize="off" />
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Linking words</div>
+                <div class="vocab-chips">
+                  <span class="chip">moreover, in addition, also</span>
+                  <span class="chip">however, although, whereas</span>
+                  <span class="chip">because, as a result, therefore</span>
+                  <span class="chip">for instance, such as</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">What comes after</div>
+                <div class="vocab-chips">
+                  <span class="chip">However, + sentence</span>
+                  <span class="chip">although + sentence</span>
+                  <span class="chip">because + sentence</span>
+                  <span class="chip">because of + noun</span>
+                  <span class="chip">such as + noun</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Different starts</div>
+                <div class="vocab-chips">
+                  <span class="chip">On a rainy day,…</span>
+                  <span class="chip">In the background,…</span>
+                  <span class="chip">Next to it,…</span>
+                  <span class="chip">Although…,</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 5 ============ -->
+        <div class="stage" id="stage-4">
+          <div class="stage-eyebrow">Stage 05 of 06</div>
+          <div class="stage-title">Extra <em>practice</em></div>
+          <div class="stage-sub">
+            More rounds of today's tasks, all with the real time limits. Do as
+            many as time allows.
+          </div>
+
+          <div class="negotiation-layout">
+            <div class="negotiation-main">
+              <!-- I: The park -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>I</span>Write About the Photo · The park
+                  </div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  You described this park out loud last class. Now write it, in
+                  three sentences, in one minute.
+                </div>
+                <div class="photo-frame">
+                  <svg
+                    viewBox="0 0 600 360"
+                    role="img"
+                    aria-label="A park on a sunny day: two people sit on a blue blanket with a picnic basket, a dog lies on the grass, a child flies a red kite, and behind them are a big tree and a man riding a bicycle on the path"
+                  >
+                    <rect width="600" height="360" fill="#cfe5f2" />
+                    <circle cx="70" cy="58" r="30" fill="#f2c14e" />
+                    <g fill="#ffffff" opacity="0.9">
+                      <ellipse cx="250" cy="55" rx="45" ry="16" />
+                      <ellipse cx="286" cy="44" rx="30" ry="14" />
+                      <ellipse cx="420" cy="82" rx="38" ry="13" />
+                    </g>
+                    <g fill="#6fa86a">
+                      <ellipse cx="380" cy="192" rx="60" ry="30" />
+                      <ellipse cx="470" cy="186" rx="50" ry="26" />
+                      <ellipse cx="565" cy="192" rx="55" ry="28" />
+                    </g>
+                    <rect y="192" width="600" height="168" fill="#93c47d" />
+                    <path
+                      d="M0 232 C150 210 300 214 600 226 L600 250 C300 238 150 236 0 258 Z"
+                      fill="#e8dcc0"
+                    />
+                    <!-- big tree -->
+                    <rect x="118" y="105" width="26" height="128" fill="#7a5230" />
+                    <circle cx="131" cy="88" r="58" fill="#3d8a57" />
+                    <circle cx="88" cy="118" r="40" fill="#2d7a4a" />
+                    <circle cx="176" cy="118" r="42" fill="#2d7a4a" />
+                    <!-- bicycle and rider -->
+                    <g stroke="#2b2b2b" stroke-width="3" fill="none">
+                      <circle cx="306" cy="222" r="15" />
+                      <circle cx="362" cy="222" r="15" />
+                      <path d="M306 222 L328 200 L354 200 L362 222 M328 200 L334 222 L306 222 M334 222 L354 200 M350 190 L354 200 M322 196 L334 196" />
+                    </g>
+                    <path d="M332 196 L339 168" stroke="#b85c2a" stroke-width="10" stroke-linecap="round" />
+                    <circle cx="342" cy="156" r="9" fill="#8a5a3c" />
+                    <path d="M339 172 L351 191" stroke="#b85c2a" stroke-width="5" stroke-linecap="round" />
+                    <path d="M332 198 L337 214" stroke="#33415c" stroke-width="6" stroke-linecap="round" />
+                    <!-- blanket -->
+                    <polygon points="150,282 390,272 432,340 118,350" fill="#3f6fb5" />
+                    <g stroke="#ffffff" stroke-width="2" opacity="0.35">
+                      <line x1="200" y1="280" x2="186" y2="347" />
+                      <line x1="270" y1="277" x2="266" y2="345" />
+                      <line x1="340" y1="274" x2="352" y2="342" />
+                    </g>
+                    <!-- person 1 -->
+                    <path d="M190 302 q0 -42 22 -42 q22 0 22 42 z" fill="#e07a3f" />
+                    <circle cx="212" cy="248" r="13" fill="#c68b5e" />
+                    <path d="M199 245 q13 -18 26 0" fill="#3b2a1e" />
+                    <rect x="186" y="298" width="52" height="12" rx="6" fill="#33415c" />
+                    <!-- person 2 -->
+                    <path d="M300 300 q0 -44 23 -44 q23 0 23 44 z" fill="#f4efe6" />
+                    <circle cx="323" cy="243" r="13" fill="#8a5a3c" />
+                    <path d="M309 245 q14 -26 28 0 l0 14 q-4 -6 -4 -12 q-10 -8 -20 0 q0 6 -4 12 z" fill="#1d1d1d" />
+                    <rect x="298" y="297" width="54" height="12" rx="6" fill="#6b4f3a" />
+                    <!-- basket -->
+                    <rect x="246" y="290" width="38" height="24" rx="3" fill="#a0703f" />
+                    <path d="M250 292 q15 -22 30 0" stroke="#7a5230" stroke-width="3" fill="none" />
+                    <circle cx="258" cy="288" r="5" fill="#c0392b" />
+                    <circle cx="270" cy="287" r="5" fill="#6aa84f" />
+                    <!-- dog -->
+                    <ellipse cx="462" cy="322" rx="28" ry="12" fill="#8a5a3c" />
+                    <circle cx="489" cy="311" r="9" fill="#8a5a3c" />
+                    <ellipse cx="485" cy="305" rx="4" ry="7" fill="#5c3b25" />
+                    <path d="M434 320 q-10 -8 -12 -16" stroke="#8a5a3c" stroke-width="4" fill="none" stroke-linecap="round" />
+                    <!-- child and kite -->
+                    <path d="M520 272 q0 -32 14 -32 q14 0 14 32 z" fill="#f2c14e" />
+                    <circle cx="534" cy="230" r="10" fill="#c68b5e" />
+                    <rect x="524" y="270" width="8" height="20" fill="#33415c" />
+                    <rect x="537" y="270" width="8" height="20" fill="#33415c" />
+                    <path d="M544 250 L556 230" stroke="#f2c14e" stroke-width="5" stroke-linecap="round" />
+                    <path d="M556 230 Q 562 150 520 96" stroke="#555555" stroke-width="1" fill="none" />
+                    <polygon points="520,40 540,68 520,96 500,68" fill="#c0392b" />
+                    <line x1="520" y1="40" x2="520" y2="96" stroke="#ffffff" stroke-width="1" />
+                    <line x1="500" y1="68" x2="540" y2="68" stroke="#ffffff" stroke-width="1" />
+                  </svg>
+                </div>
+                <textarea
+                  class="type-box"
+                  id="w-park"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="This picture shows…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">This picture shows a group of people relaxing in a park on a sunny day. In the foreground, a couple are sitting on a blue blanket with a picnic basket between them, while a dog is lying on the grass nearby. On the right, a little girl is flying a red kite, so it looks like the family is spending the whole afternoon outside.</span>
+                </div>
+              </div>
+
+              <!-- J: The market -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>J</span>Write About the Photo · The market
+                  </div>
+                  <div class="task-time">1:00</div>
+                </div>
+                <div class="task-how">
+                  One more. Join two details in your second sentence with
+                  while or which.
+                </div>
+                <div class="photo-frame">
+                  <svg
+                    viewBox="0 0 600 360"
+                    role="img"
+                    aria-label="An outdoor market stall under a red and white striped awning: boxes of oranges, apples, bananas and lettuce with price signs; the seller hands a paper bag to a woman who is paying, and a small child holds her hand"
+                  >
+                    <rect width="600" height="360" fill="#e6ecf0" />
+                    <g fill="#c9c1b5">
+                      <rect x="0" y="60" width="90" height="200" />
+                      <rect x="96" y="30" width="110" height="230" />
+                      <rect x="400" y="44" width="100" height="216" />
+                      <rect x="506" y="76" width="94" height="184" />
+                    </g>
+                    <g fill="#e6ecf0">
+                      <rect x="20" y="80" width="18" height="22" /><rect x="52" y="80" width="18" height="22" />
+                      <rect x="420" y="62" width="18" height="22" /><rect x="460" y="62" width="18" height="22" />
+                      <rect x="526" y="96" width="18" height="22" /><rect x="562" y="96" width="18" height="22" />
+                    </g>
+                    <rect y="296" width="600" height="64" fill="#cfc6b8" />
+                    <!-- awning -->
+                    <rect x="60" y="40" width="480" height="48" fill="#f4efe6" />
+                    <g fill="#c0392b">
+                      <rect x="60" y="40" width="40" height="48" /><rect x="140" y="40" width="40" height="48" />
+                      <rect x="220" y="40" width="40" height="48" /><rect x="300" y="40" width="40" height="48" />
+                      <rect x="380" y="40" width="40" height="48" /><rect x="460" y="40" width="40" height="48" />
+                    </g>
+                    <rect x="66" y="88" width="6" height="210" fill="#5c3b25" />
+                    <rect x="528" y="88" width="6" height="210" fill="#5c3b25" />
+                    <!-- seller behind the stall -->
+                    <path d="M262 206 L268 134 q20 -12 40 0 L314 206 z" fill="#2d5f3f" />
+                    <path d="M274 150 L302 150 L306 206 L270 206 z" fill="#f4efe6" />
+                    <circle cx="288" cy="116" r="15" fill="#8a5a3c" />
+                    <path d="M273 112 q15 -20 30 0 q-6 -6 -15 -6 q-9 0 -15 6 z" fill="#1d1d1d" />
+                    <path d="M306 150 L350 166 L384 160" stroke="#2d5f3f" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M380 146 L404 146 L408 176 L376 176 z" fill="#d9c09a" stroke="#a88a5c" stroke-width="1.5" />
+                    <!-- stall -->
+                    <rect x="80" y="204" width="440" height="14" fill="#a0703f" />
+                    <rect x="88" y="218" width="424" height="80" fill="#7a5230" />
+                    <g fill="#e8892b">
+                      <circle cx="104" cy="196" r="9" /><circle cx="122" cy="196" r="9" /><circle cx="140" cy="196" r="9" /><circle cx="158" cy="196" r="9" />
+                      <circle cx="113" cy="182" r="9" /><circle cx="131" cy="182" r="9" /><circle cx="149" cy="182" r="9" />
+                    </g>
+                    <g fill="#c0392b">
+                      <circle cx="186" cy="196" r="9" /><circle cx="204" cy="196" r="9" /><circle cx="222" cy="196" r="9" /><circle cx="240" cy="196" r="9" />
+                      <circle cx="195" cy="182" r="9" /><circle cx="213" cy="182" r="9" /><circle cx="231" cy="182" r="9" />
+                    </g>
+                    <g stroke="#f2c14e" stroke-width="7" fill="none" stroke-linecap="round">
+                      <path d="M326 198 q14 -22 34 -20" /><path d="M330 202 q16 -18 36 -12" /><path d="M334 205 q18 -12 36 -4" />
+                    </g>
+                    <g fill="#6aa84f">
+                      <circle cx="416" cy="192" r="13" /><circle cx="442" cy="192" r="13" /><circle cx="468" cy="192" r="13" /><circle cx="494" cy="192" r="13" />
+                      <circle cx="429" cy="178" r="11" fill="#86c06b" /><circle cx="481" cy="178" r="11" fill="#86c06b" />
+                    </g>
+                    <g font-family="sans-serif" font-size="11" font-weight="bold" fill="#1b1b1b">
+                      <rect x="112" y="226" width="40" height="20" fill="#ffffff" /><text x="119" y="240">1.50</text>
+                      <rect x="194" y="226" width="40" height="20" fill="#ffffff" /><text x="201" y="240">2.00</text>
+                      <rect x="326" y="226" width="40" height="20" fill="#ffffff" /><text x="333" y="240">0.90</text>
+                      <rect x="436" y="226" width="40" height="20" fill="#ffffff" /><text x="443" y="240">1.20</text>
+                    </g>
+                    <!-- customer, in front of the stall -->
+                    <rect x="452" y="290" width="10" height="52" fill="#33415c" />
+                    <rect x="468" y="290" width="10" height="52" fill="#33415c" />
+                    <path d="M444 296 L450 196 q15 -12 30 0 L486 296 z" fill="#3f6fb5" />
+                    <path d="M449 164 q16 -28 32 0 l2 34 q-18 6 -36 0 z" fill="#6b4f3a" />
+                    <circle cx="465" cy="172" r="14" fill="#e0b48c" />
+                    <path d="M452 210 L430 196 L414 188" stroke="#3f6fb5" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <rect x="404" y="182" width="16" height="10" fill="#7fbf7f" stroke="#2d5f3f" stroke-width="1" />
+                    <path d="M482 220 L504 262" stroke="#3f6fb5" stroke-width="7" stroke-linecap="round" />
+                    <!-- child -->
+                    <rect x="512" y="300" width="7" height="40" fill="#33415c" />
+                    <rect x="523" y="300" width="7" height="40" fill="#33415c" />
+                    <path d="M506 304 L510 254 q11 -8 22 0 L536 304 z" fill="#f2c14e" />
+                    <circle cx="521" cy="240" r="11" fill="#c68b5e" />
+                    <path d="M512 262 L504 262" stroke="#f2c14e" stroke-width="6" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <textarea
+                  class="type-box"
+                  id="w-market"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="This picture shows…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">This picture shows a busy outdoor market, with a fruit and vegetable stall under a red and white awning. The seller is handing a paper bag to a customer, who is paying while her small child holds her hand. It looks like they're doing their weekly shopping, and they probably come to this stall often.</span>
+                </div>
+              </div>
+
+              <!-- K: Interactive Writing, round two -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name">
+                    <span>K</span>Interactive Writing · Big or small?
+                  </div>
+                  <div class="task-time">5:00 + 3:00</div>
+                </div>
+                <div class="speak-prompt">
+                  Is it better to work for a big company or a small one? Explain
+                  your answer.
+                </div>
+                <div class="task-how" style="margin: 12px 0 8px">
+                  This time, add the "On the other hand" line, and end with the
+                  last 30 seconds for checking.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="iw-2"
+                  rows="8"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="In my opinion,…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">In my opinion, it's better to start your career in a small company. The main reason is that in a small team you get real responsibility from the first week, and you learn how the whole business works, not just one small part of it. For example, when I helped at my uncle's shop for a summer, I did everything from ordering stock to talking to customers, and I learned more than in any course. On the other hand, big companies usually pay more and offer better training, which is important if you want to stay for a long time. So overall, I believe a small company is the best place to learn, and a big one can come later.</span>
+                </div>
+
+                <div class="kw-label">Follow-up question</div>
+                <div class="speak-prompt il-line" id="fu-2">What would your ideal first job be, and why?</div>
+                <div class="type-row" style="margin-top: 6px">
+                  <button class="mini-btn" onclick="toggleBlur(this, 'fu-2', 'the follow-up')">Show the follow-up</button>
+                </div>
+                <textarea
+                  class="type-box"
+                  id="iw-2b"
+                  rows="6"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="My ideal first job…"
+                  oninput="countWords(this)"
+                  style="margin-top: 8px"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                  <button class="mini-btn" onclick="toggleNext(this)">Show a model answer</button>
+                </div>
+                <div class="il-model" hidden>
+                  <span class="model-text">My ideal first job would be in a small design or technology company, where I could work on real projects with a team. I would like a job like this because I enjoy solving problems, and I want to see the results of my work quickly. In addition, a friendly team would help me improve my English, since I would have to use it every day with colleagues and clients.</span>
+                </div>
+              </div>
+
+              <!-- L: Plant the mistakes -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>L</span>Plant the mistakes</div>
+                  <div class="task-time">2:00</div>
+                </div>
+                <div class="task-how">
+                  Your turn to set the test. Write three sentences about your
+                  week, and hide one mistake from the table in each. Felipe has
+                  to find and fix all three.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="w-plant"
+                  rows="4"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="1. …"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                </div>
+              </div>
+
+              <!-- M: Writing sprint -->
+              <div class="task-block">
+                <div class="task-head">
+                  <div class="task-name"><span>M</span>Writing sprint</div>
+                  <div class="task-time">5:00</div>
+                </div>
+                <div class="speak-prompt">
+                  What do you want to study at college, and why?
+                </div>
+                <div class="task-how" style="margin-top: 12px">
+                  Type for five minutes with the opinion frame, aim for 100
+                  words and two linking words, and keep the last 30 seconds to
+                  check against your error log.
+                </div>
+                <textarea
+                  class="type-box"
+                  id="sprint-text"
+                  rows="7"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="Start writing…"
+                  oninput="countWords(this)"
+                ></textarea>
+                <div class="type-row">
+                  <span class="word-count">0 words</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="language-sidebar">
+              <div class="section-label">Clock</div>
+              <div class="timer-slot"></div>
+
+              <div class="chip-group">
+                <div class="chip-group-label">Photo frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">This picture shows…</span>
+                  <span class="chip">In the foreground / On the left, there is…</span>
+                  <span class="chip">It looks like… / They might be…</span>
+                  <span class="chip">This reminds me of…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Opinion frame</div>
+                <div class="vocab-chips">
+                  <span class="chip">In my opinion,…</span>
+                  <span class="chip">The main reason is that…</span>
+                  <span class="chip">For example, when I…</span>
+                  <span class="chip">On the other hand,…</span>
+                  <span class="chip">So overall, I believe…</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <div class="chip-group-label">Linking words</div>
+                <div class="vocab-chips">
+                  <span class="chip">moreover, in addition, also</span>
+                  <span class="chip">however, although, whereas</span>
+                  <span class="chip">because, as a result, therefore</span>
+                  <span class="chip">for instance, such as</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STAGE 6 ============ -->
+        <div class="stage" id="stage-5">
+          <div class="stage-eyebrow">Stage 06 of 06</div>
+          <div class="stage-title">Wrap-up: <em>what's next</em></div>
+
+          <div class="section-label">Before next class</div>
+          <div class="reflection-grid">
+            <div class="reflection-row">
+              <div class="reflection-label">Interactive Writing</div>
+              <div class="reflection-content">
+                <p>One timed Interactive Writing every other day, typed with autocorrect off:</p>
+                <ol class="hw-steps">
+                  <li>Set a timer for 5:00 and answer the prompt with the opinion frame.</li>
+                  <li>Only then read the follow-up, and give it 3:00.</li>
+                  <li>Keep the last 30 seconds of each part to check.</li>
+                  <li>Count your words and send me each one.</li>
+                </ol>
+                <div class="hw-prompts-label">Prompt, then follow-up</div>
+                <ol class="hw-prompts">
+                  <li>
+                    Should cities ban cars from the centre? · Follow-up: How
+                    do you usually travel around your city, and why?
+                  </li>
+                  <li>
+                    Is it a good idea to have a part-time job while you study?
+                    · Follow-up: What did you learn from a job or a
+                    responsibility you had?
+                  </li>
+                  <li>
+                    Are online friends as real as friends you meet in person?
+                    · Follow-up: How did you meet your best friend?
+                  </li>
+                  <li>
+                    Should tourists pay extra to visit popular places? ·
+                    Follow-up: Describe a place you visited that was too
+                    crowded.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Error log</div>
+              <div class="reflection-content">
+                After every piece of writing, add your mistakes to the log:
+                the mistake, the correct version, the rule. Bring it to next
+                class: we'll find your three most repeated mistakes and fix
+                them.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Write About the Photo</div>
+              <div class="reflection-content">
+                On the days without Interactive Writing, take a photo from
+                your phone and give yourself one minute: three sentences with
+                the frame, one of them joined with while or which.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Speaking</div>
+              <div class="reflection-content">
+                <p>
+                  Keep one 90-second recording a day: 20 seconds, three
+                  keywords, record, listen back, record again. New rule: use one
+                  linking word from each group (adding, contrast, cause,
+                  example). Send me one recording.
+                </p>
+                <div class="hw-prompts-label">Prompts</div>
+                <ol class="hw-prompts">
+                  <li>Describe the place where you usually study.</li>
+                  <li>Is it better to save money or to spend it on experiences?</li>
+                  <li>Talk about a change you would like to see in your city.</li>
+                  <li>Retell one of your Interactive Writing answers, without reading it.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Word list &amp; listening</div>
+              <div class="reflection-content">
+                Keep both going: 10 new words a day with the word they go with,
+                and one video or podcast a day with two sentences exactly as
+                heard. New rule: use two words from your list in each
+                Interactive Writing.
+              </div>
+            </div>
+            <div class="reflection-row">
+              <div class="reflection-label">Practice test</div>
+              <div class="reflection-content">
+                If you still haven't taken the second practice test, take it
+                before Thursday, like the real thing, and send me the score.
+                Look at how the writing tasks are timed. The third practice
+                test comes after next class.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- one clock, moved into the active stage's sidebar -->
+    <div id="timer-home" hidden>
+      <div class="timer-panel" id="timer-panel">
+        <div class="timer-presets" id="timer-presets"></div>
+        <div class="timer-top">
+          <div class="timer-label" id="timer-label">Pick a time</div>
+        </div>
+        <div class="timer-display" id="timer-display">1:00</div>
+        <div class="timer-bar">
+          <div class="timer-bar-fill" id="timer-bar-fill"></div>
+        </div>
+        <div class="timer-controls">
+          <button class="btn primary" id="timer-start" onclick="toggleTimer()">
+            Start
+          </button>
+          <button class="btn" onclick="resetTimer()">Reset</button>
+          <button class="mute-btn" id="mute-btn" onclick="toggleMute()">
+            Sound on
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <button class="btn" id="btn-prev" onclick="prev()" disabled>
+        Previous
+      </button>
+      <span class="step-counter" id="step-counter">Step 1 of 6</span>
+      <button class="btn primary" id="btn-next" onclick="next()">Next</button>
+    </div>
+
+    <script>
+      /* ---- navigation ---- */
+      let current = 0;
+      const total = 6;
+      const done = [false, false, false, false, false, false];
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        if (idx > current) done[current] = true;
+        document
+          .querySelectorAll(".stage")
+          .forEach((el, i) => el.classList.toggle("active", i === idx));
+        document.querySelectorAll(".nav-item").forEach((el, i) => {
+          el.classList.toggle("active", i === idx);
+          el.classList.toggle("done", done[i] && i !== idx);
+        });
+        current = idx;
+        const slot = document
+          .getElementById("stage-" + idx)
+          .querySelector(".timer-slot");
+        if (slot) slot.appendChild(document.getElementById("timer-panel"));
+        document.getElementById("btn-prev").disabled = current === 0;
+        document.getElementById("btn-next").disabled = current === total - 1;
+        document.getElementById("btn-next").textContent =
+          current === total - 2 ? "Last stage" : "Next";
+        document.getElementById("step-counter").textContent =
+          "Step " + (current + 1) + " of " + total;
+        document.getElementById("progress-fill").style.width =
+          (current / (total - 1)) * 100 + "%";
+        document
+          .querySelector(".content")
+          .scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function next() {
+        goTo(current + 1);
+      }
+      function prev() {
+        goTo(current - 1);
+      }
+
+
+      /* ---- choice drills: one pick per row, checked together ---- */
+      const CH = {
+        "ch-rich": {
+          kind: "stack",
+          items: [
+            {
+              q: "The woman",
+              opts: [
+                ["There is a woman.", "Too simple: one fact, no detail"],
+                [
+                  "A young woman is working on her laptop at a table next to the window.",
+                  "Fits: who, doing what, and where",
+                ],
+                [
+                  "A young woman are working on her laptop next to the window.",
+                  "Grammar mistake: a woman is",
+                ],
+              ],
+              a: 1,
+            },
+            {
+              q: "The table",
+              opts: [
+                [
+                  "On the table, there is a cup of coffee and a croissant, which she hasn't touched yet.",
+                  "Fits: two details, joined with which",
+                ],
+                [
+                  "There is a coffee. There is a croissant.",
+                  "Two short sentences that start the same way",
+                ],
+                [
+                  "On the table, there is a cup of coffee and a croissant, which she hasn't touch yet.",
+                  "Grammar mistake: hasn't touched",
+                ],
+              ],
+              a: 0,
+            },
+            {
+              q: "The background",
+              opts: [
+                ["In the background, people.", "Not a sentence: there's no verb"],
+                [
+                  "In the background, there is a customer and a barista and a counter and a machine.",
+                  "A list with and… and… and, and nobody is doing anything",
+                ],
+                [
+                  "In the background, a customer is ordering at the counter while the barista makes coffee.",
+                  "Fits: two people, joined with while",
+                ],
+              ],
+              a: 2,
+            },
+            {
+              q: "The weather",
+              opts: [
+                [
+                  "It's raining outside, so she probably come in to stay dry.",
+                  "Grammar mistake: she came / she has come",
+                ],
+                [
+                  "It's raining outside, so she has probably come in to stay dry and get some work done.",
+                  "Fits: a detail and a guess, joined with so",
+                ],
+                ["It is raining.", "Too simple: one fact, no guess"],
+              ],
+              a: 1,
+            },
+          ],
+        },
+        "ch-order": {
+          kind: "wide",
+          labels: ["Answer", "Reason", "Example", "Close"],
+          items: [
+            [
+              "The main reason is that a second language opens doors to better jobs and to studying abroad.",
+              1,
+            ],
+            [
+              "To sum up, a second language is one of the most useful things a school can teach.",
+              3,
+            ],
+            [
+              "In my opinion, every student should learn at least one other language at school.",
+              0,
+            ],
+            [
+              "For example, when I applied to college, my English was one of the first things they asked about.",
+              2,
+            ],
+            [
+              "Moreover, young children learn new sounds much faster than adults do.",
+              1,
+            ],
+            [
+              "So overall, I believe schools should start teaching languages as early as possible.",
+              3,
+            ],
+            [
+              "My cousin, for instance, started French at seven, and now she speaks it without an accent.",
+              2,
+            ],
+            ["Yes, I strongly believe languages should be part of every school day.", 0],
+          ],
+        },
+        "ch-link": {
+          kind: "three",
+          items: [
+            { q: "I wanted to go out. <b>___</b>, it rained all day.", opts: ["However", "Although", "Because"], a: 0 },
+            { q: "<b>___</b> the course was difficult, I passed with a good grade.", opts: ["Despite", "Although", "However"], a: 1 },
+            { q: "I missed the bus. <b>___</b>, I was late for my first class.", opts: ["Whereas", "Such as", "As a result"], a: 2 },
+            { q: "My brother loves big cities, <b>___</b> I prefer the countryside.", opts: ["moreover", "therefore", "whereas"], a: 2 },
+            { q: "Practise the short tasks, <b>___</b> Read and Select.", opts: ["for example of", "such as", "as a result"], a: 1 },
+            { q: "The library is quiet and has fast Wi-Fi. <b>___</b>, it's open until midnight.", opts: ["Whereas", "Moreover", "Although"], a: 1 },
+            { q: "I didn't sleep well <b>___</b> my neighbours were having a party.", opts: ["because", "because of", "therefore"], a: 0 },
+            { q: "Rents went up in the city centre. <b>___</b>, many families moved out.", opts: ["Although", "Therefore", "However"], a: 1 },
+          ],
+        },
+      };
+      function buildCH(id) {
+        const s = CH[id];
+        const box = document.getElementById(id);
+        box.className = "choice-set " + s.kind;
+        box.innerHTML = s.items
+          .map((it, qi) => {
+            const q = s.labels ? it[0] : it.q;
+            const a = s.labels ? it[1] : it.a;
+            const opts = s.labels
+              ? s.labels.map((l) => [l, ""])
+              : it.opts.map((o) => (Array.isArray(o) ? o : [o, ""]));
+            return `<div class="choice-q" data-a="${a}">
+              <div class="choice-prompt">${qi + 1}. ${q}</div>
+              <div class="choice-opts">${opts
+                .map(
+                  ([t, why], oi) =>
+                    `<button class="word-btn" data-i="${oi}" onclick="pickCH(this)">${t}${why ? `<span class="opt-why" hidden>${why}</span>` : ""}</button>`,
+                )
+                .join("")}</div>
+            </div>`;
+          })
+          .join("");
+      }
+      function pickCH(btn) {
+        const row = btn.closest(".choice-q");
+        const on = !btn.classList.contains("picked");
+        row
+          .querySelectorAll(".word-btn")
+          .forEach((b) => b.classList.remove("picked"));
+        if (on) btn.classList.add("picked");
+      }
+      /* marks every answered row; reveal also marks the unanswered ones */
+      function markCH(id, reveal) {
+        let right = 0;
+        const rows = document.querySelectorAll("#" + id + " .choice-q");
+        rows.forEach((row) => {
+          const a = Number(row.dataset.a);
+          const btns = row.querySelectorAll(".word-btn");
+          const picked = [...btns].findIndex(
+            (b) =>
+              b.classList.contains("picked") ||
+              b.classList.contains("ok") ||
+              b.classList.contains("bad"),
+          );
+          if (picked < 0 && !reveal) return;
+          if (picked === a) right++;
+          btns.forEach((b, i) => {
+            b.disabled = true;
+            b.classList.remove("picked", "ok", "bad", "missed");
+            if (i === picked) b.classList.add(i === a ? "ok" : "bad");
+            else if (i === a) b.classList.add("missed");
+            const why = b.querySelector(".opt-why");
+            if (why) why.hidden = false;
+          });
+        });
+        document.getElementById(id + "-result").textContent =
+          right + " / " + rows.length + " correct";
+      }
+      function checkCH(id) {
+        markCH(id, false);
+      }
+      function showCH(id) {
+        markCH(id, true);
+      }
+      function resetCH(id) {
+        buildCH(id);
+        document.getElementById(id + "-result").textContent = "";
+      }
+
+      /* ---- toggles ---- */
+      function toggleNext(btn) {
+        const box = btn.parentElement.nextElementSibling;
+        box.hidden = !box.hidden;
+        btn.textContent = box.hidden
+          ? "Show a model answer"
+          : "Hide the model answer";
+      }
+      function toggleBlur(btn, id, what) {
+        const on = document.getElementById(id).classList.toggle("shown");
+        btn.textContent = (on ? "Hide " : "Show ") + what;
+      }
+      /* the word count sits in the .type-row right after each textarea */
+      function countWords(box) {
+        const v = box.value.trim();
+        const n = v ? v.split(/\s+/).length : 0;
+        box.nextElementSibling.querySelector(".word-count").textContent =
+          n + (n === 1 ? " word" : " words");
+      }
+
+      /* ---- find the mistake: the wrong word is in [brackets] ---- */
+      const SPOT = [
+        ["My sister [work] in a hospital near the station.", "works"],
+        ["There are many [student] in the library today.", "students"],
+        ["Last summer we [go] to the beach every weekend.", "went"],
+        ["I have [saw] that film three times.", "seen"],
+        ["She wants to be [a] engineer when she finishes college.", "an"],
+        ["The price of the tickets depends [of] the day.", "on"],
+        ["He [don't] like getting up early.", "doesn't"],
+        ["I'm really interested [on] learning new languages.", "in"],
+      ];
+      function buildSpot() {
+        document.getElementById("spot").innerHTML = SPOT.map(([s, fix], qi) => {
+          const words = s.split(" ");
+          const a = words.findIndex((w) => w.startsWith("["));
+          return `<div class="spot-q" data-a="${a}">
+            <span class="spot-n">${qi + 1}.</span>${words
+              .map(
+                (w, i) =>
+                  `<button class="word-btn spot-w" data-i="${i}" onclick="pickSpot(this)">${w.replace(/[\[\]]/g, "")}</button>`,
+              )
+              .join("")}<span class="fix-ans" hidden>${words[a].replace(/[\[\]]/g, "")} → ${fix}</span>
+          </div>`;
+        }).join("");
+        document.getElementById("spot-result").textContent = "";
+      }
+      function pickSpot(btn) {
+        const row = btn.closest(".spot-q");
+        const on = !btn.classList.contains("picked");
+        row
+          .querySelectorAll(".spot-w")
+          .forEach((b) => b.classList.remove("picked"));
+        if (on) btn.classList.add("picked");
+      }
+      function markSpot(reveal) {
+        let right = 0;
+        const rows = document.querySelectorAll("#spot .spot-q");
+        rows.forEach((row) => {
+          const a = Number(row.dataset.a);
+          const btns = row.querySelectorAll(".spot-w");
+          const picked = [...btns].findIndex(
+            (b) =>
+              b.classList.contains("picked") ||
+              b.classList.contains("ok") ||
+              b.classList.contains("bad"),
+          );
+          if (picked < 0 && !reveal) return;
+          if (picked === a) right++;
+          btns.forEach((b, i) => {
+            b.disabled = true;
+            b.classList.remove("picked", "ok", "bad", "missed");
+            if (i === picked) b.classList.add(i === a ? "ok" : "bad");
+            else if (i === a) b.classList.add("missed");
+          });
+          row.querySelector(".fix-ans").hidden = false;
+        });
+        document.getElementById("spot-result").textContent =
+          right + " / " + rows.length + " correct";
+      }
+
+      let audioCtx = null;
+      function audioContext() {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return null;
+        if (!audioCtx) audioCtx = new Ctx();
+        if (audioCtx.state === "suspended") audioCtx.resume();
+        return audioCtx;
+      }
+
+      /* ---- clock ---- */
+      const PRESETS = [
+        ["1:00", 60, "Write About the Photo"],
+        ["2:00", 120, "Drill"],
+        ["3:00", 180, "Follow-up"],
+        ["5:00", 300, "Interactive Writing"],
+      ];
+      const clock = {
+        secs: 60,
+        remaining: 60,
+        running: false,
+        tick: null,
+        muted: false,
+      };
+
+      function fmt(s) {
+        return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+      }
+      function renderTimer() {
+        const d = document.getElementById("timer-display");
+        const bar = document.getElementById("timer-bar-fill");
+        const warn = clock.remaining > 0 && clock.remaining <= clock.secs * 0.2;
+        d.textContent =
+          clock.remaining === 0 && clock.running === false && clock.finished
+            ? "Time"
+            : fmt(clock.remaining);
+        d.classList.toggle("warning", warn);
+        d.classList.toggle("done", !!clock.finished);
+        bar.classList.toggle("warning", warn);
+        bar.style.width = (clock.remaining / clock.secs) * 100 + "%";
+      }
+      function buildPresets() {
+        document.getElementById("timer-presets").innerHTML = PRESETS.map(
+          ([label, s], i) =>
+            `<button class="preset-btn${s === clock.secs ? " on" : ""}" onclick="setPreset(${i})">${label}</button>`,
+        ).join("");
+      }
+      function setPreset(i) {
+        const [, s, name] = PRESETS[i];
+        stopTick();
+        clock.secs = s;
+        clock.remaining = s;
+        clock.running = false;
+        clock.finished = false;
+        document.getElementById("timer-label").textContent = name;
+        document.getElementById("timer-start").textContent = "Start";
+        buildPresets();
+        renderTimer();
+      }
+      function stopTick() {
+        if (clock.tick) clearInterval(clock.tick);
+        clock.tick = null;
+      }
+      function toggleTimer() {
+        const btn = document.getElementById("timer-start");
+        if (clock.running) {
+          stopTick();
+          clock.running = false;
+          btn.textContent = "Resume";
+          return;
+        }
+        if (clock.remaining === 0) {
+          clock.remaining = clock.secs;
+          clock.finished = false;
+        }
+        clock.running = true;
+        btn.textContent = "Pause";
+        clock.tick = setInterval(() => {
+          clock.remaining--;
+          if (clock.remaining <= 0) {
+            clock.remaining = 0;
+            clock.running = false;
+            clock.finished = true;
+            stopTick();
+            btn.textContent = "Again";
+            beep();
+          }
+          renderTimer();
+        }, 1000);
+        renderTimer();
+      }
+      function resetTimer() {
+        stopTick();
+        clock.running = false;
+        clock.finished = false;
+        clock.remaining = clock.secs;
+        document.getElementById("timer-start").textContent = "Start";
+        renderTimer();
+      }
+
+      function beep() {
+        if (clock.muted) return;
+        try {
+          const ctx = audioContext();
+          if (!ctx) return;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.value = 660;
+          gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + 0.02);
+          gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            ctx.currentTime + 0.45,
+          );
+          osc.connect(gain).connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.46);
+        } catch (e) {
+          /* audio blocked — the visual cue is enough */
+        }
+      }
+      function toggleMute() {
+        clock.muted = !clock.muted;
+        document.getElementById("mute-btn").textContent = clock.muted
+          ? "Sound off"
+          : "Sound on";
+      }
+
+      Object.keys(CH).forEach(buildCH);
+      buildSpot();
+      buildPresets();
+      renderTimer();
+    </script>
+  </body>
+</html>

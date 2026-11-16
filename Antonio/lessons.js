@@ -45,4 +45,10 @@ window.LESSONS_BY_STUDENT.Antonio = [
     date: "13 November 2026",
     desc: "The photo frame for Speak About the Photo, three keywords in 20 seconds for Read and Listen, Then Speak, and recording yourself to find the pauses and repeated words.",
   },
+  {
+    file: "lesson_plan_6.html",
+    title: "Writing: Sentences That Score",
+    date: "16 November 2026",
+    desc: "Two or three rich sentences for Write About the Photo, answer–reason–example–close for Interactive Writing, linking words, and a log of your own grammar mistakes.",
+  },
 ];
