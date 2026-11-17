@@ -1102,6 +1102,88 @@ politely (*I see your point, but …*), next on the list below.
 
 ---
 
+## Lesson 12 — What Do You Think?
+`lesson_plan_12.html` · 17 November 2026 (a Tuesday — built the same day)
+
+Stages: Warm-up → The Opinion Toolkit → What Do You Think? → Wrap-up
+
+The topic named on lesson 11's page: opinions, agreeing and disagreeing. B1
+pitch. Nothing carried — no record yet of how lesson 11 went.
+
+**Language Tip rejected and rebuilt.** The first proposal was *I agree vs.
+You're right* (agree is a verb, right is an adjective; trap *I'm agree*) —
+Felipe: *"too simple."* Two harder options were offered: *So do I vs. Neither
+do I* (echo the helper verb across tenses) and *I don't think it's … vs. I
+think it's not …* (where the negative goes). **Felipe picked So do I.** The
+*I'm agree* and *You have reason* pairs stayed as block 2 fix cards; the
+negative-on-*think* rule became a block 1 fix card and a sentence in its note.
+
+**Warm-up:** the review of lesson 11 — *something you'd never done before
+this year* (I'd never … before · had already) · *how long had you been waiting
+when it happened* (I'd been …ing for … when · I'd known) · *a small problem and
+how it ended* (all of a sudden · it turned out · in the end). **Three, not
+four:** a fourth on the Tip (*the last time you were late — what had already
+started*) was built and Felipe deleted it before class. Then a new ladder (fifth
+rung: *"I don't like long meetings." — "Neither do I. If you ask me, thirty
+minutes is enough."*), then *What do you think about …?* — I ask · you answer
+· you keep it going. Answer starters: *In my opinion, …* · *I'd say …,
+because …* · *I don't think …* · *It depends on …*
+
+**Toolkit**, three blocks:
+
+1. **If you ask me — more than "I think"** — in my opinion · if you ask me /
+   I'd say · it seems to me that / personally · as far as I'm concerned / I'm
+   convinced that · I really believe / I don't think … · I don't think so /
+   What do you think about …? · How do you feel about …? Fix cards:
+   *According to me* → *In my opinion* · *I think it's not a good idea* → *I
+   don't think it's …* · *In my point of view* → *From my point of view*.
+2. **I see your point, but … — agreeing and disagreeing** — Exactly · I
+   couldn't agree more / You're right · Good point / That's true, but … · I see
+   your point, but … / I'm not so sure about that · I see it differently / I'm
+   afraid I disagree · I don't think that's right / …, don't you think? The
+   note flags *couldn't agree more* as 100% agreement. Two fix cards: *You
+   have reason* → *You're right* · *I'm agree* → *I agree*. A third, *No, I
+   don't agree with you* → *I see your point, but I'm not so sure* (too
+   direct, not wrong), was deleted by Felipe before class.
+3. **It depends — seeing both sides** — it depends on / on the one hand … on
+   the other hand / to some extent · in a way / the thing is / having said
+   that · even so. Two fix cards: *depends of* → *depends on* · *In other
+   hand* → *On the other hand*.
+
+**Language Tip:** *So do I vs. Neither do I* — repeat the helper verb from
+their sentence (*am, have, can, would*), or *do / does / did* if there is
+none; *So* after a yes, *Neither* after a not. Trap: *"I don't like Mondays."
+— "Me too."* → *Neither do I / Me neither*. The prose adds *So did I*, never
+*So went I*, and disagreeing by flipping it (*"I love Fridays." — "Oh, I
+don't."*).
+
+**Activity:** What do you think? — a 24-card deck of two-part opinion
+questions (work, cities, kids and phones, money, AI, tipping, transport,
+football), none about changing something at work, since that is the talk;
+**Change the sentence**, 24 hand-written cards, six each of *Make it softer* ·
+*Disagree politely — their point first* · *Answer with the helper verb* (the
+Tip: four agree, two disagree, the bracket says which) · *Say it with the
+words in brackets* (block 3, plus one *if you ask me*). Then **Something you'd
+change at work** — no roleplay, four prompts: the problem (the thing is) ·
+your opinion · both sides (it depends) · the others (do you see their point?).
+Sidebar: *Your opinion* · *Agree · disagree* · *Both sides* · *If you get
+stuck*.
+
+**Wrap-up:** one recall item — three ways to give an opinion without *I
+think*, two polite ways to disagree, the agreeing answer to *I don't like
+Mondays*, one opinion with *on the one hand … on the other hand*.
+
+**Homework:** British Council LearnEnglish, **B1 speaking** — *Agreeing and
+disagreeing* (`/free-resources/speaking/b1/agreeing-disagreeing`), a video of
+two colleagues disagreeing about a client's design: Preparation, the video,
+Tasks 1–3, then the Discussion question in four or five sentences with one
+phrase from each block. Verified in a browser on 17 November.
+
+**Next class, as named on the page:** advice and rules — *should*, *have to*,
+*need to*.
+
+---
+
 ## Carried over
 
 From **lesson 0**: block 6 (Yesterday) only. Blocks 1–5 were all reached, which
@@ -1153,6 +1235,9 @@ blocks were reached; its opening review re-asks one question from each.
 From **lesson 10**: not yet recorded. Lesson 11 was built assuming all three
 blocks were reached.
 
+From **lesson 11**: not yet recorded. Lesson 12 was built assuming all three
+blocks were reached.
+
 ---
 
 ## Not yet covered
@@ -1162,10 +1247,9 @@ present perfect, comparing, and eating out and shopping are done:
 
 - ~~Telling a story — past continuous, *when* / *while*~~ — rejected as too
   easy on 5 November; lesson 11 did the past perfect instead.
-- **Opinions, agreeing and disagreeing** — the meeting language that *video
-  calls* was really after; Felipe found that topic too generic on 29 October.
-  Named as lesson 12.
-- **should / have to / need to**, ***enjoy doing* vs. *decide to do***, **real
+- ~~Opinions, agreeing and disagreeing~~ — done in lesson 12.
+- **should / have to / need to** — named on lesson 12's page as next.
+- ***enjoy doing* vs. *decide to do***, **real
   vs. imaginary conditionals**, **the passive at work** — the rest of the
   ranked list from 29 October.
 - **Video calls in their own right** — lesson 6 only touched them (*you're

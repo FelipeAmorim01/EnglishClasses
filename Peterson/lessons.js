@@ -97,4 +97,10 @@ window.LESSONS_BY_STUDENT.Peterson = [
     date: "5 November 2026",
     desc: "Telling a story: a quick review of last class, had already… and I'd never… before, I'd been waiting for… when…, story words like it turned out and in the end, and started vs. had started.",
   },
+  {
+    file: "lesson_plan_12.html",
+    title: "What Do You Think?",
+    date: "17 November 2026",
+    desc: "Opinions: a quick review of last class, more than I think, I see your point but… and other polite ways to disagree, it depends and on the other hand, and So do I vs. Neither do I.",
+  },
 ];
