@@ -9,6 +9,7 @@
    - desc:   one-line summary
    - soon:   set to true for a class that isn't ready yet (no link)
    - paid:   set to true once the class has been paid for (green corner)
+   - free:   set to true for a class that isn't charged (left out of earnings)
 
    Lessons are numbered from 0 in the order they appear in this list,
    so just append new ones at the bottom.
@@ -18,6 +19,7 @@ window.LESSONS_BY_STUDENT.Raffa = [
   {
     file: "lesson_plan_0.html",
     paid: true,
+    free: true, // first class is free
     title: "Getting Started",
     date: "6 August 2026",
     desc: "Experimental lesson: talking about your work, upgrading everyday vocabulary, and defending decisions as CEO for a day.",

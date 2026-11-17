@@ -9,6 +9,7 @@
    - desc:   one-line summary
    - soon:   set to true for a class that isn't ready yet (no link)
    - paid:   set to true once the class has been paid for (green corner)
+   - free:   set to true for a class that isn't charged (left out of earnings)
 
    Classes are numbered from 1 in the order they appear in this list,
    so just append new ones at the bottom.
