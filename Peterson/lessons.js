@@ -105,4 +105,10 @@ window.LESSONS_BY_STUDENT.Peterson = [
     date: "17 November 2026",
     desc: "Opinions: a quick review of last class, more than I think, I see your point but… and other polite ways to disagree, it depends and on the other hand, and So do I vs. Neither do I.",
   },
+  {
+    file: "lesson_plan_13.html",
+    title: "What Should I Do?",
+    date: "24 November 2026",
+    desc: "Advice and rules: a quick review of last class, should and If I were you, have to and I'm supposed to, I should have…, and should vs. you'd better.",
+  },
 ];

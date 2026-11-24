@@ -1184,6 +1184,84 @@ phrase from each block. Verified in a browser on 17 November.
 
 ---
 
+## Lesson 13 — What Should I Do?
+`lesson_plan_13.html` · 24 November 2026 (a Tuesday — built the same day)
+
+Stages: Warm-up → The Advice Toolkit → What Should I Do? → Wrap-up
+
+The topic named on lesson 12's page: advice and rules — *should*, *have to*,
+*need to*. Pitched B1+ (adds *I'm supposed to*, *should have*, *you'd better*)
+so it is not a re-drill of basic *should*. Nothing carried — no record yet of
+how lesson 12 went.
+
+**Language Tip chosen by Felipe from five options** (*don't have to vs.
+mustn't* · *should vs. should have* · *should vs. had better* · *have to vs. be
+supposed to* · *must vs. have to*): he picked **should vs. had better**. The
+originally proposed *don't have to vs. mustn't* went into block 2 as a fix card.
+
+**Warm-up:** the review of lesson 12, four questions — an opinion on working on
+Saturdays without *I think* · a time someone at work said something you
+disagreed with (that's true, but · I see your point, but) · big company or small
+one, both sides (it depends on · on the one hand) · two things you love and two
+you hate, answered both ways (So do I · Neither do I). The fourth is the Tip
+question; lesson 12's Tip question was deleted before class, so this one may go
+too. Then a new ladder (fifth rung: *You should try the new restaurant
+downstairs. But you'd better book a table — it's always full.*), then *Any
+advice?* — I ask · you answer · you keep it going. Answer starters: *You should
+…* · *If I were you, I'd …* · *Why don't you …?* · *I'd recommend …ing*.
+
+**Toolkit**, three blocks:
+
+1. **If I were you, I'd … — giving advice** — should · shouldn't / Should I …?
+   / If I were you, I'd … / Why don't you …? · Have you tried …ing? / I'd
+   recommend …ing · I suggest you … / you'd better (not). Fix cards: *an
+   advice* → *some advice* · *I suggest you to go* → *I suggest you go* ·
+   *should to call* → *should call*.
+2. **I have to, I'm supposed to — rules and duties** — have to · has to / don't
+   have to · don't need to / Do you have to …? / had to · will have to / I'm
+   supposed to …, but … / must · must not for written rules. Fix cards:
+   *I musted work* → *I had to work* · *Do you must …?* → *Do you have to …?* ·
+   *It's optional — you mustn't come* → *you don't have to come*.
+3. **I should have called — looking back** — I should have / I shouldn't have /
+   You should have / I could have. *should've* · *could've* listen-and-repeat,
+   tied to the third form in *I've gone* / *I'd gone*. Two fix cards: *should
+   have went* → *should have gone* · *Yesterday I should call him* → *should
+   have called*.
+
+**Language Tip:** *You should vs. You'd better* — a good idea vs. a warning
+(do it, or there's a problem); *'d better* looks past but is about now. Trap:
+to a dinner guest, *You'd better try the fish* → *You should try the fish*; the
+prose adds no *to* after it.
+
+**Activity:** What should I do? — a 24-card deck of two-part questions (advice
+for friends, school and home rules, regrets, managers, travel), none about a new
+person's first weeks at his job, since that is the talk; **Change the
+sentence**, 24 hand-written cards, six each of *Give advice — should or If I
+were you* · *Put it in the past* (had to, didn't have to, *was supposed to*;
+one *must* card, since *must* has no past) · *Good idea or warning? — should or
+you'd better* (the Tip, three each way; the second half of the sentence says
+which) · *Look back — should have or shouldn't have*. Then **Someone new on
+your team** — no roleplay, his real job, four prompts: the rules (have to,
+supposed to) · no need (don't have to) · your advice (should, 'd better not) ·
+looking back at your own first month (should have). Sidebar: *Advice* ·
+*Rules* · *Looking back* · *If you get stuck*.
+
+**Wrap-up:** one recall item — three ways to give advice, something you had to
+do last week, something you don't have to do at work, one thing you should have
+done this year, and when you'd say *you'd better*.
+
+**Homework:** British Council LearnEnglish, **B1–B2 grammar** — *Modals:
+permission and obligation*
+(`/free-resources/grammar/b1-b2/modals-permission-obligation`): Grammar test 1,
+the explanation, Grammar test 2, then four true sentences about his job with
+*have to*, *don't have to*, *should* and *should have*. Verified in a browser on
+24 November.
+
+**Next class, as named on the page:** *enjoy doing* vs. *decide to do* — verbs
+followed by *-ing* and by *to*.
+
+---
+
 ## Carried over
 
 From **lesson 0**: block 6 (Yesterday) only. Blocks 1–5 were all reached, which
@@ -1238,6 +1316,9 @@ blocks were reached.
 From **lesson 11**: not yet recorded. Lesson 12 was built assuming all three
 blocks were reached.
 
+From **lesson 12**: not yet recorded. Lesson 13 was built assuming all three
+blocks were reached.
+
 ---
 
 ## Not yet covered
@@ -1248,8 +1329,9 @@ present perfect, comparing, and eating out and shopping are done:
 - ~~Telling a story — past continuous, *when* / *while*~~ — rejected as too
   easy on 5 November; lesson 11 did the past perfect instead.
 - ~~Opinions, agreeing and disagreeing~~ — done in lesson 12.
-- **should / have to / need to** — named on lesson 12's page as next.
-- ***enjoy doing* vs. *decide to do***, **real
+- ~~should / have to / need to~~ — done in lesson 13.
+- ***enjoy doing* vs. *decide to do*** — named on lesson 13's page as next.
+- **real
   vs. imaginary conditionals**, **the passive at work** — the rest of the
   ranked list from 29 October.
 - **Video calls in their own right** — lesson 6 only touched them (*you're
