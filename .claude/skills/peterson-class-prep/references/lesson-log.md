@@ -1263,7 +1263,7 @@ followed by *-ing* and by *to*.
 ---
 
 ## Lesson 14 — I'm Looking Forward to It
-`lesson_plan_14.html` · 1 December 2026 (a Tuesday — built 26 November)
+`lesson_plan_14.html` · 26 November 2026 (a Thursday — built the same day)
 
 Stages: Warm-up → The Verb Toolkit → What Do You Enjoy? → Wrap-up
 
