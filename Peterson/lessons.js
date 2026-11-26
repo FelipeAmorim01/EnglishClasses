@@ -111,4 +111,10 @@ window.LESSONS_BY_STUDENT.Peterson = [
     date: "24 November 2026",
     desc: "Advice and rules: a quick review of last class, should and If I were you, have to and I'm supposed to, I should have…, and should vs. you'd better.",
   },
+  {
+    file: "lesson_plan_14.html",
+    title: "I'm Looking Forward to It",
+    date: "1 December 2026",
+    desc: "Verb patterns: a quick review of last class, enjoy doing vs. decide to do, looking forward to seeing you, make me wait and want you to come, and stop smoking vs. stop to smoke.",
+  },
 ];

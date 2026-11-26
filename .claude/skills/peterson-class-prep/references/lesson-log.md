@@ -1262,6 +1262,89 @@ followed by *-ing* and by *to*.
 
 ---
 
+## Lesson 14 — I'm Looking Forward to It
+`lesson_plan_14.html` · 1 December 2026 (a Tuesday — built 26 November)
+
+Stages: Warm-up → The Verb Toolkit → What Do You Enjoy? → Wrap-up
+
+The topic named on lesson 13's page: verbs followed by *-ing* and by *to*.
+Pitched B1+ — a plain *like to / like -ing* block would re-drill what he
+already says, so the page adds prepositions + *-ing* and verb + person + verb.
+Shape approved as proposed. Nothing carried — no record yet of how lesson 13
+went.
+
+**Language Tip chosen by Felipe from four options** (*remember to vs. remember
+-ing* — the one first proposed · *stop -ing vs. stop to* · *try to vs. try
+-ing* · *to in the verb vs. to as a preposition*): he picked **stop smoking vs.
+stop to smoke**. Two pairs were ruled out up front as earlier Tips: *used to
+work vs. used to working* (lesson 10) and *I like vs. I'd like* (lesson 8).
+*remember / forget* and *try* stay untaught — the homework page covers them.
+
+**Warm-up:** the review of lesson 13, four questions — advice for a friend
+scared to change jobs (If I were you · Why don't you · I'd recommend …ing) · a
+rule at work, followed or not (have to · I'm supposed to, but · don't have to)
+· this year, one *should have* and one *shouldn't have* · a visitor to your
+city, one good idea and one warning (the Tip; Tip questions were deleted on
+lessons 12 and 13, so this one may go too). Then a new ladder (fifth rung:
+*I've decided to stop working on Saturdays — I'm really looking forward to
+having my weekends back.*), then *What do you enjoy?* — I ask · you answer ·
+you keep it going. Answer starters: *I really enjoy …ing* · *I've decided to
+…* · *I'm thinking about …ing* · *I'm looking forward to …ing*.
+
+**Toolkit**, three blocks:
+
+1. **I enjoy working, I decided to stay — -ing or to** — enjoy · don't mind ·
+   can't stand / keep · finish · avoid / decide · plan · hope · want / manage ·
+   agree · refuse / both: like · love · hate · start. The note gives *to*
+   verbs looking forward as a help. Fix cards: *I enjoy to travel* → *enjoy
+   traveling* · *Do you mind to wait?* → *mind waiting* · *We decided going* →
+   *decided to go*.
+2. **I'm looking forward to seeing you — after a preposition** — interested in
+   · good at · tired of / before · after · without / thinking about · of / How
+   about …? · instead of / looking forward to. Ties *to* as a preposition back
+   to lesson 10's *I'm used to working*, with the noun test (*looking forward
+   to the weekend*). Uses *looking forward to* from lesson 2's parked block 7.
+   Fix cards: *thinking to change* → *thinking about changing* · *Before to
+   leave* → *Before leaving* · *looking forward to see you* → *to seeing you*.
+3. **She made me wait — verb + person + verb** — want · need · expect + to /
+   I'd like you to / make / let / help. *tell / ask someone to* left out —
+   lesson 6 did it. Fix cards: *I want that you come* → *I want you to come* ·
+   *made me to stay* → *made me stay* · *let us to use* → *let us use* (note
+   contrasts *allow us to*).
+
+**Language Tip:** *I stopped smoking vs. I stopped to smoke* — over, or why
+you stopped. Trap: *I stopped to smoke last year — it was hard* → *I stopped
+smoking*. The prose adds *quit* and *give up* only take *-ing*.
+
+**Activity:** What do you enjoy? — a 24-card deck of two-part questions
+(likes and dislikes, habits, parents' rules, work from home, refusing,
+vacations, *stop to eat* on a drive), none about plans for next year, since
+that is the talk; **Change the sentence**, 24 hand-written cards, six each of
+*-ing or to? — use the verb in brackets* · *Add the words in brackets — then
+-ing* · *Make, let or want — one sentence* · *Stopped -ing or stopped to?* (the
+Tip, three each way). Then **Your plans for next year** — no roleplay, four
+prompts: what you enjoyed · what you've decided · what you'll change (stop
+…ing, want your team to) · looking forward. Sidebar: *-ing or to* · *After a
+preposition* · *Someone else* · *Stop* · *If you get stuck*. American spelling
+(*traveling*, *movie*, *apartment*, *gas*).
+
+**Wrap-up:** one recall item — three *-ing* verbs and three *to* verbs,
+something you're looking forward to, something your parents made or let you
+do, and *stopped smoking* vs. *stopped to smoke*.
+
+**Homework:** British Council LearnEnglish, **B1–B2 grammar** — *Verbs
+followed by '-ing' or infinitive to change meaning*
+(`/free-resources/grammar/b1-b2/verbs-followed-ing-or-infinitive-change-meaning`),
+which opens with *stop doing* vs. *stop to do* and also covers *try* and
+*remember / forget*. Grammar test 1, the explanation, Grammar test 2, then four
+true sentences with *stop …ing*, *stop to …*, *looking forward to …ing* and
+*want someone to …*. Verified in a browser on 26 November.
+
+**Next class, as named on the page:** real and imaginary conditionals — *If it
+rains, I'll stay home* / *If I won the lottery, I'd stop working.*
+
+---
+
 ## Carried over
 
 From **lesson 0**: block 6 (Yesterday) only. Blocks 1–5 were all reached, which
@@ -1319,6 +1402,9 @@ blocks were reached.
 From **lesson 12**: not yet recorded. Lesson 13 was built assuming all three
 blocks were reached.
 
+From **lesson 13**: not yet recorded. Lesson 14 was built assuming all three
+blocks were reached.
+
 ---
 
 ## Not yet covered
@@ -1330,10 +1416,9 @@ present perfect, comparing, and eating out and shopping are done:
   easy on 5 November; lesson 11 did the past perfect instead.
 - ~~Opinions, agreeing and disagreeing~~ — done in lesson 12.
 - ~~should / have to / need to~~ — done in lesson 13.
-- ***enjoy doing* vs. *decide to do*** — named on lesson 13's page as next.
-- **real
-  vs. imaginary conditionals**, **the passive at work** — the rest of the
-  ranked list from 29 October.
+- ~~*enjoy doing* vs. *decide to do*~~ — done in lesson 14.
+- **Real vs. imaginary conditionals** — named on lesson 14's page as next.
+- **The passive at work** — the rest of the ranked list from 29 October.
 - **Video calls in their own right** — lesson 6 only touched them (*you're
   breaking up*, the microphone card, three deck questions). Screen sharing,
   *you're on mute*, talking over each other, running a meeting. Named for lessons 9 and 10 and jumped both times; on 29 October Felipe
@@ -1351,4 +1436,5 @@ present perfect, comparing, and eating out and shopping are done:
   *made a course* and *assisted* went into lesson 7's block 4 as fix cards,
   and *lost the bus* and *passed time* went in as the table rows *miss the
   bus* and *spend the weekend*.) The rest of lesson 2's block 7 — *make /
-  take / changing a plan / looking forward to* — is still untaught.
+  take / changing a plan* — is still untaught (*looking forward to* went into
+  lesson 14's block 2).
